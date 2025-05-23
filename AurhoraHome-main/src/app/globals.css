@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* Variables de colores personalizadas */
+@theme {
+  --color-teal-electrico: #08BDBA;
+  --color-magenta-vivo: #D946EF;
+  --color-lima-brillante: #A3E635;
+  --color-azul-cobalto: #2563EB;
+  --color-gris-grafito-base: #111827;
+  --color-gris-grafito-card: #1F2937;
+  --color-gris-grafito-header: #1F2937;
+}
+
+/* Estilos base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #111827;
+  color: #E5E7EB;
+  overflow-x: hidden;
+}
+
+/* Utilidad para retrasos de animación */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+/* Estilos para scrollbar personalizado */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-gray-700 {
+  scrollbar-color: #374151 transparent;
+}
+
+.scrollbar-track-transparent {
+  scrollbar-color: #374151 transparent;
+}
+
+/* Webkit scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #374151;
+  border-radius: 10px;
+  border: 2px solid #111827;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4B5563;
+}
+
+/* Scroll horizontal para servicios */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.overflow-x-auto > * {
+  scroll-snap-align: start;
+}
