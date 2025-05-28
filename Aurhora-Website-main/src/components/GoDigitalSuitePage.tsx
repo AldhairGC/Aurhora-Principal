@@ -713,7 +713,7 @@ export default function GoDigitalSuitePage() {
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <div className={`w-20 h-20 rounded-full bg-gradient-to-br from-${step.color}-500 to-${step.color}-600 text-white text-2xl font-bold flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transform transition-all duration-300`}>
-                      {React.cloneElement(step.icon, { className: `w-10 h-10 text-white`})}
+                        {React.isValidElement(step.icon) && React.cloneElement(step.icon, { className: `w-10 h-10 text-white` })}
                     </div>
                     <h3 className={`text-lg sm:text-xl font-semibold mb-2 ${currentTheme.text}`}>{step.title}</h3>
                     <p className={`text-sm ${currentTheme.textSecondary}`}>{step.description}</p>
