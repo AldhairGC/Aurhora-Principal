@@ -7,14 +7,14 @@ import {
   Mail, Phone, Building, Send, CheckCircle as CheckCircleIcon, ChevronDown,
   Code, Layers, X, Brain, Compass, MapPin, Users2, ChevronRight, Gauge, Workflow, Presentation, BookOpen,
   Cpu, Database, Cloud, Smartphone as Mobile, Monitor, Bot, Sparkles, ChevronUp, Activity, Heart, Compass as DirectionIcon,
-  Repeat, TreePine, Lightbulb as Innovation, Award, Puzzle, ArrowUpRight, Timer, PieChart, Smile,
+  Repeat, TreePine, Lightbulb as Innovation, Award, Puzzle, ArrowUpRight, Timer, PieChart, Smile, Trending,
   Gamepad2, Megaphone, UserCheck, RefreshCw, Gem, Leaf, Sprout, Recycle
 } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 import { useI18n } from '@/context/I18nContext';
 import ClientLayout from '@/components/ClientLayout';
 
-// Interfaces for the data types
+// Interfaces for the data types - ACTUALIZADAS
 interface Problem {
   icon: React.ReactNode;
   title: string;
@@ -28,7 +28,7 @@ interface Approach {
 }
 
 interface TransformationArea {
-  icon: React.ReactNode;
+  Icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
   features: string[];
@@ -49,7 +49,7 @@ interface Benefit {
 }
 
 interface Technology {
-  icon: React.ReactNode;
+  Icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
   tools: string[];
@@ -359,25 +359,25 @@ export default function CulturaAgilPage() {
 
   const transformationAreas: TransformationArea[] = [
     {
-      icon: <Sprout className="w-7 h-7" />,
+      Icon: Sprout,
       title: "Cultura Organizacional Ágil",
       description: "Construimos mentalidades y comportamientos que faciliten la adaptabilidad",
       features: ["Mindset de crecimiento", "Cultura de experimentación", "Psychological safety", "Valores ágiles"]
     },
     {
-      icon: <Workflow className="w-7 h-7" />,
+      Icon: Workflow,
       title: "Metodologías y Prácticas",
       description: "Implementamos frameworks que optimizan el flujo de valor",
       features: ["Scrum & Kanban", "Design Thinking", "Lean Startup", "DevOps practices"]
     },
     {
-      icon: <DirectionIcon className="w-7 h-7" />,
+      Icon: DirectionIcon,
       title: "Liderazgo Ágil y Coaching",
       description: "Desarrollamos líderes que faciliten y empoderen equipos",
       features: ["Servant leadership", "Coaching skills", "Facilitación", "Gestión del cambio"]
     },
     {
-      icon: <Users2 className="w-7 h-7" />,
+      Icon: Users2,
       title: "Equipos de Alto Desempeño",
       description: "Formamos equipos autónomos, multifuncionales y orientados a resultados",
       features: ["Self-organizing teams", "Cross-functional skills", "Continuous improvement", "Customer focus"]
@@ -452,25 +452,25 @@ export default function CulturaAgilPage() {
 
   const technologies: Technology[] = [
     {
-      icon: <Users className="w-6 h-6" />,
+      Icon: Users,
       title: "Plataformas Colaborativas",
       description: "Herramientas que facilitan la comunicación y trabajo en equipo",
       tools: ["Slack", "Microsoft Teams", "Miro", "Confluence"]
     },
     {
-      icon: <Monitor className="w-6 h-6" />,
+      Icon: Monitor,
       title: "Dashboards de Seguimiento",
       description: "Visualización en tiempo real de métricas y KPIs ágiles",
       tools: ["Jira", "Azure DevOps", "Monday", "Notion"]
     },
     {
-      icon: <BarChart3 className="w-6 h-6" />,
+      Icon: BarChart3,
       title: "Analytics Ágiles",
       description: "Análisis de datos para toma de decisiones basada en evidencia",
       tools: ["Power BI", "Tableau", "Google Analytics", "Mixpanel"]
     },
     {
-      icon: <Zap className="w-6 h-6" />,
+      Icon: Zap,
       title: "Herramientas CI/CD",
       description: "Automatización para entregas rápidas y de calidad",
       tools: ["GitHub Actions", "Jenkins", "Docker", "Kubernetes"]
@@ -759,7 +759,7 @@ export default function CulturaAgilPage() {
                 >
                   <div className={`mb-4 flex items-center text-emerald-500`}>
                     <div className={`p-2.5 rounded-lg bg-emerald-500/10 mr-4 group-hover:scale-110 transition-transform`}>
-                       {React.cloneElement(area.icon, { className: `w-6 h-6 text-emerald-500`})}
+                       <area.Icon className="w-6 h-6 text-emerald-500" />
                     </div>
                     <h4 className={`text-lg sm:text-xl font-semibold ${currentTheme.text}`}>{area.title}</h4>
                   </div>
@@ -862,7 +862,7 @@ export default function CulturaAgilPage() {
                 >
                   <div className={`mb-4 flex items-center text-blue-500`}>
                     <div className={`p-2.5 rounded-lg bg-blue-500/10 mr-4 group-hover:scale-110 transition-transform`}>
-                       {React.cloneElement(tech.icon, { className: `w-6 h-6 text-blue-500`})}
+                       <tech.Icon className="w-6 h-6 text-blue-500" />
                     </div>
                     <h4 className={`text-lg sm:text-xl font-semibold ${currentTheme.text}`}>{tech.title}</h4>
                   </div>
