@@ -83,10 +83,12 @@ interface FormData {
   telefono: string;
   empresa: string;
   proyecto: string;
-  source?: string; 
+  source?: string;
 }
 
 // Missing ShoppingCart icon - using alternative
+// This component defines its own className for the SVG, so it doesn't need to accept one as a prop
+// if the classes are always meant to be "w-7 h-7".
 const ShoppingCart = () => (
   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m2.6 8L5 3H3m4 10v2a2 2 0 004 0v-2m0 0v2a2 2 0 004 0v-2"/>
@@ -132,7 +134,7 @@ const CodeEditor: React.FC = () => {
     const interval = setInterval(() => {
       if (currentLineIndex < codeLines.length) {
         const currentLine = codeLines[currentLineIndex];
-        
+
         if (currentCharIndex < currentLine.length) {
           setDisplayedLines(prev => {
             const newLines = [...prev];
@@ -160,35 +162,35 @@ const CodeEditor: React.FC = () => {
     }, 50);
 
     return () => clearInterval(interval);
-  }, [currentLineIndex, currentCharIndex, codeLines]);
+  }, [currentLineIndex, currentCharIndex, codeLines]); // Added codeLines to dependency array as it's used in effect
 
   const highlightSyntax = (line: string) => {
     if (!line) return '';
-    
+
     const keywords = ['import', 'export', 'const', 'async', 'function', 'await', 'new', 'return'];
     const strings = /'[^']*'|"[^"]*"/g;
-    const comments = /\/\/.*$/;
-    
+    // const comments = /\/\/.*$/; // Not used in current highlighting logic
+
     let highlighted = line;
-    
+
     // Highlight strings
-    highlighted = highlighted.replace(strings, (match) => 
+    highlighted = highlighted.replace(strings, (match) =>
       `<span class="text-green-400">${match}</span>`
     );
-    
+
     // Highlight keywords
     keywords.forEach(keyword => {
       const regex = new RegExp(`\\b${keyword}\\b`, 'g');
-      highlighted = highlighted.replace(regex, 
+      highlighted = highlighted.replace(regex,
         `<span class="text-blue-400 font-semibold">${keyword}</span>`
       );
     });
-    
+
     // Highlight object methods
-    highlighted = highlighted.replace(/(\w+)\.(\w+)/g, 
+    highlighted = highlighted.replace(/(\w+)\.(\w+)/g,
       '<span class="text-cyan-300">$1</span>.<span class="text-yellow-300">$2</span>'
     );
-    
+
     return highlighted;
   };
 
@@ -203,7 +205,7 @@ const CodeEditor: React.FC = () => {
         </div>
         <div className="ml-4 text-sm text-gray-400 font-mono">api/ai/chat/route.ts</div>
       </div>
-      
+
       {/* Code Content */}
       <div className="p-4 font-mono text-sm overflow-hidden">
         {displayedLines.map((line, index) => (
@@ -211,17 +213,20 @@ const CodeEditor: React.FC = () => {
             <span className="text-gray-500 mr-4 select-none w-6 text-right text-xs">
               {line ? index + 1 : ''}
             </span>
-            <span 
+            <span
               className="text-gray-100"
               dangerouslySetInnerHTML={{ __html: highlightSyntax(line) }}
             />
-            {index === currentLineIndex && (
+            {index === currentLineIndex && currentCharIndex === (codeLines[currentLineIndex]?.length || 0) && currentLineIndex < codeLines.length -1 && ( // Show cursor at end of fully typed line, before moving to next
+              <span className="ml-1 w-2 h-5 bg-cyan-400 animate-pulse"></span>
+            )}
+             {index === currentLineIndex && currentCharIndex < (codeLines[currentLineIndex]?.length || 0) && ( // Show cursor while typing
               <span className="ml-1 w-2 h-5 bg-cyan-400 animate-pulse"></span>
             )}
           </div>
         ))}
       </div>
-      
+
       {/* Terminal Output Simulation */}
       <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-2">
         <div className="text-green-400 font-mono text-xs">
@@ -238,13 +243,13 @@ const CodeEditor: React.FC = () => {
 
 export default function SoftwareDevelopmentPage() {
   const { theme, currentTheme } = useTheme();
-  const t = useI18n();
+  const t = useI18n(); // Assuming useI18n() returns a translation function or object
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({});
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollYValue, setScrollYValue] = useState(0);
-  const [isClient, setIsClient] = useState(false); 
+  const [isClient, setIsClient] = useState(false);
 
   const [showContactForm, setShowContactForm] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -259,7 +264,7 @@ export default function SoftwareDevelopmentPage() {
 
   useEffect(() => {
     setIsClient(true);
-    
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -269,7 +274,7 @@ export default function SoftwareDevelopmentPage() {
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
@@ -277,7 +282,7 @@ export default function SoftwareDevelopmentPage() {
   }, []);
 
   useEffect(() => {
-    if (!isClient) return; 
+    if (!isClient) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -298,8 +303,8 @@ export default function SoftwareDevelopmentPage() {
   }, [isClient]);
 
   useEffect(() => {
-    if (!isClient || !canvasRef.current) return; 
-    
+    if (!isClient || !canvasRef.current) return;
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
@@ -308,101 +313,102 @@ export default function SoftwareDevelopmentPage() {
     const handleResize = () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            if (!canvasRef.current) return;
+            if (!canvasRef.current) return; // Check if canvasRef.current is still valid
             canvasRef.current.width = window.innerWidth;
             canvasRef.current.height = window.innerHeight;
         }, 100);
     };
-    
+
     window.addEventListener('resize', handleResize);
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
+
     const particles: any[] = [];
     const particleCount = Math.min(40, Math.floor(window.innerWidth / 30));
-    const connectionDistance = 100; 
-    
+    const connectionDistance = 100;
+
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         z: Math.random() * 1000,
-        vx: (Math.random() - 0.5) * 0.1, 
-        vy: (Math.random() - 0.5) * 0.1, 
-        vz: (Math.random() - 0.5) * 0.5, 
-        size: Math.random() * 0.8 + 0.2, 
-        opacity: Math.random() * 0.2 + 0.05 
+        vx: (Math.random() - 0.5) * 0.1,
+        vy: (Math.random() - 0.5) * 0.1,
+        vz: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 0.8 + 0.2,
+        opacity: Math.random() * 0.2 + 0.05
       });
     }
-    
+
     let animationFrameId: number;
     const animate = () => {
+      if (!ctx || !canvasRef.current) return; // Ensure context and canvas are still available
       ctx.fillStyle = theme === 'dark' ? 'rgba(17, 24, 39, 0.02)' : 'rgba(243, 244, 246, 0.02)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
+      ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
       particles.forEach((particle, i) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
         particle.z += particle.vz;
-        
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+        if (particle.x < 0 || particle.x > canvasRef.current!.width) particle.vx *= -1; // Added null assertion as width/height are set
+        if (particle.y < 0 || particle.y > canvasRef.current!.height) particle.vy *= -1;
         if (particle.z < 1 || particle.z > 1000) particle.vz *= -1;
-        
+
         const scale = 1000 / (1000 + particle.z);
-        const x2d = (particle.x - canvas.width / 2) * scale + canvas.width / 2;
-        const y2d = (particle.y - canvas.height / 2) * scale + canvas.height / 2;
+        const x2d = (particle.x - canvasRef.current!.width / 2) * scale + canvasRef.current!.width / 2;
+        const y2d = (particle.y - canvasRef.current!.height / 2) * scale + canvasRef.current!.height / 2;
         const size = particle.size * scale;
-        
-        if (size > 0.1) { 
+
+        if (size > 0.1) {
             ctx.beginPath();
             ctx.arc(x2d, y2d, size, 0, Math.PI * 2);
             const gradient = ctx.createRadialGradient(x2d, y2d, 0, x2d, y2d, size);
-            gradient.addColorStop(0, theme === 'dark' 
-            ? `rgba(56, 189, 248, ${particle.opacity * scale * 0.8})` 
+            gradient.addColorStop(0, theme === 'dark'
+            ? `rgba(56, 189, 248, ${particle.opacity * scale * 0.8})`
             : `rgba(59, 130, 246, ${particle.opacity * scale * 0.8})`);
             gradient.addColorStop(1, 'transparent');
             ctx.fillStyle = gradient;
             ctx.fill();
         }
-        
+
         particles.forEach((particle2, j) => {
           if (i < j) {
             const dx = particle.x - particle2.x;
             const dy = particle.y - particle2.y;
             const dz = particle.z - particle2.z;
             const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
-            
+
             if (distance < connectionDistance) {
-              const opacity = (1 - distance / connectionDistance) * 0.1 * scale; 
-              if (opacity > 0.01) { 
+              const opacity = (1 - distance / connectionDistance) * 0.1 * scale;
+              if (opacity > 0.01) {
                 ctx.beginPath();
                 ctx.moveTo(x2d, y2d);
                 const scale2 = 1000 / (1000 + particle2.z);
-                const x2d2 = (particle2.x - canvas.width / 2) * scale2 + canvas.width / 2;
-                const y2d2 = (particle2.y - canvas.height / 2) * scale2 + canvas.height / 2;
+                const x2d2 = (particle2.x - canvasRef.current!.width / 2) * scale2 + canvasRef.current!.width / 2;
+                const y2d2 = (particle2.y - canvasRef.current!.height / 2) * scale2 + canvasRef.current!.height / 2;
                 ctx.lineTo(x2d2, y2d2);
-                ctx.strokeStyle = theme === 'dark' 
+                ctx.strokeStyle = theme === 'dark'
                     ? `rgba(56, 189, 248, ${opacity})`
                     : `rgba(59, 130, 246, ${opacity})`;
-                ctx.lineWidth = 0.2; 
+                ctx.lineWidth = 0.2;
                 ctx.stroke();
               }
             }
           }
         });
       });
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
-    
+
     animate();
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     }
-  }, [theme, isClient]); 
+  }, [theme, isClient]);
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -478,7 +484,7 @@ export default function SoftwareDevelopmentPage() {
   const techStack: TechStackItem[] = [
     {
       category: "Frontend",
-      icon: <Monitor className="w-6 h-6" />,
+      icon: <Monitor className="w-6 h-6" />, // This lucide icon accepts className
       technologies: ["React", "Vue.js", "Angular", "React Native", "Flutter"],
       color: "blue"
     },
@@ -546,7 +552,7 @@ export default function SoftwareDevelopmentPage() {
       examples: ["APIs RESTful", "Microservicios", "Integraciones complejas"]
     },
     {
-      icon: <ShoppingCart className="w-7 h-7" />,
+      icon: <ShoppingCart />, // CORRECTED LINE: Removed className="w-7 h-7"
       title: "E-commerce & MarketPlaces",
       description: "Plataformas de venta online con funcionalidades avanzadas",
       examples: ["Tiendas online", "Marketplaces", "Plataformas B2B"]
@@ -603,7 +609,7 @@ export default function SoftwareDevelopmentPage() {
 
   const developmentProcess: ProcessStep[] = [
     {
-      icon: <Compass className={`w-10 h-10`} />, 
+      icon: <Compass className={`w-10 h-10`} />,
       title: "Discovery & Strategy",
       description: "Investigación profunda, definición de objetivos y arquitectura de la solución.",
       color: 'blue'
@@ -612,7 +618,7 @@ export default function SoftwareDevelopmentPage() {
       icon: <Palette className={`w-10 h-10`} />,
       title: "Design & Prototyping",
       description: "Diseño de experiencia, interfaces y prototipos funcionales validados con usuarios.",
-      color: 'purple' 
+      color: 'purple'
     },
     {
       icon: <Code className={`w-10 h-10`} />,
@@ -704,8 +710,11 @@ export default function SoftwareDevelopmentPage() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Basic validation, consider more robust validation
     if (!formData.nombre || !formData.email || !formData.proyecto) {
-        alert('Por favor completa todos los campos requeridos');
+        // Instead of alert, you might want to show an inline error message
+        console.error('Por favor completa todos los campos requeridos');
+        // Example: setFormError("Por favor completa todos los campos requeridos");
         return;
     }
     console.log('Formulario de desarrollo de software enviado:', formData);
@@ -720,14 +729,14 @@ export default function SoftwareDevelopmentPage() {
   const openContactModal = (source: string) => {
     setFormData(prev => ({
         ...prev,
-        nombre: '', 
+        nombre: '',
         email: '',
         telefono: '',
         empresa: '',
         proyecto: '',
         source: source,
     }));
-    setFormSubmitted(false); 
+    setFormSubmitted(false);
     setShowContactForm(true);
   };
 
@@ -737,28 +746,28 @@ export default function SoftwareDevelopmentPage() {
         {isClient && (
           <>
             {/* Animated Background Canvas */}
-            <canvas 
-              ref={canvasRef} 
+            <canvas
+              ref={canvasRef}
               className="fixed inset-0 pointer-events-none z-0"
-              style={{ opacity: 0.4 }} 
+              style={{ opacity: 0.4 }}
             />
-            
+
             {/* Dynamic Gradient Orbs */}
             <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-              <div 
+              <div
                 className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full bg-gradient-to-br from-blue-500 via-cyan-500 to-purple-500 blur-3xl opacity-15 animate-pulse"
                 style={{
-                  left: `${mousePosition.x * 0.02 - 50}px`, 
+                  left: `${mousePosition.x * 0.02 - 50}px`,
                   top: `${mousePosition.y * 0.02 - 50}px`,
                   transform: `translate(-50%, -50%) scale(${1 + scrollYValue * 0.0002})`
                 }}
               />
-              <div 
+              <div
                 className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-gradient-to-tr from-cyan-500 via-blue-500 to-indigo-500 blur-3xl opacity-10 animate-pulse"
                 style={{
-                  right: `${(isClient ? window.innerWidth : 0 - mousePosition.x) * 0.02 - 100}px`, 
-                  bottom: `${(isClient ? window.innerHeight : 0 - mousePosition.y) * 0.02 - 100}px`,
-                  animationDelay: '0.5s', 
+                  right: `${(isClient && typeof window !== 'undefined' ? window.innerWidth : 0 - mousePosition.x) * 0.02 - 100}px`,
+                  bottom: `${(isClient && typeof window !== 'undefined' ? window.innerHeight : 0 - mousePosition.y) * 0.02 - 100}px`,
+                  animationDelay: '0.5s',
                   transform: `scale(${1 + scrollYValue * 0.00015})`
                 }}
               />
@@ -775,7 +784,7 @@ export default function SoftwareDevelopmentPage() {
                 <div className={`inline-block px-4 py-1.5 mb-6 ${currentTheme.bgSecondary} border ${currentTheme.border} rounded-full shadow-sm`}>
                   <span className={`text-xs sm:text-sm font-semibold ${currentTheme.textSecondary} tracking-wider`}>FÁBRICA DE DESARROLLO</span>
                 </div>
-                
+
                 <h1 className={`text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight`}>
                   <span className={`block bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent`}>
                     Desarrollo de Software
@@ -784,23 +793,23 @@ export default function SoftwareDevelopmentPage() {
                     Impulsado por IA
                   </span>
                 </h1>
-                
+
                 <p className={`text-base sm:text-lg ${currentTheme.textSecondary} mb-8 max-w-xl mx-auto lg:mx-0`}>
-                  Creamos soluciones disruptivas que rompen el status quo usando las mejores tecnologías, 
+                  Creamos soluciones disruptivas que rompen el status quo usando las mejores tecnologías,
                   IA nativa y metodologías centradas en el usuario para acelerar tu time-to-market.
                 </p>
-                
+
                 <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start`}>
-                  <button 
-                    onClick={() => openContactModal('hero_iniciar_proyecto')} 
+                  <button
+                    onClick={() => openContactModal('hero_iniciar_proyecto')}
                     className={`group px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 text-white font-bold text-base sm:text-lg hover:scale-105 transform transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center relative overflow-hidden`}
                   >
                     <span className="relative z-10">Iniciar Proyecto</span>
                     <Rocket className="inline-block ml-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
                     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   </button>
-                  <a 
-                    href="#tecnologias" 
+                  <a
+                    href="#tecnologias"
                     className={`px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white font-bold text-base sm:text-lg hover:scale-105 transform transition-all duration-300 flex items-center justify-center`}
                   >
                     Conocer Stack Tech
@@ -825,14 +834,14 @@ export default function SoftwareDevelopmentPage() {
                 Problemas que Resolvemos
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Identificamos y eliminamos los obstáculos más comunes en el desarrollo de software 
+                Identificamos y eliminamos los obstáculos más comunes en el desarrollo de software
                 que frenan la innovación y el crecimiento de las empresas.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {problemsSolved.map((problem, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 sm:p-8 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-l-blue-500 ${visibleSections['problemas'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -853,14 +862,14 @@ export default function SoftwareDevelopmentPage() {
                 Nuestro Enfoque Disruptivo
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Combinamos metodologías ágiles, tecnologías de vanguardia e IA nativa para crear 
+                Combinamos metodologías ágiles, tecnologías de vanguardia e IA nativa para crear
                 soluciones que generan ventajas competitivas sostenibles.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {disruptiveBenefits.map((benefit, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 sm:p-8 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-left transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-l-cyan-500 ${visibleSections['beneficios'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -874,35 +883,36 @@ export default function SoftwareDevelopmentPage() {
         </section>
 
         {/* Tech Stack Section */}
-        <section id="tecnologias" className={`py-16 md:py-24 ${currentTheme.bgSecondary} relative z-10`}>
+       <section id="tecnologias" className={`py-16 md:py-24 ${currentTheme.bgSecondary} relative z-10`}>
           <div className="container mx-auto px-6">
             <div className={`text-center mb-12 md:mb-16 ${visibleSections['tecnologias'] ? 'animate-fadeInUp' : 'opacity-0'}`}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                 Stack Tecnológico
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-3xl mx-auto`}>
-                Seleccionamos las tecnologías más funcionales para cada proyecto, priorizando 
+                Seleccionamos las tecnologías más funcionales para cada proyecto, priorizando
                 performance, escalabilidad y mantenibilidad a largo plazo.
               </p>
             </div>
-            
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
               {techStack.map((stack, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-left transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-l-${stack.color}-500 ${visibleSections['tecnologias'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className={`mb-4 flex items-center text-${stack.color}-500`}>
                     <div className={`p-2.5 rounded-lg bg-${stack.color}-500/10 mr-4 group-hover:scale-110 transition-transform`}>
-                       {React.cloneElement(stack.icon, { className: `w-6 h-6 text-${stack.color}-500`})}
+                       {/* Ensure icon is a valid React element and can accept className */}
+                       {React.isValidElement(stack.icon) ? React.cloneElement(stack.icon as React.ReactElement<any>, { className: `w-6 h-6 text-${stack.color}-500`}) : null}
                     </div>
                     <h4 className={`text-lg sm:text-xl font-semibold ${currentTheme.text}`}>{stack.category}</h4>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {stack.technologies.map((tech, idx) => (
-                      <span 
-                        key={idx} 
+                      <span
+                        key={idx}
                         className={`px-3 py-1 rounded-full text-xs font-medium bg-${stack.color}-500/10 text-${stack.color}-600 border border-${stack.color}-500/20`}
                       >
                         {tech}
@@ -923,21 +933,22 @@ export default function SoftwareDevelopmentPage() {
                 Tipos de Proyectos
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-3xl mx-auto`}>
-                Desarrollamos una amplia gama de soluciones digitales, desde MVPs hasta 
+                Desarrollamos una amplia gama de soluciones digitales, desde MVPs hasta
                 sistemas enterprise complejos, siempre con IA integrada nativamente.
               </p>
             </div>
-            
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
               {projectTypes.map((project, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-left transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-l-purple-500 ${visibleSections['proyectos'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className={`mb-4 flex items-center text-purple-500`}>
                     <div className={`p-2.5 rounded-lg bg-purple-500/10 mr-4 group-hover:scale-110 transition-transform`}>
-                       {React.cloneElement(project.icon, { className: `w-6 h-6 text-purple-500`})}
+                       {/* Ensure icon is a valid React element. If it's the custom ShoppingCart, it doesn't take className. Lucide icons do. */}
+                       {project.title === "E-commerce & MarketPlaces" ? project.icon : (React.isValidElement(project.icon) ? React.cloneElement(project.icon as React.ReactElement<any>, { className: `w-6 h-6 text-purple-500`}) : null)}
                     </div>
                     <h4 className={`text-lg sm:text-xl font-semibold ${currentTheme.text}`}>{project.title}</h4>
                   </div>
@@ -964,14 +975,14 @@ export default function SoftwareDevelopmentPage() {
                 Metodologías de Diseño
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Aplicamos las metodologías más efectivas según cada proyecto, siempre 
+                Aplicamos las metodologías más efectivas según cada proyecto, siempre
                 priorizando la experiencia del usuario y resultados medibles.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {methodologies.map((methodology, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 sm:p-8 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-center transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-l-indigo-500 ${visibleSections['metodologias'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                   >
@@ -992,7 +1003,7 @@ export default function SoftwareDevelopmentPage() {
                 Proceso de Desarrollo
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Metodología estructurada de 5 fases que garantiza entregas de valor desde 
+                Metodología estructurada de 5 fases que garantiza entregas de valor desde
                 las primeras semanas, con gestión robusta y comunicación transparente.
               </p>
             </div>
@@ -1000,13 +1011,13 @@ export default function SoftwareDevelopmentPage() {
               <div className={`hidden lg:block absolute top-12 left-[10%] right-[10%] h-1.5 bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 rounded-full opacity-40`}></div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-12 gap-x-8 relative z-10">
                 {developmentProcess.map((step, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`flex flex-col items-center text-center group ${visibleSections['proceso'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <div className={`w-20 h-20 rounded-full bg-gradient-to-br from-${step.color}-500 to-${step.color}-600 text-white text-2xl font-bold flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transform transition-all duration-300`}>
-                      {React.cloneElement(step.icon, { className: `w-10 h-10 text-white`})}
+                      {React.isValidElement(step.icon) ? React.cloneElement(step.icon as React.ReactElement<any>, { className: `w-10 h-10 text-white`}) : null}
                     </div>
                     <h3 className={`text-lg sm:text-xl font-semibold mb-2 ${currentTheme.text}`}>{step.title}</h3>
                     <p className={`text-sm ${currentTheme.textSecondary}`}>{step.description}</p>
@@ -1025,14 +1036,14 @@ export default function SoftwareDevelopmentPage() {
                 Modelos de Colaboración
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Ofrecemos flexibilidad total para adaptarnos a tus necesidades específicas, 
+                Ofrecemos flexibilidad total para adaptarnos a tus necesidades específicas,
                 desde proyectos completos hasta refuerzo especializado.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {collaborationModels.map((model, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-8 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-center transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-l-green-500 ${visibleSections['modelos'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 200}ms` }}
                   >
@@ -1061,14 +1072,14 @@ export default function SoftwareDevelopmentPage() {
                 ¿Para Quién Desarrollamos?
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Trabajamos con organizaciones de todos los tamaños que buscan acelerar 
+                Trabajamos con organizaciones de todos los tamaños que buscan acelerar
                 su crecimiento a través de soluciones tecnológicas innovadoras.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {targetAudience.map((item, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 sm:p-8 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-center transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-l-pink-500 ${visibleSections['publico'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                   >
@@ -1080,7 +1091,7 @@ export default function SoftwareDevelopmentPage() {
             </div>
           </div>
         </section>
-        
+
         {/* Testimonials Section */}
         <section id="testimonios" className={`py-16 md:py-24 ${currentTheme.bgSecondary} relative z-10`}>
           <div className="container mx-auto px-6">
@@ -1089,21 +1100,20 @@ export default function SoftwareDevelopmentPage() {
                 Casos de Éxito
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Descubre cómo hemos ayudado a empresas a acelerar su crecimiento y 
+                Descubre cómo hemos ayudado a empresas a acelerar su crecimiento y
                 crear ventajas competitivas a través de soluciones tecnológicas disruptivas.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`p-8 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl flex flex-col text-left transition-shadow duration-300 border-l-4 border-l-yellow-500 ${visibleSections['testimonios'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="mb-4 flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-lg mr-4">
-                      {testimonial.name.charAt(0)}
-                    </div>
+                    {/* Avatar logic can be improved if actual images are used */}
+                    <img src={testimonial.avatar} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4 object-cover" onError={(e) => (e.currentTarget.src = `https://placehold.co/100x100/ccc/333?text=${testimonial.name.charAt(0)}&font=Inter`)} />
                     <div>
                       <h4 className={`text-lg font-semibold ${currentTheme.text}`}>{testimonial.name}</h4>
                       <p className={`text-sm text-blue-500`}>{testimonial.company}</p>
@@ -1124,14 +1134,14 @@ export default function SoftwareDevelopmentPage() {
                 Preguntas Frecuentes
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Resolvemos las dudas más comunes sobre nuestro proceso de desarrollo 
+                Resolvemos las dudas más comunes sobre nuestro proceso de desarrollo
                 y metodologías de trabajo.
               </p>
             </div>
             <div className="space-y-5">
               {faqItems.map((item, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`${currentTheme.card} rounded-xl shadow-lg hover:shadow-2xl overflow-hidden transition-shadow duration-300 border-l-4 border-l-orange-500 ${visibleSections['faq'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -1166,13 +1176,13 @@ export default function SoftwareDevelopmentPage() {
               tu Desarrollo?
             </h2>
             <p className={`text-lg sm:text-xl ${currentTheme.textSecondary} mb-10 max-w-2xl mx-auto`}>
-              Construye tu visión con velocidad, excelencia y tecnologías de vanguardia. 
+              Construye tu visión con velocidad, excelencia y tecnologías de vanguardia.
               Comencemos a crear tu ventaja competitiva.
             </p>
-            
+
             <div className="flex justify-center">
-               <button 
-                 onClick={() => openContactModal('cta_final_acelerar_desarrollo')} 
+               <button
+                 onClick={() => openContactModal('cta_final_acelerar_desarrollo')}
                  className={`group px-10 py-5 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 text-white text-xl font-bold hover:scale-105 transform transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center relative overflow-hidden`}
                >
                   <span className="relative z-10">Acelerar mi Desarrollo</span>
@@ -1180,7 +1190,7 @@ export default function SoftwareDevelopmentPage() {
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
               </button>
             </div>
-            
+
             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-10 text-sm">
               <div className="flex items-center">
                 <Zap className={`w-5 h-5 text-cyan-500 mr-2`} />
@@ -1200,18 +1210,21 @@ export default function SoftwareDevelopmentPage() {
 
         {/* Contact Form Modal */}
         {showContactForm && (
-          <div 
+          <div
             className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeInUp"
             onClick={(e) => {
-              if (e.target === e.currentTarget) {
+              if (e.target === e.currentTarget) { // Close only if backdrop is clicked
                 setShowContactForm(false);
-                setFormSubmitted(false);
+                setFormSubmitted(false); // Reset submission state if modal is closed manually
               }
             }}
           >
             <div className={`relative w-full max-w-lg ${currentTheme.card} rounded-2xl shadow-2xl p-6 sm:p-8 transform transition-all duration-300`}>
               <button
-                onClick={() => setShowContactForm(false)}
+                onClick={() => {
+                  setShowContactForm(false);
+                  setFormSubmitted(false);
+                }}
                 aria-label="Cerrar formulario"
                 className={`absolute top-4 right-4 p-2 rounded-full ${currentTheme.hover} hover:scale-110 transition-all`}
               >
@@ -1246,7 +1259,7 @@ export default function SoftwareDevelopmentPage() {
                   <p className={`text-center ${currentTheme.textSecondary} mb-6 text-sm sm:text-base`}>
                     Cuéntanos sobre tu proyecto para crear una propuesta personalizada con tecnologías de vanguardia.
                   </p>
-                  
+
                   <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-5">
                     <div>
                       <label htmlFor="dev-nombre" className={`block text-sm font-medium mb-1.5 ${currentTheme.textSecondary}`}>
@@ -1327,21 +1340,21 @@ export default function SoftwareDevelopmentPage() {
         {/* WhatsApp Floating Button */}
         {isClient && (
           <a
-            href="#"
+            href="#" // The actual link is opened via window.open
             className="fixed bottom-6 right-6 z-50 group"
             aria-label="Contactar por WhatsApp"
             onClick={(e) => {
               e.preventDefault();
               const whatsappUrl = "https://wa.me/525616026685?text=Hola%20Aurhora!%0A%0AVisite%20su%20sitio%20web%20y%20me%20interesa%20conocer%20mas%20sobre%20su%20fabrica%20de%20desarrollo%20de%20software.%0A%0ATengo%20un%20proyecto%20en%20mente%20y%20me%20gustaria%20discutir%3A%0A%0A-%20Desarrollo%20con%20IA%20integrada%0A-%20Tecnologias%20de%20vanguardia%0A-%20Speed%20to%20market%0A-%20Metodologias%20agiles%0A%0ACuando%20podriamos%20agendar%20una%20reunion%20para%20discutir%20mi%20proyecto%3F";
-              window.open(whatsappUrl, '_blank');
+              window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
             }}
           >
             <div className="relative">
               <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
               <div className="relative bg-green-500 hover:bg-green-600 rounded-full p-4 shadow-2xl transform transition-all duration-300 hover:scale-110 group-hover:shadow-green-500/50">
-                <svg 
-                  className="w-8 h-8 text-white" 
-                  fill="currentColor" 
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -1359,12 +1372,12 @@ export default function SoftwareDevelopmentPage() {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(3deg); }
           }
-          
+
           @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(25px); }
             to { opacity: 1; transform: translateY(0); }
           }
-          
+
           .animate-float { animation: float 4s ease-in-out infinite; }
           .animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
           .animation-delay-100 { animation-delay: 100ms; }
@@ -1375,12 +1388,12 @@ export default function SoftwareDevelopmentPage() {
 
           body {
             scroll-behavior: smooth;
-            font-family: 'Inter', sans-serif; 
+            font-family: 'Inter', sans-serif;
           }
           html {
             scroll-behavior: smooth;
           }
-          .font-['Inter',_sans-serif] { 
+          .font-['Inter',_sans-serif] {
               font-family: 'Inter', sans-serif;
           }
         `}</style>
