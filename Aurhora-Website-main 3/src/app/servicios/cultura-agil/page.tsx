@@ -7,7 +7,7 @@ import {
   Mail, Phone, Building, Send, CheckCircle as CheckCircleIcon, ChevronDown,
   Code, Layers, X, Brain, Compass, MapPin, Users2, ChevronRight, Gauge, Workflow, Presentation, BookOpen,
   Cpu, Database, Cloud, Smartphone as Mobile, Monitor, Bot, Sparkles, ChevronUp, Activity, Heart, Compass as DirectionIcon,
-  Repeat, TreePine, Lightbulb as Innovation, Award, Puzzle, ArrowUpRight, Timer, PieChart, Smile, Trending,
+  Repeat, TreePine, Lightbulb as Innovation, Award, Puzzle, ArrowUpRight, Timer, PieChart, Smile,
   Gamepad2, Megaphone, UserCheck, RefreshCw, Gem, Leaf, Sprout, Recycle
 } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
