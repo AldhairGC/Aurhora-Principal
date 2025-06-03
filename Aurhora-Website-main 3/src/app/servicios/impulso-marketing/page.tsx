@@ -22,11 +22,11 @@ interface ProblemSolved {
 interface Approach {
   icon: React.ReactNode;
   title: string;
-  description: string;  
+  description: string;
 }
 
 interface ServiceCategory {
-  icon: React.ReactNode;
+  icon: React.ReactNode; // This can be undefined, null, etc.
   title: string;
   description: string;
   services: string[];
@@ -82,7 +82,7 @@ export default function MarketingDigitalPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollYValue, setScrollYValue] = useState(0);
   const [isClient, setIsClient] = useState(false);
-  
+
   const [showContactForm, setShowContactForm] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     nombre: '',
@@ -96,7 +96,7 @@ export default function MarketingDigitalPage() {
 
   useEffect(() => {
     setIsClient(true);
-    
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -106,7 +106,7 @@ export default function MarketingDigitalPage() {
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
@@ -131,110 +131,111 @@ export default function MarketingDigitalPage() {
     const sections = document.querySelectorAll('section[id]');
     sections.forEach((section) => observer.observe(section));
 
-    return () => sections.forEach((section) => { if(section) observer.unobserve(section) });
+    return () => sections.forEach((section) => { if (section) observer.unobserve(section) });
   }, [isClient]);
 
   useEffect(() => {
-    if (!isClient || !canvasRef.current) return; 
-    
+    if (!isClient || !canvasRef.current) return;
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            if (!canvasRef.current) return;
-            canvasRef.current.width = window.innerWidth;
-            canvasRef.current.height = window.innerHeight;
-        }, 100);
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (!canvasRef.current) return;
+        canvasRef.current.width = window.innerWidth;
+        canvasRef.current.height = window.innerHeight;
+      }, 100);
     };
-    
+
     window.addEventListener('resize', handleResize);
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
+
     const particles: any[] = [];
     const particleCount = Math.min(35, Math.floor(window.innerWidth / 35));
-    const connectionDistance = 110; 
-    
+    const connectionDistance = 110;
+
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         z: Math.random() * 1000,
-        vx: (Math.random() - 0.5) * 0.12, 
-        vy: (Math.random() - 0.5) * 0.12, 
-        vz: (Math.random() - 0.5) * 0.6, 
-        size: Math.random() * 0.9 + 0.3, 
-        opacity: Math.random() * 0.25 + 0.05 
+        vx: (Math.random() - 0.5) * 0.12,
+        vy: (Math.random() - 0.5) * 0.12,
+        vz: (Math.random() - 0.5) * 0.6,
+        size: Math.random() * 0.9 + 0.3,
+        opacity: Math.random() * 0.25 + 0.05
       });
     }
-    
+
     let animationFrameId: number;
     const animate = () => {
+      if (!ctx || !canvasRef.current) return; // Check if canvas and context are still valid
       ctx.fillStyle = theme === 'dark' ? 'rgba(17, 24, 39, 0.025)' : 'rgba(243, 244, 246, 0.025)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
+      ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
       particles.forEach((particle, i) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
         particle.z += particle.vz;
-        
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-        if (particle.z < 1 || particle.z > 1000) particle.vz *= -1; 
-        
+
+        if (particle.x < 0 || particle.x > canvasRef.current!.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvasRef.current!.height) particle.vy *= -1;
+        if (particle.z < 1 || particle.z > 1000) particle.vz *= -1;
+
         const scale = 1000 / (1000 + particle.z);
-        const x2d = (particle.x - canvas.width / 2) * scale + canvas.width / 2;
-        const y2d = (particle.y - canvas.height / 2) * scale + canvas.height / 2;
+        const x2d = (particle.x - canvasRef.current!.width / 2) * scale + canvasRef.current!.width / 2;
+        const y2d = (particle.y - canvasRef.current!.height / 2) * scale + canvasRef.current!.height / 2;
         const size = particle.size * scale;
-        
-        if (size > 0.1) { 
-            ctx.beginPath();
-            ctx.arc(x2d, y2d, size, 0, Math.PI * 2);
-            const gradient = ctx.createRadialGradient(x2d, y2d, 0, x2d, y2d, size);
-            gradient.addColorStop(0, theme === 'dark' 
+
+        if (size > 0.1) {
+          ctx.beginPath();
+          ctx.arc(x2d, y2d, size, 0, Math.PI * 2);
+          const gradient = ctx.createRadialGradient(x2d, y2d, 0, x2d, y2d, size);
+          gradient.addColorStop(0, theme === 'dark'
             ? `rgba(251, 191, 36, ${particle.opacity * scale * 0.7})` // Tailwind amber-400
             : `rgba(245, 158, 11, ${particle.opacity * scale * 0.7})`); // Tailwind amber-600
-            gradient.addColorStop(1, 'transparent');
-            ctx.fillStyle = gradient;
-            ctx.fill();
+          gradient.addColorStop(1, 'transparent');
+          ctx.fillStyle = gradient;
+          ctx.fill();
         }
-        
+
         particles.forEach((particle2, j) => {
           if (i < j) {
             const dx = particle.x - particle2.x;
             const dy = particle.y - particle2.y;
             const dz = particle.z - particle2.z;
             const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
-            
+
             if (distance < connectionDistance) {
-              const opacity = (1 - distance / connectionDistance) * 0.12 * scale; 
-              if (opacity > 0.01) { 
+              const opacity = (1 - distance / connectionDistance) * 0.12 * scale;
+              if (opacity > 0.01) {
                 ctx.beginPath();
                 ctx.moveTo(x2d, y2d);
                 const scale2 = 1000 / (1000 + particle2.z);
-                const x2d2 = (particle2.x - canvas.width / 2) * scale2 + canvas.width / 2;
-                const y2d2 = (particle2.y - canvas.height / 2) * scale2 + canvas.height / 2;
+                const x2d2 = (particle2.x - canvasRef.current!.width / 2) * scale2 + canvasRef.current!.width / 2;
+                const y2d2 = (particle2.y - canvasRef.current!.height / 2) * scale2 + canvasRef.current!.height / 2;
                 ctx.lineTo(x2d2, y2d2);
-                ctx.strokeStyle = theme === 'dark' 
-                    ? `rgba(251, 191, 36, ${opacity})`
-                    : `rgba(245, 158, 11, ${opacity})`;
-                ctx.lineWidth = 0.2; 
+                ctx.strokeStyle = theme === 'dark'
+                  ? `rgba(251, 191, 36, ${opacity})`
+                  : `rgba(245, 158, 11, ${opacity})`;
+                ctx.lineWidth = 0.2;
                 ctx.stroke();
               }
             }
           }
         });
       });
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
-    
+
     animate();
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
@@ -465,8 +466,10 @@ export default function MarketingDigitalPage() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.nombre || !formData.email || !formData.necesidad) {
-        alert('Por favor completa todos los campos requeridos');
-        return;
+      // Consider using a more user-friendly notification system instead of alert
+      console.error('Por favor completa todos los campos requeridos');
+      // alert('Por favor completa todos los campos requeridos');
+      return;
     }
     console.log('Formulario de marketing digital enviado:', formData);
     setFormSubmitted(true);
@@ -479,15 +482,15 @@ export default function MarketingDigitalPage() {
 
   const openContactModal = (source: string) => {
     setFormData(prev => ({
-        ...prev,
-        nombre: '', 
-        email: '',
-        telefono: '',
-        empresa: '',
-        necesidad: '',
-        source: source, 
+      ...prev,
+      nombre: '',
+      email: '',
+      telefono: '',
+      empresa: '',
+      necesidad: '',
+      source: source,
     }));
-    setFormSubmitted(false); 
+    setFormSubmitted(false);
     setShowContactForm(true);
   };
 
@@ -497,28 +500,28 @@ export default function MarketingDigitalPage() {
         {isClient && (
           <>
             {/* Animated Background Canvas */}
-            <canvas 
-              ref={canvasRef} 
+            <canvas
+              ref={canvasRef}
               className="fixed inset-0 pointer-events-none z-0"
-              style={{ opacity: 0.3 }} 
+              style={{ opacity: 0.3 }}
             />
-            
+
             {/* Dynamic Gradient Orbs - Amarillo y colores de marca */}
             <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-              <div 
+              <div
                 className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full bg-gradient-to-br from-amber-400 via-yellow-500 to-green-400 blur-3xl opacity-15 animate-pulse"
                 style={{
-                  left: `${mousePosition.x * 0.02 - 50}px`, 
+                  left: `${mousePosition.x * 0.02 - 50}px`,
                   top: `${mousePosition.y * 0.02 - 50}px`,
                   transform: `translate(-50%, -50%) scale(${1 + scrollYValue * 0.0002})`
                 }}
               />
-              <div 
+              <div
                 className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-gradient-to-tr from-blue-400 via-teal-400 to-amber-400 blur-3xl opacity-10 animate-pulse"
                 style={{
-                  right: `${(isClient ? window.innerWidth : 0 - mousePosition.x) * 0.02 - 100}px`, 
-                  bottom: `${(isClient ? window.innerHeight : 0 - mousePosition.y) * 0.02 - 100}px`,
-                  animationDelay: '0.5s', 
+                  right: `${(isClient && typeof window !== 'undefined' ? window.innerWidth : 0 - mousePosition.x) * 0.02 - 100}px`,
+                  bottom: `${(isClient && typeof window !== 'undefined' ? window.innerHeight : 0 - mousePosition.y) * 0.02 - 100}px`,
+                  animationDelay: '0.5s',
                   transform: `scale(${1 + scrollYValue * 0.00015})`
                 }}
               />
@@ -535,7 +538,7 @@ export default function MarketingDigitalPage() {
                 <div className={`inline-block px-4 py-1.5 mb-6 ${currentTheme.bgSecondary} border ${currentTheme.border} rounded-full shadow-sm`}>
                   <span className={`text-xs sm:text-sm font-semibold text-amber-600 tracking-wider`}>ESTRATEGIA DIGITAL INTELIGENTE</span>
                 </div>
-                
+
                 <h1 className={`text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight`}>
                   <span className={`block bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 bg-clip-text text-transparent`}>
                     Impulso y Marketing
@@ -544,23 +547,23 @@ export default function MarketingDigitalPage() {
                     Digital
                   </span>
                 </h1>
-                
+
                 <p className={`text-base sm:text-lg ${currentTheme.textSecondary} mb-8 max-w-xl mx-auto lg:mx-0`}>
-                  Estrategias basadas en datos que conectan tu marca con clientes reales. 
+                  Estrategias basadas en datos que conectan tu marca con clientes reales.
                   Marketing personalizado por industria con ROI medible y resultados sostenibles.
                 </p>
-                
+
                 <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start`}>
-                  <button 
-                    onClick={() => openContactModal('hero_impulsar_negocio')} 
+                  <button
+                    onClick={() => openContactModal('hero_impulsar_negocio')}
                     className={`group px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-white font-bold text-base sm:text-lg hover:scale-105 transform transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center relative overflow-hidden`}
                   >
                     <span className="relative z-10">Impulsar mi Negocio</span>
                     <Rocket className="inline-block ml-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
                     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   </button>
-                  <a 
-                    href="#estrategia" 
+                  <a
+                    href="#estrategia"
                     className={`px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white font-bold text-base sm:text-lg hover:scale-105 transform transition-all duration-300 flex items-center justify-center`}
                   >
                     Ver Estrategia
@@ -572,12 +575,12 @@ export default function MarketingDigitalPage() {
               {/* Right Column: Visual */}
               <div className={`hidden lg:flex justify-center items-center relative ${visibleSections['hero'] ? 'animate-fadeInUp animation-delay-200' : 'opacity-0'}`}>
                 <div className={`relative w-80 h-80 md:w-96 md:h-96 p-4 rounded-full bg-gradient-to-br from-amber-500/10 via-yellow-500/10 to-green-500/10 animate-float`}>
-                  <Target className={`w-full h-full text-amber-500 opacity-70 transform group-hover:scale-110 transition-transform duration-500`} strokeWidth={1.5}/>
+                  <Target className={`w-full h-full text-amber-500 opacity-70 transform group-hover:scale-110 transition-transform duration-500`} strokeWidth={1.5} />
                   <div className={`absolute inset-8 rounded-full border-4 border-amber-500 opacity-30 animate-pulse`}></div>
                   <div className={`absolute inset-16 rounded-full border-2 border-yellow-500 opacity-20 animate-pulse animation-delay-200`}></div>
-                   <Rocket className={`absolute top-10 right-10 w-12 h-12 text-amber-500 opacity-60 -rotate-12 animate-float animation-delay-300`} strokeWidth={1.5}/>
-                   <LineChart className={`absolute bottom-10 left-10 w-16 h-16 text-green-500 opacity-60 rotate-12 animate-float animation-delay-500`} strokeWidth={1.5}/>
-                   <Megaphone className={`absolute top-1/2 left-5 w-10 h-10 text-blue-500 opacity-50 animate-float animation-delay-100`} strokeWidth={1.5}/>
+                  <Rocket className={`absolute top-10 right-10 w-12 h-12 text-amber-500 opacity-60 -rotate-12 animate-float animation-delay-300`} strokeWidth={1.5} />
+                  <LineChart className={`absolute bottom-10 left-10 w-16 h-16 text-green-500 opacity-60 rotate-12 animate-float animation-delay-500`} strokeWidth={1.5} />
+                  <Megaphone className={`absolute top-1/2 left-5 w-10 h-10 text-blue-500 opacity-50 animate-float animation-delay-100`} strokeWidth={1.5} />
                 </div>
               </div>
             </div>
@@ -592,14 +595,14 @@ export default function MarketingDigitalPage() {
                 Desafíos que Resolvemos
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Transformamos obstáculos digitales en oportunidades de crecimiento 
+                Transformamos obstáculos digitales en oportunidades de crecimiento
                 con estrategias personalizadas y orientadas a resultados.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {problemsSolved.map((problem, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 sm:p-8 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-l-amber-500 ${visibleSections['problemas'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -620,14 +623,14 @@ export default function MarketingDigitalPage() {
                 Nuestro Enfoque Estratégico
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Marketing que parte de la estrategia de negocio, no de tácticas aisladas. 
+                Marketing que parte de la estrategia de negocio, no de tácticas aisladas.
                 Cada acción alineada con tus objetivos empresariales.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {strategicApproach.map((approach, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-center transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-t-amber-500 ${visibleSections['estrategia'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -648,21 +651,22 @@ export default function MarketingDigitalPage() {
                 Servicios Digitales Integrados
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-3xl mx-auto`}>
-                Soluciones completas adaptadas a tu industria y objetivos. 
+                Soluciones completas adaptadas a tu industria y objetivos.
                 Desde estrategia hasta ejecución y optimización continua.
               </p>
             </div>
-            
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
               {serviceCategories.map((category, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-left transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-l-${category.color}-500 ${visibleSections['servicios'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className={`mb-4 flex items-center text-${category.color}-500`}>
                     <div className={`p-2.5 rounded-lg bg-${category.color}-500/10 mr-4 group-hover:scale-110 transition-transform`}>
-                       {React.cloneElement(category.icon, { className: `w-6 h-6 text-${category.color}-500`})}
+                      {/* CORRECTED LINE: Added React.isValidElement check */}
+                      {React.isValidElement(category.icon) ? React.cloneElement(category.icon as React.ReactElement<any>, { className: `w-6 h-6 text-${category.color}-500` }) : null}
                     </div>
                     <h4 className={`text-lg sm:text-xl font-semibold ${currentTheme.text}`}>{category.title}</h4>
                   </div>
@@ -689,7 +693,7 @@ export default function MarketingDigitalPage() {
                 Proceso Estratégico
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Metodología probada que garantiza resultados medibles 
+                Metodología probada que garantiza resultados medibles
                 y crecimiento sostenible en el mundo digital.
               </p>
             </div>
@@ -697,13 +701,13 @@ export default function MarketingDigitalPage() {
               <div className={`hidden lg:block absolute top-12 left-[10%] right-[10%] h-1.5 bg-gradient-to-r from-amber-500 via-yellow-500 to-green-500 rounded-full opacity-40`}></div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 relative z-10">
                 {strategicProcess.map((step, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className={`flex flex-col items-center text-center group ${visibleSections['proceso'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <div className={`w-20 h-20 rounded-full bg-gradient-to-br from-${step.color}-500 to-${step.color}-600 text-white text-2xl font-bold flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transform transition-all duration-300`}>
-                      {React.cloneElement(step.icon, { className: `w-10 h-10 text-white`})}
+                      {React.isValidElement(step.icon) ? React.cloneElement(step.icon as React.ReactElement<any>, { className: `w-10 h-10 text-white` }) : null}
                     </div>
                     <h3 className={`text-lg sm:text-xl font-semibold mb-2 ${currentTheme.text}`}>{step.title}</h3>
                     <p className={`text-sm ${currentTheme.textSecondary}`}>{step.description}</p>
@@ -722,14 +726,14 @@ export default function MarketingDigitalPage() {
                 Resultados que Entregamos
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Métricas reales de clientes reales. Nuestro éxito se mide 
+                Métricas reales de clientes reales. Nuestro éxito se mide
                 por el crecimiento tangible de tu negocio.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
               {results.map((result, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-center transition-all duration-300 transform hover:-translate-y-2 ${visibleSections['resultados'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -750,14 +754,14 @@ export default function MarketingDigitalPage() {
                 Por Qué Elegirnos
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Más que una agencia, somos tu partner estratégico en el mundo digital. 
+                Más que una agencia, somos tu partner estratégico en el mundo digital.
                 Comprometidos con resultados reales y crecimiento sostenible.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
               {whyUs.map((reason, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-center transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-t-amber-500 ${visibleSections['diferenciadores'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -778,14 +782,14 @@ export default function MarketingDigitalPage() {
                 Casos por Industria
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Experiencia comprobada en múltiples sectores con estrategias 
+                Experiencia comprobada en múltiples sectores con estrategias
                 adaptadas a los desafíos únicos de cada industria.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {industryCases.map((industryCase, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`group p-6 sm:p-8 rounded-2xl ${currentTheme.card} shadow-lg hover:shadow-2xl text-center transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-l-amber-500 ${visibleSections['industrias'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -809,19 +813,19 @@ export default function MarketingDigitalPage() {
         {/* FAQ Section */}
         <section id="faq" className={`py-16 md:py-24 ${currentTheme.bg} relative z-10`}>
           <div className="container mx-auto px-6 max-w-3xl">
-             <div className={`text-center mb-12 md:mb-16 ${visibleSections['faq'] ? 'animate-fadeInUp' : 'opacity-0'}`}>
+            <div className={`text-center mb-12 md:mb-16 ${visibleSections['faq'] ? 'animate-fadeInUp' : 'opacity-0'}`}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
                 Preguntas Frecuentes
               </h2>
               <p className={`text-lg ${currentTheme.textSecondary} max-w-2xl mx-auto`}>
-                Resolvemos las dudas más comunes sobre marketing digital, 
+                Resolvemos las dudas más comunes sobre marketing digital,
                 estrategias y resultados esperados.
               </p>
             </div>
             <div className="space-y-5">
               {faqItems.map((item, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`${currentTheme.card} rounded-xl shadow-lg hover:shadow-2xl overflow-hidden transition-shadow duration-300 border-l-4 border-l-amber-500 ${visibleSections['faq'] ? 'animate-fadeInUp' : 'opacity-0'}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -856,21 +860,21 @@ export default function MarketingDigitalPage() {
               tu Negocio?
             </h2>
             <p className={`text-lg sm:text-xl ${currentTheme.textSecondary} mb-10 max-w-2xl mx-auto`}>
-              Estrategias personalizadas que conectan tu marca con clientes reales. 
+              Estrategias personalizadas que conectan tu marca con clientes reales.
               Marketing basado en datos con resultados medibles.
             </p>
-            
+
             <div className="flex justify-center">
-               <button 
-                 onClick={() => openContactModal('cta_final_impulsar_negocio')} 
-                 className={`group px-10 py-5 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-white text-xl font-bold hover:scale-105 transform transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center relative overflow-hidden`}
-               >
-                  <span className="relative z-10">Impulsar mi Negocio</span>
-                  <Rocket className="inline-block ml-3 w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              <button
+                onClick={() => openContactModal('cta_final_impulsar_negocio')}
+                className={`group px-10 py-5 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-white text-xl font-bold hover:scale-105 transform transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center relative overflow-hidden`}
+              >
+                <span className="relative z-10">Impulsar mi Negocio</span>
+                <Rocket className="inline-block ml-3 w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
               </button>
             </div>
-            
+
             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-10 text-sm">
               <div className="flex items-center">
                 <TrendingUp className={`w-5 h-5 text-amber-500 mr-2`} />
@@ -890,7 +894,7 @@ export default function MarketingDigitalPage() {
 
         {/* Contact Form Modal */}
         {showContactForm && (
-          <div 
+          <div
             className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeInUp"
             onClick={(e) => {
               // Only close if clicked on the backdrop
@@ -902,7 +906,10 @@ export default function MarketingDigitalPage() {
           >
             <div className={`relative w-full max-w-lg ${currentTheme.card} rounded-2xl shadow-2xl p-6 sm:p-8 transform transition-all duration-300`}>
               <button
-                onClick={() => setShowContactForm(false)}
+                onClick={() => {
+                  setShowContactForm(false);
+                  setFormSubmitted(false); // Reset submission state if modal is closed manually
+                }}
                 aria-label="Cerrar formulario"
                 className={`absolute top-4 right-4 p-2 rounded-full ${currentTheme.hover} hover:scale-110 transition-all`}
               >
@@ -937,7 +944,7 @@ export default function MarketingDigitalPage() {
                   <p className={`text-center ${currentTheme.textSecondary} mb-6 text-sm sm:text-base`}>
                     Compártenos tus desafíos y metas para una conversación personalizada.
                   </p>
-                  
+
                   <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-5">
                     <div>
                       <label htmlFor="digitalmkt-nombre" className={`block text-sm font-medium mb-1.5 ${currentTheme.textSecondary}`}>
@@ -1024,18 +1031,18 @@ export default function MarketingDigitalPage() {
             onClick={(e) => {
               e.preventDefault();
               const whatsappUrl = "https://wa.me/525616026685?text=Hola%20Aurhora!%0A%0AVi%20su%20página%20de%20Impulso%20y%20Marketing%20Digital.%20Me%20gustaría%20saber%20más%20sobre%20cómo%20pueden%20ayudar%20a%20mi%20negocio%20a%20crecer.%0A%0AEstoy%20interesado%20en%3A%0A%0A-%20%5BEspecificar%20necesidad%20o%20servicio%20de%20interés%5D%0A-%20Aumentar%20visibilidad%0A-%20Generar%20más%20clientes%0A%0A¿Podemos%20agendar%20una%20llamada%3F";
-              window.open(whatsappUrl, '_blank');
+              window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
             }}
           >
             <div className="relative">
               <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
               <div className="relative bg-green-500 hover:bg-green-600 rounded-full p-4 shadow-2xl transform transition-all duration-300 hover:scale-110 group-hover:shadow-green-500/50">
-                <svg 
-                  className="w-8 h-8 text-white" 
-                  fill="currentColor" 
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
                 </svg>
               </div>
               <div className="absolute bottom-full right-0 mb-2 px-3 py-1 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
@@ -1050,12 +1057,12 @@ export default function MarketingDigitalPage() {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(3deg); }
           }
-          
+
           @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(25px); }
             to { opacity: 1; transform: translateY(0); }
           }
-          
+
           .animate-float { animation: float 4s ease-in-out infinite; }
           .animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
           .animation-delay-100 { animation-delay: 100ms; }
@@ -1066,12 +1073,12 @@ export default function MarketingDigitalPage() {
 
           body {
             scroll-behavior: smooth;
-            font-family: 'Inter', sans-serif; 
+            font-family: 'Inter', sans-serif;
           }
           html {
             scroll-behavior: smooth;
           }
-          .font-['Inter',_sans-serif] { 
+          .font-['Inter',_sans-serif] {
               font-family: 'Inter', sans-serif;
           }
         `}</style>
