@@ -142,13 +142,6 @@ export default function CulturaAgilPage() {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  // Missing Crown icon - using alternative
-  const Crown: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l4 6 3-6 3 6 4-6v16H5V3z"/>
-    </svg>
-  );
-
   useEffect(() => {
     setIsClient(true);
     
@@ -497,7 +490,7 @@ export default function CulturaAgilPage() {
       needs: ["Team building", "Cross-functional skills", "Self-organization", "Continuous improvement"]
     },
     {
-      icon: <Crown className="w-8 h-8 text-lime-400" />,
+      icon: <Award className="w-8 h-8 text-lime-400" />,
       title: "Líderes y C-Suite",
       description: "Ejecutivos comprometidos con la transformación organizacional",
       needs: ["Agile leadership", "Change vision", "Culture design", "Results measurement"]
