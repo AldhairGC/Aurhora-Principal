@@ -83,18 +83,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [isThemeReady, setIsThemeReady] = useState(false);
 
   useEffect(() => {
-    // Inicializar el tema desde localStorage o preferencia del sistema
+    // Inicializar el tema desde localStorage, si no existe usar dark
     const storedTheme = localStorage.getItem("aurhora-website-theme") as
       | "light"
       | "dark"
       | null;
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    // Si no hay tema guardado y no hay preferencia del sistema, usar dark
-    const initialTheme =
-      storedTheme ||
-      (prefersDark !== undefined ? (prefersDark ? "dark" : "light") : "dark");
+
+    // Siempre usar dark como valor predeterminado si no hay tema guardado
+    const initialTheme = storedTheme || "dark";
 
     setThemeState(initialTheme);
 
