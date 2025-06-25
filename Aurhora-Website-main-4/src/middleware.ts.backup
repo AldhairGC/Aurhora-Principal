@@ -1,0 +1,20 @@
+/*
+// src/middleware.ts
+import { createI18nMiddleware } from 'next-international/middleware';
+import { NextRequest } from 'next/server';
+import { locales, defaultLocale } from '@/i18n/index'; // Importa desde la configuración básica
+
+const I18nMiddleware = createI18nMiddleware({
+  locales,
+  defaultLocale,
+});
+
+export function middleware(request: NextRequest) {
+  return I18nMiddleware(request);
+}
+
+export const config = {
+  // No ejecutes el middleware en estas rutas:
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|images|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.svg).*)']
+};
+*/
