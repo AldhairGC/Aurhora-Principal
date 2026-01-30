@@ -1,0 +1,573 @@
+{
+  "header": {
+    "inicio": "Início",
+    "quienesSomos": "Quem Somos",
+    "recursos": "Recursos",
+    "servicios": "Serviços",
+    "serviciosMenu": "Menu de serviços",
+    "contacto": "Contato",
+    "login": "Entrar",
+    "cambiarIdioma": "Mudar idioma",
+    "idioma": "Idioma",
+    "skipToContent": "Pular para o conteúdo principal",
+    "mainNavigation": "Navegação principal",
+    "switchToLight": "Mudar para modo claro",
+    "switchToDark": "Mudar para modo escuro",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "mobileMenu": "Menu móvel"
+  },
+  "megaMenu": {
+    "serviciosCore": "Serviços Core",
+    "estrategia": "Estratégia e Crescimento",
+    "godigitalDesc": "Ecossistema digital integral chave na mão",
+    "transformacionDesc": "Roadmap tecnológico e inovação",
+    "desarrolloDesc": "Software personalizado e produtos digitais",
+    "marketingDesc": "Growth marketing e aquisição",
+    "culturaDesc": "Agilidade organizacional e melhoria contínua",
+    "optimizacionDesc": "Processos eficientes e certificações",
+    "seguros": "Seguros",
+    "fintech": "Fintech",
+    "ecommerce": "E-commerce",
+    "corporativo": "Corporativo",
+    "destacado": "Destaque",
+    "suiteTitle": "GoDigital Suite 360°",
+    "suiteDesc": "Transformação digital completa: site profissional, CRM, marketing digital e automações em uma única plataforma.",
+    "conocerMas": "Saiba mais",
+    "industrias": "Indústrias"
+  },
+  "socialProof": {
+    "yearsExperience": "Anos de experiência",
+    "projectsCompleted": "Projetos concluídos",
+    "clientSatisfaction": "Satisfação do cliente",
+    "activeClients": "Clientes ativos",
+    "trustedBy": "Empresas que confiam em nós",
+    "testimonialName": "Ana Rodríguez",
+    "testimonialRole": "CEO, FinTech Solutions",
+    "testimonialQuote": "Aurhora transformou nossa visão em realidade. Sua abordagem estratégica e execução impecável nos permitiram lançar nossa plataforma em tempo recorde, superando todas as nossas expectativas.",
+    "resultsSpeak": "falam por si mesmos"
+  },
+  "stickyCTA": {
+    "title": "Pronto para transformar seu negócio?",
+    "subtitle": "Agende uma sessão estratégica gratuita",
+    "cta": "Começar agora",
+    "close": "Fechar"
+  },
+  "hero": {
+    "title": "Impulsionando a",
+    "innovation": "Inovação",
+    "subtitle": "Resultados que Transformam.",
+    "description": "Aurhora Agency: Seu parceiro estratégico em transformação digital e otimização de processos. Integramos visão, tecnologia e execução especializada para maximizar seu potencial.",
+    "startTransformation": "Inicie sua Transformação",
+    "exploreServices": "Explorar Serviços",
+    "experience": "+10 anos impulsionando inovação | Seguros | Bancos | Fintech"
+  },
+  "services": {
+    "title": "Nossas Capacidades Estratégicas",
+    "description": "Da estratégia à implementação e evolução, cobrimos todo o espectro da transformação.",
+    "godigital": {
+      "title": "GoDigital Suite",
+      "description": "Ecossistema digital integral \"chave na mão\" com presença online profissional e gestão de clientes. Implementação em 1-2 semanas.",
+      "linkText": "Conhecer GoDigital"
+    },
+    "transformation": {
+      "title": "Estratégia de Inovação e Transformação Digital",
+      "description": "Co-criamos seu roadmap tecnológico e digital, identificando oportunidades de inovação para acelerar resultados.",
+      "linkText": "Impulsionar Inovação"
+    },
+    "development": {
+      "title": "Desenvolvimento de Software e Produtos Digitais",
+      "description": "Projetamos, construímos e implantamos software personalizado e produtos digitais inovadores que potencializam sua estratégia.",
+      "linkText": "Explorar Desenvolvimento"
+    },
+    "optimization": {
+      "title": "Otimização de Processos e Qualidade",
+      "description": "Projetamos e implementamos SGQ (ex. ISO), otimizando sua operação para excelência e certificações.",
+      "linkText": "Descobrir Otimização"
+    },
+    "marketing": {
+      "title": "Marketing Digital e Crescimento",
+      "description": "Definimos e gerenciamos estratégias de marketing digital para lançar e posicionar seus produtos e serviços.",
+      "linkText": "Ver Estratégias"
+    },
+    "agile": {
+      "title": "Cultura Ágil e Transformação Organizacional",
+      "description": "Trabalhamos de dentro para fora com suas equipes para implementar metodologias ágeis, gerenciar mudanças e fomentar uma cultura de inovação sustentável.",
+      "linkText": "Transformar Equipes"
+    }
+  },
+  "philosophy": {
+    "title": "Nossa Filosofia",
+    "description": "Não apenas resolvemos problemas, co-criamos o futuro. Integramos estratégia, talento e tecnologia para impulsionar uma transformação digital real e resultados mensuráveis.",
+    "item1": {
+      "title": "Gestão Integral",
+      "description": "Conectamos e gerenciamos o talento e as ferramentas precisas (internas/externas) para cada desafio, garantindo execução sinérgica e eficiente."
+    },
+    "item2": {
+      "title": "Co-criação Inteligente",
+      "description": "Trabalhamos com você. Fundimos seu conhecimento do negócio com nossa experiência em metodologias de inovação e transformação."
+    },
+    "item3": {
+      "title": "Orientação a Soluções",
+      "description": "Focamos em encontrar as formas mais eficazes e pragmáticas para alcançar suas metas, superando desafios com uma abordagem orientada a soluções."
+    }
+  },
+  "cta": {
+    "title": "Pronto para",
+    "impulse": "Impulsionar",
+    "vision": "sua Visão?",
+    "description": "Vamos conversar sobre seus desafios e explorar como a Aurhora Agency pode ser o parceiro estratégico que acelera seus resultados.",
+    "scheduleSession": "Agende sua Sessão Estratégica",
+    "contact": "Ou entre em contato diretamente:"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Preencha o formulário para agendar sua sessão.",
+    "name": "Nome Completo",
+    "email": "Email",
+    "phone": "Telefone",
+    "company": "Empresa",
+    "message": "Mensagem",
+    "send": "Enviar Solicitação",
+    "sent": "Mensagem Enviada!",
+    "thanks": "Obrigado pelo seu interesse. Entraremos em contato em breve.",
+    "required": "Por favor, preencha os campos obrigatórios: Nome, Email e Mensagem.",
+    "error": "Erro ao enviar o formulário. Por favor, tente novamente.",
+    "interestedInPlan": "Você está interessado no Plano: {plan}. Excelente escolha!",
+    "planOfInterest": "Plano de interesse: {plan}",
+    "modalAutoClose": "O modal fechará automaticamente em alguns segundos...",
+    "closeNow": "Fechar agora"
+  },
+  "about": {
+    "experience": "Nossa Experiência",
+    "title1": "Transformando Negócios",
+    "title2": "Sem Limites Setoriais",
+    "description1": "Nossa metodologia de gestão integral e foco em soluções é inerentemente adaptável, permitindo gerar valor significativo em praticamente qualquer indústria. Complementamos nosso núcleo especializado com uma ampla rede de especialistas setoriais para garantir o conhecimento profundo necessário em cada projeto.",
+    "description2": "Temos uma trajetória destacada e casos de sucesso comprováveis em Seguros, Bancos e Fintech. Colaboramos estreitamente tanto com PMEs, startups e empresas em crescimento quanto com grandes corporações, adaptando nossa abordagem para maximizar o potencial único de cada organização.",
+    "principlesTitle": "Princípios Chave:",
+    "principle1": "Co-criação e Colaboração Genuína",
+    "principle2": "Resultados Pragmáticos e Mensuráveis",
+    "principle3": "Abordagem Resolutiva e Orientada a Soluções",
+    "yearsExperience": "Anos de Experiência",
+    "projects": "Projetos",
+    "clients": "Clientes",
+    "trustResults": "Confiança e Resultados",
+    "trustDescription": "Construímos relações estratégicas duradouras. Em breve compartilharemos casos de sucesso."
+  },
+  "process": {
+    "title": "Nosso Processo de Transformação",
+    "description": "Uma metodologia colaborativa em 5 fases, da visão à evolução contínua.",
+    "step1": {
+      "title": "Diagnóstico e Oportunidade",
+      "description": "Imersão profunda para entender contexto, desafios e oportunidades de inovação."
+    },
+    "step2": {
+      "title": "Estratégia e Co-Design",
+      "description": "Co-criação da visão, roadmap estratégico e design de soluções transformadoras."
+    },
+    "step3": {
+      "title": "Plano de Ação e Habilitação",
+      "description": "Entrega do plano detalhado, preparação de equipes e habilitação tecnológica."
+    },
+    "step4": {
+      "title": "Implementação e Desenvolvimento",
+      "description": "Lideramos a execução, construímos as soluções tecnológicas e gerenciamos a mudança organizacional de dentro para fora."
+    },
+    "step5": {
+      "title": "Melhoria e Evolução Contínua",
+      "description": "Medição de resultados, iteração ágil, otimização constante e suporte para a sustentabilidade da mudança."
+    }
+  },
+  "form": {
+    "namePlaceholder": "Seu nome completo",
+    "emailPlaceholder": "voce@exemplo.com",
+    "phonePlaceholder": "Opcional",
+    "companyPlaceholder": "Nome da sua empresa (Opcional)",
+    "messagePlaceholder": "Conte-nos sobre seu projeto ou como podemos ajudá-lo..."
+  },
+  "common": {
+    "comingSoon": "Em breve",
+    "close": "Fechar",
+    "preferChat": "Prefere conversar?",
+    "chatWhatsApp": "Escreva-nos no WhatsApp",
+    "chatWithUs": "Converse conosco!"
+  },
+  "footer": {
+    "tagline": "Impulsionando a Inovação, Resultados que Transformam.",
+    "legal": "Legal",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos e Condições",
+    "follow": "Siga-nos",
+    "copyright": "Aurhora Agency. Todos os direitos reservados.",
+    "designed": "Projetado com",
+    "by": "pela Equipe Aurhora",
+    "company": "Empresa",
+    "contact": "Contato",
+    "scheduleConsultation": "Agendar uma consulta",
+    "madeWith": "Feito com",
+    "byTeam": "pela Equipe Aurhora",
+    "description": "Transformamos negócios através da tecnologia e inovação estratégica. Seu parceiro na era digital.",
+    "city": "Cidade do México, México"
+  },
+  "login": {
+    "title": "Entrar",
+    "email": "Email",
+    "password": "Senha",
+    "emailPlaceholder": "voce@email.com",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "Lembrar de mim",
+    "forgotPassword": "Esqueceu sua senha?",
+    "access": "Acessar",
+    "loggingIn": "Entrando...",
+    "noAccount": "Não tem uma conta?",
+    "signUp": "Cadastre-se",
+    "tagline": "Transformação digital inteligente para empresas que lideram o futuro",
+    "secure": "Seguro",
+    "fast": "Rápido",
+    "global": "Global"
+  },
+  "godigital": {
+    "ourStarSuite": "NOSSA SUITE ESTRELA",
+    "title": "Aurhora GoDigital Suite",
+    "subtitle": "Seu Negócio para a Era Digital, Simples e Completo.",
+    "description": "O ecossistema digital integral \"chave na mão\" que transforma sua presença online e otimiza a gestão do seu negócio. Focado na transformação digital contínua.",
+    "discoverPlans": "Descobrir Planos",
+    "scheduleFreeDemo": "Agendar Demo Gratuita",
+    "challengesTitle": "Seu negócio enfrenta esses desafios digitais?",
+    "challengesSubtitle": "GoDigital Suite foi projetada para transformar esses obstáculos em oportunidades de crescimento e eficiência.",
+    "strategicBenefitsTitle": "Benefícios Estratégicos: Mais que Tecnologia, Resultados Concretos",
+    "strategicBenefitsSubtitle": "Descubra como a GoDigital Suite impulsiona seu negócio rumo ao sucesso no ambiente digital.",
+    "processTitle": "Nosso Processo: Sua Transformação Digital Passo a Passo",
+    "processSubtitle": "Acompanhamos você em cada etapa para garantir uma implementação bem-sucedida e adaptada às suas necessidades.",
+    "plansTitle": "Planos Projetados para seu Crescimento Digital",
+    "plansSubtitle": "Escolha o plano que melhor se adapta ao seu negócio. Todos incluem implementação, acompanhamento especializado e a promessa de transformação.",
+    "addonsTitle": "Potencialize sua Suite com Add-ons Estratégicos",
+    "addonsSubtitle": "Nossos Add-ons são soluções modulares projetadas para habilitar várias necessidades operacionais do seu negócio, compatíveis desde o Pacote Básico.",
+    "targetTitle": "Para Quem é a GoDigital Suite?",
+    "targetSubtitle": "Se você busca transformar digitalmente seu negócio, consolidar sua presença online e otimizar suas operações, esta suite é para você.",
+    "testimonialsTitle": "O que Dizem Nossos Clientes Satisfeitos",
+    "testimonialsSubtitle": "Histórias reais de transformação e crescimento com a GoDigital Suite.",
+    "faqTitle": "Perguntas Frequentes",
+    "faqSubtitle": "Resolvemos suas dúvidas para que você tome a melhor decisão para seu negócio.",
+    "ctaTitle": "Pronto para transformar seu negócio?",
+    "ctaSubtitle": "Dê o primeiro passo rumo a uma presença digital impactante e operações otimizadas. Nossa equipe de especialistas está pronta para ajudá-lo.",
+    "startNow": "Começar Agora",
+    "scheduleFreeConsultation": "Agendar Consultoria Gratuita",
+    "fastImplementation": "Implementação Express: 1-2 semanas",
+    "continuousSupport": "Garantia e Suporte Contínuo",
+    "expertAdvice": "Assessoria Especializada Personalizada",
+    "popular": "MAIS POPULAR",
+    "chooseThisPlan": "Escolher este Plano",
+    "continueWithPlan": "Continuar com este Plano",
+    "fromPrice": "A partir de",
+    "taxesNotIncluded": "Impostos não incluídos. Consulte detalhes.",
+    "closeForm": "Fechar formulário",
+    "benefits": {
+      "strengthening": {
+        "title": "Fortalecimento de Imagem e Credibilidade",
+        "description": "Sites modernos, responsivos e seguros (SSL) com SEO básico para maior visibilidade e confiança."
+      },
+      "efficiency": {
+        "title": "Otimização de Eficiência Operacional",
+        "description": "Desde um canal de contato profissional até gestão avançada de consultas e um mini-CRM para acompanhamento superior."
+      },
+      "agile": {
+        "title": "Implementação Ágil e Consultoria Integral",
+        "description": "Prazos otimizados (1-2 semanas pós-aprovação) com gestão técnica e configuração pela Aurhora Agency."
+      },
+      "scalable": {
+        "title": "Solução Tecnológica Escalável e Modular",
+        "description": "Três pacotes base e uma ampla gama de add-ons para personalizar e expandir conforme a evolução do seu negócio."
+      },
+      "costEffective": {
+        "title": "Relação Custo-Benefício Superior",
+        "description": "Oferta de alto valor que combina tecnologia robusta com consultoria especializada a um preço competitivo."
+      },
+      "support": {
+        "title": "Redução de Carga de Trabalho e Suporte Contínuo",
+        "description": "Cuidamos da configuração e montagem, com hospedagem, manutenção e suporte incluídos."
+      }
+    },
+    "problems": {
+      "digitalPresence": {
+        "title": "Presença Digital Limitada ou Inexistente",
+        "description": "Supere a falta de uma plataforma web profissional ou perfis sociais robustos que impactam sua credibilidade e alcance."
+      },
+      "valueComm": {
+        "title": "Comunicação de Valor Ineficaz",
+        "description": "Facilitamos a apresentação clara e profissional de sua oferta, incluindo validação através de depoimentos e casos de sucesso."
+      },
+      "interaction": {
+        "title": "Gestão de Interações Descentralizada",
+        "description": "Automatize e centralize a gestão de consultas e agendamentos, eliminando processos manuais ineficientes e melhorando o acompanhamento."
+      },
+      "processes": {
+        "title": "Processos Operacionais Manuais e Lentos",
+        "description": "Digitalize processos operacionais-chave para melhorar sua capacidade de resposta e eficiência geral do negócio."
+      },
+      "complexity": {
+        "title": "Complexidade Tecnológica Avassaladora",
+        "description": "Reduzimos as barreiras de complexidade, custo e tempo associadas à implementação de soluções digitais. Uma alternativa à autogestão."
+      },
+      "scaling": {
+        "title": "Dificuldade para Escalar seu Negócio",
+        "description": "Fornecemos as ferramentas digitais necessárias para crescimento sustentado e melhoria contínua de seus serviços."
+      }
+    },
+    "target": {
+      "freelancers": {
+        "name": "Profissionais Independentes e Empreendedores",
+        "description": "Consultores, coaches, terapeutas, designers, e mais, que buscam consolidar sua marca pessoal e otimizar a captação e gestão de clientes."
+      },
+      "smes": {
+        "name": "Pequenas e Médias Empresas (PMEs)",
+        "description": "Negócios em crescimento ou em processo de digitalização que precisam de uma presença online robusta e ferramentas para gerenciar interações e clientes de forma eficiente."
+      },
+      "variousSectors": {
+        "name": "Diversos Setores",
+        "description": "Adaptável a serviços profissionais (consultoria, jurídicos), saúde, educação, ofícios técnicos, estética, e pequeno comércio com necessidades de agendamento."
+      }
+    },
+    "processSteps": {
+      "onboarding": {
+        "title": "1. Onboarding e Kick-off",
+        "description": "Sessão inicial para entender suas necessidades, alinhar expectativas e definir próximos passos. Coletamos informações essenciais de forma estruturada."
+      },
+      "content": {
+        "title": "2. Estruturação de Conteúdo e Branding",
+        "description": "Orientamos você a organizar seu conteúdo e aplicar sua marca (ou guiamos em branding básico). Apresentamos uma proposta para sua revisão."
+      },
+      "technical": {
+        "title": "3. Implementação Técnica",
+        "description": "Montamos seu ecossistema digital (site, agendamento, CRM conforme plano) aplicando o modelo, sua marca e conteúdo. Realizamos testes internos exaustivos."
+      },
+      "review": {
+        "title": "4. Revisão e Aprovação",
+        "description": "Apresentamos o site em ambiente de revisão. Você tem um período para feedback consolidado e realizamos ajustes menores incluídos."
+      },
+      "delivery": {
+        "title": "5. Entrega Final e Treinamento",
+        "description": "Lançamos seu site! Entregamos acessos e treinamos você (conforme pacote) para gerenciar sua nova plataforma. Inclui suporte pós-lançamento."
+      }
+    },
+    "plans": {
+      "360": {
+        "title": "360",
+        "description": "Solução integral com ferramentas de gestão de clientes.",
+        "feature": {
+          "allProfessional": "Tudo do Pacote Profissional",
+          "miniCrm": "Mini-CRM (Gestão de Relacionamento com Clientes Básico)",
+          "adminPanel": "Painel de Administração Web",
+          "contactDataFields": "Registro de dados de contato e campos personalizáveis",
+          "interactionHistory": "Histórico de Interações e Notas por Cliente",
+          "documentManagement": "Gestão de Documentos por Cliente",
+          "unlimitedPages": "Páginas ilimitadas",
+          "monthlyConsulting": "Consultoria mensal incluída"
+        }
+      },
+      "basic": {
+        "title": "Básico",
+        "description": "Presença digital profissional e informativa. Ideal para começar.",
+        "feature": {
+          "websiteInfo": "Site Informativo (Landing Page ou Multi-seção Simples)",
+          "responsiveDesign": "Design moderno e responsivo",
+          "contact": "Formulário de Contato",
+          "social": "Integração de Redes Sociais",
+          "sslIncluded": "Certificado SSL incluído",
+          "seoInitial": "SEO básico inicial",
+          "hostingBasic": "Hospedagem e Manutenção básica",
+          "pagesUpTo5": "Até 5 páginas padrão"
+        }
+      },
+      "professional": {
+        "title": "Profissional",
+        "description": "Otimize a gestão de consultas e interações. Eleve sua eficiência.",
+        "feature": {
+          "allBasic": "Tudo do Pacote Básico",
+          "schedulingSystem": "Sistema de Agendamento de Consultas Integrado (tipo Calendly)",
+          "availabilityConfig": "Configuração de disponibilidade e serviços",
+          "calendarSync": "Sincronização com calendários pessoais",
+          "emailConfirmations": "Confirmações automáticas por email",
+          "pagesUpTo10": "Até 10 páginas",
+          "prioritySupport": "Suporte prioritário"
+        }
+      }
+    },
+    "addonsList": {
+      "onlinePayments": {
+        "name": "Pagamentos Online para Consultas",
+        "price": "+R$99/mês",
+        "description": "Permite que seus clientes paguem ao agendar."
+      },
+      "billing": {
+        "name": "Módulo de Faturamento Simplificado",
+        "price": "+R$149/mês",
+        "description": "Gere faturas básicas de sua plataforma."
+      },
+      "advancedReminders": {
+        "name": "Lembretes Avançados (SMS/WhatsApp)",
+        "price": "+R$79/mês",
+        "description": "Reduza no-shows com lembretes automáticos."
+      },
+      "blog": {
+        "name": "Blog Simples Integrado",
+        "price": "+R$59/mês",
+        "description": "Compartilhe conteúdo de valor e melhore seu SEO."
+      },
+      "galleries": {
+        "name": "Galerias de Imagens Avançadas",
+        "price": "+R$49/mês",
+        "description": "Mostre seu trabalho com portfólios visuais."
+      },
+      "multiLanguage": {
+        "name": "Suporte para Múltiplos Idiomas",
+        "price": "+R$129/mês",
+        "description": "Expanda seu alcance para audiências internacionais."
+      }
+    },
+    "testimonialsList": {
+      "anaPerez": {
+        "quote": "GoDigital Suite transformou nossa forma de interagir com clientes. O processo foi rápido e a equipe da Aurhora, excepcional.",
+        "name": "Ana Pérez",
+        "company": "Consultoria Criativa"
+      },
+      "carlosLopez": {
+        "quote": "Desde que implementamos a solução de agendamento, economizamos horas de trabalho administrativo. Totalmente recomendado!",
+        "name": "Carlos López",
+        "company": "Saúde e Bem-estar Integral"
+      },
+      "sofiaMartinez": {
+        "quote": "O Mini-CRM é exatamente o que precisávamos para organizar as informações dos nossos clientes. Um antes e depois.",
+        "name": "Sofía Martínez",
+        "company": "Estúdio de Design SM"
+      }
+    },
+    "faqList": {
+      "item1": {
+        "q": "Quão rápido posso ter meu site e sistema funcionando?",
+        "a": "Nosso processo de implementação é otimizado para ser ágil. Geralmente, após receber todas as suas informações e aprovação do conteúdo e estrutura, podemos ter seu Pacote Básico pronto em aproximadamente 1 semana, e os Pacotes Profissional ou 360 em 1-2 semanas, dependendo da complexidade e add-ons selecionados."
+      },
+      "item2": {
+        "q": "Preciso ter conhecimentos técnicos?",
+        "a": "De forma alguma! GoDigital Suite é uma solução 'chave na mão'. Cuidamos de toda a configuração técnica, design (baseado em modelos profissionais que personalizamos com sua marca) e lançamento. Entregamos seu ecossistema digital pronto para usar e oferecemos treinamento básico para que você possa gerenciá-lo."
+      },
+      "item3": {
+        "q": "E se meu negócio crescer e eu precisar de mais funcionalidades?",
+        "a": "GoDigital Suite foi projetada para escalar com você. Você pode começar com um pacote e depois atualizá-lo, ou adicionar funcionalidades específicas através do nosso catálogo de Add-ons a qualquer momento. Nosso objetivo é que a tecnologia se adapte às suas necessidades em mudança."
+      },
+      "item4": {
+        "q": "O que o preço 'A partir de X' inclui exatamente?",
+        "a": "O preço 'A partir de X' é um ponto de partida e pode variar significativamente dependendo do esquema de pagamento que você escolher ao contratar. Oferecemos flexibilidade com opções como pagamentos únicos por implementação, mensalidades (que podem ser menores se combinadas com um pagamento inicial), ou planos anuais com benefícios adicionais. Esta estrutura nos permite adaptar o investimento às suas necessidades específicas e ao valor que a Suite trará para você. Um executivo da Aurhora Agency o acompanhará pessoalmente para detalhar todas as opções, entender seus requisitos e ajudá-lo a configurar o plano e esquema de pagamento que melhor se adequa ao seu negócio durante uma consulta personalizada."
+      },
+      "item5": {
+        "q": "Que tipo de suporte vocês oferecem?",
+        "a": "Todos os planos incluem suporte técnico básico e um período de garantia pós-lançamento para corrigir qualquer erro técnico atribuível à Aurhora. Para necessidades de suporte mais contínuas ou prioritárias, oferecemos políticas de suporte técnico adicionais e consultoria."
+      }
+    }
+  },
+  "aboutUs": {
+    "badge": "Conheça-nos",
+    "heroTitle1": "Orquestrando a Transformação",
+    "heroTitle2": "com Experiência e Co-criação",
+    "heroDescription": "Na Aurhora Agency, combinamos a agilidade de uma empresa jovem com a profunda experiência de uma equipe de profissionais que liderou a vanguarda tecnológica em múltiplas indústrias por mais de 15 anos. Somos seus parceiros estratégicos na gestão e integração de soluções que impulsionam a verdadeira mudança.",
+    "scheduleStrategicSession": "Agendar Sessão Estratégica",
+    "heartBadge": "O Coração da Aurhora",
+    "essenceTitle1": "Jovens de Espírito,",
+    "essenceTitle2": "Gigantes em Experiência",
+    "essenceDescription1": "A Aurhora Agency nasce da convicção de que a verdadeira transformação digital requer mais que apenas tecnologia; precisa de visão, gestão especializada e uma compreensão profunda do negócio. Embora sejamos uma agência de criação recente, nossa equipe diretiva e consultores principais acumulam mais de 15 anos de experiência liderando projetos complexos e bem-sucedidos em grandes corporações e startups inovadoras.",
+    "essenceDescription2": "Essa dualidade nos permite oferecer o frescor e adaptabilidade de uma nova era, respaldada pelo conhecimento e solidez daqueles que navegaram e moldaram a evolução tecnológica em setores-chave.",
+    "experienceYears": "+15 Anos de Experiência",
+    "experienceSubtitle": "Liderando a transformação na indústria.",
+    "essenceQuote": "\"Fundimos a agilidade inovadora com a sabedoria da experiência.\"",
+    "orchestrationTitle": "A Arte da Orquestração Estratégica",
+    "orchestrationDescription": "Nossa capacidade única reside em conhecer a fundo tanto as grandes corporações quanto os empreendimentos desde sua raiz. Essa perspectiva nos permite consolidar equipes multidisciplinares de especialistas que não apenas entendem diversos setores, mas sabem como \"tropicalizar\" funcionalidades, migrando o melhor de cada mundo para criar soluções inovadoras e sob medida para nossos clientes.",
+    "expertOrchestration": "Orquestração Especializada",
+    "expertOrchestrationDesc": "Somos mestres na gestão e integração de soluções complexas, conectando talento e tecnologia para resultados sinérgicos e eficientes.",
+    "multidisciplinaryTeams": "Equipes Multidisciplinares",
+    "multidisciplinaryTeamsDesc": "Nossa força reside na diversidade de nossos especialistas, provenientes de múltiplos setores, o que nos permite uma visão 360° de cada desafio.",
+    "tropicalizationInnovation": "Inovação por \"Tropicalização\"",
+    "tropicalizationInnovationDesc": "Adaptamos e migramos funcionalidades bem-sucedidas de um setor para outro, tomando o melhor de cada mundo para propor soluções frescas e disruptivas.",
+    "sectoralStrengthBadge": "Nossa Força Setorial",
+    "insuranceTitle": "Especialistas no Ecossistema de Seguros (InsurTech)",
+    "insuranceDescription1": "Conhecemos profundamente a indústria seguradora mexicana e latino-americana. Colaboramos com as principais seguradoras do país, desenvolvendo e integrando soluções tecnológicas ao longo de toda sua cadeia de valor.",
+    "insuranceDescription2": "Nossa experiência abrange uma ampla gama de produtos e linhas de negócio, permitindo-nos oferecer perspectivas inovadoras e soluções pragmáticas que respondem aos desafios específicos do setor.",
+    "fintechTitle": "Impulsionadores da Inovação em Fintech",
+    "fintechDescription1": "O setor financeiro está em constante evolução, e na Aurhora Agency estamos na vanguarda. Trabalhamos com bancos tradicionais, startups disruptivas e neoBancos, criando desde robustos bancos móveis até a integração ágil de agregadores de pagamento.",
+    "fintechDescription2": "Entendemos os desafios de segurança, regulatórios e de experiência do usuário que definem o setor Fintech, e oferecemos soluções que combinam inovação tecnológica com conhecimento profundo do negócio financeiro.",
+    "cocreationTitle": "Co-criação: O Pilar de Soluções Genuínas",
+    "cocreationDescription1": "Acreditamos firmemente que as soluções mais impactantes nascem da colaboração estreita. Nossa abordagem de co-criação significa que trabalhamos lado a lado com você, fundindo seu conhecimento profundo do negócio com nossa experiência em gestão, integração e tecnologia.",
+    "cocreationDescription2": "Este processo colaborativo nos permite ir além das soluções genéricas, projetando e implementando estratégias e ferramentas verdadeiramente personalizadas que atendem 100% às necessidades e objetivos únicos de sua organização, garantindo um impacto real e mensurável.",
+    "ctaTitle": "Pronto para que nossa experiência impulsione sua visão?",
+    "ctaDescription": "Permita-nos ser os arquitetos de sua próxima grande transformação. Vamos conversar sobre seus desafios e explorar juntos como a Aurhora Agency pode ser o parceiro estratégico que você precisa.",
+    "scheduleStrategicSessionCta": "Agendar uma Sessão Estratégica",
+    "insurance": {
+      "medicalExpenses": "Gastos Médicos Maiores (Individual e Coletivo)",
+      "auto": "Auto (Particulares, Frotas, Serviço Público)",
+      "life": "Vida (Tradicional, Investimento, Educacionais)",
+      "property": "Danos (Residencial, Empresariais, RC)",
+      "savings": "Produtos de Poupança e Aposentadoria",
+      "claims": "Gestão Integral de Sinistros",
+      "underwriting": "Subscrição e Emissão Digital",
+      "channels": "Canais Digitais e Venda Direta"
+    },
+    "fintech": {
+      "mobileBanking": "Desenvolvimento de Bancos Móveis",
+      "paymentGateways": "Gateways e Agregadores de Pagamento",
+      "cardProcessing": "Processamento de Cartões (Crédito/Débito)",
+      "neoBanks": "Soluções para NeoBancos",
+      "coreBanking": "Sistemas Core Bancário e Auxiliares",
+      "digitalLoans": "Empréstimos Digitais (Originação/Gestão)",
+      "openBanking": "APIs Financeiras e Open Banking",
+      "kyc": "KYC e Onboarding Digital Ágil"
+    }
+  },
+  "cookies": {
+    "title": "Usamos cookies",
+    "description": "Usamos cookies e tecnologias semelhantes para melhorar sua experiência, analisar o tráfego do site e personalizar o conteúdo. Você pode gerenciar suas preferências a qualquer momento.",
+    "acceptAll": "Aceitar todos",
+    "rejectAll": "Rejeitar todos",
+    "customizeSettings": "Personalizar configurações",
+    "hideSettings": "Ocultar configurações",
+    "savePreferences": "Salvar preferências",
+    "alwaysActive": "Sempre ativo",
+    "close": "Fechar",
+    "learnMore": "Para mais informações, consulte nossa",
+    "privacyPolicy": "Política de Privacidade",
+    "necessary": {
+      "title": "Cookies necessários",
+      "description": "Essenciais para o funcionamento do site. Não podem ser desativados."
+    },
+    "analytics": {
+      "title": "Cookies analíticos",
+      "description": "Nos ajudam a entender como os visitantes interagem com nosso site (Google Analytics, Microsoft Clarity)."
+    },
+    "marketing": {
+      "title": "Cookies de marketing",
+      "description": "Usados para exibir anúncios relevantes e medir a eficácia de nossas campanhas publicitárias."
+    },
+    "functional": {
+      "title": "Cookies funcionais",
+      "description": "Permitem funcionalidades aprimoradas e personalizações, como chat ao vivo ou preferências de idioma."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Política de Privacidade",
+      "subtitle": "Sua privacidade é importante para nós. Este aviso descreve como coletamos, usamos e protegemos seus dados pessoais.",
+      "lastUpdated": "Última atualização",
+      "tableOfContents": "Conteúdo",
+      "questionsTitle": "Tem perguntas sobre sua privacidade?",
+      "questionsDesc": "Estamos aqui para ajudar. Contate-nos para qualquer consulta relacionada aos seus dados pessoais."
+    },
+    "terms": {
+      "title": "Termos e Condições",
+      "subtitle": "Estes termos regulam o uso de nossos serviços e a relação comercial entre a Aurhora Agency e nossos clientes.",
+      "lastUpdated": "Última atualização",
+      "tableOfContents": "Conteúdo",
+      "importantNotice": "Aviso Importante",
+      "importantNoticeDesc": "Por favor, leia estes termos cuidadosamente antes de contratar nossos serviços. Ao utilizar nossos serviços, você concorda em estar sujeito a estes termos e condições.",
+      "questionsTitle": "Tem perguntas sobre estes termos?",
+      "questionsDesc": "Nossa equipe jurídica está disponível para esclarecer qualquer dúvida."
+    }
+  }
+}
