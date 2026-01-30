@@ -19,7 +19,11 @@ export const metadata: Metadata = {
   description: "Impulsando la Innovación con Resultados que Transforman.",
   viewport: "width=device-width, initial-scale=1.0, viewport-fit=cover",
   icons: {
-    icon: "/file.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" }
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -31,6 +35,11 @@ export default function RootLayout({
   return (
     <html className="scroll-smooth">
       <head>
+        {/* Favicon Links */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-icon" />
+        
         {/* Google Tag Manager - Head Script */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
