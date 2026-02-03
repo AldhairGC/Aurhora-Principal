@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { ComponentType } from 'react';
+import { ComponentType, ReactElement } from 'react';
 
 /**
  * Utilidades para carga diferida de componentes pesados
@@ -18,7 +18,7 @@ export function lazyComponent<P extends object>(
   importFn: () => Promise<{ default: ComponentType<P> }>,
   options: {
     ssr?: boolean;
-    loading?: () => JSX.Element | null;
+    loading?: () => ReactElement | null;
   } = {}
 ) {
   return dynamic(importFn, { ...defaultOptions, ...options });

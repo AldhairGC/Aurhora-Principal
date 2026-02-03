@@ -32,13 +32,17 @@ export const contactFormSchema = z.object({
   mensaje: z
     .string()
     .min(10, { message: "El mensaje debe tener al menos 10 caracteres" })
-    .max(2000, { message: "El mensaje no puede exceder 2000 caracteres" }),
+    .max(2000, { message: "El mensaje no puede exceder 2000 caracteres" })
+    .optional()
+    .or(z.literal("")),
 
   proyecto: z.string().optional(),
   proceso: z.string().optional(),
   necesidad: z.string().optional(),
   source: z.string().optional(),
   selectedPlan: z.string().optional(),
+  desafio: z.string().optional(),
+  objetivos: z.string().optional(),
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
@@ -75,13 +79,17 @@ export const contactFormSchemaEN = z.object({
   mensaje: z
     .string()
     .min(10, { message: "Message must be at least 10 characters long" })
-    .max(2000, { message: "Message cannot exceed 2000 characters" }),
+    .max(2000, { message: "Message cannot exceed 2000 characters" })
+    .optional()
+    .or(z.literal("")),
 
   proyecto: z.string().optional(),
   proceso: z.string().optional(),
   necesidad: z.string().optional(),
   source: z.string().optional(),
   selectedPlan: z.string().optional(),
+  desafio: z.string().optional(),
+  objetivos: z.string().optional(),
 });
 
 // Schema para traducciones en portugués
@@ -116,13 +124,17 @@ export const contactFormSchemaPT = z.object({
   mensaje: z
     .string()
     .min(10, { message: "A mensagem deve ter pelo menos 10 caracteres" })
-    .max(2000, { message: "A mensagem não pode exceder 2000 caracteres" }),
+    .max(2000, { message: "A mensagem não pode exceder 2000 caracteres" })
+    .optional()
+    .or(z.literal("")),
 
   proyecto: z.string().optional(),
   proceso: z.string().optional(),
   necesidad: z.string().optional(),
   source: z.string().optional(),
   selectedPlan: z.string().optional(),
+  desafio: z.string().optional(),
+  objetivos: z.string().optional(),
 });
 
 // Helper function to get the correct schema based on locale
