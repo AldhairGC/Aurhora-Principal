@@ -371,12 +371,9 @@ export default function CookieConsent() {
           {/* Privacy Policy Link */}
           <p className={`text-xs ${currentTheme.textSecondary} mt-4 text-center`}>
             {t("cookies.learnMore")}{" "}
-            <a
-              href="/privacy"
-              className="text-purple-500 hover:text-purple-600 underline"
-            >
+            <span className="text-purple-500 hover:text-purple-600 underline cursor-pointer">
               {t("cookies.privacyPolicy")}
-            </a>
+            </span>
           </p>
         </div>
       </div>
