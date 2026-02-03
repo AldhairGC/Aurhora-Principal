@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { X, Cookie, Shield, ChevronDown, ChevronUp } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 interface CookiePreferences {
   necessary: boolean;
@@ -371,9 +372,12 @@ export default function CookieConsent() {
           {/* Privacy Policy Link */}
           <p className={`text-xs ${currentTheme.textSecondary} mt-4 text-center`}>
             {t("cookies.learnMore")}{" "}
-            <span className="text-purple-500 hover:text-purple-600 underline cursor-pointer">
+            <Link
+              href="/aviso-privacidad"
+              className="text-purple-500 hover:text-purple-600 underline"
+            >
               {t("cookies.privacyPolicy")}
-            </span>
+            </Link>
           </p>
         </div>
       </div>

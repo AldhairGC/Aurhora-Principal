@@ -8,14 +8,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": "next/core-web-vitals",
-    "rules": {
-      "@next/next/no-html-link-for-pages": "off",
-      "@typescript-eslint/no-unused-vars": "warn",
-      "@typescript-eslint/no-explicit-any": "warn"
-    }
-  },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "framer-motion": "^12.29.2",
