@@ -129,8 +129,8 @@ const Footer = () => {
             <ul className="space-y-3 md:space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                <a href="mailto:contacto@aurhora.it.com" className="text-gray-600 dark:text-gray-400 text-xs md:text-sm hover:text-purple-600 transition-colors break-all">
-                  contacto@aurhora.it.com
+                <a href="mailto:contacto@aurhora.agency" className="text-gray-600 dark:text-gray-400 text-xs md:text-sm hover:text-purple-600 transition-colors break-all">
+                  contacto@aurhora.agency
                 </a>
               </li>
               <li className="flex items-start gap-3">

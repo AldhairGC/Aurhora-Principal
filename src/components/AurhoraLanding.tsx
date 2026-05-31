@@ -33,10 +33,10 @@ import {
   getAnimationFrameRate,
 } from "@/lib/utils/device";
 import { StrategicCTA } from "./StrategicCTA";
-import { SocialProofSection } from "./SocialProofSection";
 import { StickyCTABar } from "./StickyCTABar";
 import { OrganicDivider } from "./SectionDivider";
 import { ContactCTA } from "./ContactCTA";
+import AuroraWaves from "./AuroraWaves";
 
 // Interfaz para el FormData
 interface LandingFormData {
@@ -503,135 +503,231 @@ const AurhoraLanding = () => {
           </>
         )}
 
-        {/* Hero Section - Stripe-inspired Redesign */}
+        {/* Hero Section - Elegant Aurora Design */}
         <section
           id="hero"
-          className="relative min-h-[90vh] md:min-h-screen pt-24 md:pt-36 pb-16 md:pb-24 flex items-center hero-section"
+          className="relative min-h-screen flex items-center justify-center hero-section overflow-hidden"
+          style={{ minHeight: '100svh' }}
         >
-          {/* Background con gradiente sutil */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 -z-20" />
+          {/* Background elegante */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 -z-30" />
           
-          <div className="container mx-auto px-4 md:px-8 relative z-10">
-            <div className="max-w-5xl mx-auto text-center">
+          {/* Efecto de Auroras Boreales - Detrás del texto */}
+          {isClient && (
+            <div className="absolute inset-0 -z-20">
+              <AuroraWaves opacity={0.7} />
+            </div>
+          )}
+          
+          {/* Overlay sutil para profundidad */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/20 to-slate-950/60 -z-10" />
+          
+          <div className="container mx-auto px-6 md:px-8 relative z-10">
+            <div className="max-w-6xl mx-auto text-center">
               
-              {/* Badge (estilo Stripe) */}
+              {/* Badge elegante */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300 mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-white/5 backdrop-blur-xl border border-white/10"
               >
-                {t("hero.experience")}
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                </span>
+                <span className="text-sm font-medium text-gray-300">
+                  {t("hero.experience")}
+                </span>
               </motion.div>
 
-              {/* Headline con tipografía refinada y balanceada */}
+              {/* Título principal - Grande pero elegante */}
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                className="mb-4 md:mb-6"
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="mb-6"
               >
                 <span 
+                  className="block text-white font-bold tracking-tight leading-none mb-3"
                   style={{
-                    fontSize: 'clamp(2rem, 6vw, 4.5rem)',
-                    lineHeight: '1.1',
-                    letterSpacing: '-0.025em',
-                    fontWeight: '600'
+                    fontSize: 'clamp(3rem, 10vw, 7rem)',
+                    textShadow: '0 4px 30px rgba(0,0,0,0.5)'
                   }}
-                  className="block text-gray-900 dark:text-white"
                 >
-                  {t("hero.title")}{" "}
-                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                    {t("hero.innovation")}
-                  </span>
+                  {t("hero.title")}
                 </span>
-                <span 
+                
+                {/* Palabra con gradiente animado */}
+                <motion.span
+                  animate={{
+                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  className="block font-bold tracking-tight leading-none bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent"
                   style={{
-                    fontSize: 'clamp(1.25rem, 3.5vw, 2.25rem)',
-                    lineHeight: '1.3',
-                    letterSpacing: '-0.015em',
-                    fontWeight: '500'
+                    fontSize: 'clamp(3rem, 10vw, 7rem)',
+                    backgroundSize: '200% auto',
+                    filter: 'drop-shadow(0 0 30px rgba(16, 185, 129, 0.3))'
                   }}
-                  className="block mt-3 md:mt-4 text-gray-600 dark:text-gray-400"
                 >
-                  {t("hero.subtitle")}
-                </span>
+                  {t("hero.innovation")}
+                </motion.span>
               </motion.h1>
+
+              {/* Subtítulo elegante */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-gray-300 font-normal mb-6 leading-relaxed"
+                style={{
+                  fontSize: 'clamp(1.25rem, 3vw, 2rem)',
+                  textShadow: '0 2px 20px rgba(0,0,0,0.6)'
+                }}
+              >
+                {t("hero.subtitle")}
+              </motion.p>
 
               {/* Descripción */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed"
                 style={{
-                  fontSize: 'clamp(0.9375rem, 1.5vw, 1.125rem)',
-                  lineHeight: '1.6'
+                  fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                  textShadow: '0 2px 10px rgba(0,0,0,0.5)'
                 }}
-                className="text-gray-600 dark:text-gray-400 mb-8 md:mb-10 max-w-2xl mx-auto px-2"
               >
                 {t("hero.description")}
               </motion.p>
 
-              {/* CTAs principales */}
+              {/* CTAs elegantes */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-12 md:mb-16 px-4 sm:px-0"
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               >
-                <StrategicCTA 
-                  variant="primary" 
-                  size="lg" 
-                  text={t("hero.startTransformation")}
-                  icon={<ArrowRight className="w-5 h-5" />}
+                {/* Botón primario */}
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() => openContactModal("hero_inicia_transformacion")}
-                  fullWidth
-                  className="sm:w-auto"
-                />
-                <StrategicCTA 
-                  variant="secondary" 
-                  size="lg" 
-                  text={t("hero.exploreServices")}
+                  className="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold rounded-2xl shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/40 transition-all duration-300 overflow-hidden"
+                  style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)' }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative flex items-center justify-center gap-2">
+                    {t("hero.startTransformation")}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                </motion.button>
+                
+                {/* Botón secundario */}
+                <motion.a
                   href="#servicios"
-                  fullWidth
-                  className="sm:w-auto"
-                />
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group w-full sm:w-auto px-8 py-4 bg-white/5 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-2xl hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+                  style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)' }}
+                >
+                  <span className="flex items-center justify-center gap-2">
+                    {t("hero.exploreServices")}
+                    <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  </span>
+                </motion.a>
               </motion.div>
 
             </div>
           </div>
 
-          {/* Elementos decorativos - con z-index negativo */}
+          {/* Orbes de luz elegantes */}
           {isClient && (
-            <div className="absolute inset-0 pointer-events-none -z-10">
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+              {/* Orbes sutiles de fondo */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.5, scale: 1 }}
-                transition={{ duration: 1, delay: 0.7 }}
-                className="absolute top-[15%] left-[8%]"
-              >
-                <Zap className="w-12 h-12 text-purple-500/40" />
-              </motion.div>
+                animate={{ 
+                  x: [0, 50, 0],
+                  y: [0, -30, 0],
+                  opacity: [0.15, 0.25, 0.15],
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{ 
+                  duration: 10, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute top-[10%] left-[5%] w-96 h-96 md:w-[600px] md:h-[600px] bg-gradient-to-br from-emerald-500/20 to-cyan-500/10 rounded-full blur-3xl"
+              />
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.5, scale: 1 }}
-                transition={{ duration: 1, delay: 0.9 }}
-                className="absolute top-[25%] right-[10%]"
-              >
-                <Rocket className="w-16 h-16 text-blue-500/40" />
-              </motion.div>
+                animate={{ 
+                  x: [0, -40, 0],
+                  y: [0, 40, 0],
+                  opacity: [0.15, 0.3, 0.15],
+                  scale: [1, 1.15, 1]
+                }}
+                transition={{ 
+                  duration: 12, 
+                  delay: 1,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute top-[15%] right-[5%] w-80 h-80 md:w-[550px] md:h-[550px] bg-gradient-to-bl from-purple-500/20 to-pink-500/10 rounded-full blur-3xl"
+              />
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.5, scale: 1 }}
-                transition={{ duration: 1, delay: 1.1 }}
-                className="absolute bottom-[20%] left-[15%]"
-              >
-                <Code className="w-10 h-10 text-cyan-500/40" />
-              </motion.div>
+                animate={{ 
+                  x: [0, 30, 0],
+                  y: [0, -40, 0],
+                  opacity: [0.1, 0.2, 0.1],
+                  scale: [1, 1.3, 1]
+                }}
+                transition={{ 
+                  duration: 14, 
+                  delay: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute bottom-[10%] left-[10%] w-72 h-72 md:w-[500px] md:h-[500px] bg-gradient-to-tr from-cyan-500/15 to-blue-500/10 rounded-full blur-3xl"
+              />
+              
+              {/* Partículas sutiles */}
+              {[...Array(15)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  animate={{ 
+                    y: [0, -40 - i * 5, 0],
+                    x: [0, Math.sin(i) * 20, 0],
+                    opacity: [0.2, 0.5, 0.2],
+                    scale: [1, 1.5, 1]
+                  }}
+                  transition={{ 
+                    duration: 5 + i * 0.3,
+                    delay: i * 0.2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className={`absolute w-1 h-1 rounded-full ${
+                    i % 4 === 0 ? 'bg-emerald-400/60' :
+                    i % 4 === 1 ? 'bg-cyan-400/60' :
+                    i % 4 === 2 ? 'bg-purple-400/60' : 'bg-pink-400/60'
+                  }`}
+                  style={{
+                    top: `${15 + (i % 4) * 20}%`,
+                    left: `${10 + i * 6}%`,
+                    filter: 'blur(1px)'
+                  }}
+                />
+              ))}
             </div>
           )}
           
-          {/* Organic Divider */}
+          {/* Organic Divider con transición suave */}
           <OrganicDivider position="bottom" className="text-white dark:text-gray-900" height="h-16 md:h-24" />
         </section>
 
@@ -1129,73 +1225,6 @@ const AurhoraLanding = () => {
                       </p>
                     </motion.div>
 
-                    {/* Grid de métricas */}
-                    <div className="grid grid-cols-2 gap-8">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 0.3 }}
-                        className="text-center"
-                      >
-                        <div className="text-5xl font-bold mb-2">
-                          <span className="text-cyan-500">500+</span>
-                        </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                          {t("about.projects")}
-                        </p>
-                      </motion.div>
-
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 0.4 }}
-                        className="text-center"
-                      >
-                        <div className="text-5xl font-bold mb-2">
-                          <span className="text-purple-500">50+</span>
-                        </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-                          {t("about.clients")}
-                        </p>
-                      </motion.div>
-                    </div>
-
-                    {/* Confianza y resultados */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.5 }}
-                      className="pt-8 border-t border-gray-200 dark:border-gray-700"
-                    >
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 text-center">
-                        {t("about.trustResults")}
-                      </h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 text-center mb-6">
-                        {t("about.trustDescription")}
-                      </p>
-                      
-                      {/* Logos de clientes */}
-                      <div className="flex flex-wrap justify-center items-center gap-3">
-                        {["TechCorp", "InnovateLab", "DigitalFlow"].map((company, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.3, delay: 0.6 + (i * 0.1) }}
-                            whileHover={{ scale: 1.05 }}
-                            className="h-10 px-5 flex items-center justify-center bg-gray-100 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600 transition-all duration-200"
-                          >
-                            <span className="text-gray-600 dark:text-gray-400 text-xs font-bold tracking-wider">
-                              {company}
-                            </span>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </motion.div>
                   </div>
                 </div>
               </motion.div>
@@ -1207,8 +1236,7 @@ const AurhoraLanding = () => {
         {/* Contact CTA Section - Componente Reutilizable */}
         <ContactCTA onScheduleClick={() => openContactModal("cta_final_agenda_sesion")} />
 
-        {/* Social Proof Section */}
-        <SocialProofSection />
+        {/* Social Proof Section - temporarily removed until real client data is available */}
 
         {/* Contact Modal - TRADUCIDO */}
         {showContactForm && (

@@ -62,7 +62,7 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({ onScheduleClick }) => {
                 </button>
                 
                 <a
-                  href="mailto:contacto@aurhora.it.com"
+                  href="mailto:contacto@aurhora.agency"
                   className="w-full sm:w-auto px-6 md:px-8 py-3.5 md:py-4 rounded-xl md:rounded-full font-semibold text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.98] touch-manipulation"
                 >
                   <Mail className="w-5 h-5" />

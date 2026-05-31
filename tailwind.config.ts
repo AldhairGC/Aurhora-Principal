@@ -90,10 +90,28 @@ export default {
         neutral: colors.neutral,
         background: "var(--background)",
         foreground: "var(--foreground)",
+        // ── Aurora Design System (rediseño) — fuente: src/lib/design-system/aurora.ts ──
+        ink: {
+          DEFAULT: "var(--color-ink)",
+          soft: "var(--color-ink-soft)",
+        },
+        secondaryText: "var(--color-secondary)",
+        line: "var(--color-line)",
+        surface: "var(--color-surface)",
+        aurora: {
+          violet: "var(--color-aurora-violet)",
+          indigo: "var(--color-aurora-indigo)",
+          blue: "var(--color-aurora-blue)",
+          cyan: "var(--color-aurora-cyan)",
+          bg: "var(--color-aurora-bg)",
+        },
+      },
+      backgroundImage: {
+        aurora: "var(--gradient-aurora)",
       },
       fontFamily: {
         sans: typography.fontFamily.sans.split(", "),
-        mono: typography.fontFamily.mono.split(", "),
+        mono: ["var(--font-geist-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       fontSize: typography.fontSize,
       fontWeight: typography.fontWeight,

@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+/**
+ * Plantilla del correo de confirmación al usuario.
+ * Migrada desde email-template-user.html a una función JS para que funcione en
+ * entornos serverless (Vercel) — antes se leía con fs.readFile y fallaba en runtime.
+ */
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+export function buildUserEmailHtml(nombre: string, year: number | string): string {
+  const safeNombre = escapeHtml(nombre);
+
+  return `<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -96,7 +113,7 @@
                         <table width="100%">
                             <tr>
                                 <td class="text-primary" style="font-size: 22px; font-weight: 700; padding-bottom: 20px;">
-                                    ¡Hola, [Nombre del Cliente]!
+                                    ¡Hola, ${safeNombre}!
                                 </td>
                             </tr>
                             <tr>
@@ -128,7 +145,7 @@
                             </tr>
                             <tr>
                                 <td align="center" style="padding-bottom: 30px;">
-                                    <a href="https://aurhora.it" target="_blank" class="button-cta"
+                                    <a href="https://aurhora.agency" target="_blank" class="button-cta"
    style="background: linear-gradient(90deg, #0EA5E9, #9333EA, #D946EF);
           color: #ffffff !important;
           padding: 14px 28px;
@@ -157,8 +174,8 @@
                             </tr>
                             <tr>
                                 <td class="footer-text" align="center" style="padding: 20px 0; font-size: 12px; line-height: 1.5; color: #f9fafb;">
-                                    Si tienes una pregunta urgente, no dudes en contactarnos a través de <a href="mailto:contacto@aurhora.it.com" style="color: #9333EA; text-decoration: underline;">contacto@aurhora.it.com</a> o por <a href="https://wa.me/5215582991282" style="color: #9333EA; text-decoration: underline;">WhatsApp</a>.<br><br>
-                                    Aurhora Agency &copy; {{year}}. Todos los derechos reservados.<br>
+                                    Si tienes una pregunta urgente, no dudes en contactarnos a través de <a href="mailto:contacto@aurhora.agency" style="color: #9333EA; text-decoration: underline;">contacto@aurhora.agency</a> o por <a href="https://wa.me/5215582991282" style="color: #9333EA; text-decoration: underline;">WhatsApp</a>.<br><br>
+                                    Aurhora Agency &copy; ${year}. Todos los derechos reservados.<br>
                                     Recibiste este correo porque llenaste un formulario en nuestro sitio web.
                                 </td>
                             </tr>
@@ -170,4 +187,5 @@
     </tr>
 </table>
 </body>
-</html>
+</html>`;
+}

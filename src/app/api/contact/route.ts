@@ -1,11 +1,58 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
-import { AdminEmailTemplate } from "./email-templates";
-import { promises as fs } from "fs";
-import path from "path";
+import { buildUserEmailHtml } from "./email-template-user";
+import { buildAdminEmailHtml } from "./email-template-admin";
 
-// Inicializar Resend con la API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Remitente — el dominio/email debe estar autenticado en Brevo
+const SENDER = {
+  name: "Aurhora",
+  email: process.env.BREVO_SENDER_EMAIL || "contacto@aurhora.agency",
+};
+const ADMIN_EMAIL = process.env.BREVO_ADMIN_EMAIL || "contacto@aurhora.agency";
+
+type BrevoResult = { data?: unknown; error?: { message: string } };
+
+/**
+ * Envía un correo transaccional vía la API REST de Brevo.
+ * El SDK no es necesario: fetch funciona en serverless sin dependencias extra.
+ */
+async function sendBrevoEmail(params: {
+  toEmail: string;
+  toName?: string;
+  subject: string;
+  htmlContent: string;
+}): Promise<BrevoResult> {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) {
+    return { error: { message: "BREVO_API_KEY no está configurada" } };
+  }
+
+  try {
+    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "api-key": apiKey,
+        "Content-Type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify({
+        sender: SENDER,
+        to: [{ email: params.toEmail, name: params.toName }],
+        subject: params.subject,
+        htmlContent: params.htmlContent,
+      }),
+    });
+
+    if (!res.ok) {
+      const detail = await res.text();
+      return { error: { message: detail || `Brevo HTTP ${res.status}` } };
+    }
+    return { data: await res.json() };
+  } catch (err) {
+    return {
+      error: { message: err instanceof Error ? err.message : "Error de red con Brevo" },
+    };
+  }
+}
 
 export async function POST(request: Request) {
   try {
@@ -41,34 +88,30 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
     const currentYear = new Date().getFullYear();
-    // Leer la plantilla HTML y reemplazar el nombre
-    const templatePath = path.join(
-      process.cwd(),
-      "src/app/api/contact/email-template-user.html"
-    );
-    let htmlTemplate = await fs.readFile(templatePath, "utf8");
-    htmlTemplate = htmlTemplate
-      .replace("[Nombre del Cliente]", nombre)
-      .replace("{{year}}", currentYear.toString());
+    const htmlTemplate = buildUserEmailHtml(nombre, currentYear);
 
-    // Enviar correo al usuario
-    await resend.emails.send({
-      from: "Aurhora <contacto@aurhora.it.com>",
-      to: email,
+    // Correo de confirmación al usuario
+    const userSend = await sendBrevoEmail({
+      toEmail: email,
+      toName: nombre,
       subject: "¡Gracias por contactar a Aurhora!",
-      html: htmlTemplate,
+      htmlContent: htmlTemplate,
     });
+    if (userSend.error) {
+      console.error("Error de Brevo (correo usuario):", userSend.error);
+      return NextResponse.json(
+        { error: "No se pudo enviar el correo de confirmación", detail: userSend.error.message },
+        { status: 502 }
+      );
+    }
 
-    // Espera 600ms antes de enviar el siguiente correo
-    await new Promise((r) => setTimeout(r, 600));
-
-    // Enviar correo al admin
-    await resend.emails.send({
-      from: "Aurhora <contacto@aurhora.it.com>",
-      to: "contacto@aurhora.it.com",
+    // Aviso al equipo (admin)
+    const adminSend = await sendBrevoEmail({
+      toEmail: ADMIN_EMAIL,
       subject: `Nuevo contacto desde ${source || "sitio web"}`,
-      react: AdminEmailTemplate({
+      htmlContent: buildAdminEmailHtml({
         nombre,
         email,
         telefono,
@@ -77,6 +120,13 @@ export async function POST(request: Request) {
         source,
       }),
     });
+    if (adminSend.error) {
+      console.error("Error de Brevo (correo admin):", adminSend.error);
+      return NextResponse.json(
+        { error: "No se pudo enviar el aviso al equipo", detail: adminSend.error.message },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json(
       { message: "Correos enviados exitosamente" },

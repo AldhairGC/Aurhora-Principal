@@ -65,6 +65,8 @@ export const useContactForm = (defaultValues?: Partial<ContactFormData>) => {
   return {
     register,
     handleSubmit: handleSubmit(submitForm),
+    /** RHF handleSubmit sin enlazar — valida y luego llama a tu callback */
+    validateSubmit: handleSubmit,
     errors,
     isSubmitting,
     error,

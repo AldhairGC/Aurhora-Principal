@@ -1,6 +1,6 @@
 // src/app/[locale]/page.tsx
-import AurhoraLanding from '@/components/AurhoraLanding';
+import HomeView from "@/components/landing/HomeView";
 
 export default function HomePage() {
-  return <AurhoraLanding />;
+  return <HomeView />;
 }

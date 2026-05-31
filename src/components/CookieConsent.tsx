@@ -158,7 +158,7 @@ export default function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-[1700] p-4 sm:p-6 animate-slideInUp"
+      className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 animate-slideInUp"
       role="dialog"
       aria-labelledby="cookie-consent-title"
       aria-describedby="cookie-consent-description"
