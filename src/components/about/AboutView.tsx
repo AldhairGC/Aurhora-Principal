@@ -12,6 +12,7 @@ import { Brain, UsersRound, Lightbulb, Shield, Cpu, Handshake, Quote } from "luc
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { FinalCTA } from "@/components/landing/FinalCTA";
+import { AISection } from "@/components/landing/AISection";
 import { ContactModal } from "@/components/contact/ContactModal";
 import { Section, Eyebrow, GradientText, Button } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem, CountUp, MagneticButton } from "@/lib/motion";
@@ -72,6 +73,8 @@ export function AboutView() {
           </Reveal>
         </div>
       </Section>
+
+      <AISection />
 
       {/* ───────────── ESENCIA ───────────── */}
       <Section className="py-20 md:py-28">

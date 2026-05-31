@@ -108,6 +108,21 @@
       "linkText": "Transformar Equipes"
     }
   },
+  "ai": {
+    "eyebrow": "IA no nosso DNA",
+    "titleLead": "Reinventamos o modelo de agência com a",
+    "titleHighlight": "IA como motor",
+    "titleTail": "de toda a nossa operação.",
+    "description": "A inteligência artificial não é apenas mais uma ferramenta para nós: é parte do nosso DNA. Somos uma agência nativa de IA, especializada em agentes e grandes modelos de linguagem (LLMs), que nos tornam mais rápidos, ágeis, certeiros e seguros ao implementar soluções — com preços mais competitivos.",
+    "point1Title": "Nativos de IA",
+    "point1Desc": "Não adaptamos IA a um modelo antigo: construímos nossa operação em torno de agentes e LLMs desde o primeiro dia.",
+    "point2Title": "Mais rápidos e certeiros",
+    "point2Desc": "A IA acelera cada fase —diagnóstico, design e execução— com maior precisão e menos margem de erro.",
+    "point3Title": "Modelo revolucionário",
+    "point3Desc": "Renovamos o modelo da agência tradicional para oferecer maiores capacidades e competitividade nesta nova era.",
+    "point4Title": "Preços mais competitivos",
+    "point4Desc": "Maior capacidade operacional com IA significa entregar mais valor a um custo mais acessível para o seu negócio."
+  },
   "philosophy": {
     "eyebrow": "Filosofia",
     "title": "Nossa Filosofia",

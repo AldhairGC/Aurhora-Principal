@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Hero } from "@/components/landing/Hero";
+import { AISection } from "@/components/landing/AISection";
 import { Services } from "@/components/landing/Services";
 import { Philosophy } from "@/components/landing/Philosophy";
 import { Process } from "@/components/landing/Process";
@@ -38,6 +39,7 @@ export function HomeView() {
     <div id="main-content" className="min-h-screen bg-surface">
       <SiteHeader services={services} openContactModal={openContactModal} />
       <Hero onContactClick={openContactModal} />
+      <AISection />
       <Services />
       <Philosophy />
       <Process />

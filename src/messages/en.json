@@ -108,6 +108,21 @@
       "linkText": "Transform Teams"
     }
   },
+  "ai": {
+    "eyebrow": "AI in our DNA",
+    "titleLead": "We've reinvented the agency model with",
+    "titleHighlight": "AI as the engine",
+    "titleTail": "of our entire operation.",
+    "description": "Artificial intelligence isn't just another tool for us: it's part of our DNA. We're an AI-native agency, specialized in agents and large language models (LLMs), which make us faster, sharper, more accurate and secure when implementing solutions — at more competitive prices.",
+    "point1Title": "AI-native",
+    "point1Desc": "We don't bolt AI onto an old model: we build our operation around agents and LLMs from day one.",
+    "point2Title": "Faster and more accurate",
+    "point2Desc": "AI accelerates every phase —diagnosis, design and execution— with greater precision and less room for error.",
+    "point3Title": "A revolutionary model",
+    "point3Desc": "We've renewed the traditional agency model to give you greater capabilities and competitiveness in this new era.",
+    "point4Title": "More competitive pricing",
+    "point4Desc": "Greater operational capacity with AI means delivering more value at a more accessible cost for your business."
+  },
   "philosophy": {
     "eyebrow": "Philosophy",
     "title": "Our Philosophy",
