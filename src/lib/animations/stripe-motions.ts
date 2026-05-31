@@ -234,7 +234,7 @@ export const transitions = {
 };
 
 // Export all
-export default {
+const stripeMotions = {
   fadeInUpVariants,
   fadeInDownVariants,
   fadeInLeftVariants,
@@ -250,3 +250,5 @@ export default {
   viewportConfig,
   transitions
 };
+
+export default stripeMotions;

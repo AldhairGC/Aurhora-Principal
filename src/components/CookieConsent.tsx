@@ -46,6 +46,7 @@ export default function CookieConsent() {
         console.error("Error loading cookie preferences:", e);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadScripts = (prefs: CookiePreferences) => {
@@ -84,7 +85,7 @@ export default function CookieConsent() {
     }
 
     // Microsoft Clarity
-    if (typeof window !== "undefined" && !(window as any).clarity) {
+    if (typeof window !== "undefined" && !(window as Window & { clarity?: unknown }).clarity) {
       const script = document.createElement("script");
       script.innerHTML = `
         (function(c,l,a,r,i,t,y){

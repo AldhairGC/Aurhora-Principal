@@ -1,5 +1,5 @@
 // src/config/services.config.ts
-import { Globe, Rocket, Code, CheckCircle, TrendingUp, Users } from 'lucide-react';
+import { Globe, Rocket, Code, CheckCircle, TrendingUp, Users, type LucideIcon } from 'lucide-react';
 
 export interface Service {
   id: string | number;
@@ -7,7 +7,7 @@ export interface Service {
   link: string;
   available: boolean;
   description: string;
-  icon?: any; // Para los iconos de Lucide
+  icon?: LucideIcon; // Para los iconos de Lucide
   bgColor?: string;
   borderColor?: string;
   iconColor?: string;

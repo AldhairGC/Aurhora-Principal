@@ -28,7 +28,7 @@ export function isLowPerformanceDevice(): boolean {
   }
   
   // Check device memory (if available)
-  const deviceMemory = (navigator as any).deviceMemory;
+  const deviceMemory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
   if (deviceMemory && deviceMemory < 4) {
     return true;
   }

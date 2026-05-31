@@ -103,7 +103,7 @@ export function generateMetadata(config: SEOConfig, baseUrl: string = "https://a
       },
     },
     openGraph: {
-      type: type as any,
+      type: type as "website",
       locale,
       url: fullUrl,
       title,
@@ -199,7 +199,7 @@ export function generateWebSiteSchema(locale: string = "es") {
 export function generateServiceSchema(
   serviceName: string,
   description: string,
-  locale: string = "es"
+  _locale: string = "es"
 ) {
   const baseUrl = "https://aurhora.agency";
   

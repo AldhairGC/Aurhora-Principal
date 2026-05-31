@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import {
   Bot, Zap, Users, Layers, Monitor, Server, Cloud, Database, Smartphone,
-  Globe, Share2, ChevronDown, ArrowRight,
+  Globe, Share2, ChevronDown,
 } from "lucide-react";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
