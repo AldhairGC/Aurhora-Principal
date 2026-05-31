@@ -84,7 +84,7 @@
     },
     "transformation": {
       "title": "Innovation and Digital Transformation Strategy",
-      "description": "We co-create your technological and digital roadmap, identifying innovation opportunities to accelerate results.",
+      "description": "Your end-to-end transformation with AI: strategy, process optimization and agile culture for measurable results.",
       "linkText": "Drive Innovation"
     },
     "development": {
@@ -514,6 +514,19 @@
     "approachEyebrow": "Why Aurhora",
     "approachTitle": "Innovation that turns into competitive advantage",
     "approachDescription": "We don't just map out strategies: we execute them with native AI and a culture of continuous innovation, so the transformation is real and measurable.",
+    "pillarsEyebrow": "Pillars of transformation",
+    "pillarsTitle": "Process and culture: the heart of change",
+    "pillarsDescription": "A real transformation isn't just technology. We optimize your processes and transform your culture so the change is deep and sustainable.",
+    "procTitle": "Process Optimization & Quality",
+    "procDesc": "We redesign and automate your critical operations with AI and implement quality management systems to reach excellence and certifications.",
+    "procTag1": "AI automation",
+    "procTag2": "Quality systems (ISO)",
+    "procTag3": "Operational efficiency",
+    "cultTitle": "Agile Culture & Change Management",
+    "cultDesc": "We implement agile methodologies with your teams, manage change adoption and foster a culture of continuous innovation.",
+    "cultTag1": "Agile methodologies",
+    "cultTag2": "Change management",
+    "cultTag3": "Continuous innovation",
     "benefit1Title": "AI-powered strategy",
     "benefit1Desc": "We use AI to analyze your digital maturity, detect opportunities and prioritize the highest-impact initiatives.",
     "benefit2Title": "Continuous innovation",

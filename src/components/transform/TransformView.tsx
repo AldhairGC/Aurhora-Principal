@@ -24,9 +24,7 @@ const services = [
   { id: "godigital", title: "GoDigital Suite", link: "/servicios/godigital", available: true },
   { id: "transformacion-digital", title: "Transformación Digital", link: "/servicios/transformacion-digital", available: true },
   { id: "desarrollo-software", title: "Desarrollo de Software", link: "/servicios/desarrollo-software", available: true },
-  { id: "optimizacion-procesos", title: "Optimización de Procesos", link: "/servicios/optimizacion-procesos", available: true },
   { id: "impulso-marketing", title: "Impulso y Marketing", link: "/servicios/impulso-marketing", available: true },
-  { id: "cultura-agil", title: "Cultura Ágil", link: "/servicios/cultura-agil", available: true },
 ];
 
 const benefits = [
@@ -103,6 +101,34 @@ export function TransformView() {
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.06] text-aurora-cyan"><Icon className="h-5 w-5" /></div>
                 <h3 className="mt-5 text-lg font-semibold tracking-[-0.01em]">{t(tk)}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-400">{t(d)}</p>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </Section>
+
+      {/* ───────────── PILARES (Procesos + Cultura) ───────────── */}
+      <Section className="py-20 md:py-28">
+        <div className="max-w-3xl">
+          <Reveal><Eyebrow className="mb-6">{t("pillarsEyebrow")}</Eyebrow></Reveal>
+          <Reveal delay={0.05}><h2 className="text-3xl font-semibold tracking-[-0.02em] md:text-4xl">{t("pillarsTitle")}</h2></Reveal>
+          <Reveal delay={0.1}><p className="mt-5 text-lg leading-relaxed text-secondaryText">{t("pillarsDescription")}</p></Reveal>
+        </div>
+        <Stagger className="mt-12 grid gap-6 lg:grid-cols-2" stagger={0.1}>
+          {[
+            { Icon: Workflow, t: "procTitle", d: "procDesc", tags: ["procTag1", "procTag2", "procTag3"] },
+            { Icon: Users, t: "cultTitle", d: "cultDesc", tags: ["cultTag1", "cultTag2", "cultTag3"] },
+          ].map(({ Icon, t: tk, d, tags }) => (
+            <StaggerItem key={tk} className="h-full">
+              <div className="h-full rounded-2xl border border-line bg-white p-8">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-aurora-indigo/[0.08] text-aurora-indigo"><Icon className="h-6 w-6" /></div>
+                <h3 className="mt-5 text-xl font-semibold tracking-[-0.01em] text-ink">{t(tk)}</h3>
+                <p className="mt-3 leading-relaxed text-secondaryText">{t(d)}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span key={tag} className="rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-secondaryText">{t(tag)}</span>
+                  ))}
+                </div>
               </div>
             </StaggerItem>
           ))}

@@ -8,7 +8,7 @@
 import React from "react";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
-import { Globe, Rocket, Code, ShieldCheck, TrendingUp, Users, ArrowRight } from "lucide-react";
+import { Globe, Rocket, Code, TrendingUp, ArrowRight } from "lucide-react";
 import { Section, Eyebrow } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem } from "@/lib/motion";
 
@@ -16,9 +16,7 @@ const items = [
   { key: "godigital", href: "/servicios/godigital", Icon: Globe },
   { key: "transformation", href: "/servicios/transformacion-digital", Icon: Rocket },
   { key: "development", href: "/servicios/desarrollo-software", Icon: Code },
-  { key: "optimization", href: "/servicios/optimizacion-procesos", Icon: ShieldCheck },
   { key: "marketing", href: "/servicios/impulso-marketing", Icon: TrendingUp },
-  { key: "agile", href: "/servicios/cultura-agil", Icon: Users },
 ] as const;
 
 export function Services() {

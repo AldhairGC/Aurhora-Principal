@@ -21,9 +21,7 @@ const services = [
   { id: "godigital", title: "GoDigital Suite", link: "/servicios/godigital", available: true },
   { id: "transformacion-digital", title: "Transformación Digital", link: "/servicios/transformacion-digital", available: true },
   { id: "desarrollo-software", title: "Desarrollo de Software", link: "/servicios/desarrollo-software", available: true },
-  { id: "optimizacion-procesos", title: "Optimización de Procesos", link: "/servicios/optimizacion-procesos", available: true },
   { id: "impulso-marketing", title: "Impulso y Marketing", link: "/servicios/impulso-marketing", available: true },
-  { id: "cultura-agil", title: "Cultura Ágil", link: "/servicios/cultura-agil", available: true },
 ];
 
 export function HomeView() {

@@ -33,6 +33,23 @@ const nextConfig: NextConfig = {
   // Modo standalone para Docker/serverless (opcional)
   // output: 'standalone',
   
+  // Redirecciones: Optimización de Procesos y Cultura Ágil ahora forman parte
+  // de Transformación Digital (fusión de servicios).
+  async redirects() {
+    return [
+      {
+        source: "/:locale/servicios/optimizacion-procesos",
+        destination: "/:locale/servicios/transformacion-digital",
+        permanent: true,
+      },
+      {
+        source: "/:locale/servicios/cultura-agil",
+        destination: "/:locale/servicios/transformacion-digital",
+        permanent: true,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {

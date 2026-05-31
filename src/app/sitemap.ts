@@ -11,9 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/servicios/godigital",
     "/servicios/transformacion-digital",
     "/servicios/desarrollo-software",
-    "/servicios/optimizacion-procesos",
     "/servicios/impulso-marketing",
-    "/servicios/cultura-agil",
   ];
 
   const sitemap: MetadataRoute.Sitemap = [];

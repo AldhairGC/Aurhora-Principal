@@ -5,18 +5,15 @@ import React from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { 
-  Zap, 
-  Rocket, 
-  Code, 
-  TrendingUp, 
-  Target, 
-  Cog,
+import {
+  Zap,
+  Rocket,
+  Code,
+  TrendingUp,
   Building,
   CreditCard,
   ShoppingCart,
   Users,
-  Sparkles,
   ArrowRight
 } from 'lucide-react';
 import { fadeWithBlurVariants, fadeInUpVariants, staggerContainer } from '@/lib/animations/stripe-motions';
@@ -66,20 +63,6 @@ export function MegaMenu({ isOpen, onClose, locale }: MegaMenuProps) {
           href: `/${locale}/servicios/impulso-marketing`,
           icon: TrendingUp,
           color: 'text-pink-600'
-        },
-        {
-          name: t('services.agile.title'),
-          description: t('megaMenu.culturaDesc'),
-          href: `/${locale}/servicios/cultura-agil`,
-          icon: Target,
-          color: 'text-amber-600'
-        },
-        {
-          name: t('services.optimization.title'),
-          description: t('megaMenu.optimizacionDesc'),
-          href: `/${locale}/servicios/optimizacion-procesos`,
-          icon: Cog,
-          color: 'text-emerald-600'
         }
       ]
     }
