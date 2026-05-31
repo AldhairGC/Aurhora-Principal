@@ -94,7 +94,7 @@ export function SiteHeader({ services, openContactModal }: SiteHeaderProps) {
         aria-label={t("header.mainNavigation")}
         className={`fixed top-0 inset-x-0 z-50 border-b transition-all duration-300 ${
           scrolled
-            ? "bg-surface/80 border-line backdrop-blur-md"
+            ? "bg-surface/95 border-line shadow-[0_1px_3px_rgba(0,0,0,0.05)] backdrop-blur-md"
             : "bg-surface/40 border-transparent backdrop-blur-sm"
         }`}
       >

@@ -42,9 +42,6 @@
     "clientSatisfaction": "Satisfacción del cliente",
     "activeClients": "Clientes activos",
     "trustedBy": "Empresas que confían en nosotros",
-    "testimonialName": "Ana Rodríguez",
-    "testimonialRole": "CEO, FinTech Solutions",
-    "testimonialQuote": "Aurhora transformó nuestra visión en realidad. Su enfoque estratégico y ejecución impecable nos permitieron lanzar nuestra plataforma en tiempo récord, superando todas nuestras expectativas.",
     "resultsSpeak": "hablan por sí mismos"
   },
   "stickyCTA": {
@@ -274,8 +271,6 @@
     "addonsSubtitle": "Nuestros Add-ons son soluciones modulares diseñadas para habilitar diversas necesidades operativas de tu negocio, compatibles desde el Paquete Básico.",
     "targetTitle": "¿Para Quién es GoDigital Suite?",
     "targetSubtitle": "Si buscas transformar digitalmente tu negocio, consolidar tu presencia online y optimizar tus operaciones, esta suite es para ti.",
-    "testimonialsTitle": "Lo que Dicen Nuestros Clientes Satisfechos",
-    "testimonialsSubtitle": "Historias reales de transformación y crecimiento con GoDigital Suite.",
     "faqTitle": "Preguntas Frecuentes",
     "faqSubtitle": "Resolvemos tus dudas para que tomes la mejor decisión para tu negocio.",
     "ctaTitle": "¿Listo para transformar tu negocio?",
@@ -452,23 +447,6 @@
         "name": "Soporte para Múltiples Idiomas",
         "price": "+$129/mes",
         "description": "Expande tu alcance a audiencias internacionales."
-      }
-    },
-    "testimonialsList": {
-      "anaPerez": {
-        "quote": "GoDigital Suite transformó nuestra forma de interactuar con los clientes. El proceso fue rápido y el equipo de Aurhora, excepcional.",
-        "name": "Ana Pérez",
-        "company": "Consultoría Creativa"
-      },
-      "carlosLopez": {
-        "quote": "Desde que implementamos la solución de agendamiento, hemos ahorrado horas de trabajo administrativo. ¡Totalmente recomendado!",
-        "name": "Carlos López",
-        "company": "Salud y Bienestar Integral"
-      },
-      "sofiaMartinez": {
-        "quote": "El Mini-CRM es justo lo que necesitábamos para organizar la información de nuestros clientes. Un antes y un después.",
-        "name": "Sofía Martínez",
-        "company": "Estudio de Diseño SM"
       }
     },
     "faqList": {
@@ -736,7 +714,7 @@
     "experienceSubtitle": "Liderando la transformación en la industria.",
     "essenceQuote": "\"Fusionamos la agilidad innovadora con la sabiduría de la experiencia.\"",
     "orchestrationBadge": "Cómo trabajamos",
-    "orchestrationTitle":"El Arte de la Orquestación Estratégica",
+    "orchestrationTitle": "El Arte de la Orquestación Estratégica",
     "orchestrationDescription": "Nuestra capacidad única reside en conocer a fondo tanto los grandes corporativos como los emprendimientos desde su raíz. Esta perspectiva nos permite consolidar equipos multidisciplinarios de expertos que no solo entienden diversos sectores, sino que saben cómo \"tropicalizar\" funcionalidades, migrando lo mejor de cada mundo para crear soluciones innovadoras y a la medida para nuestros clientes.",
     "expertOrchestration": "Orquestación Experta",
     "expertOrchestrationDesc": "Somos maestros en la gestión e integración de soluciones complejas, conectando talento y tecnología para resultados sinérgicos y eficientes.",
@@ -746,7 +724,7 @@
     "tropicalizationInnovationDesc": "Adaptamos y migramos funcionalidades exitosas de un sector a otro, tomando lo mejor de cada mundo para proponer soluciones frescas y disruptivas.",
     "sectoralStrengthBadge": "Nuestra Fortaleza Sectorial",
     "sectorsHeading": "Conocimiento profundo en los sectores que más lo exigen",
-    "insuranceTitle":"Expertos en el Ecosistema de Seguros (InsurTech)",
+    "insuranceTitle": "Expertos en el Ecosistema de Seguros (InsurTech)",
     "insuranceDescription1": "Conocemos a profundidad la industria aseguradora mexicana y latinoamericana. Hemos colaborado con las principales aseguradoras del país, desarrollando e integrando soluciones tecnológicas a lo largo de toda su cadena de valor.",
     "insuranceDescription2": "Nuestra experiencia abarca una amplia gama de productos y líneas de negocio, permitiéndonos ofrecer perspectivas innovadoras y soluciones pragmáticas que responden a los desafíos específicos del sector.",
     "fintechTitle": "Impulsores de la Innovación en Fintech",

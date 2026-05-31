@@ -42,9 +42,6 @@
     "clientSatisfaction": "Client satisfaction",
     "activeClients": "Active clients",
     "trustedBy": "Trusted by leading companies",
-    "testimonialName": "Ana Rodriguez",
-    "testimonialRole": "CEO, FinTech Solutions",
-    "testimonialQuote": "Aurhora turned our vision into reality. Their strategic approach and flawless execution allowed us to launch our platform in record time, exceeding all our expectations.",
     "resultsSpeak": "speak for themselves"
   },
   "stickyCTA": {
@@ -274,8 +271,6 @@
     "addonsSubtitle": "Our Add-ons are modular solutions designed to enable various operational needs of your business, compatible from the Basic Package.",
     "targetTitle": "Who is GoDigital Suite for?",
     "targetSubtitle": "If you seek to digitally transform your business, consolidate your online presence, and optimize your operations, this suite is for you.",
-    "testimonialsTitle": "What Our Satisfied Customers Say",
-    "testimonialsSubtitle": "Real stories of transformation and growth with GoDigital Suite.",
     "faqTitle": "Frequently Asked Questions",
     "faqSubtitle": "We resolve your doubts so you can make the best decision for your business.",
     "ctaTitle": "Ready to transform your business?",
@@ -452,23 +447,6 @@
         "name": "Multi-language Support",
         "price": "+$129/month",
         "description": "Expand your reach to international audiences."
-      }
-    },
-    "testimonialsList": {
-      "anaPerez": {
-        "quote": "GoDigital Suite transformed our way of interacting with clients. The process was fast and the Aurhora team, exceptional.",
-        "name": "Ana Pérez",
-        "company": "Creative Consulting"
-      },
-      "carlosLopez": {
-        "quote": "Since we implemented the scheduling solution, we have saved hours of administrative work. Totally recommended!",
-        "name": "Carlos López",
-        "company": "Health and Integral Wellness"
-      },
-      "sofiaMartinez": {
-        "quote": "The Mini-CRM is just what we needed to organize our client information. A before and after.",
-        "name": "Sofía Martínez",
-        "company": "SM Design Studio"
       }
     },
     "faqList": {
@@ -736,7 +714,7 @@
     "experienceSubtitle": "Leading transformation in the industry.",
     "essenceQuote": "\"We merge innovative agility with the wisdom of experience.\"",
     "orchestrationBadge": "How we work",
-    "orchestrationTitle":"The Art of Strategic Orchestration",
+    "orchestrationTitle": "The Art of Strategic Orchestration",
     "orchestrationDescription": "Our unique capability lies in knowing both large corporations and startups from their roots. This perspective allows us to consolidate multidisciplinary teams of experts who not only understand diverse sectors, but know how to \"tropicalize\" functionalities, migrating the best from each world to create innovative and tailored solutions for our clients.",
     "expertOrchestration": "Expert Orchestration",
     "expertOrchestrationDesc": "We are masters in managing and integrating complex solutions, connecting talent and technology for synergistic and efficient results.",
@@ -746,7 +724,7 @@
     "tropicalizationInnovationDesc": "We adapt and migrate successful functionalities from one sector to another, taking the best from each world to propose fresh and disruptive solutions.",
     "sectoralStrengthBadge": "Our Sectoral Strength",
     "sectorsHeading": "Deep expertise in the sectors that demand it most",
-    "insuranceTitle":"Experts in the Insurance Ecosystem (InsurTech)",
+    "insuranceTitle": "Experts in the Insurance Ecosystem (InsurTech)",
     "insuranceDescription1": "We have deep knowledge of the Mexican and Latin American insurance industry. We have collaborated with the country's main insurers, developing and integrating technological solutions throughout their value chain.",
     "insuranceDescription2": "Our experience spans a wide range of products and business lines, allowing us to offer innovative perspectives and pragmatic solutions that respond to the specific challenges of the sector.",
     "fintechTitle": "Drivers of Innovation in Fintech",
