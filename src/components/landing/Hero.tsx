@@ -7,6 +7,7 @@
  */
 
 import React from "react";
+import { useTranslations } from "next-intl";
 import { Section, Eyebrow, Button, GradientText } from "@/components/ui";
 import { Reveal, CountUp, MagneticButton } from "@/lib/motion";
 
@@ -17,6 +18,8 @@ type HeroProps = {
 };
 
 export function Hero({ onContactClick }: HeroProps) {
+  const t = useTranslations("hero");
+
   return (
     <Section glow id="hero" className="pt-32 pb-24 md:pt-40 md:pb-32">
       {/* retícula sutil que se desvanece hacia abajo */}
@@ -33,9 +36,7 @@ export function Hero({ onContactClick }: HeroProps) {
 
       <div className="relative">
         <Reveal>
-          <Eyebrow className="mb-6">
-            Transformación digital · Seguros · Banca · Fintech
-          </Eyebrow>
+          <Eyebrow className="mb-6">{t("eyebrow")}</Eyebrow>
         </Reveal>
 
         <Reveal delay={0.05}>
@@ -48,7 +49,7 @@ export function Hero({ onContactClick }: HeroProps) {
               maxWidth: "16ch",
             }}
           >
-            Ingeniería y estrategia para <GradientText>transformar</GradientText> tu negocio.
+            {t("titleLead")} <GradientText>{t("titleHighlight")}</GradientText> {t("titleTail")}
           </h1>
         </Reveal>
 
@@ -57,8 +58,7 @@ export function Hero({ onContactClick }: HeroProps) {
             className="mt-7 text-secondaryText"
             style={{ fontSize: "clamp(1.05rem, 1.6vw, 1.3rem)", lineHeight: 1.6, maxWidth: "54ch" }}
           >
-            Diseñamos, construimos y escalamos productos digitales con un equipo que ha liderado
-            la vanguardia tecnológica por más de 10 años. Visión, ejecución y resultados medibles.
+            {t("subtitleV2")}
           </p>
         </Reveal>
 
@@ -71,11 +71,11 @@ export function Hero({ onContactClick }: HeroProps) {
                 icon="arrow"
                 onClick={() => onContactClick?.("hero_agenda_sesion")}
               >
-                Agenda una sesión estratégica
+                {t("ctaPrimary")}
               </Button>
             </MagneticButton>
             <Button variant="secondary" size="lg" icon="arrow-up" href="#servicios">
-              Ver servicios
+              {t("ctaSecondary")}
             </Button>
           </div>
         </Reveal>
@@ -83,9 +83,9 @@ export function Hero({ onContactClick }: HeroProps) {
         {/* métricas con count-up */}
         <div className="mt-16 flex flex-wrap gap-x-12 gap-y-6 border-t border-line pt-8">
           {[
-            { node: <CountUp value={10} prefix="+" />, v: "años de experiencia" },
-            { node: <CountUp value={3} />, v: "sectores: seguros · banca · fintech" },
-            { node: <>1–2 sem</>, v: "implementación express" },
+            { node: <CountUp value={10} prefix="+" />, v: t("metric1Label") },
+            { node: <CountUp value={3} />, v: t("metric2Label") },
+            { node: <>{t("metric3Value")}</>, v: t("metric3Label") },
           ].map((m, i) => (
             <div key={i}>
               <div style={{ fontFamily: mono, fontSize: "1.75rem", fontWeight: 500, letterSpacing: "-0.02em" }}>

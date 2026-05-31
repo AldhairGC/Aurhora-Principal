@@ -60,9 +60,21 @@
     "description": "Tu socio estratégico en transformación digital y optimización de procesos. Integramos visión, tecnología y ejecución experta para acelerar tu crecimiento y maximizar tu potencial.",
     "startTransformation": "Inicia tu Transformación",
     "exploreServices": "Explorar Servicios",
-    "experience": "+10 años impulsando la innovación | Seguros | Banca | Fintech"
+    "experience": "+10 años impulsando la innovación | Seguros | Banca | Fintech",
+    "eyebrow": "Transformación digital · Seguros · Banca · Fintech",
+    "titleLead": "Ingeniería y estrategia para",
+    "titleHighlight": "transformar",
+    "titleTail": "tu negocio.",
+    "subtitleV2": "Diseñamos, construimos y escalamos productos digitales con un equipo que ha liderado la vanguardia tecnológica por más de 10 años. Visión, ejecución y resultados medibles.",
+    "ctaPrimary": "Agenda una sesión estratégica",
+    "ctaSecondary": "Ver servicios",
+    "metric1Label": "años de experiencia",
+    "metric2Label": "sectores: seguros · banca · fintech",
+    "metric3Value": "1–2 sem",
+    "metric3Label": "implementación express"
   },
   "services": {
+    "eyebrow": "Servicios",
     "title": "Nuestras Capacidades Estratégicas",
     "description": "Desde la estrategia hasta la implementación y evolución, cubrimos el espectro de la transformación.",
     "godigital": {
@@ -97,6 +109,7 @@
     }
   },
   "philosophy": {
+    "eyebrow": "Filosofía",
     "title": "Nuestra Filosofía",
     "description": "No solo resolvemos problemas, co-creamos futuro. Integramos estrategia, talento y tecnología para impulsar una transformación digital real y resultados medibles.",
     "item1": {
@@ -155,6 +168,7 @@
     "trustDescription": "Construimos relaciones estratégicas duraderas. Pronto compartiremos casos de éxito."
   },
   "process": {
+    "eyebrow": "Proceso",
     "title": "Nuestro Proceso de Transformación",
     "description": "Una metodología colaborativa en 5 fases, desde la visión hasta la evolución continua.",
     "step1": {

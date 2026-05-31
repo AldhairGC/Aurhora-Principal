@@ -60,9 +60,21 @@
     "description": "Aurhora Agency: Seu parceiro estratégico em transformação digital e otimização de processos. Integramos visão, tecnologia e execução especializada para maximizar seu potencial.",
     "startTransformation": "Inicie sua Transformação",
     "exploreServices": "Explorar Serviços",
-    "experience": "+10 anos impulsionando inovação | Seguros | Bancos | Fintech"
+    "experience": "+10 anos impulsionando inovação | Seguros | Bancos | Fintech",
+    "eyebrow": "Transformação digital · Seguros · Banca · Fintech",
+    "titleLead": "Engenharia e estratégia para",
+    "titleHighlight": "transformar",
+    "titleTail": "o seu negócio.",
+    "subtitleV2": "Projetamos, construímos e escalamos produtos digitais com uma equipe que lidera a vanguarda tecnológica há mais de 10 anos. Visão, execução e resultados mensuráveis.",
+    "ctaPrimary": "Agende uma sessão estratégica",
+    "ctaSecondary": "Ver serviços",
+    "metric1Label": "anos de experiência",
+    "metric2Label": "setores: seguros · banca · fintech",
+    "metric3Value": "1–2 sem",
+    "metric3Label": "implementação express"
   },
   "services": {
+    "eyebrow": "Serviços",
     "title": "Nossas Capacidades Estratégicas",
     "description": "Da estratégia à implementação e evolução, cobrimos todo o espectro da transformação.",
     "godigital": {
@@ -97,6 +109,7 @@
     }
   },
   "philosophy": {
+    "eyebrow": "Filosofia",
     "title": "Nossa Filosofia",
     "description": "Não apenas resolvemos problemas, co-criamos o futuro. Integramos estratégia, talento e tecnologia para impulsionar uma transformação digital real e resultados mensuráveis.",
     "item1": {
@@ -155,6 +168,7 @@
     "trustDescription": "Construímos relações estratégicas duradouras. Em breve compartilharemos casos de sucesso."
   },
   "process": {
+    "eyebrow": "Processo",
     "title": "Nosso Processo de Transformação",
     "description": "Uma metodologia colaborativa em 5 fases, da visão à evolução contínua.",
     "step1": {

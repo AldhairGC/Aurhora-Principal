@@ -28,7 +28,7 @@ export function Services() {
     <Section id="servicios" className="py-24 md:py-32">
       <div className="max-w-2xl">
         <Reveal>
-          <Eyebrow className="mb-6">Servicios</Eyebrow>
+          <Eyebrow className="mb-6">{t("eyebrow")}</Eyebrow>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="text-4xl font-semibold tracking-[-0.02em] md:text-5xl">{t("title")}</h2>

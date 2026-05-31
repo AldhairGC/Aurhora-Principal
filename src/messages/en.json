@@ -60,9 +60,21 @@
     "description": "Aurhora Agency: Your strategic partner in digital transformation and process optimization. We integrate vision, technology, and expert execution to maximize your potential.",
     "startTransformation": "Start your Transformation",
     "exploreServices": "Explore Services",
-    "experience": "+10 years driving innovation | Insurance | Banking | Fintech"
+    "experience": "+10 years driving innovation | Insurance | Banking | Fintech",
+    "eyebrow": "Digital transformation · Insurance · Banking · Fintech",
+    "titleLead": "Engineering and strategy to",
+    "titleHighlight": "transform",
+    "titleTail": "your business.",
+    "subtitleV2": "We design, build, and scale digital products with a team that has led the technological forefront for over 10 years. Vision, execution, and measurable results.",
+    "ctaPrimary": "Book a strategy session",
+    "ctaSecondary": "View services",
+    "metric1Label": "years of experience",
+    "metric2Label": "sectors: insurance · banking · fintech",
+    "metric3Value": "1–2 wks",
+    "metric3Label": "express implementation"
   },
   "services": {
+    "eyebrow": "Services",
     "title": "Our Strategic Capabilities",
     "description": "From strategy to implementation and evolution, we cover the full spectrum of transformation.",
     "godigital": {
@@ -97,6 +109,7 @@
     }
   },
   "philosophy": {
+    "eyebrow": "Philosophy",
     "title": "Our Philosophy",
     "description": "We don't just solve problems, we co-create the future. We integrate strategy, talent, and technology to drive real digital transformation and measurable results.",
     "item1": {
@@ -155,6 +168,7 @@
     "trustDescription": "We build lasting strategic relationships. We will soon share success stories."
   },
   "process": {
+    "eyebrow": "Process",
     "title": "Our Transformation Process",
     "description": "A collaborative 5-phase methodology, from vision to continuous evolution.",
     "step1": {
