@@ -1,5 +1,5 @@
-import AurhoraLogin from '@/components/AurhoraLogin';
+import LoginView from "@/components/auth/LoginView";
 
 export default function LoginPage() {
-  return <AurhoraLogin />;
+  return <LoginView />;
 }

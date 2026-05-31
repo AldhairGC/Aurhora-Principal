@@ -1,6 +1,5 @@
-// src/app/not-found.tsx
-import Error404Page from '@/components/Error404Page';
+import NotFoundView from "@/components/error/NotFoundView";
 
 export default function NotFound() {
-  return <Error404Page />;
+  return <NotFoundView />;
 }
