@@ -70,7 +70,9 @@ export function SiteHeader({ services, openContactModal }: SiteHeaderProps) {
   const navLinks = [
     { href: "/", label: t("header.inicio") },
     { href: "/quienes-somos", label: t("header.quienesSomos") },
-    { href: "/recursos", label: t("header.recursos") },
+    // Desactivado temporalmente: la página de Recursos aún no tiene contenido.
+    // Reactivar descomentando cuando esté lista.
+    // { href: "/recursos", label: t("header.recursos") },
   ];
 
   const linkBase =
