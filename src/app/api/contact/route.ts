@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { buildUserEmailHtml } from "./email-template-user";
 import { buildAdminEmailHtml } from "./email-template-admin";
+import { createBrevoDeal } from "@/lib/brevo/deals";
 
 // Remitente — el dominio/email debe estar autenticado en Brevo
 const SENDER = {
@@ -198,6 +199,19 @@ export async function POST(request: Request) {
     });
     if (crmUpsert.error) {
       console.error("Aviso: no se pudo sincronizar el contacto con Brevo CRM:", crmUpsert.error);
+    }
+
+    // Crear la oportunidad (deal) en el pipeline de ventas. Se espera (await)
+    // porque en serverless un fire-and-forget se cancelaría tras el return; la
+    // función captura sus propios errores, así que nunca rompe el formulario.
+    const dealsApiKey = process.env.BREVO_API_KEY ?? "";
+    if (dealsApiKey) {
+      await createBrevoDeal(dealsApiKey, {
+        name: nombre,
+        email,
+        empresa,
+        source: source || "web",
+      });
     }
 
     return NextResponse.json(
