@@ -2,7 +2,7 @@
 
 /**
  * ContactModal — modal de contacto del sistema Aurora.
- * Reutiliza useContactForm (RHF + Zod + Resend) con el diseño nuevo.
+ * Reutiliza useContactForm (RHF + Zod + Brevo) con el diseño nuevo.
  * Cierra con Escape / overlay, atrapa el foco y muestra estado de éxito.
  */
 

@@ -11,6 +11,7 @@ import {
 } from '@/lib/seo/metadata';
 import Script from 'next/script';
 import CookieConsent from '@/components/CookieConsent';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -66,6 +67,7 @@ export default async function LocaleLayout({
           }}
         />
         {children}
+        <WhatsAppButton />
         <CookieConsent />
       </ThemeProvider>
     </NextIntlClientProvider>

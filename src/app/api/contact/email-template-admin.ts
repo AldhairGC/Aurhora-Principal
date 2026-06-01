@@ -1,7 +1,7 @@
 /**
  * Plantilla del correo de aviso al equipo (admin).
  * Devuelve HTML (string) para enviarse vía la API de Brevo.
- * Reemplaza al componente React AdminEmailTemplate (específico de Resend).
+ * Reemplaza al componente React AdminEmailTemplate del stack anterior.
  */
 
 function escapeHtml(value: string): string {

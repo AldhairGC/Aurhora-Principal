@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getContactFormSchema, ContactFormData } from "@/lib/validations/contact";
 import { useLocale } from "next-intl";
+import { trackEvent } from "@/lib/analytics/track";
 
 export const useContactForm = (defaultValues?: Partial<ContactFormData>) => {
   const locale = useLocale();
@@ -48,6 +49,18 @@ export const useContactForm = (defaultValues?: Partial<ContactFormData>) => {
 
       if (!response.ok) {
         throw new Error(data.error || "Error al enviar el formulario");
+      }
+
+      // Medición: conversión principal. El `source` permite atribuir el lead
+      // al CTA/canal de origen (ver docs/MARKETING_STRATEGY.md §2.1).
+      const source = formData.source || "sitio_web";
+      trackEvent("contact_submit", {
+        source,
+        plan: formData.selectedPlan || undefined,
+      });
+      // Si el CTA de origen es una demo, registramos también la conversión de demo.
+      if (/demo/i.test(source)) {
+        trackEvent("demo_scheduled", { source, plan: formData.selectedPlan || undefined });
       }
 
       reset();

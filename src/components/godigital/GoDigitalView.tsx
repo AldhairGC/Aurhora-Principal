@@ -18,6 +18,7 @@ import { FinalCTA } from "@/components/landing/FinalCTA";
 import { ContactModal } from "@/components/contact/ContactModal";
 import { Section, Eyebrow, GradientText, Button, Badge } from "@/components/ui";
 import { Reveal, Stagger, StaggerItem, MagneticButton } from "@/lib/motion";
+import { trackEvent } from "@/lib/analytics/track";
 
 const services = [
   { id: "godigital", title: "GoDigital Suite", link: "/servicios/godigital", available: true },
@@ -57,7 +58,10 @@ export function GoDigitalView() {
   const t = useTranslations("godigital");
   const [modal, setModal] = useState<{ open: boolean; source: string; plan?: string }>({ open: false, source: "" });
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const open = (source: string, plan?: string) => setModal({ open: true, source, plan });
+  const open = (source: string, plan?: string) => {
+    if (plan) trackEvent("plan_selected", { plan, source });
+    setModal({ open: true, source, plan });
+  };
   const close = () => setModal((m) => ({ ...m, open: false }));
 
   return (

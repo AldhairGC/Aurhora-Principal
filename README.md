@@ -11,8 +11,9 @@ Sitio web corporativo de Aurhora Agency, una agencia especializada en transforma
 - ✨ **Diseño moderno y responsivo** con animaciones fluidas
 - 🌓 **Modo oscuro/claro** con persistencia en localStorage
 - 🌍 **Multiidioma** (Español MX, English US, Português BR)
-- 📊 **Analytics integrado** (Google Analytics, GTM, Microsoft Clarity)
-- 📧 **Sistema de contacto** con envío de emails vía Resend
+- 📊 **Analytics integrado** (Google Analytics, GTM, Microsoft Clarity) con eventos de conversión
+- 📧 **Sistema de contacto** con envío de emails vía Brevo
+- 💬 **Botón flotante de WhatsApp** para contacto directo
 - ⚡ **Optimizado para rendimiento** con Next.js 15 y React 19
 - 🎨 **Tailwind CSS** para estilos modulares y mantenibles
 
@@ -27,7 +28,7 @@ Sitio web corporativo de Aurhora Agency, una agencia especializada en transforma
 
 ```bash
 git clone https://github.com/AldhairGC/Aurhora-Principal.git
-cd Aurhora-Website-main-4
+cd "Aurhora Agency Website"
 ```
 
 2. Instala las dependencias:
@@ -48,10 +49,13 @@ Crea un archivo `.env.local` basándote en `.env.example`:
 cp .env.example .env.local
 ```
 
-Edita `.env.local` y agrega tu API key de Resend:
+Edita `.env.local` y agrega tu API key de Brevo y el número de WhatsApp:
 
 ```env
-RESEND_API_KEY=tu_api_key_aqui
+BREVO_API_KEY=tu_api_key_aqui
+BREVO_SENDER_EMAIL=contacto@aurhora.agency
+BREVO_ADMIN_EMAIL=contacto@aurhora.agency
+NEXT_PUBLIC_WHATSAPP_NUMBER=5215512345678
 ```
 
 ## 🚦 Comandos Disponibles
@@ -71,7 +75,7 @@ npm run lint         # Ejecuta ESLint para verificar el código
 ## 📁 Estructura del Proyecto
 
 ```
-Aurhora-Website-main-4/
+Aurhora Agency Website/
 ├── public/              # Archivos estáticos (imágenes, iconos)
 ├── src/
 │   ├── app/            # App Router de Next.js
@@ -119,17 +123,17 @@ Aurhora-Website-main-4/
 - **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
 - **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
 - **Iconos:** [Lucide React](https://lucide.dev/)
-- **Email:** [Resend](https://resend.com/)
+- **Email:** [Brevo](https://brevo.com/)
 - **Analytics:** Google Analytics, GTM, Microsoft Clarity
 
 ## 📧 Configuración de Email
 
-El sistema de contacto utiliza [Resend](https://resend.com/) para el envío de correos electrónicos.
+El sistema de contacto utiliza [Brevo](https://brevo.com/) para el envío de correos electrónicos transaccionales.
 
-1. Crea una cuenta en [Resend](https://resend.com/)
-2. Genera una API key
-3. Verifica tu dominio (actualmente configurado para `aurhora.it.com`)
-4. Agrega la API key a tu archivo `.env.local`
+1. Crea una cuenta en [Brevo](https://brevo.com/)
+2. Genera una API key (SMTP & API → API Keys)
+3. Verifica tu dominio `aurhora.agency` (remitente autenticado)
+4. Agrega `BREVO_API_KEY`, `BREVO_SENDER_EMAIL` y `BREVO_ADMIN_EMAIL` a tu archivo `.env.local`
 
 ## 🌍 Internacionalización
 
@@ -181,7 +185,7 @@ El proyecto es compatible con cualquier plataforma que soporte Next.js:
 
 ## 📞 Contacto
 
-- **Email:** contacto@aurhora.it.com
+- **Email:** contacto@aurhora.agency
 - **LinkedIn:** [Aurhora Agency](https://linkedin.com/company/aurhora-agency)
 - **Instagram:** [@aurhora.agency](https://instagram.com/aurhora.agency)
 - **Facebook:** [Aurhora Agency](https://facebook.com/aurhora.agency)

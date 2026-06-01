@@ -96,7 +96,10 @@ npm run lint
 
 Crear `.env.local`:
 ```env
-RESEND_API_KEY=tu_api_key_aqui
+BREVO_API_KEY=tu_api_key_aqui
+BREVO_SENDER_EMAIL=contacto@aurhora.agency
+BREVO_ADMIN_EMAIL=contacto@aurhora.agency
+NEXT_PUBLIC_WHATSAPP_NUMBER=5215512345678
 ```
 
 ---
@@ -179,7 +182,7 @@ router.replace(pathname, { locale: 'en' });
 
 1. **Probar en desarrollo**: `npm run dev`
 2. **Revisar las páginas** en los 3 idiomas
-3. **Actualizar `.env.local`** con tu API key de Resend
+3. **Actualizar `.env.local`** con tu API key de Brevo
 4. **Deploy a producción** cuando estés listo
 
 ---

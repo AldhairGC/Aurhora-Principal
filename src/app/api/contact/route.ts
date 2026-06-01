@@ -8,8 +8,66 @@ const SENDER = {
   email: process.env.BREVO_SENDER_EMAIL || "contacto@aurhora.agency",
 };
 const ADMIN_EMAIL = process.env.BREVO_ADMIN_EMAIL || "contacto@aurhora.agency";
+// Lista de Brevo donde se agregan los leads del sitio (opcional).
+const CONTACT_LIST_ID = process.env.BREVO_CONTACT_LIST_ID
+  ? Number(process.env.BREVO_CONTACT_LIST_ID)
+  : undefined;
 
 type BrevoResult = { data?: unknown; error?: { message: string } };
+
+/**
+ * Crea o actualiza el contacto en el CRM de Brevo (upsert por email).
+ * Es enriquecimiento, NO la vía crítica: si falla, el lead ya se notificó por
+ * correo, así que solo registramos el error y seguimos.
+ *
+ * Atributos personalizados usados (créalos en Brevo → Contactos → Configuración
+ * → Atributos de contacto, como tipo texto): EMPRESA, TELEFONO, ORIGEN, MENSAJE.
+ */
+async function upsertBrevoContact(params: {
+  email: string;
+  nombre?: string;
+  telefono?: string;
+  empresa?: string;
+  source?: string;
+  mensaje?: string;
+}): Promise<BrevoResult> {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) return { error: { message: "BREVO_API_KEY no está configurada" } };
+
+  const attributes: Record<string, string> = {};
+  if (params.nombre) attributes.FIRSTNAME = params.nombre;
+  if (params.empresa) attributes.EMPRESA = params.empresa;
+  if (params.telefono) attributes.TELEFONO = params.telefono;
+  if (params.source) attributes.ORIGEN = params.source;
+  if (params.mensaje) attributes.MENSAJE = params.mensaje.slice(0, 500);
+
+  try {
+    const res = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: {
+        "api-key": apiKey,
+        "Content-Type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify({
+        email: params.email,
+        attributes,
+        updateEnabled: true, // upsert: no falla si el contacto ya existe
+        ...(CONTACT_LIST_ID ? { listIds: [CONTACT_LIST_ID] } : {}),
+      }),
+    });
+
+    if (!res.ok) {
+      const detail = await res.text();
+      return { error: { message: detail || `Brevo HTTP ${res.status}` } };
+    }
+    return { data: res.status === 204 ? null : await res.json() };
+  } catch (err) {
+    return {
+      error: { message: err instanceof Error ? err.message : "Error de red con Brevo" },
+    };
+  }
+}
 
 /**
  * Envía un correo transaccional vía la API REST de Brevo.
@@ -126,6 +184,20 @@ export async function POST(request: Request) {
         { error: "No se pudo enviar el aviso al equipo", detail: adminSend.error.message },
         { status: 502 }
       );
+    }
+
+    // Enriquecimiento CRM: registrar/actualizar el lead en Brevo con su origen.
+    // No bloquea la respuesta: el correo de aviso ya garantizó la captura.
+    const crmUpsert = await upsertBrevoContact({
+      email,
+      nombre,
+      telefono,
+      empresa,
+      source,
+      mensaje: mainMessage,
+    });
+    if (crmUpsert.error) {
+      console.error("Aviso: no se pudo sincronizar el contacto con Brevo CRM:", crmUpsert.error);
     }
 
     return NextResponse.json(
