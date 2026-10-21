@@ -72,6 +72,8 @@ interface LeadData {
   email: string;
   empresa?: string;
   source?: string;
+  /** Líneas extra (plan, UTM, gclid…) para la descripción del deal. */
+  details?: [string, string][];
 }
 
 export async function createBrevoDeal(apiKey: string, lead: LeadData): Promise<void> {
@@ -101,7 +103,10 @@ export async function createBrevoDeal(apiKey: string, lead: LeadData): Promise<v
         name: dealName,
         attributes: {
           deal_stage: stageId,
-          deal_description: `Canal: ${lead.source ?? "web"}`,
+          deal_description: [
+            `Canal: ${lead.source ?? "web"}`,
+            ...(lead.details ?? []).map(([k, v]) => `${k}: ${v}`),
+          ].join("\n"),
         },
       }),
     });

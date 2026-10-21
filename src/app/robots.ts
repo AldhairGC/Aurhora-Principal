@@ -1,21 +1,19 @@
 import { MetadataRoute } from "next";
+import { BASE_URL } from "@/lib/seo/metadata";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://aurhora.agency";
-  
+  // /_next/ queda permitido: los buscadores necesitan JS y CSS para renderizar.
+  // /login se excluye con robots noindex en la propia página (no aquí, para que
+  // Google pueda leer esa etiqueta).
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/_next/"],
-      },
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/api/", "/admin/"],
+        disallow: ["/api/"],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   };
 }

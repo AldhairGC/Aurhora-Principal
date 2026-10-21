@@ -10,6 +10,7 @@ import React from "react";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import { Linkedin, Instagram, Facebook, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { OPEN_COOKIE_SETTINGS_EVENT } from "@/lib/analytics/consent";
 
 const socialLinks = [
   { icon: Linkedin, href: "https://linkedin.com/company/aurhora-agency", label: "LinkedIn" },
@@ -104,6 +105,15 @@ export function SiteFooter() {
                   <Link href={l.href} className={linkCls}>{l.label}</Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS_EVENT))}
+                  className={linkCls}
+                >
+                  {t("footer.cookieSettings")}
+                </button>
+              </li>
             </ul>
           </div>
 

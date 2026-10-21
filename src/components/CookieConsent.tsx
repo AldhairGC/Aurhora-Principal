@@ -5,16 +5,13 @@ import { X, Cookie, Shield, ChevronDown, ChevronUp } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-
-interface CookiePreferences {
-  necessary: boolean;
-  analytics: boolean;
-  marketing: boolean;
-  functional: boolean;
-}
-
-const COOKIE_CONSENT_KEY = "aurhora_cookie_consent";
-const COOKIE_PREFERENCES_KEY = "aurhora_cookie_preferences";
+import {
+  applyConsent,
+  COOKIE_CONSENT_KEY,
+  COOKIE_PREFERENCES_KEY,
+  OPEN_COOKIE_SETTINGS_EVENT,
+  type CookiePreferences,
+} from "@/lib/analytics/consent";
 
 export default function CookieConsent() {
   const { currentTheme } = useTheme();
@@ -29,84 +26,30 @@ export default function CookieConsent() {
   });
 
   useEffect(() => {
-    // Check if user has already given consent
-    const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-    const savedPreferences = localStorage.getItem(COOKIE_PREFERENCES_KEY);
-
-    if (!consent) {
-      // Show banner if no consent given
-      setShowBanner(true);
-    } else if (savedPreferences) {
-      // Load saved preferences
-      try {
-        const prefs = JSON.parse(savedPreferences);
+    // El estado "default" y la elección guardada ya se aplicaron en <head>
+    // (CONSENT_DEFAULT_SCRIPT). Aquí solo cargamos lo que no lee Consent Mode.
+    try {
+      const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+      const savedPreferences = localStorage.getItem(COOKIE_PREFERENCES_KEY);
+      if (!consent || !savedPreferences) {
+        setShowBanner(true);
+      } else {
+        const prefs = JSON.parse(savedPreferences) as CookiePreferences;
         setPreferences(prefs);
-        loadScripts(prefs);
-      } catch (e) {
-        console.error("Error loading cookie preferences:", e);
+        applyConsent(prefs);
       }
+    } catch {
+      setShowBanner(true);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // Permite reabrir el panel desde cualquier enlace "Preferencias de cookies".
+    const open = () => {
+      setShowDetails(true);
+      setShowBanner(true);
+    };
+    window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, open);
+    return () => window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, open);
   }, []);
-
-  const loadScripts = (prefs: CookiePreferences) => {
-    // Load analytics scripts if consented
-    if (prefs.analytics) {
-      loadAnalyticsScripts();
-    }
-
-    // Load marketing scripts if consented
-    if (prefs.marketing) {
-      loadMarketingScripts();
-    }
-
-    // Load functional scripts if consented
-    if (prefs.functional) {
-      loadFunctionalScripts();
-    }
-  };
-
-  const loadAnalyticsScripts = () => {
-    // Google Analytics
-    if (typeof window !== "undefined" && !window.gtag) {
-      const script1 = document.createElement("script");
-      script1.async = true;
-      script1.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"; // TODO: Replace with actual GA ID
-      document.head.appendChild(script1);
-
-      const script2 = document.createElement("script");
-      script2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX'); // TODO: Replace with actual GA ID
-      `;
-      document.head.appendChild(script2);
-    }
-
-    // Microsoft Clarity
-    if (typeof window !== "undefined" && !(window as Window & { clarity?: unknown }).clarity) {
-      const script = document.createElement("script");
-      script.innerHTML = `
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "XXXXXXXXXX"); // TODO: Replace with actual Clarity ID
-      `;
-      document.head.appendChild(script);
-    }
-  };
-
-  const loadMarketingScripts = () => {
-    // Add marketing/advertising scripts here (e.g., Facebook Pixel, Google Ads)
-    console.log("Marketing scripts loaded");
-  };
-
-  const loadFunctionalScripts = () => {
-    // Add functional scripts here (e.g., chat widgets, personalization)
-    console.log("Functional scripts loaded");
-  };
 
   const handleAcceptAll = () => {
     const allPreferences: CookiePreferences = {
@@ -118,7 +61,6 @@ export default function CookieConsent() {
 
     setPreferences(allPreferences);
     saveConsent(allPreferences);
-    loadScripts(allPreferences);
     setShowBanner(false);
   };
 
@@ -137,13 +79,17 @@ export default function CookieConsent() {
 
   const handleSavePreferences = () => {
     saveConsent(preferences);
-    loadScripts(preferences);
     setShowBanner(false);
   };
 
   const saveConsent = (prefs: CookiePreferences) => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, "true");
-    localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(prefs));
+    try {
+      localStorage.setItem(COOKIE_CONSENT_KEY, "true");
+      localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(prefs));
+    } catch {
+      /* almacenamiento bloqueado: la elección aplica solo a esta visita */
+    }
+    applyConsent(prefs);
   };
 
   const togglePreference = (key: keyof CookiePreferences) => {

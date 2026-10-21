@@ -4,27 +4,26 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/context/ThemeContext';
 import {
-  generateMetadata as genMeta,
-  defaultSEO,
+  buildLocaleDefaults,
   generateOrganizationSchema,
   generateWebSiteSchema,
 } from '@/lib/seo/metadata';
-import Script from 'next/script';
 import CookieConsent from '@/components/CookieConsent';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import AttributionCapture from '@/components/AttributionCapture';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+// Defaults compartidos; cada página define su propio title, description y canonical.
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const seoConfig = defaultSEO[locale] || defaultSEO.es;
-  return genMeta(seoConfig);
+  return buildLocaleDefaults(locale);
 }
 
 export default async function LocaleLayout({
@@ -36,7 +35,7 @@ export default async function LocaleLayout({
 }) {
   // Await params en Next.js 15
   const { locale } = await params;
-  
+
   // Validar que el locale sea válido
   if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
@@ -51,21 +50,16 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <ThemeProvider>
-        {/* Structured Data for SEO */}
-        <Script
-          id="organization-schema"
+        {/* Structured Data: en el HTML del servidor para que Google lo lea sin ejecutar JS */}
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        <Script
-          id="website-schema"
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(webSiteSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
+        <AttributionCapture />
         {children}
         <WhatsAppButton />
         <CookieConsent />

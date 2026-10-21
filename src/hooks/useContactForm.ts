@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { getContactFormSchema, ContactFormData } from "@/lib/validations/contact";
 import { useLocale } from "next-intl";
 import { trackEvent } from "@/lib/analytics/track";
+import { getAttribution } from "@/lib/analytics/attribution";
 
 export const useContactForm = (defaultValues?: Partial<ContactFormData>) => {
   const locale = useLocale();
@@ -42,7 +43,8 @@ export const useContactForm = (defaultValues?: Partial<ContactFormData>) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        // UTM, gclid y página de entrada para atribuir el lead en Brevo.
+        body: JSON.stringify({ ...formData, attribution: getAttribution() }),
       });
 
       const data = await response.json();

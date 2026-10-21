@@ -19,6 +19,8 @@ interface AdminEmailData {
   empresa?: string;
   mensaje?: string;
   source?: string;
+  /** Atribución (plan, UTM, gclid…) como pares etiqueta/valor. */
+  extra?: [string, string][];
 }
 
 export function buildAdminEmailHtml({
@@ -28,6 +30,7 @@ export function buildAdminEmailHtml({
   empresa,
   mensaje,
   source,
+  extra = [],
 }: AdminEmailData): string {
   const row = (label: string, value?: string) =>
     `<p style="margin:0 0 10px;"><strong>${label}:</strong> ${escapeHtml(value || "")}</p>`;
@@ -42,5 +45,6 @@ export function buildAdminEmailHtml({
   ${row("Empresa", empresa || "No proporcionada")}
   <p style="margin:0 0 10px;"><strong>Mensaje:</strong> ${mensajeHtml}</p>
   ${row("Fuente", source || "sitio web")}
+  ${extra.length ? `<h3 style="margin:24px 0 10px;color:#111827;">Atribución</h3>${extra.map(([k, v]) => row(k, v)).join("")}` : ""}
 </div>`;
 }

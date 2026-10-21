@@ -2,6 +2,11 @@ import { NextResponse } from "next/server";
 import { buildUserEmailHtml } from "./email-template-user";
 import { buildAdminEmailHtml } from "./email-template-admin";
 import { createBrevoDeal } from "@/lib/brevo/deals";
+import {
+  attributionRows,
+  attributionToBrevoAttributes,
+  sanitizeAttribution,
+} from "@/lib/brevo/attribution";
 
 // Remitente — el dominio/email debe estar autenticado en Brevo
 const SENDER = {
@@ -71,6 +76,31 @@ async function upsertBrevoContact(params: {
 }
 
 /**
+ * Guarda la atribución (UTM, gclid, plan…) como atributos del contacto.
+ * Va en una llamada aparte para que, si algún atributo aún no existe en Brevo,
+ * no se pierda la actualización principal del contacto.
+ */
+async function updateBrevoAttribution(email: string, attributes: Record<string, string>): Promise<BrevoResult> {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) return { error: { message: "BREVO_API_KEY no está configurada" } };
+  if (!Object.keys(attributes).length) return { data: null };
+  try {
+    const res = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: { "api-key": apiKey, "Content-Type": "application/json", accept: "application/json" },
+      body: JSON.stringify({ email, attributes, updateEnabled: true }),
+    });
+    if (!res.ok) {
+      const detail = await res.text();
+      return { error: { message: detail || `Brevo HTTP ${res.status}` } };
+    }
+    return { data: null };
+  } catch (err) {
+    return { error: { message: err instanceof Error ? err.message : "Error de red con Brevo" } };
+  }
+}
+
+/**
  * Envía un correo transaccional vía la API REST de Brevo.
  * El SDK no es necesario: fetch funciona en serverless sin dependencias extra.
  */
@@ -128,7 +158,12 @@ export async function POST(request: Request) {
       desafio,
       objetivos,
       source,
+      selectedPlan,
     } = body;
+
+    const plan = typeof selectedPlan === "string" && selectedPlan.trim() ? selectedPlan.trim().slice(0, 100) : undefined;
+    const attribution = sanitizeAttribution(body.attribution);
+    const attributionDetails = attributionRows(attribution, plan);
 
     // Determinar el campo de mensaje principal
     const mainMessage =
@@ -177,6 +212,7 @@ export async function POST(request: Request) {
         empresa,
         mensaje: mainMessage,
         source,
+        extra: attributionDetails,
       }),
     });
     if (adminSend.error) {
@@ -199,6 +235,14 @@ export async function POST(request: Request) {
     });
     if (crmUpsert.error) {
       console.error("Aviso: no se pudo sincronizar el contacto con Brevo CRM:", crmUpsert.error);
+    } else {
+      const attrUpdate = await updateBrevoAttribution(email, attributionToBrevoAttributes(attribution, plan));
+      if (attrUpdate.error) {
+        console.error(
+          "Aviso: no se guardó la atribución en Brevo (¿faltan atributos UTM_SOURCE, GCLID, PLAN…?):",
+          attrUpdate.error,
+        );
+      }
     }
 
     // Crear la oportunidad (deal) en el pipeline de ventas. Se espera (await)
@@ -211,6 +255,7 @@ export async function POST(request: Request) {
         email,
         empresa,
         source: source || "web",
+        details: attributionDetails,
       });
     }
 
