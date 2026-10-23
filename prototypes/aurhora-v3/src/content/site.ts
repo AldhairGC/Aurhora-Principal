@@ -29,7 +29,7 @@ export const UNITS: Unit[] = [
     services: ["agentes-ia", "automatizacion-procesos", "software", "consultoria", "marketing", "godigital"],
     seo: {
       title: "Aurhora Digital | Agentes de IA, automatización y software",
-      description: "Implementamos agentes de inteligencia artificial, automatización de procesos, software a la medida y marketing digital para empresas en México.",
+      description: "Agentes de IA en México para empresas: implementación de agentes, automatización de procesos, software a la medida y marketing digital con supervisión humana.",
       slug: "/digital",
       keywords: ["agentes de IA México", "automatización con inteligencia artificial", "desarrollo de software a la medida", "transformación digital", "IA para empresas"],
     },
@@ -46,7 +46,7 @@ export const UNITS: Unit[] = [
     services: ["seguridad-accesos", "redes", "domotica", "audio-video"],
     seo: {
       title: "Aurhora Integra | Cámaras, redes y domótica en CDMX",
-      description: "Instalación de cámaras de seguridad, control de acceso, WiFi, cableado estructurado, domótica y audio para residencias y negocios en CDMX y Estado de México.",
+      description: "Instalación de cámaras en CDMX y Estado de México, control de acceso, WiFi, cableado estructurado, domótica y audio para residencias y negocios.",
       slug: "/integra",
       keywords: ["instalación de cámaras CDMX", "domótica CDMX", "cableado estructurado", "control de acceso", "casa inteligente"],
     },
@@ -63,7 +63,7 @@ export const UNITS: Unit[] = [
     services: ["aire-acondicionado", "electricidad", "reparaciones", "mantenimiento-programado", "proyectos-residenciales", "proyectos-industriales"],
     seo: {
       title: "Aurhora Facilities | Mantenimiento e instalaciones en CDMX",
-      description: "Aire acondicionado, electricidad, instalaciones, pólizas de mantenimiento y proyectos para casas, negocios, naves y bodegas en CDMX y Estado de México.",
+      description: "Mantenimiento en CDMX y Estado de México: aire acondicionado, electricidad, reparaciones del hogar, pólizas y proyectos residenciales e industriales.",
       slug: "/facilities",
       keywords: ["mantenimiento CDMX", "mantenimiento industrial", "póliza de mantenimiento", "electricista CDMX", "mantenimiento de aire acondicionado"],
     },
@@ -76,25 +76,25 @@ export const unitById = (id: string) => UNITS.find((u) => u.id === id)!;
 export const PAGE_SEO: Record<string, Seo> = {
   grupo: {
     title: "Aurhora Agency | Agentes de IA, tecnología y mantenimiento",
-    description: "Tres especialidades, un respaldo: agentes de IA y software, seguridad y domótica, y mantenimiento residencial, comercial e industrial en México.",
+    description: "Aurhora Agency reúne tres especialidades con un respaldo: agentes de IA y software, seguridad y domótica, y mantenimiento residencial e industrial en México.",
     slug: "/",
     keywords: ["Aurhora Agency", "Aurhora", "agentes de IA", "domótica", "mantenimiento CDMX"],
   },
   nosotros: {
     title: "Nosotros | Aurhora Agency",
-    description: "Conoce a Aurhora: tres especialidades en tecnología, espacios y mantenimiento con un mismo respaldo, un equipo con experiencia y una forma clara de trabajar.",
+    description: "Conoce a Aurhora Agency: tres especialidades en tecnología, espacios y mantenimiento con un mismo respaldo y una forma clara de trabajar.",
     slug: "/nosotros",
     keywords: ["Aurhora Agency", "quiénes somos Aurhora", "Aurhora"],
   },
   recursos: {
     title: "Guías de IA, domótica y mantenimiento | Aurhora Agency",
-    description: "Guías prácticas sobre agentes de inteligencia artificial, automatización, domótica y mantenimiento para casas y negocios, escritas por el equipo de Aurhora.",
+    description: "Guías de inteligencia artificial, agentes de IA, automatización, domótica y mantenimiento para casas y negocios, escritas por el equipo de Aurhora.",
     slug: "/recursos",
     keywords: ["guías de inteligencia artificial", "agentes de IA", "domótica", "mantenimiento de minisplit"],
   },
   contacto: {
     title: "Contacto | Aurhora Agency",
-    description: "Cuéntanos qué necesitas y continúa por WhatsApp con la especialidad adecuada. Lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00.",
+    description: "Contacto de Aurhora: cuéntanos qué necesitas y sigue por WhatsApp con la especialidad adecuada. Lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00.",
     slug: "/contacto",
     keywords: ["contacto Aurhora", "cotización", "WhatsApp Aurhora"],
   },

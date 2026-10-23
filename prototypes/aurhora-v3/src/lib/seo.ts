@@ -2,7 +2,7 @@ import { PAGE_SEO, SITE, UNITS, unitById } from "@/content/site";
 import { serviceById } from "@/content/services";
 import { articleById } from "@/content/articles";
 import { legalById } from "@/content/legal";
-import { faqOf } from "@/content/extras";
+import { extrasOf, faqOf } from "@/content/extras";
 import type { Seo } from "@/content/types";
 
 /*
@@ -72,6 +72,22 @@ function unitBusiness(id: string) {
   };
 }
 
+/** Authorized "Desde $X" prices as Offers (MXN, before IVA). Rows without an amount are skipped. */
+function priceOffers(serviceId: string) {
+  return (extrasOf(serviceId)?.prices ?? []).flatMap((p) => {
+    const m = p.range.match(/\$([\d,]+)/);
+    if (!m) return [];
+    const minPrice = Number(m[1].replace(/,/g, ""));
+    return [{
+      "@type": "Offer",
+      name: p.concept,
+      ...(p.unit ? { description: p.unit } : {}),
+      priceCurrency: "MXN",
+      priceSpecification: { "@type": "PriceSpecification", minPrice, priceCurrency: "MXN", valueAddedTaxIncluded: false },
+    }];
+  });
+}
+
 function breadcrumbs(items: { name: string; slug: string }[]) {
   return {
     "@type": "BreadcrumbList",
@@ -93,6 +109,7 @@ export function jsonLdFor(view: string): Record<string, unknown> {
         serviceType: s.name,
         provider: { "@id": unitId(s.unit) },
         areaServed: s.unit === "digital" ? { "@type": "Country", name: "México" } : AREA_LOCAL,
+        offers: priceOffers(s.id),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: s.name,

@@ -83,7 +83,7 @@ const BASE: Article[] = [
     ],
     seo: {
       title: "Qué es un agente de IA y qué puede hacer por tu empresa",
-      description: "Qué es un agente de inteligencia artificial, de qué está hecho, dónde aporta valor en una empresa y cuándo no conviene. Guía práctica sin tecnicismos.",
+      description: "Qué es un agente de IA, de qué está hecho, dónde aporta valor en una empresa, cuánto cuesta y cuándo no conviene. Guía práctica sin tecnicismos.",
       slug: "/recursos/que-es-un-agente-de-ia",
       keywords: ["qué es un agente de IA", "agentes de inteligencia artificial", "IA agéntica", "agentes de IA para empresas"],
     },
@@ -144,7 +144,7 @@ const BASE: Article[] = [
     ],
     seo: {
       title: "Agente de IA vs chatbot vs automatización: cómo elegir",
-      description: "Diferencias entre un chatbot tradicional, una automatización y un agente de IA, con una tabla práctica para decidir cuál conviene a cada proceso.",
+      description: "Agente de IA vs chatbot vs automatización: diferencias, costos y una tabla práctica para decidir cuál conviene a cada proceso de tu empresa.",
       slug: "/recursos/agente-de-ia-vs-chatbot",
       keywords: ["agente de IA vs chatbot", "diferencia entre chatbot y agente de IA", "automatización vs inteligencia artificial"],
     },
@@ -211,7 +211,7 @@ const BASE: Article[] = [
     ],
     seo: {
       title: "Cómo implementar un agente de IA en tu empresa, paso a paso",
-      description: "Guía para implementar un agente de inteligencia artificial: elegir el caso de uso, medir, diseñar límites, probar con casos reales y lanzar con supervisión.",
+      description: "Cómo implementar un agente de IA en tu empresa: caso de uso, medición, límites, pruebas con casos reales, lanzamiento con supervisión, tiempos y costos.",
       slug: "/recursos/como-implementar-un-agente-de-ia",
       keywords: ["cómo implementar un agente de IA", "implementación de agentes de IA", "IA en empresas", "piloto de inteligencia artificial"],
     },
@@ -271,7 +271,7 @@ const BASE: Article[] = [
     ],
     seo: {
       title: "Domótica sin obra: qué automatizar en casa o departamento",
-      description: "Qué puedes automatizar en tu casa o departamento sin romper muros: luces, clima, persianas, accesos y seguridad, y qué conviene dejar para una remodelación.",
+      description: "Domótica sin obra: qué automatizar en tu casa o departamento sin romper muros (luces, clima, persianas y accesos), cuánto cuesta y por dónde empezar.",
       slug: "/recursos/domotica-sin-obra",
       keywords: ["domótica sin obra", "casa inteligente departamento", "domótica inalámbrica", "automatizar casa"],
     },
@@ -322,7 +322,7 @@ const BASE: Article[] = [
     ],
     seo: {
       title: "¿Cada cuánto dar mantenimiento a un minisplit?",
-      description: "Con qué frecuencia dar mantenimiento a un minisplit, qué puedes hacer tú, qué debe hacer un técnico y las señales de que tu aire acondicionado ya lo necesita.",
+      description: "Cada cuánto dar mantenimiento a un minisplit, qué puedes hacer tú, qué hace un técnico, cuánto cuesta en la CDMX y las señales de que ya lo necesita.",
       slug: "/recursos/cada-cuanto-dar-mantenimiento-a-un-minisplit",
       keywords: ["cada cuánto dar mantenimiento a un minisplit", "mantenimiento de minisplit", "limpieza de aire acondicionado"],
     },
@@ -378,7 +378,7 @@ const BASE: Article[] = [
     ],
     seo: {
       title: "¿Por qué se bota la pastilla? Causas y qué hacer",
-      description: "Por qué se bota la pastilla o interruptor de tu casa o negocio: sobrecarga, cortocircuito, humedad o un equipo dañado, y qué hacer de forma segura.",
+      description: "Por qué se bota la pastilla en tu casa o negocio: sobrecarga, cortocircuito, humedad o un equipo dañado, qué hacer de forma segura y cuánto cuesta revisarlo.",
       slug: "/recursos/por-que-se-bota-la-pastilla",
       keywords: ["por qué se bota la pastilla", "se bota el breaker", "falla eléctrica en casa", "interruptor termomagnético se bota"],
     },
@@ -434,7 +434,7 @@ const BASE: Article[] = [
     ],
     seo: {
       title: "Qué incluye una póliza de mantenimiento preventivo",
-      description: "Qué debe incluir una póliza de mantenimiento preventivo para negocios, oficinas y naves: inventario, frecuencia, bitácora, correctivos y cómo evaluarla.",
+      description: "Qué incluye una póliza de mantenimiento preventivo para negocios, oficinas y naves: inventario, frecuencia, reportes, correctivos, costos y cómo evaluarla.",
       slug: "/recursos/que-incluye-una-poliza-de-mantenimiento",
       keywords: ["póliza de mantenimiento preventivo", "qué incluye una póliza de mantenimiento", "mantenimiento preventivo empresas"],
     },
