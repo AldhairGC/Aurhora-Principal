@@ -9,7 +9,7 @@ Versión vigente: 21 de octubre de 2026. Esta guía sustituye a `CONTENT_STYLE_G
 - **Escritura:**
   - "Aurhora" siempre con h y siempre primero.
   - "Aurora" sin h solo se escribe para el fenómeno natural, por ejemplo "una aurora boreal".
-- **Datos legales:** la razón social es Aurhora Agency, S.A. de C.V., con nombre comercial Aurhora Agency. El dominio `aurhora.agency` y sus correos se mantienen.
+- **Datos legales:** la razón social es Aurhora Agency, S.A. de C.V., con nombre comercial Aurhora Agency y domicilio en Park Plaza II, Calle 3, Zedec Santa Fe, Álvaro Obregón, C.P. 01376, Ciudad de México. Privacidad y datos personales: legal@aurhora.agency. El dominio `aurhora.agency` y sus correos se mantienen.
 
 ## 2. Frase principal
 
@@ -62,12 +62,12 @@ Es la única frase de marca. Va en la portada, el pie del sitio y las firmas. No
 - **Prometer solo lo que se cumple:**
   - Horario real (lunes a viernes de 8:00 a 20:00, sábados de 8:00 a 16:00).
   - Sin 24/7 ni tiempos de llegada garantizados.
-  - Respaldos tal como están acordados: 15 o 30 días en Aurhora Facilities y +1 año en productos elegibles de Integra.
+  - Respaldos tal como están acordados: garantía de 90 días en Aurhora Facilities y +1 año en productos elegibles de Integra.
 - **Prohibido:**
   - Cifras sin fuente (por ejemplo, "reduce costos hasta 40%").
   - Clientes, testimonios o casos sin autorización escrita.
   - Certificaciones que no estén confirmadas.
-  - Precios distintos a los autorizados. Desde el 23 de octubre de 2026 los precios están autorizados y se publican solo como "Desde $X" (el límite inferior), con la nota "más IVA" y la aclaración de que el precio final se confirma en la cotización. No publicar el límite superior ni rangos "de $X a $Y".
+  - Precios distintos a los autorizados. Desde el 23 de octubre de 2026 los precios están autorizados y se publican solo como "Desde $X" con IVA incluido (límite inferior + 16%, redondeado hacia arriba al múltiplo de $50), con la nota "con IVA incluido" y la aclaración de que el precio final se confirma en la cotización. No publicar el límite superior ni rangos "de $X a $Y".
   - Clichés como "clase mundial" o "revolucionario".
 - **Términos:**
   - "IA" (no "AI"), "agentes de IA" e "IA agéntica".

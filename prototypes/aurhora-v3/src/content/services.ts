@@ -8,7 +8,7 @@ const MANT_EXPECT = [
   { label: "Primer contacto", value: "Por WhatsApp, en horario de atención" },
   { label: "Diagnóstico", value: "Costo informado antes; se descuenta si aceptas el trabajo" },
   { label: "Cotización", value: "Antes de ejecutar, con alcance y materiales" },
-  { label: "Respaldo", value: "15 o 30 días según el servicio" },
+  { label: "Garantía", value: "90 días sobre el trabajo realizado" },
 ];
 
 const MANT_PROCESS = [
@@ -26,8 +26,8 @@ const PROJECT_PROCESS = [
 ];
 
 const MANT_BACKING = {
-  title: "Respaldo de 15 o 30 días",
-  desc: "Según el servicio. Antes de contratar te explicamos qué cubre y cómo solicitar una revisión o ajuste.",
+  title: "Garantía de 90 días",
+  desc: "Sobre el trabajo realizado, a partir del servicio. Antes de contratar te explicamos qué cubre y cómo solicitar una revisión o ajuste.",
 };
 
 const INTEGRA_PROCESS = [
@@ -113,7 +113,7 @@ export const SERVICES: Service[] = [
     contactService: "Aire acondicionado",
     seo: {
       title: "Mantenimiento de aire acondicionado en CDMX | Aurhora Agency",
-      description: "Mantenimiento de aire acondicionado en CDMX y Estado de México: limpieza, instalación y reparación de minisplits. Desde $800 por equipo + IVA.",
+      description: "Mantenimiento de aire acondicionado en CDMX y Estado de México: limpieza, instalación y reparación de minisplits. Desde $950 por equipo con IVA.",
       slug: "/facilities/aire-acondicionado",
       keywords: ["mantenimiento de aire acondicionado CDMX", "limpieza de minisplit", "instalación de minisplit", "reparación de aire acondicionado", "aire acondicionado no enfría"],
     },
@@ -154,7 +154,7 @@ export const SERVICES: Service[] = [
     contactService: "Electricidad",
     seo: {
       title: "Electricista para casa, local y oficina en CDMX | Aurhora Agency",
-      description: "Electricista en CDMX para casa, local y oficina: pastillas que se botan, contactos, iluminación e instalaciones. Visita desde $400 + IVA, descontable.",
+      description: "Electricista en CDMX para casa, local y oficina: pastillas que se botan, contactos, iluminación e instalaciones. Visita desde $500 con IVA, descontable.",
       slug: "/facilities/electricidad",
       keywords: ["electricista CDMX", "se bota la pastilla", "instalación eléctrica", "electricista a domicilio", "falla eléctrica en casa"],
     },
@@ -194,7 +194,7 @@ export const SERVICES: Service[] = [
     contactService: "Instalaciones y reparaciones",
     seo: {
       title: "Reparaciones del hogar e instalaciones en CDMX | Aurhora Agency",
-      description: "Reparaciones del hogar en CDMX y Estado de México: soportes de TV, repisas, puertas, pintura y varios pendientes en una visita. Visita desde $600 + IVA.",
+      description: "Reparaciones del hogar en CDMX y Estado de México: soportes de TV, repisas, puertas, pintura y varios pendientes en una visita. Visita desde $700 con IVA.",
       slug: "/facilities/instalaciones-y-reparaciones",
       keywords: ["reparaciones del hogar CDMX", "reparaciones del hogar", "instalar soporte de TV", "mantenimiento de casa", "reparaciones a domicilio"],
     },
@@ -244,7 +244,7 @@ export const SERVICES: Service[] = [
     contactService: "Mantenimiento programado",
     seo: {
       title: "Pólizas de mantenimiento preventivo en CDMX | Aurhora Agency",
-      description: "Póliza de mantenimiento preventivo para oficinas, sucursales y naves en CDMX: clima, electricidad e instalaciones, con reportes. Desde $3,500/mes + IVA.",
+      description: "Póliza de mantenimiento preventivo para oficinas, sucursales y naves en CDMX: clima, electricidad e instalaciones, con reportes. Desde $4,100/mes con IVA.",
       slug: "/facilities/mantenimiento-programado",
       keywords: ["póliza de mantenimiento preventivo", "mantenimiento preventivo empresas", "mantenimiento de oficinas CDMX", "mantenimiento de sucursales", "contrato de mantenimiento"],
     },
@@ -289,7 +289,7 @@ export const SERVICES: Service[] = [
     contactService: "Proyecto residencial",
     seo: {
       title: "Remodelación e instalación residencial en CDMX | Aurhora Agency",
-      description: "Remodelación de casa en CDMX: instalación eléctrica, climatización, iluminación y acabados, con domótica y seguridad. Instalación eléctrica desde $200/m² + IVA.",
+      description: "Remodelación de casa en CDMX: instalación eléctrica, climatización, iluminación y acabados, con domótica y seguridad. Instalación desde $250/m² con IVA.",
       slug: "/facilities/proyectos-residenciales",
       keywords: ["remodelación de casa CDMX", "instalación eléctrica residencial", "proyecto residencial", "remodelación integral", "casa preparada para domótica"],
     },
@@ -390,7 +390,7 @@ export const SERVICES: Service[] = [
     stack: ["Claude, GPT, Gemini y modelos abiertos", "Recuperación de información (RAG) y bases vectoriales", "Model Context Protocol (MCP)", "Orquestación con n8n, Make o código propio", "WhatsApp Business API", "APIs de CRM, ERP y hojas de cálculo"],
     seo: {
       title: "Implementación de agentes de IA para empresas | Aurhora Agency",
-      description: "Agentes de IA para empresas en México: atención, ventas y operación por WhatsApp, conectados a tu CRM y con supervisión humana. Desde $8,000 + IVA.",
+      description: "Agentes de IA para empresas en México: atención, ventas y operación por WhatsApp, conectados a tu CRM y con supervisión humana. Desde $9,300 con IVA.",
       slug: "/digital/agentes-de-ia",
       keywords: ["agentes de IA", "implementación de agentes de inteligencia artificial", "IA agéntica", "agentes de IA para empresas", "desarrollo de agentes de IA México", "agente de IA para WhatsApp", "expertos en IA agéntica", "multiagentes"],
     },
@@ -431,7 +431,7 @@ export const SERVICES: Service[] = [
     stack: ["n8n y Make", "APIs y webhooks", "Google Workspace y Microsoft 365", "Extracción de documentos con IA"],
     seo: {
       title: "Automatización de procesos con IA | Aurhora Agency",
-      description: "Automatización de procesos con IA en México: conectamos CRM, facturación, WhatsApp y hojas de cálculo para quitar trabajo manual. Desde $3,500 + IVA.",
+      description: "Automatización de procesos con IA en México: conectamos CRM, facturación, WhatsApp y hojas de cálculo para quitar trabajo manual. Desde $4,100 con IVA.",
       slug: "/digital/automatizacion-de-procesos",
       keywords: ["automatización de procesos", "automatización con IA", "automatización de procesos empresariales", "hiperautomatización", "integración de sistemas", "n8n México"],
     },
@@ -552,7 +552,7 @@ export const SERVICES: Service[] = [
     contactService: "Marketing digital",
     seo: {
       title: "Marketing digital, SEO y campañas medibles | Aurhora Agency",
-      description: "Agencia de marketing digital para negocios en México: SEO local, campañas en Google y Meta, y medición con Tag Manager y Analytics. Desde $5,000/mes + IVA.",
+      description: "Agencia de marketing digital para negocios en México: SEO local, campañas en Google y Meta, y medición con Tag Manager y Analytics. Desde $5,800/mes con IVA.",
       slug: "/digital/marketing-digital",
       keywords: ["agencia de marketing digital", "SEO local", "campañas de Google Ads", "Google Tag Manager", "marketing digital para negocios"],
     },
@@ -591,7 +591,7 @@ export const SERVICES: Service[] = [
     contactService: "GoDigital Suite",
     seo: {
       title: "GoDigital: sitio web, contacto y agenda | Aurhora Agency",
-      description: "Página web para negocio con WhatsApp, formularios, seguimiento de solicitudes y agenda en línea, para profesionales y pymes en México. Desde $6,500 + IVA.",
+      description: "Página web para negocio con WhatsApp, formularios, seguimiento de solicitudes y agenda en línea, para profesionales y pymes en México. Desde $7,550 con IVA.",
       slug: "/digital/godigital",
       keywords: ["página web para negocio", "sitio web para consultorio", "agenda en línea", "presencia digital pymes", "página web con WhatsApp"],
     },
@@ -633,7 +633,7 @@ export const SERVICES: Service[] = [
     contactService: "Seguridad y accesos",
     seo: {
       title: "Cámaras de seguridad y control de acceso en CDMX | Aurhora Agency",
-      description: "Instalación de cámaras de seguridad en CDMX y Estado de México, con consulta remota, alarmas, control de acceso y cercos. 4 cámaras desde $5,500 + IVA.",
+      description: "Instalación de cámaras de seguridad en CDMX y Estado de México, con consulta remota, alarmas, control de acceso y cercos. 4 cámaras desde $6,400 con IVA.",
       slug: "/integra/seguridad-y-accesos",
       keywords: ["instalación de cámaras de seguridad CDMX", "control de acceso", "videovigilancia para negocio", "cerco electrificado", "alarma para casa"],
     },
@@ -672,7 +672,7 @@ export const SERVICES: Service[] = [
     contactService: "Redes y conectividad",
     seo: {
       title: "WiFi y cableado estructurado en CDMX | Aurhora Agency",
-      description: "Cableado estructurado en CDMX e instalación de WiFi en todo el espacio, con redes separadas y telefonía para casas, negocios y oficinas. Nodo desde $800 + IVA.",
+      description: "Cableado estructurado en CDMX e instalación de WiFi, con redes separadas y telefonía para casas, negocios y oficinas. Nodo desde $950 con IVA.",
       slug: "/integra/redes-y-conectividad",
       keywords: ["cableado estructurado CDMX", "instalación de WiFi", "red para negocio", "mejorar señal WiFi casa", "telefonía para oficina"],
     },
@@ -715,7 +715,7 @@ export const SERVICES: Service[] = [
     contactService: "Domótica y automatización",
     seo: {
       title: "Domótica y casa inteligente en CDMX | Aurhora Agency",
-      description: "Domótica en CDMX y Estado de México: iluminación, clima, persianas, accesos y escenas para casas, departamentos y oficinas. Desde $15,000 + IVA.",
+      description: "Domótica en CDMX y Estado de México: iluminación, clima, persianas, accesos y escenas para casas, departamentos y oficinas. Desde $17,400 con IVA.",
       slug: "/integra/domotica",
       keywords: ["domótica CDMX", "casa inteligente", "automatización residencial", "instalación de domótica", "domótica para oficinas", "persianas motorizadas"],
     },
@@ -754,7 +754,7 @@ export const SERVICES: Service[] = [
     contactService: "Audio, video y control",
     seo: {
       title: "Audio por zonas, cine en casa y salas de juntas | Aurhora Agency",
-      description: "Audio por zonas, cine en casa, pantallas con cableado oculto y salas de juntas para residencias, restaurantes y oficinas en CDMX. Pantalla desde $600 + IVA.",
+      description: "Audio por zonas, cine en casa, pantallas con cableado oculto y salas de juntas para residencias, restaurantes y oficinas en CDMX. Pantalla desde $700 con IVA.",
       slug: "/integra/audio-y-video",
       keywords: ["audio por zonas", "cine en casa CDMX", "instalación de pantallas", "sala de juntas videoconferencia", "audio ambiental para restaurante"],
     },

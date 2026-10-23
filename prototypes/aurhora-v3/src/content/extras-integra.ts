@@ -13,13 +13,13 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
   "seguridad-accesos": {
     costIntro: "Cotizamos desde la mano de obra por cámara hasta sistemas completos con equipo. La diferencia entre un sistema de entrada y uno de gama media está sobre todo en la resolución de las cámaras y el tipo de grabador.",
     prices: [
-      { concept: "Instalación por cámara (equipo aparte)", range: "Desde $250", unit: "por cámara" },
-      { concept: "Sistema de 4 cámaras instalado, gama de entrada (1080p)", range: "Desde $5,500", unit: "por sistema" },
-      { concept: "Sistema de 4 cámaras IP instalado, gama media (4 MP)", range: "Desde $8,500", unit: "por sistema" },
-      { concept: "Alarma con sensores, instalada", range: "Desde $3,000", unit: "por sistema" },
-      { concept: "Chapa inteligente instalada", range: "Desde $2,700", unit: "por puerta" },
-      { concept: "Videoportero instalado", range: "Desde $5,000", unit: "por unidad" },
-      { concept: "Cerco electrificado de 6 hilos instalado", range: "Desde $9,000", unit: "por 10 m; menos por metro en tramos largos" },
+      { concept: "Instalación por cámara (equipo aparte)", range: "Desde $300", unit: "por cámara" },
+      { concept: "Sistema de 4 cámaras instalado, gama de entrada (1080p)", range: "Desde $6,400", unit: "por sistema" },
+      { concept: "Sistema de 4 cámaras IP instalado, gama media (4 MP)", range: "Desde $9,900", unit: "por sistema" },
+      { concept: "Alarma con sensores, instalada", range: "Desde $3,500", unit: "por sistema" },
+      { concept: "Chapa inteligente instalada", range: "Desde $3,150", unit: "por puerta" },
+      { concept: "Videoportero instalado", range: "Desde $5,800", unit: "por unidad" },
+      { concept: "Cerco electrificado de 6 hilos instalado", range: "Desde $10,450", unit: "por 10 m; menos por metro en tramos largos" },
     ],
     factors: [
       "Número y resolución de las cámaras.",
@@ -41,10 +41,9 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
       "Servicio de internet.",
       "Monitoreo por una central de alarmas y almacenamiento en la nube (servicios de terceros con cuota mensual).",
       "Trabajo en altura que requiera equipo especial.",
-      "IVA: todos los precios son más IVA.",
     ],
     faq: [
-      ["¿Cuánto cuesta instalar 4 cámaras de seguridad en la CDMX?", "Un sistema de 4 cámaras instalado parte de $5,500 en gama de entrada y desde $8,500 en cámaras IP de 4 MP."],
+      ["¿Cuánto cuesta instalar 4 cámaras de seguridad en la CDMX?", "Un sistema de 4 cámaras instalado parte de $6,400 en gama de entrada y desde $9,900 en cámaras IP de 4 MP."],
       ["¿Cuánto tarda la instalación?", "Un sistema de 4 a 8 cámaras en casa o local normalmente se instala en un día. Proyectos con más cámaras o varios pisos toman de 2 a 3 días."],
     ],
   },
@@ -52,11 +51,11 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
   redes: {
     costIntro: "El costo de una red depende de cuántos puntos necesitas y de cómo se lleva el cable. Se cobra por nodo de red y por punto de acceso WiFi instalado.",
     prices: [
-      { concept: "Nodo de red Cat6 instalado", range: "Desde $800", unit: "por nodo" },
-      { concept: "Paquete de 5 nodos con switch", range: "Desde $3,500", unit: "por paquete" },
-      { concept: "Punto de acceso WiFi instalado", range: "Desde $1,300", unit: "por punto" },
-      { concept: "WiFi profesional para casa (2 a 5 puntos)", range: "Desde $9,900", unit: "por sistema" },
-      { concept: "Armado y organización de rack de pared", range: "Desde $1,650", unit: "por rack" },
+      { concept: "Nodo de red Cat6 instalado", range: "Desde $950", unit: "por nodo" },
+      { concept: "Paquete de 5 nodos con switch", range: "Desde $4,100", unit: "por paquete" },
+      { concept: "Punto de acceso WiFi instalado", range: "Desde $1,550", unit: "por punto" },
+      { concept: "WiFi profesional para casa (2 a 5 puntos)", range: "Desde $11,500", unit: "por sistema" },
+      { concept: "Armado y organización de rack de pared", range: "Desde $1,950", unit: "por rack" },
     ],
     factors: [
       "Número de nodos y puntos de acceso.",
@@ -75,28 +74,27 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
       "Canalización oculta y resanes.",
       "Switches, routers y puntos de acceso, cuando el precio es solo mano de obra.",
       "Certificación de nodos, si no se pide.",
-      "IVA: todos los precios son más IVA.",
     ],
     context: [
       "Antes de cotizar, revisa dónde está tu módem y en qué zonas falla la señal. Una foto de cada nivel y del lugar donde están los equipos nos ayuda a proponer la ubicación de los puntos de acceso.",
       "Si tu negocio usa terminal de pago, cámaras o telefonía, conviene separarlos de la red de invitados. Es una configuración sencilla que mejora la seguridad y evita que un cliente sature la conexión de tu caja.",
     ],
     faq: [
-      ["¿Cuánto cuesta un nodo de red?", "Un nodo Cat6 instalado parte de $800; el precio final depende de si incluye certificación y canalización."],
-      ["¿Cuánto cuesta mejorar el WiFi de una casa?", "Depende del tamaño y los niveles. Los sistemas profesionales instalados de 2 a 5 puntos parten de $9,900."],
+      ["¿Cuánto cuesta un nodo de red?", "Un nodo Cat6 instalado parte de $950; el precio final depende de si incluye certificación y canalización."],
+      ["¿Cuánto cuesta mejorar el WiFi de una casa?", "Depende del tamaño y los niveles. Los sistemas profesionales instalados de 2 a 5 puntos parten de $11,500."],
     ],
   },
 
   domotica: {
     costIntro: "La domótica puede empezar con unos cuantos dispositivos o cubrir toda la casa. Por eso el presupuesto varía mucho: lo que más mueve el precio es cuántas áreas automatizas y si hay que instalar cableado.",
     prices: [
-      { concept: "Domotizar un departamento", range: "Desde $15,000", unit: "por proyecto" },
-      { concept: "Domotizar una casa, nivel básico", range: "Desde $42,000", unit: "por proyecto" },
-      { concept: "Domotizar una casa, nivel completo", range: "Desde $100,000", unit: "por proyecto" },
-      { concept: "Apagador inteligente instalado", range: "Desde $1,000", unit: "por pieza" },
-      { concept: "Motorizar una persiana existente", range: "Desde $1,800", unit: "por unidad" },
-      { concept: "Persiana eléctrica nueva instalada", range: "Desde $5,500", unit: "por unidad" },
-      { concept: "Control WiFi para minisplit (equipo)", range: "Desde $450", unit: "por equipo" },
+      { concept: "Domotizar un departamento", range: "Desde $17,400", unit: "por proyecto" },
+      { concept: "Domotizar una casa, nivel básico", range: "Desde $48,750", unit: "por proyecto" },
+      { concept: "Domotizar una casa, nivel completo", range: "Desde $116,000", unit: "por proyecto" },
+      { concept: "Apagador inteligente instalado", range: "Desde $1,200", unit: "por pieza" },
+      { concept: "Motorizar una persiana existente", range: "Desde $2,100", unit: "por unidad" },
+      { concept: "Persiana eléctrica nueva instalada", range: "Desde $6,400", unit: "por unidad" },
+      { concept: "Control WiFi para minisplit (equipo)", range: "Desde $550", unit: "por equipo" },
     ],
     factors: [
       "Número de áreas y dispositivos.",
@@ -115,14 +113,13 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
       "Obra, canalización y resanes.",
       "Suscripciones de aplicaciones o servicios en la nube.",
       "Asistentes de voz y equipos que ya tengas.",
-      "IVA: todos los precios son más IVA.",
     ],
     context: [
       "Elige primero desde dónde quieres controlar tu casa: una aplicación, un asistente de voz o un panel. Esa decisión define qué marcas y dispositivos son compatibles y evita comprar equipos que no se hablan entre sí.",
       "Si estás por remodelar, aprovecha para dejar preparado el cableado y las cajas de los controles. Si tu espacio ya está terminado, las opciones inalámbricas permiten automatizar sin romper muros.",
     ],
     faq: [
-      ["¿Cuánto cuesta domotizar un departamento?", "Desde $15,000 según las áreas y dispositivos."],
+      ["¿Cuánto cuesta domotizar un departamento?", "Desde $17,400 según las áreas y dispositivos."],
       ["¿Puedo empezar con poco?", "Sí. Puedes empezar con iluminación o clima en una sola área y sumar después, sin rehacer lo instalado."],
     ],
   },
@@ -130,9 +127,9 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
   "audio-video": {
     costIntro: "En audio y video, el equipo suele ser la parte más grande del presupuesto. Publicamos el precio de instalación de pantallas; los proyectos de audio por zonas, cine en casa y salas de juntas se cotizan por proyecto.",
     prices: [
-      { concept: "Instalación de pantalla en muro (soporte aparte)", range: "Desde $600", unit: "por pantalla" },
-      { concept: "Cine en casa en una sala existente", range: "Desde $25,000", unit: "por proyecto, con equipo" },
-      { concept: "Sala de juntas básica (pantalla, videollamada y audio)", range: "Desde $100,000", unit: "por sala" },
+      { concept: "Instalación de pantalla en muro (soporte aparte)", range: "Desde $700", unit: "por pantalla" },
+      { concept: "Cine en casa en una sala existente", range: "Desde $29,000", unit: "por proyecto, con equipo" },
+      { concept: "Sala de juntas básica (pantalla, videollamada y audio)", range: "Desde $116,000", unit: "por sala" },
       { concept: "Audio por zonas", range: "Se cotiza por proyecto", unit: "según zonas y bocinas" },
     ],
     factors: [
@@ -152,7 +149,6 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
       "Cableado empotrado y resanes.",
       "Suscripciones de contenido o videoconferencia.",
       "Acondicionamiento acústico.",
-      "IVA: todos los precios son más IVA.",
     ],
     context: [
       "Antes de comprar equipo, dinos cómo quieres usar cada espacio: música de fondo, películas, videollamadas o presentaciones. Con eso recomendamos el número de bocinas, el tamaño de pantalla y si conviene ocultar el cableado.",
@@ -160,8 +156,8 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
     ],
     faq: [
       ["¿Puedo usar mis bocinas o mi pantalla actuales?", "En muchos casos sí. Revisamos el modelo y las conexiones en la visita y te decimos qué conviene conservar y qué complementar."],
-      ["¿Cuánto cuesta una sala de juntas para videollamadas?", "Una sala básica con pantalla, cámara y audio parte de $100,000. Para equipos pequeños hay opciones más sencillas que cotizamos según el espacio."],
-      ["¿Cuánto cuesta instalar una pantalla en la pared?", "Desde $600 por pantalla, sin el soporte."],
+      ["¿Cuánto cuesta una sala de juntas para videollamadas?", "Una sala básica con pantalla, cámara y audio parte de $116,000. Para equipos pequeños hay opciones más sencillas que cotizamos según el espacio."],
+      ["¿Cuánto cuesta instalar una pantalla en la pared?", "Desde $700 por pantalla, sin el soporte."],
     ],
   },
 };

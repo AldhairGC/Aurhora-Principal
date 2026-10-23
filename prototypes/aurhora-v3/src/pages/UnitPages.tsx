@@ -382,7 +382,7 @@ export function IntegraPage() {
 const MANT_FAQ: [string, string][] = [
   ["¿Pueden atenderme hoy?", "Cuéntanos qué necesitas y dónde estás. El equipo revisa la urgencia, los traslados y la disponibilidad antes de confirmar un horario."],
   ["¿Cuánto cuesta el servicio?", "Depende del equipo, el problema, los materiales y el alcance. Te informamos el costo del diagnóstico si hace falta y presentamos la cotización antes de ejecutar."],
-  ["¿Qué garantía tiene el trabajo?", "Según el servicio, ofrecemos un periodo de 15 o 30 días. Antes de contratar te indicamos las condiciones para solicitar revisión o ajuste."],
+  ["¿Qué garantía tiene el trabajo?", "Todos los trabajos tienen una garantía de 90 días a partir del servicio. Antes de contratar te indicamos las condiciones para solicitar revisión o ajuste."],
   ["¿Atienden también negocios y oficinas?", "Sí. Atendemos viviendas, locales y oficinas. Para trabajos de mayor alcance primero evaluamos las necesidades y condiciones del espacio."],
   ["¿Trabajan en domingo?", "No hay operación ordinaria en domingo. Las urgencias se evalúan según disponibilidad."],
   ["¿Atienden naves, bodegas y proyectos industriales?", "Sí. Realizamos instalaciones, iluminación, climatización y mantenimiento programado para naves y bodegas. El alcance técnico se confirma en el levantamiento."],
@@ -411,7 +411,7 @@ export function FacilitiesPage() {
 
       <div className="gutter bg-night text-on-night">
         <ul className="wrap grid gap-px py-1 text-[14px] md:grid-cols-3">
-          {["Cotización antes de trabajar", "Diagnóstico descontable del trabajo aceptado", "Respaldo de 15 o 30 días según servicio"].map((t) => (
+          {["Cotización antes de trabajar", "Diagnóstico descontable del trabajo aceptado", "Garantía de 90 días en todos los trabajos"].map((t) => (
             <li key={t} className="flex items-center gap-3 py-4"><Check className="h-4 w-4 shrink-0 text-unit-night" aria-hidden="true" />{t}</li>
           ))}
         </ul>

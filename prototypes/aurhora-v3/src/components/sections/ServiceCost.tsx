@@ -20,7 +20,7 @@ export function ServiceCost({ x, name }: { x: ServiceExtras; name: string }) {
               <thead className="hidden sm:table-header-group">
                 <tr className="border-b border-line text-mute">
                   <th scope="col" className="p-4 font-medium">Concepto</th>
-                  <th scope="col" className="p-4 font-medium">Precio (más IVA)</th>
+                  <th scope="col" className="p-4 font-medium">Precio (IVA incluido)</th>
                 </tr>
               </thead>
               <tbody>

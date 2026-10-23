@@ -13,13 +13,13 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
   "aire-acondicionado": {
     costIntro: "Los precios para minisplits van desde unos cientos de pesos por una visita de diagnóstico hasta varios miles por una instalación. Te sirven para planear; el precio final depende de tu equipo, del acceso y de lo que encontremos en la revisión.",
     prices: [
-      { concept: "Visita técnica o diagnóstico", range: "Desde $350", unit: "por visita, descontable" },
-      { concept: "Mantenimiento preventivo en casa (1 a 2 toneladas)", range: "Desde $800", unit: "por equipo" },
-      { concept: "Mantenimiento en negocio u oficina (minisplit o cassette)", range: "Desde $2,500", unit: "por equipo" },
-      { concept: "Instalación básica de minisplit (mano de obra)", range: "Desde $1,900", unit: "por equipo" },
-      { concept: "Metro adicional de tubería", range: "Desde $350", unit: "por metro" },
-      { concept: "Recarga de gas, después de reparar la fuga", range: "Desde $900", unit: "según kilos" },
-      { concept: "Localización y reparación de fuga con carga", range: "Desde $2,500", unit: "por evento" },
+      { concept: "Visita técnica o diagnóstico", range: "Desde $450", unit: "por visita, descontable" },
+      { concept: "Mantenimiento preventivo en casa (1 a 2 toneladas)", range: "Desde $950", unit: "por equipo" },
+      { concept: "Mantenimiento en negocio u oficina (minisplit o cassette)", range: "Desde $2,900", unit: "por equipo" },
+      { concept: "Instalación básica de minisplit (mano de obra)", range: "Desde $2,250", unit: "por equipo" },
+      { concept: "Metro adicional de tubería", range: "Desde $450", unit: "por metro" },
+      { concept: "Recarga de gas, después de reparar la fuga", range: "Desde $1,050", unit: "según kilos" },
+      { concept: "Localización y reparación de fuga con carga", range: "Desde $2,900", unit: "por evento" },
     ],
     factors: [
       "Capacidad y tipo de equipo (minisplit, cassette, piso-techo).",
@@ -41,25 +41,24 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Tubería adicional, perforación de losa, bases y canaleta.",
       "Línea eléctrica dedicada para equipos nuevos.",
       "Trabajo en altura que requiera andamio o elevador.",
-      "IVA: todos los precios son más IVA.",
     ],
     faq: [
-      ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Desde $800 por equipo en casa y desde $2,500 en negocios. Te damos el precio exacto después de ver tu equipo."],
+      ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Desde $950 por equipo en casa y desde $2,900 en negocios. Te damos el precio exacto después de ver tu equipo."],
       ["¿Cuánto tarda la limpieza de un minisplit?", "Normalmente entre una hora y hora y media por equipo, según el acceso y qué tan sucio esté."],
-      ["¿El diagnóstico tiene costo?", "Sí, y te lo informamos antes de la visita. Parte de $350; si aceptas la cotización, se descuenta del trabajo."],
+      ["¿El diagnóstico tiene costo?", "Sí, y te lo informamos antes de la visita. Parte de $450; si aceptas la cotización, se descuenta del trabajo."],
     ],
   },
 
   electricidad: {
     costIntro: `Los trabajos eléctricos se cobran por visita, por pieza o por circuito. La mayoría son de mano de obra: el material se cotiza aparte, y la diferencia entre un contacto básico y uno de marca premium puede ser grande.`,
     prices: [
-      { concept: "Visita o diagnóstico", range: "Desde $400", unit: "por visita, descontable" },
-      { concept: "Cambio de contacto o apagador", range: "Desde $250", unit: "por pieza" },
-      { concept: "Instalación de luminaria (altura estándar)", range: "Desde $350", unit: "por pieza" },
-      { concept: "Cambio de pastilla", range: "Desde $350", unit: "por pieza" },
-      { concept: "Circuito nuevo", range: "Desde $900", unit: "por circuito" },
-      { concept: "Salida de 220 V para minisplit (sin material)", range: "Desde $1,200", unit: "por salida" },
-      { concept: "Cambio de centro de carga", range: "Desde $1,500", unit: "por servicio" },
+      { concept: "Visita o diagnóstico", range: "Desde $500", unit: "por visita, descontable" },
+      { concept: "Cambio de contacto o apagador", range: "Desde $300", unit: "por pieza" },
+      { concept: "Instalación de luminaria (altura estándar)", range: "Desde $450", unit: "por pieza" },
+      { concept: "Cambio de pastilla", range: "Desde $450", unit: "por pieza" },
+      { concept: "Circuito nuevo", range: "Desde $1,050", unit: "por circuito" },
+      { concept: "Salida de 220 V para minisplit (sin material)", range: "Desde $1,400", unit: "por salida" },
+      { concept: "Cambio de centro de carga", range: "Desde $1,750", unit: "por servicio" },
     ],
     factors: [
       "Tipo de trabajo y cantidad de puntos.",
@@ -80,10 +79,9 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Resanes y pintura después de ranurar muros.",
       "Trámites ante CFE, como aumento de carga.",
       "Trabajo en altura con andamio.",
-      "IVA: todos los precios son más IVA.",
     ],
     faq: [
-      ["¿Cuánto cobra un electricista por venir a casa en la CDMX?", "La visita o diagnóstico parte de $400 y suele descontarse si aceptas el trabajo."],
+      ["¿Cuánto cobra un electricista por venir a casa en la CDMX?", "La visita o diagnóstico parte de $500 y suele descontarse si aceptas el trabajo."],
       ["¿El material está incluido en el precio?", "Normalmente no. Te decimos qué material se necesita y lo incluimos en la cotización, o puedes comprarlo tú si lo prefieres."],
     ],
   },
@@ -91,12 +89,12 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
   reparaciones: {
     costIntro: "Los trabajos de reparación del hogar se cobran por trabajo o por tiempo. Se cobra una visita mínima, por eso conviene juntar varios pendientes en una sola visita.",
     prices: [
-      { concept: "Visita mínima (2 horas)", range: "Desde $600", unit: "por visita" },
-      { concept: "Hora de servicio", range: "Desde $300", unit: "por hora" },
-      { concept: "Media jornada (4 horas)", range: "Desde $800", unit: "por jornada" },
-      { concept: "Jornada completa", range: "Desde $1,500", unit: "por jornada" },
-      { concept: "Instalar soporte de TV en muro (soporte aparte)", range: "Desde $500", unit: "por pantalla" },
-      { concept: "Repisas o cuadros", range: "Desde $250", unit: "por trabajo" },
+      { concept: "Visita mínima (2 horas)", range: "Desde $700", unit: "por visita" },
+      { concept: "Hora de servicio", range: "Desde $350", unit: "por hora" },
+      { concept: "Media jornada (4 horas)", range: "Desde $950", unit: "por jornada" },
+      { concept: "Jornada completa", range: "Desde $1,750", unit: "por jornada" },
+      { concept: "Instalar soporte de TV en muro (soporte aparte)", range: "Desde $600", unit: "por pantalla" },
+      { concept: "Repisas o cuadros", range: "Desde $300", unit: "por trabajo" },
     ],
     factors: [
       "Cantidad de trabajos en la misma visita.",
@@ -122,7 +120,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Si ya compraste soportes, repisas o accesorios, compártenos el modelo o una foto de la caja. Así revisamos que sean adecuados para tu muro y para el peso que van a cargar.",
     ],
     faq: [
-      ["¿Cuánto cuesta instalar un soporte de TV?", "Desde $500 por pantalla, sin contar el soporte."],
+      ["¿Cuánto cuesta instalar un soporte de TV?", "Desde $600 por pantalla, sin contar el soporte."],
       ["¿Cobran por hora o por trabajo?", "Depende de la lista. Con varios pendientes, conviene una cotización por media jornada o jornada completa."],
     ],
   },
@@ -130,11 +128,11 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
   "mantenimiento-programado": {
     costIntro: "El precio de una póliza depende del inventario de equipos y de la frecuencia de visitas. Estos precios de partida te ayudan a dimensionar el presupuesto antes del levantamiento.",
     prices: [
-      { concept: "Póliza para negocio con 5 a 10 minisplits", range: "Desde $3,500", unit: "al mes" },
-      { concept: "Plan anual por minisplit (mantenimiento + diagnóstico)", range: "Desde $1,900", unit: "por equipo al año" },
-      { concept: "Mantenimiento preventivo de tablero eléctrico", range: "Desde $1,500", unit: "por tablero" },
-      { concept: "Mantenimiento eléctrico de oficina o local", range: "Desde $1,500", unit: "por servicio" },
-      { concept: "Hora de técnico especializado", range: "Desde $550", unit: "por hora" },
+      { concept: "Póliza para negocio con 5 a 10 minisplits", range: "Desde $4,100", unit: "al mes" },
+      { concept: "Plan anual por minisplit (mantenimiento + diagnóstico)", range: "Desde $2,250", unit: "por equipo al año" },
+      { concept: "Mantenimiento preventivo de tablero eléctrico", range: "Desde $1,750", unit: "por tablero" },
+      { concept: "Mantenimiento eléctrico de oficina o local", range: "Desde $1,750", unit: "por servicio" },
+      { concept: "Hora de técnico especializado", range: "Desde $650", unit: "por hora" },
     ],
     factors: [
       "Número y tipo de equipos.",
@@ -161,7 +159,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
     ],
     faq: [
       ["¿Qué pasa si un equipo falla entre visitas?", "Lo reportas por WhatsApp y coordinamos la atención según el tiempo de respuesta acordado en la póliza. Como ya conocemos el equipo y su historial, el diagnóstico suele ser más rápido. El correctivo se cotiza antes de ejecutarlo."],
-      ["¿Cuánto cuesta una póliza de mantenimiento?", "Depende del inventario. Para un negocio con 5 a 10 minisplits, la póliza parte de $3,500 al mes."],
+      ["¿Cuánto cuesta una póliza de mantenimiento?", "Depende del inventario. Para un negocio con 5 a 10 minisplits, la póliza parte de $4,100 al mes."],
       ["¿Cada cuánto son las visitas?", "En comercios suele ser cada tres meses; en restaurantes e industria, con mayor frecuencia; en casas, cada seis meses. Se ajusta con el uso real."],
     ],
   },
@@ -169,12 +167,12 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
   "proyectos-residenciales": {
     costIntro: "Los proyectos residenciales se cotizan por etapas después del levantamiento. Estos precios de partida ayudan a dimensionar el presupuesto; el total cambia mucho porque cada casa es distinta.",
     prices: [
-      { concept: "Instalación eléctrica nueva", range: "Desde $200", unit: "por m²" },
-      { concept: "Punto eléctrico en obra (mano de obra)", range: "Desde $450", unit: "por punto" },
-      { concept: "Remodelación eléctrica completa", range: "Desde $15,000", unit: "por inmueble" },
-      { concept: "Remodelación de baño", range: "Desde $9,500", unit: "por proyecto" },
-      { concept: "Remodelación de cocina", range: "Desde $9,700", unit: "por proyecto" },
-      { concept: "Preparación para minisplit (salida 220 V)", range: "Desde $1,200", unit: "por salida" },
+      { concept: "Instalación eléctrica nueva", range: "Desde $250", unit: "por m²" },
+      { concept: "Punto eléctrico en obra (mano de obra)", range: "Desde $550", unit: "por punto" },
+      { concept: "Remodelación eléctrica completa", range: "Desde $17,400", unit: "por inmueble" },
+      { concept: "Remodelación de baño", range: "Desde $11,050", unit: "por proyecto" },
+      { concept: "Remodelación de cocina", range: "Desde $11,300", unit: "por proyecto" },
+      { concept: "Preparación para minisplit (salida 220 V)", range: "Desde $1,400", unit: "por salida" },
     ],
     factors: [
       "Metros cuadrados y número de puntos eléctricos.",
@@ -200,18 +198,18 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
     ],
     faq: [
       ["¿Puedo hacer la remodelación por etapas?", "Sí. Es común empezar por la instalación eléctrica y el cableado, que van antes de los acabados, y dejar para una segunda etapa la climatización o la domótica. La propuesta indica qué conviene hacer primero."],
-      ["¿Cuánto cuesta cambiar la instalación eléctrica de una casa?", "Una instalación nueva parte de $200 por m² y una remodelación eléctrica completa desde $15,000."],
+      ["¿Cuánto cuesta cambiar la instalación eléctrica de una casa?", "Una instalación nueva parte de $250 por m² y una remodelación eléctrica completa desde $17,400."],
     ],
   },
 
   "proyectos-industriales": {
     costIntro: "En proyectos comerciales e industriales el precio depende del área, la altura y los horarios en que se puede trabajar. Estos precios de partida sirven para estimar el orden de magnitud antes del levantamiento.",
     prices: [
-      { concept: "Iluminación LED de nave (proyecto completo)", range: "Desde $120", unit: "por m²" },
-      { concept: "Luminaria LED tipo campana, suministro e instalación", range: "Desde $5,800", unit: "por luminaria, costo directo" },
-      { concept: "Mantenimiento básico de nave o local", range: "Desde $2,500", unit: "por servicio" },
-      { concept: "Mantenimiento de climatización comercial", range: "Desde $2,800", unit: "por equipo" },
-      { concept: "Mantenimiento preventivo de tablero", range: "Desde $1,500", unit: "por tablero" },
+      { concept: "Iluminación LED de nave (proyecto completo)", range: "Desde $150", unit: "por m²" },
+      { concept: "Luminaria LED tipo campana, suministro e instalación", range: "Desde $6,750", unit: "por luminaria, costo directo" },
+      { concept: "Mantenimiento básico de nave o local", range: "Desde $2,900", unit: "por servicio" },
+      { concept: "Mantenimiento de climatización comercial", range: "Desde $3,250", unit: "por equipo" },
+      { concept: "Mantenimiento preventivo de tablero", range: "Desde $1,750", unit: "por tablero" },
     ],
     factors: [
       "Superficie y altura de trabajo.",
@@ -236,7 +234,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Si tu plaza, corporativo o aseguradora pide requisitos específicos, como bitácoras, seguros o documentación de entrega, compártelos desde el inicio. Los incluimos en la propuesta para que no se conviertan en un costo sorpresa al final.",
     ],
     faq: [
-      ["¿Cuánto cuesta cambiar la iluminación de una nave a LED?", "Los proyectos completos parten de $120 por m², incluyendo luminarias e instalación."],
+      ["¿Cuánto cuesta cambiar la iluminación de una nave a LED?", "Los proyectos completos parten de $150 por m², incluyendo luminarias e instalación."],
     ],
   },
 };

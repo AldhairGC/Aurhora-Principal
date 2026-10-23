@@ -72,7 +72,7 @@ function unitBusiness(id: string) {
   };
 }
 
-/** Authorized "Desde $X" prices as Offers (MXN, before IVA). Rows without an amount are skipped. */
+/** Authorized "Desde $X" prices as Offers (MXN, IVA included). Rows without an amount are skipped. */
 function priceOffers(serviceId: string) {
   return (extrasOf(serviceId)?.prices ?? []).flatMap((p) => {
     const m = p.range.match(/\$([\d,]+)/);
@@ -83,7 +83,7 @@ function priceOffers(serviceId: string) {
       name: p.concept,
       ...(p.unit ? { description: p.unit } : {}),
       priceCurrency: "MXN",
-      priceSpecification: { "@type": "PriceSpecification", minPrice, priceCurrency: "MXN", valueAddedTaxIncluded: false },
+      priceSpecification: { "@type": "PriceSpecification", minPrice, priceCurrency: "MXN", valueAddedTaxIncluded: true },
     }];
   });
 }

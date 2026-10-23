@@ -18,11 +18,11 @@ CDMX y zonas del Estado de México para servicios físicos, con foco en Satélit
 
 WhatsApp único confirmado: +52 55 8299 1282. Primera versión con atención humana. La solicitud recopila unidad, servicio, espacio, zona, descripción y preferencia de atención. No obliga al cliente a completar un cuestionario largo para contactar.
 
-Precios autorizados (23 de octubre de 2026): se aprobaron los rangos de mercado de CDMX y Estado de México investigados para cada servicio, y se publican solo como "Desde $X", con el límite inferior de cada rango. No se publica el límite superior. Todos los precios son más IVA. Cada tabla lleva la nota "Precios desde, en pesos mexicanos, más IVA. El precio final se confirma en la cotización". Los datos y sus fuentes están en `extras-*.ts` y `articles-cost.ts` del prototipo v3.
+Precios autorizados (23 de octubre de 2026): se aprobaron los rangos de mercado de CDMX y Estado de México investigados para cada servicio, y se publican solo como "Desde $X", con el límite inferior de cada rango. No se publica el límite superior. Para cumplir el art. 7 Bis de la LFPC, los precios publicados incluyen IVA: al límite inferior se le suma el 16% y se redondea hacia arriba al siguiente múltiplo de $50 (por ejemplo, $350 + IVA = $406, se publica $450). Cada tabla lleva la nota "Precios desde, en pesos mexicanos, con IVA incluido. El precio final se confirma en la cotización". Los datos y sus fuentes están en `extras-*.ts` y `articles-cost.ts` del prototipo v3.
 
-La visita o diagnóstico se publica desde $350 (aire acondicionado) y desde $400 (electricidad); se informa antes de la visita y se descuenta del trabajo aceptado. Materiales, traslados y urgencias necesitan políticas finales.
+La visita o diagnóstico se publica desde $450 (aire acondicionado) y desde $500 (electricidad), con IVA; se informa antes de la visita y se descuenta del trabajo aceptado. Materiales, traslados y urgencias necesitan políticas finales.
 
-Integra: año adicional de garantía para productos elegibles vendidos por Aurhora, sujeto a precisar cobertura y condiciones. Facilities: 15 o 30 días según servicio; periodo de revisión/ajuste por definir para cada categoría. No usar satisfacción total como promesa universal.
+Integra: año adicional de garantía para productos elegibles vendidos por Aurhora, sujeto a precisar cobertura y condiciones. Facilities: garantía de 90 días sobre el trabajo realizado, a partir de la prestación del servicio (mínimo del art. 77 de la LFPC). No usar satisfacción total como promesa universal.
 
 ## Evolución posterior
 
@@ -30,4 +30,4 @@ Agente de atención inicial con base de conocimientos, oferta de catálogo y pre
 
 ## Pendientes de contenido
 
-Fotos propias; garantías específicas; catálogo completo; idiomas y URLs de producción. No bloquean la revisión del mockup.
+Fotos propias; condiciones detalladas de la garantía de Integra; revisión de los textos legales por un abogado; catálogo completo; idiomas y URLs de producción. No bloquean la revisión del mockup.

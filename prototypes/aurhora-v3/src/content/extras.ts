@@ -8,7 +8,7 @@ import { DIGITAL_EXTRAS } from "./extras-digital";
   rangos de mercado de CDMX y Estado de México. Ver docs/GUIA_DE_MARCA.md (sección Voz).
 */
 export const PRICE_NOTE =
-  "Precios desde, en pesos mexicanos, más IVA. El precio final se confirma en la cotización, después de revisar tu caso.";
+  "Precios desde, en pesos mexicanos, con IVA incluido. El precio final se confirma en la cotización, después de revisar tu caso.";
 
 export const EXTRAS: Record<string, ServiceExtras> = {
   ...FACILITIES_EXTRAS,

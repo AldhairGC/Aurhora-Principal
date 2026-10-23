@@ -18,14 +18,14 @@ const COMMITMENTS = [
   { title: "Cotización antes de trabajar", desc: "Sabes qué se hará y cuánto costará antes de aceptar." },
   { title: "Diagnóstico descontable", desc: "Si hace falta, te informamos su costo primero y se descuenta del trabajo aceptado." },
   { title: "Horario real", desc: "Lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00. Fuera de ese horario, las urgencias se evalúan según disponibilidad." },
-  { title: "Respaldo por escrito", desc: "15 o 30 días en Aurhora Facilities; +1 año adicional en productos elegibles de Integra." },
+  { title: "Respaldo por escrito", desc: "90 días en Aurhora Facilities; +1 año adicional en productos elegibles de Integra." },
 ];
 
 const GROUP_FAQ: [string, string][] = [
   ["¿Por qué tres especialidades en una sola agencia?", "Porque las necesidades de un hogar o un negocio cambian. Puedes empezar con un mantenimiento y después necesitar cámaras o una herramienta digital, sin volver a explicar quién eres."],
   ["¿Tengo que saber con qué unidad hablar?", "No. Escríbenos por el mismo WhatsApp y te canalizamos con la especialidad adecuada."],
   ["¿Dónde atienden?", "Los servicios físicos se realizan en CDMX y zonas del Estado de México. Los proyectos digitales se atienden en todo México."],
-  ["¿Publican precios?", "Sí. Cada servicio muestra sus precios desde, más IVA. El precio final depende del alcance, por eso cotizamos antes de ejecutar y te informamos cualquier costo de diagnóstico."],
+  ["¿Publican precios?", "Sí. Cada servicio muestra sus precios desde, con IVA incluido. El precio final depende del alcance, por eso cotizamos antes de ejecutar y te informamos cualquier costo de diagnóstico."],
 ];
 
 const SECTORS = ["Automotriz", "Banca", "Fintech", "Seguros"];

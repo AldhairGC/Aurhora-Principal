@@ -25,7 +25,7 @@ export function TicketCard({ className }: { className?: string }) {
   const steps = [
     { t: "Revisión del equipo", d: "Minisplit 1 · recámara principal" },
     { t: "Trabajo acordado", d: "Limpieza profunda y ajuste de drenaje" },
-    { t: "Seguimiento", d: "Respaldo de 30 días explicado" },
+    { t: "Seguimiento", d: "Garantía de 90 días explicada" },
   ];
   return (
     <div data-unit="facilities" className={cn("rounded-[16px] border border-line bg-raised p-5", className)}>

@@ -5,7 +5,7 @@ import type { ArticleMore } from "./articles-more";
   autorizados "Desde" (límite inferior de los rangos de mercado de octubre de 2026). Sus fuentes
   están documentadas en extras-digital.ts, extras-integra.ts y extras-facilities.ts.
 */
-const REF = "Precios desde, en pesos mexicanos, más IVA. El precio final se confirma en la cotización, después de revisar tu caso.";
+const REF = "Precios desde, en pesos mexicanos, con IVA incluido. El precio final se confirma en la cotización, después de revisar tu caso.";
 
 export const ARTICLES_COST: Record<string, ArticleMore> = {
   "que-es-un-agente-de-ia": {
@@ -18,10 +18,10 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
           { p: "Un agente tiene dos costos: la implementación, que se paga una vez, y la operación mensual. Estos son los precios de partida:" },
           {
             kv: [
-              ["Implementación de un agente acotado", "Desde $8,000"],
-              ["Agente conectado a CRM o ERP", "Desde $25,000"],
-              ["Operación y mejoras", "Desde $2,500 al mes"],
-              ["Uso de WhatsApp y del modelo de IA", "Desde $300 al mes, según volumen"],
+              ["Implementación de un agente acotado", "Desde $9,300"],
+              ["Agente conectado a CRM o ERP", "Desde $29,000"],
+              ["Operación y mejoras", "Desde $2,900 al mes"],
+              ["Uso de WhatsApp y del modelo de IA", "Desde $350 al mes, según volumen"],
             ],
           },
           { p: "La diferencia entre un extremo y otro está en las integraciones, el volumen de conversaciones y el nivel de supervisión. Un plan empaquetado puede bastar para responder preguntas frecuentes; un proceso que toca tus sistemas necesita un proyecto a la medida. En tiempo, un agente acotado suele estar listo en 1 a 3 semanas, y uno con integraciones a CRM, en 3 a 8." },
@@ -30,7 +30,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta un agente de IA para una empresa?", "En México, la implementación de un agente acotado parte de $8,000 y la operación desde $2,500 al mes, más el uso de WhatsApp y del modelo."],
+      ["¿Cuánto cuesta un agente de IA para una empresa?", "En México, la implementación de un agente acotado parte de $9,300 y la operación desde $2,900 al mes, más el uso de WhatsApp y del modelo."],
     ],
   },
 
@@ -52,9 +52,9 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
         blocks: [
           {
             kv: [
-              ["Chatbot o plataforma que configuras tú", "Desde $500 al mes"],
-              ["Automatización de un flujo simple", "Desde $3,500, pago único"],
-              ["Agente de IA acotado", "Desde $8,000 de implementación y desde $2,500 al mes de operación"],
+              ["Chatbot o plataforma que configuras tú", "Desde $600 al mes"],
+              ["Automatización de un flujo simple", "Desde $4,100, pago único"],
+              ["Agente de IA acotado", "Desde $9,300 de implementación y desde $2,900 al mes de operación"],
             ],
           },
           { p: "Al comparar, suma el tiempo de tu equipo. Una opción barata que deja la mitad de los casos sin resolver puede costar más horas de trabajo que una solución más completa." },
@@ -80,7 +80,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta un chatbot comparado con un agente?", "Una plataforma de chatbot que configuras tú cuesta desde $500 al mes. Un agente acotado requiere una implementación desde $8,000 más su operación mensual."],
+      ["¿Cuánto cuesta un chatbot comparado con un agente?", "Una plataforma de chatbot que configuras tú cuesta desde $600 al mes. Un agente acotado requiere una implementación desde $9,300 más su operación mensual."],
     ],
   },
 
@@ -126,9 +126,9 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
           { p: "Para presupuestar un agente considera cuatro partidas:" },
           {
             kv: [
-              ["Implementación", "Desde $8,000 un agente acotado; desde $25,000 con CRM o ERP"],
-              ["Operación mensual", "Desde $2,500 al mes"],
-              ["Uso variable", "Desde $300 al mes en WhatsApp y modelo de IA, según volumen"],
+              ["Implementación", "Desde $9,300 un agente acotado; desde $29,000 con CRM o ERP"],
+              ["Operación mensual", "Desde $2,900 al mes"],
+              ["Uso variable", "Desde $350 al mes en WhatsApp y modelo de IA, según volumen"],
               ["Tiempo interno", "Horas del responsable del proceso para pruebas y revisiones"],
             ],
           },
@@ -154,7 +154,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta implementar un agente de IA con CRM?", "Un agente conectado a CRM o ERP parte de $25,000 de implementación y tarda de 3 a 8 semanas."],
+      ["¿Cuánto cuesta implementar un agente de IA con CRM?", "Un agente conectado a CRM o ERP parte de $29,000 de implementación y tarda de 3 a 8 semanas."],
     ],
   },
 
@@ -167,11 +167,11 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
         blocks: [
           {
             kv: [
-              ["Domotizar un departamento", "Desde $15,000"],
-              ["Domotizar una casa, nivel básico", "Desde $42,000"],
-              ["Apagador inteligente instalado", "Desde $1,000 por pieza"],
-              ["Motorizar una persiana existente", "Desde $1,800 por unidad"],
-              ["Control WiFi para minisplit", "Desde $450 por equipo (solo equipo)"],
+              ["Domotizar un departamento", "Desde $17,400"],
+              ["Domotizar una casa, nivel básico", "Desde $48,750"],
+              ["Apagador inteligente instalado", "Desde $1,200 por pieza"],
+              ["Motorizar una persiana existente", "Desde $2,100 por unidad"],
+              ["Control WiFi para minisplit", "Desde $550 por equipo (solo equipo)"],
             ],
           },
           { p: "El precio final depende de cuántas áreas automatices, de la marca y de si hace falta instalación eléctrica para motores. Empezar por un área permite conocer el sistema antes de invertir en toda la casa." },
@@ -213,7 +213,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta domotizar un departamento sin obra?", "En la CDMX, desde $15,000 según las áreas y dispositivos. Un apagador inteligente instalado parte de $1,000."],
+      ["¿Cuánto cuesta domotizar un departamento sin obra?", "En la CDMX, desde $17,400 según las áreas y dispositivos. Un apagador inteligente instalado parte de $1,200."],
     ],
   },
 
@@ -234,10 +234,10 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
         blocks: [
           {
             kv: [
-              ["Visita técnica o diagnóstico", "Desde $350, normalmente descontable"],
-              ["Mantenimiento en casa (1 a 2 toneladas)", "Desde $800 por equipo"],
-              ["Mantenimiento en negocio u oficina", "Desde $2,500 por equipo"],
-              ["Recarga de gas, después de reparar la fuga", "Desde $900"],
+              ["Visita técnica o diagnóstico", "Desde $450, normalmente descontable"],
+              ["Mantenimiento en casa (1 a 2 toneladas)", "Desde $950 por equipo"],
+              ["Mantenimiento en negocio u oficina", "Desde $2,900 por equipo"],
+              ["Recarga de gas, después de reparar la fuga", "Desde $1,050"],
             ],
           },
           { p: "Un mantenimiento toma alrededor de una hora a hora y media por equipo. Si tienes varios, conviene atenderlos en la misma visita: ahorras traslados y el precio por equipo suele ser menor." },
@@ -272,7 +272,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Desde $800 por equipo en casa y desde $2,500 en negocios. Toma alrededor de una hora a hora y media por equipo."],
+      ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Desde $950 por equipo en casa y desde $2,900 en negocios. Toma alrededor de una hora a hora y media por equipo."],
     ],
   },
 
@@ -294,10 +294,10 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
         blocks: [
           {
             kv: [
-              ["Visita o diagnóstico", "Desde $400, normalmente descontable"],
-              ["Cambio de pastilla", "Desde $350 por pieza"],
-              ["Circuito nuevo", "Desde $900 por circuito"],
-              ["Cambio de centro de carga", "Desde $1,500"],
+              ["Visita o diagnóstico", "Desde $500, normalmente descontable"],
+              ["Cambio de pastilla", "Desde $450 por pieza"],
+              ["Circuito nuevo", "Desde $1,050 por circuito"],
+              ["Cambio de centro de carga", "Desde $1,750"],
             ],
           },
           { p: "El diagnóstico suele resolverse en la misma visita. Si hace falta un circuito nuevo o cambiar el tablero, se cotiza aparte con el material incluido." },
@@ -348,7 +348,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cobra un electricista por revisar por qué se bota la pastilla?", "En la CDMX, la visita o diagnóstico parte de $400 y normalmente se descuenta si aceptas el trabajo. Cambiar una pastilla cuesta desde $350."],
+      ["¿Cuánto cobra un electricista por revisar por qué se bota la pastilla?", "En la CDMX, la visita o diagnóstico parte de $500 y normalmente se descuenta si aceptas el trabajo. Cambiar una pastilla cuesta desde $450."],
     ],
   },
 
@@ -377,10 +377,10 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
           { p: "El precio de una póliza depende del inventario. Estos precios de partida sirven para dimensionar el presupuesto:" },
           {
             kv: [
-              ["Póliza para negocio con 5 a 10 minisplits", "Desde $3,500 al mes"],
-              ["Plan anual por minisplit", "Desde $1,900 por equipo al año"],
-              ["Mantenimiento preventivo de tablero", "Desde $1,500 por tablero"],
-              ["Hora de técnico especializado", "Desde $550 por hora"],
+              ["Póliza para negocio con 5 a 10 minisplits", "Desde $4,100 al mes"],
+              ["Plan anual por minisplit", "Desde $2,250 por equipo al año"],
+              ["Mantenimiento preventivo de tablero", "Desde $1,750 por tablero"],
+              ["Hora de técnico especializado", "Desde $650 por hora"],
             ],
           },
           { callout: REF, tone: "info" },
@@ -444,7 +444,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta una póliza de mantenimiento preventivo?", "Depende del inventario y la frecuencia. En la CDMX, una póliza para un negocio con 5 a 10 minisplits parte de $3,500 al mes, y el plan anual por minisplit, desde $1,900 por equipo."],
+      ["¿Cuánto cuesta una póliza de mantenimiento preventivo?", "Depende del inventario y la frecuencia. En la CDMX, una póliza para un negocio con 5 a 10 minisplits parte de $4,100 al mes, y el plan anual por minisplit, desde $2,250 por equipo."],
     ],
   },
 };
