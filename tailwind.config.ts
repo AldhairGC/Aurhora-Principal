@@ -1,173 +1,76 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
-import {
-  colors,
-  typography,
-  spacing,
-  sizes,
-  borderRadius,
-  shadows,
-  transitions,
-  breakpoints,
-  zIndex,
-} from "./src/lib/design-system/tokens";
+import animate from "tailwindcss-animate";
+
+const tok = (name: string) => `rgb(var(--${name}) / <alpha-value>)`;
 
 export default {
-  darkMode: 'class',
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  safelist: [
-    // Colores para gradientes
-    'from-cyan-500',
-    'from-cyan-500/20',
-    'from-cyan-600',
-    'from-purple-500',
-    'from-purple-500/20',
-    'from-purple-600',
-    'from-pink-500',
-    'from-pink-500/20',
-    'from-pink-600',
-    'from-amber-500',
-    'from-amber-500/20',
-    'from-amber-600',
-    'from-blue-500',
-    'from-blue-500/20',
-    'from-blue-600',
-    'from-emerald-500',
-    'from-emerald-500/20',
-    'from-lime-500',
-    'from-lime-500/20',
-    'to-cyan-600',
-    'to-purple-600',
-    'to-pink-600',
-    'to-amber-600',
-    'to-blue-600',
-    'to-transparent',
-    // Colores de texto
-    'text-cyan-500',
-    'text-purple-500',
-    'text-pink-500',
-    'text-amber-500',
-    'text-blue-500',
-    'text-emerald-500',
-    'text-lime-400',
-    'text-cyan-400',
-    // Colores de fondo
-    'bg-emerald-900/50',
-    'bg-emerald-100',
-    'bg-blue-900/50',
-    'bg-blue-100',
-    'bg-purple-900/50',
-    'bg-purple-100',
-    'bg-pink-900/50',
-    'bg-pink-100',
-    'bg-amber-900/50',
-    'bg-amber-100',
-    'bg-cyan-500/20',
-    'from-cyan-500/10',
-    'to-purple-500/10',
-    // Bordes
-    'border-emerald-700/30',
-    'border-emerald-300',
-    'border-blue-700/30',
-    'border-blue-300',
-    'border-purple-700/30',
-    'border-purple-300',
-    'border-pink-700/30',
-    'border-pink-300',
-    'border-amber-700/30',
-    'border-amber-300',
-    'border-cyan-500/30',
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: { center: true },
     extend: {
-      colors: {
-        ...colors.brand,
-        ...colors.secondary,
-        neutral: colors.neutral,
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        // ── Aurora Design System (rediseño) — fuente: src/lib/design-system/aurora.ts ──
-        ink: {
-          DEFAULT: "var(--color-ink)",
-          soft: "var(--color-ink-soft)",
-        },
-        secondaryText: "var(--color-secondary)",
-        line: "var(--color-line)",
-        surface: "var(--color-surface)",
-        aurora: {
-          violet: "var(--color-aurora-violet)",
-          indigo: "var(--color-aurora-indigo)",
-          blue: "var(--color-aurora-blue)",
-          cyan: "var(--color-aurora-cyan)",
-          bg: "var(--color-aurora-bg)",
-        },
-      },
-      backgroundImage: {
-        aurora: "var(--gradient-aurora)",
-      },
       fontFamily: {
-        sans: typography.fontFamily.sans.split(", "),
+        display: ["var(--font-sora)", "var(--font-geist)", "system-ui", "sans-serif"],
+        sans: ["var(--font-geist)", "system-ui", "-apple-system", "\"Segoe UI\"", "sans-serif"],
         mono: ["var(--font-geist-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
-      fontSize: typography.fontSize,
-      fontWeight: typography.fontWeight,
-      lineHeight: typography.lineHeight,
-      letterSpacing: typography.letterSpacing,
-      spacing: spacing,
-      borderRadius: borderRadius,
-      boxShadow: shadows,
-      transitionDuration: transitions.duration,
-      transitionTimingFunction: transitions.timing,
-      screens: breakpoints,
-      zIndex: zIndex,
-      maxWidth: sizes.container,
-      animation: {
-        'float': 'float 4s ease-in-out infinite',
-        'fadeInUp': 'fadeInUp 0.8s ease-out forwards',
-        'fadeInLeft': 'fadeInLeft 0.8s ease-out forwards',
-        'fadeInRight': 'fadeInRight 0.8s ease-out forwards',
+      colors: {
+        bg: tok("bg"),
+        raised: tok("raised"),
+        sunken: tok("sunken"),
+        line: tok("line"),
+        "line-strong": tok("line-strong"),
+        ink: tok("ink"),
+        "ink-soft": tok("ink-soft"),
+        mute: tok("mute"),
+        night: tok("night"),
+        "night-raised": tok("night-raised"),
+        "night-line": tok("night-line"),
+        "on-night": tok("on-night"),
+        "on-night-mute": tok("on-night-mute"),
+        violet: tok("violet"),
+        indigo: tok("indigo"),
+        cyan: tok("cyan"),
+        mint: tok("mint"),
+        unit: tok("unit"),
+        "unit-soft": tok("unit-soft"),
+        "unit-on": tok("unit-on"),
+        "unit-night": tok("unit-night"),
+        ok: tok("ok"),
+        warn: tok("warn"),
+        danger: tok("danger"),
+        // shadcn/ui aliases mapped onto the Aurhora tokens
+        border: tok("line"),
+        input: tok("line"),
+        ring: tok("focus"),
+        background: tok("bg"),
+        foreground: tok("ink"),
+        primary: { DEFAULT: tok("ink"), foreground: tok("bg") },
+        secondary: { DEFAULT: tok("sunken"), foreground: tok("ink") },
+        destructive: { DEFAULT: tok("danger"), foreground: tok("bg") },
+        muted: { DEFAULT: tok("sunken"), foreground: tok("mute") },
+        accent: { DEFAULT: tok("sunken"), foreground: tok("ink") },
+        popover: { DEFAULT: tok("raised"), foreground: tok("ink") },
+        card: { DEFAULT: tok("raised"), foreground: tok("ink") },
       },
+      borderRadius: {
+        lg: "16px",
+        md: "12px",
+        sm: "8px",
+      },
+      maxWidth: { site: "1240px" },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '50%': { transform: 'translateY(-20px) rotate(5deg)' }
-        },
-        fadeInUp: {
-          'from': {
-            opacity: '0',
-            transform: 'translateY(30px)'
-          },
-          'to': {
-            opacity: '1',
-            transform: 'translateY(0)'
-          }
-        },
-        fadeInLeft: {
-          'from': {
-            opacity: '0',
-            transform: 'translateX(-30px)'
-          },
-          'to': {
-            opacity: '1',
-            transform: 'translateX(0)'
-          }
-        },
-        fadeInRight: {
-          'from': {
-            opacity: '0',
-            transform: 'translateX(30px)'
-          },
-          'to': {
-            opacity: '1',
-            transform: 'translateX(0)'
-          }
-        }
-      }
+        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
+        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
+        marquee: { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
+        pulse2: { "0%,100%": { opacity: "1" }, "50%": { opacity: ".35" } },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee 38s linear infinite",
+        pulse2: "pulse2 2.2s ease-in-out infinite",
+      },
     },
   },
-  plugins: [],
+  plugins: [animate],
 } satisfies Config;

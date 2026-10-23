@@ -1,103 +1,70 @@
 import type { NextConfig } from "next";
-import createNextIntlPlugin from 'next-intl/plugin';
 
-const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+/*
+  The previous site lived under /es, /en and /pt with other service URLs. Spanish is now
+  the only language and the pages moved, so each old URL redirects (301) to its new page.
+*/
+const OLD_TO_NEW: [string, string][] = [
+  ["/servicios/desarrollo-software", "/digital/software-a-la-medida"],
+  ["/servicios/godigital", "/digital/godigital"],
+  ["/servicios/impulso-marketing", "/digital/marketing-digital"],
+  ["/servicios/transformacion-digital", "/digital/consultoria-ia"],
+  ["/servicios/optimizacion-procesos", "/digital/consultoria-ia"],
+  ["/servicios/cultura-agil", "/digital/consultoria-ia"],
+  ["/quienes-somos", "/nosotros"],
+  ["/aviso-privacidad", "/aviso-de-privacidad"],
+  ["/terminos-condiciones", "/terminos-y-condiciones"],
+  ["/login", "/"],
+];
+const LOCALE = ":locale(es|en|pt)";
 
 const nextConfig: NextConfig = {
-  // Optimizaciones de compilación
   compiler: {
-    // Eliminar console.log en producción
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-  
-  // Optimización de imágenes
-  images: {
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 días
-  },
-  
-  // Optimización experimental
-  experimental: {
-    // Optimizar imports de paquetes
-    optimizePackageImports: ['lucide-react', 'framer-motion', 'lodash'],
+    removeConsole: process.env.NODE_ENV === "production",
   },
 
-  // Compresión
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 días
+  },
+
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion"],
+  },
+
   compress: true,
-  
-  // Generación de source maps solo en desarrollo
   productionBrowserSourceMaps: false,
-  
-  // Modo standalone para Docker/serverless (opcional)
-  // output: 'standalone',
-  
-  // Redirecciones: Optimización de Procesos y Cultura Ágil ahora forman parte
-  // de Transformación Digital (fusión de servicios).
+
   async redirects() {
     return [
-      {
-        source: "/:locale/servicios/optimizacion-procesos",
-        destination: "/:locale/servicios/transformacion-digital",
-        permanent: true,
-      },
-      {
-        source: "/:locale/servicios/cultura-agil",
-        destination: "/:locale/servicios/transformacion-digital",
-        permanent: true,
-      },
+      ...OLD_TO_NEW.flatMap(([from, to]) => [
+        { source: `/${LOCALE}${from}`, destination: to, permanent: true },
+        { source: from, destination: to, permanent: true },
+      ]),
+      { source: `/${LOCALE}`, destination: "/", permanent: true },
+      { source: `/${LOCALE}/:path*`, destination: "/:path*", permanent: true },
     ];
   },
 
   async headers() {
     return [
       {
-        // Headers de seguridad y caché para todas las rutas
         source: "/:path*",
         headers: [
-          {
-            key: "X-DNS-Prefetch-Control",
-            value: "on",
-          },
-          {
-            key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains; preload",
-          },
-          {
-            key: "X-Frame-Options",
-            value: "SAMEORIGIN",
-          },
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-          {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
-          },
-          {
-            key: "Referrer-Policy",
-            value: "origin-when-cross-origin",
-          },
-          {
-            key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
-          },
+          { key: "X-DNS-Prefetch-Control", value: "on" },
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
         ],
       },
       {
-        // Caché agresivo para assets estáticos
         source: "/(.*)\\.(js|css|woff|woff2|ttf|eot|ico|svg|png|jpg|jpeg|gif|webp|avif)$",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
     ];
   },
 };
 
-export default withNextIntl(nextConfig);
+export default nextConfig;

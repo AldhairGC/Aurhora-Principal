@@ -1,31 +1,22 @@
-// src/app/layout.tsx
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Sora } from "next/font/google";
 import Script from "next/script";
-import { getLocale } from "next-intl/server";
+import { SiteShell } from "@/components/site/SiteShell";
+import { SITE } from "@/content/site";
 import { CONSENT_DEFAULT_SCRIPT } from "@/lib/analytics/consent";
-import { htmlLang } from "@/lib/seo/metadata";
+import { THEME_SCRIPT } from "@/lib/theme-script";
 import "./globals.css";
 
 const GTM_ID = "GTM-TMP9R7B6";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const sora = Sora({ variable: "--font-sora", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" }
-    ],
-  },
+  metadataBase: new URL(SITE.url),
+  applicationName: SITE.name,
+  formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = {
@@ -34,19 +25,14 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const locale = await getLocale();
-
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={htmlLang(locale)} className="scroll-smooth">
+    <html lang="es-MX" suppressHydrationWarning className={`${sora.variable} ${geist.variable} ${geistMono.variable}`}>
       <head>
+        {/* Theme before paint (data-theme is the only attribute the script changes). */}
+        <script id="theme-init" dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         {/* Consent Mode v2: debe ejecutarse antes de GTM (todo "denied" hasta que la persona elija) */}
         <script id="consent-default" dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT_SCRIPT }} />
-
         {/* Google Tag Manager — GA4, Ads y píxeles se configuran dentro del contenedor */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
@@ -59,10 +45,7 @@ export default async function RootLayout({
           `}
         </Script>
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans min-h-screen flex flex-col`}
-      >
-        {/* Google Tag Manager (noscript) */}
+      <body>
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
@@ -71,8 +54,7 @@ export default async function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-
-        {children}
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

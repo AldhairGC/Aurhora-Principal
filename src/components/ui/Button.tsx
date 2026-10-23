@@ -1,79 +1,59 @@
 "use client";
 
-/**
- * Button — botón/enlace del sistema Aurora.
- * Variantes: primary (gradiente firma), secondary (borde), ghost.
- * Renderiza <a> si recibe `href`, si no <button>.
- */
-import React from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
 
-type Variant = "primary" | "secondary" | "ghost";
-type Size = "md" | "lg";
+import { cn } from "@/lib/utils"
 
-type CommonProps = {
-  children: React.ReactNode;
-  variant?: Variant;
-  size?: Size;
-  /** Ícono final: "arrow" (→), "arrow-up" (↗) o ninguno */
-  icon?: "arrow" | "arrow-up" | "none";
-  className?: string;
-};
-
-type ButtonAsButton = CommonProps &
-  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof CommonProps> & { href?: undefined };
-type ButtonAsLink = CommonProps &
-  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof CommonProps> & { href: string };
-
-type ButtonProps = ButtonAsButton | ButtonAsLink;
-
-const base =
-  "group inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aurora-indigo focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
-
-const sizes: Record<Size, string> = {
-  md: "px-5 py-3 text-[0.95rem]",
-  lg: "px-6 py-3.5 text-base",
-};
-
-const variants: Record<Variant, string> = {
-  primary: "bg-aurora text-white shadow-[0_10px_30px_-8px_rgba(79,70,229,0.5)] hover:brightness-110",
-  secondary: "border border-line bg-white text-ink hover:border-zinc-300",
-  ghost: "text-aurora-indigo hover:bg-aurora-indigo/5",
-};
-
-export function Button({
-  children,
-  variant = "primary",
-  size = "lg",
-  icon = "none",
-  className = "",
-  ...props
-}: ButtonProps) {
-  const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
-  const iconEl =
-    icon === "arrow" ? (
-      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-    ) : icon === "arrow-up" ? (
-      <ArrowUpRight className="h-4 w-4" />
-    ) : null;
-
-  if ("href" in props && props.href !== undefined) {
-    const { href, ...rest } = props as ButtonAsLink;
-    return (
-      <a href={href} className={cls} {...rest}>
-        {children}
-        {iconEl}
-      </a>
-    );
+const buttonVariants = cva(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-9 px-4 py-2",
+        sm: "h-8 rounded-md px-3 text-xs",
+        lg: "h-10 rounded-md px-8",
+        icon: "h-9 w-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
   }
+)
 
-  const { type = "button", ...rest } = props as ButtonAsButton;
-  return (
-    <button type={type} className={cls} {...rest}>
-      {children}
-      {iconEl}
-    </button>
-  );
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
 }
 
-export default Button;
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Button.displayName = "Button"
+
+export { Button, buttonVariants }
