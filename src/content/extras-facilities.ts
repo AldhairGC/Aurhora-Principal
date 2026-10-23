@@ -4,7 +4,8 @@ import type { ServiceExtras } from "./types";
   Fuentes (consultadas el 23 de octubre de 2026): precios publicados por aireyclimas.mx,
   homepro.com.mx, simpleclima.com, jpserviciosconstrucctivos.com, tulbox.pro, lg.com/mx y
   renovaingenieria.com; rangos de plataformas cronoshare.com.mx, drhandy.app,
-  habitissimo.com.mx y leadduo.io; costo directo de mexico.generadordeprecios.info (CYPE).
+  habitissimo.com.mx y leadduo.io; plomería: homepro.com.mx, cronoshare.com.mx,
+  habitissimo.com.mx, lavado-de-cisternas.com y lavadotinacosycisternas.com; costo directo de mexico.generadordeprecios.info (CYPE).
   Muchos se publican sin IVA. Precios autorizados por Aurhora el 23 de octubre de 2026: se publican
   como "Desde" con el límite inferior de cada rango.
 */
@@ -83,6 +84,56 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
     faq: [
       ["¿Cuánto cobra un electricista por venir a casa en la CDMX?", "La visita o diagnóstico parte de $500 y suele descontarse si aceptas el trabajo."],
       ["¿El material está incluido en el precio?", "Normalmente no. Te decimos qué material se necesita y lo incluimos en la cotización, o puedes comprarlo tú si lo prefieres."],
+    ],
+  },
+
+  plomeria: {
+    costIntro: "La mayoría de los trabajos de plomería se cobran por visita o por trabajo terminado. Los precios son de mano de obra: los muebles, accesorios y equipos se cotizan aparte o puedes comprarlos tú.",
+    prices: [
+      { concept: "Visita o diagnóstico", range: "Desde $500", unit: "por visita, descontable" },
+      { concept: "Hora de servicio", range: "Desde $300", unit: "por hora" },
+      { concept: "Reparación de fuga visible", range: "Desde $600", unit: "por fuga" },
+      { concept: "Cambio de llave o mezcladora (mano de obra)", range: "Desde $700", unit: "por pieza" },
+      { concept: "Destape de fregadero, lavabo o WC", range: "Desde $850", unit: "por servicio" },
+      { concept: "Destape de drenaje con equipo", range: "Desde $950", unit: "por servicio" },
+      { concept: "Instalación de WC (mano de obra)", range: "Desde $1,200", unit: "por pieza" },
+      { concept: "Instalación de lavabo o fregadero (mano de obra)", range: "Desde $1,400", unit: "por pieza" },
+      { concept: "Lavado y desinfección de tinaco (hasta 1,100 L)", range: "Desde $350", unit: "por tinaco" },
+      { concept: "Lavado y desinfección de cisterna (hasta 10,000 L)", range: "Desde $1,750", unit: "por cisterna" },
+      { concept: "Instalación de tinaco de 450 a 1,100 L (mano de obra)", range: "Desde $1,200", unit: "por tinaco" },
+      { concept: "Bomba de agua, suministro e instalación", range: "Desde $2,350", unit: "por equipo" },
+      { concept: "Instalación de calentador (mano de obra y conexiones)", range: "Desde $3,500", unit: "por equipo" },
+    ],
+    factors: [
+      "Si la fuga está a la vista o dentro de un muro o piso.",
+      "Acceso al tinaco o la cisterna: azotea, altura o espacio reducido.",
+      "Capacidad del tinaco o la cisterna.",
+      "Tipo de tubería: cobre, CPVC, PPR o galvanizada.",
+      "Muebles y accesorios que elijas.",
+      "Si hace falta romper y resanar.",
+    ],
+    timing: [
+      { label: "Fuga visible o cambio de llave", value: "1 a 2 horas" },
+      { label: "Destape", value: "1 a 2 horas; más si el drenaje requiere equipo" },
+      { label: "WC, lavabo o fregadero", value: "2 a 3 horas por pieza" },
+      { label: "Lavado de tinaco", value: "1 a 2 horas por tinaco" },
+      { label: "Lavado de cisterna", value: "Medio día (aprox.)" },
+      { label: "Tinaco con bomba", value: "1 día (aprox.)" },
+    ],
+    excludes: [
+      "Muebles, accesorios y equipos: WC, mezcladoras, tinacos, bombas y calentadores.",
+      "Ranurado, demolición y resanes.",
+      "Conexión a la línea de gas.",
+      "Desazolve de drenaje municipal o con camión de presión.",
+      "Material adicional a lo cotizado.",
+    ],
+    context: [
+      "Antes de la visita, ubica la llave de paso general y la del área con el problema. Si hay una fuga, cerrarla evita daños mientras llegamos. Si no sabes dónde está, te ayudamos a encontrarla por videollamada o en la visita.",
+      "Si el recibo de agua subió sin explicación, haz una prueba sencilla: cierra todas las llaves y revisa si el medidor sigue avanzando. Si avanza, hay una fuga oculta y conviene revisarla antes de que dañe muros o pisos.",
+    ],
+    faq: [
+      ["¿Cuánto cobra un plomero en la CDMX?", "La visita o diagnóstico parte de $500 con IVA y se descuenta si aceptas el trabajo. Una fuga visible se repara desde $600 y un destape de fregadero o WC desde $850."],
+      ["¿Cuánto cuesta lavar un tinaco o una cisterna?", "El lavado y desinfección de un tinaco de hasta 1,100 litros parte de $350 y el de una cisterna de hasta 10,000 litros desde $1,750, con IVA incluido."],
     ],
   },
 

@@ -26,6 +26,7 @@ const NEEDS: Record<Place, { label: string; service: string }[]> = {
   casa: [
     { label: "El aire no enfría o gotea", service: "aire-acondicionado" },
     { label: "Una falla eléctrica", service: "electricidad" },
+    { label: "Una fuga o el agua no sube al tinaco", service: "plomeria" },
     { label: "Colgar, ajustar o reparar", service: "reparaciones" },
     { label: "Ver quién entra a mi casa", service: "seguridad-accesos" },
     { label: "Luces, clima y persianas automáticas", service: "domotica" },
@@ -34,6 +35,7 @@ const NEEDS: Record<Place, { label: string; service: string }[]> = {
   local: [
     { label: "Dejar el local listo para abrir", service: "proyectos-industriales" },
     { label: "Clima para clientes y equipo", service: "aire-acondicionado" },
+    { label: "Baños y cocina sin fugas", service: "plomeria" },
     { label: "Cámaras en caja y accesos", service: "seguridad-accesos" },
     { label: "Red para terminal y WiFi de clientes", service: "redes" },
     { label: "Que me encuentren en línea", service: "godigital" },
@@ -50,6 +52,7 @@ const NEEDS: Record<Place, { label: string; service: string }[]> = {
   nave: [
     { label: "Instalaciones eléctricas o iluminación LED", service: "proyectos-industriales" },
     { label: "Póliza de mantenimiento preventivo", service: "mantenimiento-programado" },
+    { label: "Cisternas, bombas y redes de agua", service: "plomeria" },
     { label: "Cámaras y control de acceso", service: "seguridad-accesos" },
     { label: "Red y WiFi en áreas amplias", service: "redes" },
     { label: "Automatizar captura de pedidos y documentos", service: "automatizacion-procesos" },
@@ -60,6 +63,7 @@ const NEEDS: Record<Place, { label: string; service: string }[]> = {
     { label: "Dejar la casa preparada para domótica", service: "domotica" },
     { label: "Cableado de red y cámaras desde obra", service: "redes" },
     { label: "Instalación eléctrica completa", service: "electricidad" },
+    { label: "Instalación hidráulica y sanitaria", service: "plomeria" },
   ],
   digital: [
     { label: "Un agente de IA que atienda y ejecute tareas", service: "agentes-ia" },

@@ -3,7 +3,7 @@
 import { GroupPage } from "@/views/GroupPage";
 import { DigitalPage, IntegraPage, FacilitiesPage } from "@/views/UnitPages";
 import { ContactPage, ServicePage } from "@/views/ServicePage";
-import { ArticlePage, LegalPage, NosotrosPage, RecursosPage } from "@/views/ContentPages";
+import { ArticlePage, LegalPage, NosotrosPage, RecursosPage, SitemapPage } from "@/views/ContentPages";
 import { serviceById } from "@/content/services";
 import { articleById } from "@/content/articles";
 import { legalById } from "@/content/legal";
@@ -24,6 +24,7 @@ export function SiteView({ view }: { view: string }) {
     case "contacto": return <ContactPage />;
     case "nosotros": return <NosotrosPage />;
     case "recursos": return <RecursosPage />;
+    case "mapa-del-sitio": return <SitemapPage />;
     default: return <GroupPage />;
   }
 }

@@ -59,7 +59,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <p className="eyebrow text-on-night-mute">Agencia</p>
             <ul className="mt-4 space-y-2.5 text-[15px]">
-              {[["nosotros", "Nosotros"], ["recursos", "Recursos"], ["contacto", "Solicitar atención"]].map(([to, label]) => (
+              {[["nosotros", "Nosotros"], ["recursos", "Recursos"], ["mapa-del-sitio", "Mapa del sitio"], ["contacto", "Solicitar atención"]].map(([to, label]) => (
                 <li key={to}>
                   <Link to={to} className="text-on-night-mute transition hover:text-on-night">{label}</Link>
                 </li>

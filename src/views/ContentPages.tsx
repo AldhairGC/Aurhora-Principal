@@ -8,6 +8,7 @@ import { Breadcrumb, BtnLink, CtaBand, Eyebrow, FaqBlock, PlaceholderMedia, Sect
 import { Link, scrollToId } from "@/lib/router";
 import { track } from "@/lib/analytics";
 import { ARTICLES, articleById } from "@/content/articles";
+import { LEGAL_DOCS } from "@/content/legal";
 import { serviceById } from "@/content/services";
 import { SITE, UNITS, unitById } from "@/content/site";
 import type { Article, Block, DocSection, LegalDoc, UnitId } from "@/content/types";
@@ -334,6 +335,45 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
                 .map(([id, label]) => <Link key={id} to={id} className="text-unit underline-offset-4 hover:underline">{label}</Link>)}
             </div>
           </div>
+        </div>
+      </Section>
+    </>
+  );
+}
+
+/* ─────────── Mapa del sitio ─────────── */
+
+export function SitemapPage() {
+  const groups: { title: string; links: [string, string][] }[] = [
+    { title: "Aurhora Agency", links: [["grupo", "Inicio"], ["nosotros", "Nosotros"], ["recursos", "Recursos"], ["contacto", "Contacto"]] },
+    ...UNITS.map((u) => ({
+      title: u.full,
+      links: [[u.id, `Todo ${u.full}`] as [string, string], ...u.services.map((id): [string, string] => [id, serviceById(id)!.name])],
+    })),
+    { title: "Guías", links: ARTICLES.map((a): [string, string] => [a.id, a.title]) },
+    { title: "Legal", links: LEGAL_DOCS.map((d): [string, string] => [d.id, d.title]) },
+  ];
+  return (
+    <>
+      <Section className="pb-10 pt-14 md:pt-20">
+        <Breadcrumb trail={[{ to: "grupo", label: "Inicio" }, { label: "Mapa del sitio" }]} />
+        <h1 className="display-lg mt-8 max-w-[18ch]">Mapa del sitio</h1>
+        <p className="mt-6 max-w-[56ch] text-[17px] leading-relaxed text-mute">Todas las páginas de Aurhora Agency en un solo lugar: las tres especialidades con sus servicios, las guías y los documentos legales.</p>
+      </Section>
+      <Section className="pb-24">
+        <div className="grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+          {groups.map((g) => (
+            <nav key={g.title} aria-label={g.title}>
+              <h2 className="eyebrow text-mute">{g.title}</h2>
+              <ul className="mt-4 space-y-2.5 border-t border-line pt-4 text-[15px]">
+                {g.links.map(([to, label]) => (
+                  <li key={to}>
+                    <Link to={to} className="text-ink-soft underline-offset-4 transition hover:text-ink hover:underline">{label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
       </Section>
     </>

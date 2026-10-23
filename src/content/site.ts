@@ -57,15 +57,15 @@ export const UNITS: Unit[] = [
     full: "Aurhora Facilities",
     short: "Hogar, comercio e industria.",
     lead: "Que todo funcione. Y tu día siga.",
-    desc: "Aire acondicionado, electricidad, instalaciones y proyectos para casas, locales, oficinas, naves y bodegas. El mismo equipo se encarga desde la revisión hasta el seguimiento.",
+    desc: "Aire acondicionado, electricidad, plomería, instalaciones y proyectos para casas, locales, oficinas, naves y bodegas. El mismo equipo se encarga desde la revisión hasta el seguimiento.",
     area: "CDMX y zonas del Estado de México",
     icon: Wrench,
-    services: ["aire-acondicionado", "electricidad", "reparaciones", "mantenimiento-programado", "proyectos-residenciales", "proyectos-industriales"],
+    services: ["aire-acondicionado", "electricidad", "plomeria", "reparaciones", "mantenimiento-programado", "proyectos-residenciales", "proyectos-industriales"],
     seo: {
       title: "Aurhora Facilities | Mantenimiento e instalaciones en CDMX",
-      description: "Mantenimiento en CDMX y Estado de México: aire acondicionado, electricidad, reparaciones del hogar, pólizas y proyectos residenciales e industriales.",
+      description: "Mantenimiento en CDMX y Estado de México: aire acondicionado, electricidad, plomería, reparaciones del hogar, pólizas y proyectos residenciales e industriales.",
       slug: "/facilities",
-      keywords: ["mantenimiento CDMX", "mantenimiento industrial", "póliza de mantenimiento", "electricista CDMX", "mantenimiento de aire acondicionado"],
+      keywords: ["mantenimiento CDMX", "mantenimiento industrial", "póliza de mantenimiento", "electricista CDMX", "plomero CDMX", "mantenimiento de aire acondicionado"],
     },
   },
 ];
@@ -91,6 +91,12 @@ export const PAGE_SEO: Record<string, Seo> = {
     description: "Guías de inteligencia artificial, agentes de IA, automatización, domótica y mantenimiento para casas y negocios, escritas por el equipo de Aurhora.",
     slug: "/recursos",
     keywords: ["guías de inteligencia artificial", "agentes de IA", "domótica", "mantenimiento de minisplit"],
+  },
+  "mapa-del-sitio": {
+    title: "Mapa del sitio | Aurhora Agency",
+    description: "Mapa del sitio de Aurhora Agency: todas las páginas de Digital, Integra y Facilities con sus servicios, las guías y los documentos legales.",
+    slug: "/mapa-del-sitio",
+    keywords: ["mapa del sitio Aurhora"],
   },
   contacto: {
     title: "Contacto | Aurhora Agency",

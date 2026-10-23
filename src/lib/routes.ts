@@ -14,6 +14,7 @@ const PAGES: [string, string][] = [
   ["nosotros", PAGE_SEO.nosotros.slug],
   ["recursos", PAGE_SEO.recursos.slug],
   ["contacto", PAGE_SEO.contacto.slug],
+  ["mapa-del-sitio", PAGE_SEO["mapa-del-sitio"].slug],
   ...UNITS.map((u): [string, string] => [u.id, u.seo.slug]),
   ...SERVICES.map((s): [string, string] => [s.id, s.seo.slug]),
   ...ARTICLES.map((a): [string, string] => [a.id, a.seo.slug]),

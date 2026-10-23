@@ -439,6 +439,101 @@ const BASE: Article[] = [
       keywords: ["póliza de mantenimiento preventivo", "qué incluye una póliza de mantenimiento", "mantenimiento preventivo empresas"],
     },
   },
+  {
+    id: "lavar-tinaco-y-cisterna",
+    unit: "facilities",
+    title: "¿Cada cuánto lavar el tinaco y la cisterna?",
+    excerpt: "La frecuencia recomendada, las señales de que ya toca, qué incluye un lavado profesional y cuánto cuesta en la CDMX.",
+    date: "23 de octubre de 2026",
+    published: "2026-10-23",
+    minutes: 6,
+    service: "plomeria",
+    related: ["mantenimiento-minisplit", "poliza-mantenimiento-preventivo"],
+    sections: [
+      {
+        id: "regla",
+        title: "La regla general",
+        blocks: [
+          { p: "En una casa, lo habitual es lavar y desinfectar el tinaco y la cisterna cada seis meses. Es el plazo más citado por fabricantes y empresas de limpieza, y funciona bien para la mayoría de los hogares de la Ciudad de México y el Estado de México." },
+          { p: "Hay casos en que conviene hacerlo antes: si el agua llega turbia o con sedimento, si hubo obras cerca, si la tapa se dañó o se quedó abierta, o si alguien en casa tiene problemas estomacales recurrentes y no sabes por qué. En negocios que dan servicio de alimentos o en edificios con muchos usuarios, la frecuencia suele ser mayor y conviene llevar un registro." },
+          { callout: "Lavar no sustituye a revisar. En cada lavado conviene revisar también la tapa, el flotador, las válvulas y la bomba.", tone: "info" },
+        ],
+      },
+      {
+        id: "senales",
+        title: "Señales de que ya toca",
+        blocks: [
+          { list: ["El agua sale turbia, amarillenta o con partículas.", "Hay olor a humedad, a cloro excesivo o a huevo podrido.", "Ves sarro o lodo en el fondo cuando abres el tinaco.", "Aparecen manchas o lama en lavabos y regaderas.", "Pasaron más de seis meses desde el último lavado o no sabes cuándo fue."] },
+        ],
+      },
+      {
+        id: "diferencias",
+        title: "Tinaco y cisterna no son lo mismo",
+        blocks: [
+          { p: "La cisterna está bajo tierra y recibe el agua de la red; el tinaco está en la azotea y reparte el agua por gravedad. Como la cisterna guarda más agua y es más difícil de revisar, suele acumular más sedimento. Por eso conviene lavarlos juntos: si solo lavas el tinaco, la bomba vuelve a subir el agua de una cisterna sucia." },
+          { kv: [["Cisterna", "Mayor capacidad, bajo tierra, acumula sedimento y requiere más tiempo de lavado."], ["Tinaco", "En la azotea, expuesto al sol y al polvo; la tapa y el flotador son los puntos más vulnerables."]] },
+        ],
+      },
+      {
+        id: "lavado",
+        title: "Qué incluye un lavado profesional",
+        blocks: [
+          { list: ["Vaciado controlado y retiro de lodo y sedimento.", "Tallado de paredes, piso y tapa.", "Enjuague para quitar residuos.", "Desinfección con productos aptos para agua de consumo.", "Revisión de flotador, válvulas, tapa y conexiones.", "Llenado y prueba de la bomba.", "Reporte con fotos del antes y el después."] },
+          { p: "Un buen servicio te explica qué productos usa y te recomienda cuánto tiempo esperar antes de usar el agua para beber o cocinar." },
+        ],
+      },
+      {
+        id: "tu",
+        title: "Lo que puedes hacer entre lavados",
+        blocks: [
+          { list: ["Mantener la tapa bien cerrada y en buen estado.", "Revisar que el flotador cierre y el tinaco no se derrame.", "Escuchar si la bomba arranca muy seguido: puede indicar una fuga.", "Colocar un filtro de sedimentos a la entrada si el agua llega con partículas.", "Anotar la fecha de cada lavado."] },
+          { p: "Evita meterte al tinaco o a la cisterna sin equipo ni ayuda. Son espacios cerrados, resbalosos y, en el caso de la cisterna, con poca ventilación." },
+        ],
+      },
+      {
+        id: "cuanto-cuesta",
+        title: "Cuánto cuesta y cuánto tarda",
+        blocks: [
+          {
+            kv: [
+              ["Lavado y desinfección de tinaco (hasta 1,100 L)", "Desde $350 por tinaco"],
+              ["Lavado y desinfección de cisterna (hasta 10,000 L)", "Desde $1,750 por cisterna"],
+              ["Instalación de tinaco de 450 a 1,100 L", "Desde $1,200 de mano de obra"],
+              ["Bomba de agua, suministro e instalación", "Desde $2,350 por equipo"],
+            ],
+          },
+          { p: "El lavado de un tinaco toma de una a dos horas y el de una cisterna, alrededor de medio día. Si los lavas en la misma visita, ahorras un traslado y el agua queda limpia en todo el sistema." },
+          { callout: "Precios desde, en pesos mexicanos, con IVA incluido. El precio final se confirma en la cotización, después de revisar tu caso.", tone: "info" },
+        ],
+      },
+      {
+        id: "preparar",
+        title: "Cómo prepararte para la visita",
+        blocks: [
+          { list: ["Usa el agua de la casa con calma unas horas antes para que el tinaco no esté lleno.", "Ten a la mano la llave o el acceso a la azotea y a la cisterna.", "Dinos la capacidad del tinaco y de la cisterna, o envía una foto de la etiqueta.", "Avisa a quienes viven en casa: el agua se corta durante el lavado."] },
+        ],
+      },
+      {
+        id: "negocios",
+        title: "En negocios y edificios",
+        blocks: [
+          { p: "Restaurantes, consultorios, escuelas y edificios de departamentos usan más agua y tienen más personas expuestas a un problema de calidad. Conviene incluir el lavado de tinacos y cisternas en una póliza de mantenimiento, con fechas fijas y un reporte de cada visita que puedas mostrar a tu administración o a tus clientes." },
+        ],
+      },
+    ],
+    faq: [
+      ["¿Puedo usar el agua justo después del lavado?", "Para lavar y bañarte, sí. Para beber o cocinar, sigue la recomendación del técnico según el desinfectante que se usó; si el agua de tu zona no es potable, usa agua purificada de todos modos."],
+      ["¿Cuánto cuesta lavar una cisterna en la CDMX?", "El lavado y desinfección de una cisterna de hasta 10,000 litros parte de $1,750 con IVA. Las cisternas más grandes o de difícil acceso se cotizan después de verlas."],
+      ["¿Lavan tinacos en edificios y negocios?", "Sí. Para varios tinacos o cisternas grandes hacemos un levantamiento y una propuesta por etapas, o lo incluimos en una póliza de mantenimiento."],
+      ["¿Qué pasa si el tinaco tiene grietas o la tapa no cierra?", "Una grieta o una tapa dañada dejan entrar polvo, insectos y luz, y el agua se ensucia más rápido. En la visita te decimos si conviene repararlo o reemplazarlo, y cotizamos la instalación del nuevo."],
+    ],
+    seo: {
+      title: "¿Cada cuánto lavar el tinaco y la cisterna?",
+      description: "Cada cuánto lavar el tinaco y la cisterna, señales de que ya toca, qué incluye un lavado profesional y cuánto cuesta en la CDMX, con precios con IVA.",
+      slug: "/recursos/cada-cuanto-lavar-el-tinaco-y-la-cisterna",
+      keywords: ["cada cuánto lavar el tinaco", "lavado de cisternas CDMX", "lavado de tinacos", "limpieza de cisterna", "precio lavado de tinaco"],
+    },
+  },
 ];
 
 /** Inserts the extra sections (articles-more.ts) after their anchor section and appends extra FAQ. */
