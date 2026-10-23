@@ -299,7 +299,7 @@ export function IntegraPage() {
               <button type="button" onClick={() => scrollToId("i-soluciones")} className="text-[15px] font-medium text-on-night underline decoration-on-night/30 underline-offset-4 hover:decoration-on-night">Ver soluciones</button>
             </div>
             <ul className="mt-12 flex flex-col gap-3 border-t border-night-line pt-6 text-[14px] text-on-night-mute">
-              {["Residencias y negocios en CDMX y zonas del Estado de México", "Propuesta por escrito antes de instalar", "+1 año de garantía adicional en productos elegibles"].map((t) => (
+              {["Residencias y negocios en CDMX y área metropolitana", "Propuesta por escrito antes de instalar", "+1 año de garantía adicional en productos elegibles"].map((t) => (
                 <li key={t} className="flex items-start gap-2.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-unit-night" aria-hidden="true" />{t}</li>
               ))}
             </ul>
@@ -374,7 +374,7 @@ export function IntegraPage() {
         </div>
       </Section>
 
-      <CtaBand title={<>Hagamos que tu espacio <span className="text-unit-night">trabaje mejor para ti.</span></>} text="Atendemos residencias y negocios en CDMX y zonas del Estado de México. Cuéntanos qué quieres instalar o mejorar." unit="integra" waText="Hola, Aurhora Integra. Me gustaría cotizar una instalación." />
+      <CtaBand title={<>Hagamos que tu espacio <span className="text-unit-night">trabaje mejor para ti.</span></>} text="Atendemos residencias y negocios en CDMX y área metropolitana. Cuéntanos qué quieres instalar o mejorar." unit="integra" waText="Hola, Aurhora Integra. Me gustaría cotizar una instalación." />
     </div>
   );
 }
@@ -522,8 +522,8 @@ export function FacilitiesPage() {
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Eyebrow>Cobertura</Eyebrow>
-            <h2 className="display-md mt-4">Ciudad de México y <span className="text-unit">Estado de México.</span></h2>
-            <p className="mt-5 max-w-[44ch] text-[16px] leading-relaxed text-mute">Atendemos en Ciudad de México y zonas del Estado de México. Confirmamos cobertura y traslado antes de la visita.</p>
+            <h2 className="display-md mt-4">CDMX y <span className="text-unit">área metropolitana.</span></h2>
+            <p className="mt-5 max-w-[44ch] text-[16px] leading-relaxed text-mute">Atendemos en la Ciudad de México y su área metropolitana, incluidos Naucalpan, Cuautitlán Izcalli, Ecatepec y Chalco. También llegamos a Puebla, Querétaro, Hidalgo y Valle de Bravo con traslado acordado. Confirmamos cobertura antes de la visita.</p>
           </div>
           <div className="grid min-w-0 gap-4 md:grid-cols-2 lg:col-span-7">
             <ZoneChecker />

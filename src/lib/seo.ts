@@ -33,6 +33,7 @@ const AREA_LOCAL = [
   { "@type": "City", name: "Ciudad de México" },
   { "@type": "State", name: "Estado de México" },
   ...SITE.zones.map((z) => ({ "@type": "Place", name: z })),
+  ...SITE.regions.map((z) => ({ "@type": "Place", name: z })),
 ];
 
 const ORG_ID = `${SITE.url}/#organization`;

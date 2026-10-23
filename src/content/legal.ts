@@ -167,7 +167,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
         id: "solicitudes",
         title: "Solicitudes, citas y cotizaciones",
         blocks: [
-          { list: ["Las solicitudes enviadas desde el sitio o por WhatsApp no constituyen una reserva. La cita queda confirmada cuando el equipo te lo indica.", "Cuando un servicio requiere diagnóstico, te informamos su costo antes de la visita. Se descuenta del trabajo si aceptas la cotización.", "Los servicios físicos se prestan en Ciudad de México y zonas del Estado de México, sujetos a confirmación de traslado y disponibilidad.", "Atendemos de lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00, hora de Ciudad de México. Las urgencias se evalúan según disponibilidad."] },
+          { list: ["Las solicitudes enviadas desde el sitio o por WhatsApp no constituyen una reserva. La cita queda confirmada cuando el equipo te lo indica.", "Cuando un servicio requiere diagnóstico, te informamos su costo antes de la visita. Se descuenta del trabajo si aceptas la cotización.", "Los servicios físicos se prestan en la Ciudad de México y su área metropolitana, y en otras localidades previo acuerdo de traslado, sujetos a confirmación de disponibilidad.", "Atendemos de lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00, hora de Ciudad de México. Las urgencias se evalúan según disponibilidad."] },
         ],
       },
       {

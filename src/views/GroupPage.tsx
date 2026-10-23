@@ -26,7 +26,7 @@ const COMMITMENTS = [
 const GROUP_FAQ: [string, string][] = [
   ["¿Por qué tres especialidades en una sola agencia?", "Porque las necesidades de un hogar o un negocio cambian. Puedes empezar con un mantenimiento y después necesitar cámaras o una herramienta digital, sin volver a explicar quién eres."],
   ["¿Tengo que saber con qué unidad hablar?", "No. Escríbenos por el mismo WhatsApp y te canalizamos con la especialidad adecuada."],
-  ["¿Dónde atienden?", "Los servicios físicos se realizan en CDMX y zonas del Estado de México. Los proyectos digitales se atienden en todo México."],
+  ["¿Dónde atienden?", "Los servicios físicos se realizan en CDMX y área metropolitana, y en Puebla, Querétaro, Hidalgo y Valle de Bravo con traslado acordado. Los proyectos digitales se atienden en todo México."],
   ["¿Publican precios?", "Sí. Cada servicio muestra sus precios desde, con IVA incluido. El precio final depende del alcance, por eso cotizamos antes de ejecutar y te informamos cualquier costo de diagnóstico."],
 ];
 

@@ -105,6 +105,7 @@ export function ZoneChecker({ className }: { className?: string }) {
   const [q, setQ] = useState("Naucalpan");
   const nq = norm(q);
   const match = useMemo(() => SITE.zones.find((z) => norm(z) === nq) ?? (nq.length >= 3 ? SITE.zones.find((z) => norm(z).includes(nq)) : undefined), [nq]);
+  const region = useMemo(() => (match || nq.length < 3 ? undefined : SITE.regions.find((z) => norm(z).includes(nq) || nq.includes(norm(z)))), [match, nq]);
   const suggestions = nq ? SITE.zones.filter((z) => norm(z).includes(nq) && norm(z) !== nq) : [];
 
   return (
@@ -116,7 +117,7 @@ export function ZoneChecker({ className }: { className?: string }) {
           id="zone-q"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          onBlur={() => nq && track("select_content", { content_type: "zone_check", content_id: match ?? "fuera_de_lista" })}
+          onBlur={() => nq && track("select_content", { content_type: "zone_check", content_id: match ?? region ?? "fuera_de_lista" })}
           placeholder="Escribe tu colonia, alcaldía o municipio"
           autoComplete="off"
           className="h-12 w-full rounded-[12px] border border-line bg-bg pl-10 pr-3 text-[15px] outline-none transition focus:border-unit"
@@ -131,11 +132,16 @@ export function ZoneChecker({ className }: { className?: string }) {
       )}
       <div className="mt-4 min-h-[72px]" aria-live="polite">
         {!nq ? (
-          <p className="text-[14px] text-mute">Atendemos CDMX y zonas del Estado de México.</p>
+          <p className="text-[14px] text-mute">Atendemos CDMX y área metropolitana.</p>
         ) : match ? (
           <div className="flex items-start gap-3 rounded-[12px] bg-unit-soft p-3">
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-unit" aria-hidden="true" />
             <p className="text-[14px] leading-snug"><strong className="font-semibold">{match}</strong> está dentro de nuestras zonas frecuentes. Confirmamos traslado y disponibilidad al revisar tu solicitud.</p>
+          </div>
+        ) : region ? (
+          <div className="flex items-start gap-3 rounded-[12px] bg-unit-soft p-3">
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-unit" aria-hidden="true" />
+            <p className="text-[14px] leading-snug">Atendemos proyectos en <strong className="font-semibold">{region}</strong> con traslado acordado. Cuéntanos el alcance y te confirmamos fechas.</p>
           </div>
         ) : (
           <div className="flex items-start gap-3 rounded-[12px] bg-sunken p-3">

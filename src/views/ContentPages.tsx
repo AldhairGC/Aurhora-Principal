@@ -162,7 +162,7 @@ export function NosotrosPage() {
           <div className="lg:col-span-6">
             <Eyebrow>Dónde estamos</Eyebrow>
             <h2 className="display-md mt-4">Ciudad de México, para todo el país.</h2>
-            <p className="mt-5 max-w-[48ch] text-[16px] leading-relaxed text-mute">Los servicios físicos de Integra y Facilities se realizan en CDMX y zonas del Estado de México. Los proyectos de Aurhora Digital se trabajan en línea con clientes de todo México.</p>
+            <p className="mt-5 max-w-[48ch] text-[16px] leading-relaxed text-mute">Los servicios físicos de Integra y Facilities se realizan en CDMX y área metropolitana, y en Puebla, Querétaro, Hidalgo y Valle de Bravo con traslado acordado. Los proyectos de Aurhora Digital se trabajan en línea con clientes de todo México.</p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {SITE.zones.map((z) => <li key={z} className="rounded-full border border-line px-3 py-1 text-[13px] text-ink-soft">{z}</li>)}
             </ul>
@@ -311,10 +311,6 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
         <h1 className="display-lg mt-8">{doc.title}</h1>
         <p className="mt-6 max-w-[62ch] text-[17px] leading-relaxed text-mute">{doc.intro}</p>
         <p className="eyebrow mt-6 text-mute">Última actualización: {doc.updated}</p>
-        <div className="mt-6 flex max-w-[70ch] gap-3 rounded-[12px] border border-warn/40 bg-warn/5 p-4 text-[14px]">
-          <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-warn" aria-hidden="true" />
-          <p>Borrador para revisión. Adaptado del texto vigente del sitio a las tres unidades de Aurhora; debe validarse con asesoría legal antes de publicarse.</p>
-        </div>
       </Section>
       <Section className="border-t border-line pb-24 pt-12">
         <div className="grid gap-12 lg:grid-cols-12">

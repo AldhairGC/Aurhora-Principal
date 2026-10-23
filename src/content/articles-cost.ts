@@ -30,7 +30,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta un agente de IA para una empresa?", "En México, la implementación de un agente acotado parte de $9,300 y la operación desde $2,900 al mes, más el uso de WhatsApp y del modelo."],
+      ["¿Cuánto cuesta un agente de IA para una empresa?", "Con nosotros, la implementación de un agente acotado parte de $9,300 y la operación desde $2,900 al mes, más el uso de WhatsApp y del modelo."],
     ],
   },
 
@@ -52,7 +52,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
         blocks: [
           {
             kv: [
-              ["Chatbot o plataforma que configuras tú", "Desde $600 al mes"],
+              ["Chatbot o plataforma que configuras tú", "Suscripción que pagas directo al proveedor"],
               ["Automatización de un flujo simple", "Desde $4,100, pago único"],
               ["Agente de IA acotado", "Desde $9,300 de implementación y desde $2,900 al mes de operación"],
             ],
@@ -80,7 +80,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta un chatbot comparado con un agente?", "Una plataforma de chatbot que configuras tú cuesta desde $600 al mes. Un agente acotado requiere una implementación desde $9,300 más su operación mensual."],
+      ["¿Cuánto cuesta un chatbot comparado con un agente?", "Nosotros implementamos un agente acotado desde $9,300, más su operación mensual. Una plataforma de chatbot que configuras por tu cuenta se paga aparte a su proveedor y solo sigue respuestas predefinidas."],
     ],
   },
 
@@ -154,7 +154,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta implementar un agente de IA con CRM?", "Un agente conectado a CRM o ERP parte de $29,000 de implementación y tarda de 3 a 8 semanas."],
+      ["¿Cuánto cuesta implementar un agente de IA con CRM?", "Con nosotros, un agente conectado a CRM o ERP parte de $29,000 de implementación y tarda de 3 a 8 semanas."],
     ],
   },
 
@@ -213,7 +213,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta domotizar un departamento sin obra?", "En la CDMX, desde $17,400 según las áreas y dispositivos. Un apagador inteligente instalado parte de $1,200."],
+      ["¿Cuánto cuesta domotizar un departamento sin obra?", "Con nosotros, desde $17,400 según las áreas y dispositivos. Instalamos un apagador inteligente desde $1,200."],
     ],
   },
 
@@ -234,7 +234,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
         blocks: [
           {
             kv: [
-              ["Visita técnica o diagnóstico", "Desde $450, normalmente descontable"],
+              ["Visita técnica o diagnóstico", "Desde $450, se descuenta si aceptas el trabajo"],
               ["Mantenimiento en casa (1 a 2 toneladas)", "Desde $950 por equipo"],
               ["Mantenimiento en negocio u oficina", "Desde $2,900 por equipo"],
               ["Recarga de gas, después de reparar la fuga", "Desde $1,050"],
@@ -272,7 +272,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Desde $950 por equipo en casa y desde $2,900 en negocios. Toma alrededor de una hora a hora y media por equipo."],
+      ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Nuestro mantenimiento parte de $950 por equipo en casa y de $2,900 en negocios. Toma alrededor de una hora a hora y media por equipo."],
     ],
   },
 
@@ -294,7 +294,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
         blocks: [
           {
             kv: [
-              ["Visita o diagnóstico", "Desde $500, normalmente descontable"],
+              ["Visita o diagnóstico", "Desde $500, se descuenta si aceptas el trabajo"],
               ["Cambio de pastilla", "Desde $450 por pieza"],
               ["Circuito nuevo", "Desde $1,050 por circuito"],
               ["Cambio de centro de carga", "Desde $1,750"],
@@ -348,7 +348,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cobra un electricista por revisar por qué se bota la pastilla?", "En la CDMX, la visita o diagnóstico parte de $500 y normalmente se descuenta si aceptas el trabajo. Cambiar una pastilla cuesta desde $450."],
+      ["¿Cuánto cobra un electricista por revisar por qué se bota la pastilla?", "Nuestra visita o diagnóstico parte de $500 y se descuenta si aceptas el trabajo. Cambiamos una pastilla desde $450."],
     ],
   },
 
@@ -444,7 +444,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
       },
     ],
     faq: [
-      ["¿Cuánto cuesta una póliza de mantenimiento preventivo?", "Depende del inventario y la frecuencia. En la CDMX, una póliza para un negocio con 5 a 10 minisplits parte de $4,100 al mes, y el plan anual por minisplit, desde $2,250 por equipo."],
+      ["¿Cuánto cuesta una póliza de mantenimiento preventivo?", "Depende del inventario y la frecuencia. Nuestra póliza para un negocio con 5 a 10 minisplits parte de $4,100 al mes, y el plan anual por minisplit, desde $2,250 por equipo."],
     ],
   },
 };

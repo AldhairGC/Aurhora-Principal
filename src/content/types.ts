@@ -86,6 +86,37 @@ export type Unit = {
   services: string[];
 };
 
+/** Una solución concreta dentro de un servicio (una pestaña de la anatomía). */
+export type AnatomyItem = {
+  id: string;
+  /** Nombre corto para la pestaña. */
+  label: string;
+  icon: LucideIcon;
+  /** Qué es, en una o dos frases. */
+  what: string;
+  /** Cómo funciona, en concreto. */
+  how: string;
+  /** Equipos, componentes o tecnologías que intervienen. */
+  parts: string[];
+  /** Cuándo conviene. */
+  idealFor: string;
+  /** Límites, lo que no incluye o lo que hay que revisar antes. */
+  consider: string;
+};
+
+/** Sección explicativa de un servicio: qué soluciones abarca y cómo funciona cada una. */
+export type Anatomy = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  items: AnatomyItem[];
+  /** Tecnologías, equipos o estándares agrupados por capa. Sustituye a `stack`. */
+  layers?: { title: string; items: string[] }[];
+  layersTitle?: string;
+  /** Forma de trabajo específica del servicio (metodología, ciclo de entrega). */
+  method?: { title: string; intro: string; steps: Item[] };
+};
+
 /** Precio "Desde": límite inferior autorizado por Aurhora. */
 export type PriceRow = { concept: string; range: string; unit?: string };
 

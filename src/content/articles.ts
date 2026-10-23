@@ -496,7 +496,7 @@ const BASE: Article[] = [
         blocks: [
           {
             kv: [
-              ["Lavado y desinfección de tinaco (hasta 1,100 L)", "Desde $350 por tinaco"],
+              ["Lavado y desinfección de tinaco (hasta 1,100 L)", "Desde $600 por tinaco"],
               ["Lavado y desinfección de cisterna (hasta 10,000 L)", "Desde $1,750 por cisterna"],
               ["Instalación de tinaco de 450 a 1,100 L", "Desde $1,200 de mano de obra"],
               ["Bomba de agua, suministro e instalación", "Desde $2,350 por equipo"],
@@ -523,7 +523,7 @@ const BASE: Article[] = [
     ],
     faq: [
       ["¿Puedo usar el agua justo después del lavado?", "Para lavar y bañarte, sí. Para beber o cocinar, sigue la recomendación del técnico según el desinfectante que se usó; si el agua de tu zona no es potable, usa agua purificada de todos modos."],
-      ["¿Cuánto cuesta lavar una cisterna en la CDMX?", "El lavado y desinfección de una cisterna de hasta 10,000 litros parte de $1,750 con IVA. Las cisternas más grandes o de difícil acceso se cotizan después de verlas."],
+      ["¿Cuánto cuesta lavar una cisterna en la CDMX?", "Nuestro lavado y desinfección de una cisterna de hasta 10,000 litros parte de $1,750 con IVA. Las cisternas más grandes o de difícil acceso se cotizan después de verlas."],
       ["¿Lavan tinacos en edificios y negocios?", "Sí. Para varios tinacos o cisternas grandes hacemos un levantamiento y una propuesta por etapas, o lo incluimos en una póliza de mantenimiento."],
       ["¿Qué pasa si el tinaco tiene grietas o la tapa no cierra?", "Una grieta o una tapa dañada dejan entrar polvo, insectos y luz, y el agua se ensucia más rápido. En la visita te decimos si conviene repararlo o reemplazarlo, y cotizamos la instalación del nuevo."],
     ],

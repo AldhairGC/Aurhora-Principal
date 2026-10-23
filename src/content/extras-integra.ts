@@ -43,13 +43,13 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
       "Trabajo en altura que requiera equipo especial.",
     ],
     faq: [
-      ["¿Cuánto cuesta instalar 4 cámaras de seguridad en la CDMX?", "Un sistema de 4 cámaras instalado parte de $6,400 en gama de entrada y desde $9,900 en cámaras IP de 4 MP."],
+      ["¿Cuánto cuesta instalar 4 cámaras de seguridad en la CDMX?", "Con nosotros, un sistema de 4 cámaras instalado parte de $6,400 en gama de entrada y desde $9,900 en cámaras IP de 4 MP."],
       ["¿Cuánto tarda la instalación?", "Un sistema de 4 a 8 cámaras en casa o local normalmente se instala en un día. Proyectos con más cámaras o varios pisos toman de 2 a 3 días."],
     ],
   },
 
   redes: {
-    costIntro: "El costo de una red depende de cuántos puntos necesitas y de cómo se lleva el cable. Se cobra por nodo de red y por punto de acceso WiFi instalado.",
+    costIntro: "El costo de una red depende de cuántos puntos necesitas y de cómo se lleva el cable. Cobramos por nodo de red y por punto de acceso WiFi instalado.",
     prices: [
       { concept: "Nodo de red Cat6 instalado", range: "Desde $950", unit: "por nodo" },
       { concept: "Paquete de 5 nodos con switch", range: "Desde $4,100", unit: "por paquete" },
@@ -80,8 +80,8 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
       "Si tu negocio usa terminal de pago, cámaras o telefonía, conviene separarlos de la red de invitados. Es una configuración sencilla que mejora la seguridad y evita que un cliente sature la conexión de tu caja.",
     ],
     faq: [
-      ["¿Cuánto cuesta un nodo de red?", "Un nodo Cat6 instalado parte de $950; el precio final depende de si incluye certificación y canalización."],
-      ["¿Cuánto cuesta mejorar el WiFi de una casa?", "Depende del tamaño y los niveles. Los sistemas profesionales instalados de 2 a 5 puntos parten de $11,500."],
+      ["¿Cuánto cuesta un nodo de red?", "Instalamos cada nodo Cat6 desde $950; el precio final depende de si incluye certificación y canalización."],
+      ["¿Cuánto cuesta mejorar el WiFi de una casa?", "Depende del tamaño y los niveles. Nuestros sistemas instalados de 2 a 5 puntos parten de $11,500."],
     ],
   },
 
@@ -119,7 +119,7 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
       "Si estás por remodelar, aprovecha para dejar preparado el cableado y las cajas de los controles. Si tu espacio ya está terminado, las opciones inalámbricas permiten automatizar sin romper muros.",
     ],
     faq: [
-      ["¿Cuánto cuesta domotizar un departamento?", "Desde $17,400 según las áreas y dispositivos."],
+      ["¿Cuánto cuesta domotizar un departamento?", "Con nosotros, desde $17,400 según las áreas y dispositivos."],
       ["¿Puedo empezar con poco?", "Sí. Puedes empezar con iluminación o clima en una sola área y sumar después, sin rehacer lo instalado."],
     ],
   },
@@ -156,8 +156,8 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
     ],
     faq: [
       ["¿Puedo usar mis bocinas o mi pantalla actuales?", "En muchos casos sí. Revisamos el modelo y las conexiones en la visita y te decimos qué conviene conservar y qué complementar."],
-      ["¿Cuánto cuesta una sala de juntas para videollamadas?", "Una sala básica con pantalla, cámara y audio parte de $116,000. Para equipos pequeños hay opciones más sencillas que cotizamos según el espacio."],
-      ["¿Cuánto cuesta instalar una pantalla en la pared?", "Desde $700 por pantalla, sin el soporte."],
+      ["¿Cuánto cuesta una sala de juntas para videollamadas?", "Nuestra sala básica con pantalla, cámara y audio parte de $116,000. Para equipos pequeños hay opciones más sencillas que cotizamos según el espacio."],
+      ["¿Cuánto cuesta instalar una pantalla en la pared?", "La instalamos desde $700 por pantalla, sin el soporte."],
     ],
   },
 };

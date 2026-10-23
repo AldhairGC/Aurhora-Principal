@@ -10,11 +10,14 @@ import { unitById } from "@/content/site";
 import { ARTICLES } from "@/content/articles";
 import { extrasOf, faqOf } from "@/content/extras";
 import { ServiceCost } from "@/components/sections/ServiceCost";
+import { ServiceAnatomy } from "@/components/sections/ServiceAnatomy";
+import { anatomyOf } from "@/content/anatomy";
 import type { Service } from "@/content/types";
 
 export function ServicePage({ service: s }: { service: Service }) {
   const unit = unitById(s.unit);
-  const wa = `Hola, ${unit.full}. Me interesa ${s.name.toLowerCase()}.`;
+  const anatomy = anatomyOf(s.id);
+  const wa =`Hola, ${unit.full}. Me interesa ${s.name.toLowerCase()}.`;
 
   return (
     <div data-unit={s.unit}>
@@ -65,9 +68,7 @@ export function ServicePage({ service: s }: { service: Service }) {
         </ul>
       </Section>
 
-      {extrasOf(s.id) && <ServiceCost x={extrasOf(s.id)!} name={s.name} />}
-
-      {s.id === "agentes-ia" && (
+      {s.id === "agentes-ia" ? (
         <section className="gutter bg-night py-20 text-on-night md:py-28">
           <div className="wrap">
             <SectionHead night eyebrow="Anatomía de un agente" title="Así diseñamos cada agente." intro="Cada agente tiene un disparador, conocimiento, herramientas, límites y un momento claro para pasar el caso a una persona." />
@@ -75,9 +76,11 @@ export function ServicePage({ service: s }: { service: Service }) {
             <div className="mt-14"><AgentComparison night /></div>
           </div>
         </section>
-      )}
+      ) : anatomy && <ServiceAnatomy a={anatomy} serviceId={s.id} />}
 
-      {s.stack && (
+      {extrasOf(s.id) && <ServiceCost x={extrasOf(s.id)!} name={s.name} />}
+
+      {s.stack && !anatomy?.layers && (
         <Section className="border-b border-line py-14">
           <div className="grid gap-6 md:grid-cols-12 md:items-center">
             <div className="md:col-span-4">

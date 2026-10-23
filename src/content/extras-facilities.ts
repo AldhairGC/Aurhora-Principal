@@ -44,14 +44,14 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Trabajo en altura que requiera andamio o elevador.",
     ],
     faq: [
-      ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Desde $950 por equipo en casa y desde $2,900 en negocios. Te damos el precio exacto después de ver tu equipo."],
+      ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Nuestro mantenimiento parte de $950 por equipo en casa y de $2,900 en negocios. Te damos el precio exacto después de ver tu equipo."],
       ["¿Cuánto tarda la limpieza de un minisplit?", "Normalmente entre una hora y hora y media por equipo, según el acceso y qué tan sucio esté."],
       ["¿El diagnóstico tiene costo?", "Sí, y te lo informamos antes de la visita. Parte de $450; si aceptas la cotización, se descuenta del trabajo."],
     ],
   },
 
   electricidad: {
-    costIntro: `Los trabajos eléctricos se cobran por visita, por pieza o por circuito. La mayoría son de mano de obra: el material se cotiza aparte, y la diferencia entre un contacto básico y uno de marca premium puede ser grande.`,
+    costIntro: `Cobramos los trabajos eléctricos por visita, por pieza o por circuito. Nuestros precios son de mano de obra: el material se cotiza aparte, y la diferencia entre un contacto básico y uno de marca premium puede ser grande.`,
     prices: [
       { concept: "Visita o diagnóstico", range: "Desde $500", unit: "por visita, descontable" },
       { concept: "Cambio de contacto o apagador", range: "Desde $300", unit: "por pieza" },
@@ -82,13 +82,13 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Trabajo en altura con andamio.",
     ],
     faq: [
-      ["¿Cuánto cobra un electricista por venir a casa en la CDMX?", "La visita o diagnóstico parte de $500 y suele descontarse si aceptas el trabajo."],
+      ["¿Cuánto cobra un electricista por venir a casa en la CDMX?", "Nuestra visita o diagnóstico parte de $500 y se descuenta si aceptas el trabajo."],
       ["¿El material está incluido en el precio?", "Normalmente no. Te decimos qué material se necesita y lo incluimos en la cotización, o puedes comprarlo tú si lo prefieres."],
     ],
   },
 
   plomeria: {
-    costIntro: "La mayoría de los trabajos de plomería se cobran por visita o por trabajo terminado. Los precios son de mano de obra: los muebles, accesorios y equipos se cotizan aparte o puedes comprarlos tú.",
+    costIntro: "Cobramos la mayoría de los trabajos de plomería por visita o por trabajo terminado. Nuestros precios son de mano de obra: los muebles, accesorios y equipos se cotizan aparte o puedes comprarlos tú.",
     prices: [
       { concept: "Visita o diagnóstico", range: "Desde $500", unit: "por visita, descontable" },
       { concept: "Hora de servicio", range: "Desde $300", unit: "por hora" },
@@ -98,11 +98,11 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       { concept: "Destape de drenaje con equipo", range: "Desde $950", unit: "por servicio" },
       { concept: "Instalación de WC (mano de obra)", range: "Desde $1,200", unit: "por pieza" },
       { concept: "Instalación de lavabo o fregadero (mano de obra)", range: "Desde $1,400", unit: "por pieza" },
-      { concept: "Lavado y desinfección de tinaco (hasta 1,100 L)", range: "Desde $350", unit: "por tinaco" },
+      { concept: "Lavado y desinfección de tinaco (hasta 1,100 L)", range: "Desde $600", unit: "por tinaco" },
       { concept: "Lavado y desinfección de cisterna (hasta 10,000 L)", range: "Desde $1,750", unit: "por cisterna" },
       { concept: "Instalación de tinaco de 450 a 1,100 L (mano de obra)", range: "Desde $1,200", unit: "por tinaco" },
       { concept: "Bomba de agua, suministro e instalación", range: "Desde $2,350", unit: "por equipo" },
-      { concept: "Instalación de calentador (mano de obra y conexiones)", range: "Desde $3,500", unit: "por equipo" },
+      { concept: "Instalación de calentador (mano de obra y conexiones)", range: "Desde $2,000", unit: "por equipo" },
     ],
     factors: [
       "Si la fuga está a la vista o dentro de un muro o piso.",
@@ -132,13 +132,13 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Si el recibo de agua subió sin explicación, haz una prueba sencilla: cierra todas las llaves y revisa si el medidor sigue avanzando. Si avanza, hay una fuga oculta y conviene revisarla antes de que dañe muros o pisos.",
     ],
     faq: [
-      ["¿Cuánto cobra un plomero en la CDMX?", "La visita o diagnóstico parte de $500 con IVA y se descuenta si aceptas el trabajo. Una fuga visible se repara desde $600 y un destape de fregadero o WC desde $850."],
-      ["¿Cuánto cuesta lavar un tinaco o una cisterna?", "El lavado y desinfección de un tinaco de hasta 1,100 litros parte de $350 y el de una cisterna de hasta 10,000 litros desde $1,750, con IVA incluido."],
+      ["¿Cuánto cobra un plomero en la CDMX?", "Nuestra visita o diagnóstico parte de $500 con IVA y se descuenta si aceptas el trabajo. Una fuga visible se repara desde $600 y un destape de fregadero o WC desde $850."],
+      ["¿Cuánto cuesta lavar un tinaco o una cisterna?", "Nuestro lavado y desinfección de un tinaco de hasta 1,100 litros parte de $600 y el de una cisterna de hasta 10,000 litros desde $1,750, con IVA incluido."],
     ],
   },
 
   reparaciones: {
-    costIntro: "Los trabajos de reparación del hogar se cobran por trabajo o por tiempo. Se cobra una visita mínima, por eso conviene juntar varios pendientes en una sola visita.",
+    costIntro: "Cobramos las reparaciones del hogar por trabajo o por tiempo, con una visita mínima; por eso conviene juntar varios pendientes en una sola visita.",
     prices: [
       { concept: "Visita mínima (2 horas)", range: "Desde $700", unit: "por visita" },
       { concept: "Hora de servicio", range: "Desde $350", unit: "por hora" },
@@ -171,7 +171,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Si ya compraste soportes, repisas o accesorios, compártenos el modelo o una foto de la caja. Así revisamos que sean adecuados para tu muro y para el peso que van a cargar.",
     ],
     faq: [
-      ["¿Cuánto cuesta instalar un soporte de TV?", "Desde $600 por pantalla, sin contar el soporte."],
+      ["¿Cuánto cuesta instalar un soporte de TV?", "Lo instalamos desde $600 por pantalla, sin contar el soporte."],
       ["¿Cobran por hora o por trabajo?", "Depende de la lista. Con varios pendientes, conviene una cotización por media jornada o jornada completa."],
     ],
   },
@@ -210,7 +210,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
     ],
     faq: [
       ["¿Qué pasa si un equipo falla entre visitas?", "Lo reportas por WhatsApp y coordinamos la atención según el tiempo de respuesta acordado en la póliza. Como ya conocemos el equipo y su historial, el diagnóstico suele ser más rápido. El correctivo se cotiza antes de ejecutarlo."],
-      ["¿Cuánto cuesta una póliza de mantenimiento?", "Depende del inventario. Para un negocio con 5 a 10 minisplits, la póliza parte de $4,100 al mes."],
+      ["¿Cuánto cuesta una póliza de mantenimiento?", "Depende del inventario. Para un negocio con 5 a 10 minisplits, nuestra póliza parte de $4,100 al mes."],
       ["¿Cada cuánto son las visitas?", "En comercios suele ser cada tres meses; en restaurantes e industria, con mayor frecuencia; en casas, cada seis meses. Se ajusta con el uso real."],
     ],
   },
@@ -249,7 +249,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
     ],
     faq: [
       ["¿Puedo hacer la remodelación por etapas?", "Sí. Es común empezar por la instalación eléctrica y el cableado, que van antes de los acabados, y dejar para una segunda etapa la climatización o la domótica. La propuesta indica qué conviene hacer primero."],
-      ["¿Cuánto cuesta cambiar la instalación eléctrica de una casa?", "Una instalación nueva parte de $250 por m² y una remodelación eléctrica completa desde $17,400."],
+      ["¿Cuánto cuesta cambiar la instalación eléctrica de una casa?", "Con nosotros, una instalación nueva parte de $250 por m² y una remodelación eléctrica completa desde $17,400."],
     ],
   },
 
@@ -285,7 +285,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Si tu plaza, corporativo o aseguradora pide requisitos específicos, como bitácoras, seguros o documentación de entrega, compártelos desde el inicio. Los incluimos en la propuesta para que no se conviertan en un costo sorpresa al final.",
     ],
     faq: [
-      ["¿Cuánto cuesta cambiar la iluminación de una nave a LED?", "Los proyectos completos parten de $150 por m², incluyendo luminarias e instalación."],
+      ["¿Cuánto cuesta cambiar la iluminación de una nave a LED?", "Nuestros proyectos completos parten de $150 por m², con luminarias e instalación incluidas."],
     ],
   },
 };

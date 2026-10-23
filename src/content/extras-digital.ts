@@ -13,7 +13,7 @@ import type { ServiceExtras } from "./types";
 
 export const DIGITAL_EXTRAS: Record<string, ServiceExtras> = {
   "agentes-ia": {
-    costIntro: "Un agente de IA tiene dos costos: la implementación, que se paga una vez, y la operación mensual, que incluye el uso de WhatsApp y del modelo de IA. En México conviven planes empaquetados de bajo costo y proyectos a la medida conectados a los sistemas de la empresa.",
+    costIntro: "Un agente de IA tiene dos costos: la implementación, que se paga una vez, y la operación mensual, que incluye el uso de WhatsApp y del modelo de IA. Manejamos desde planes empaquetados hasta agentes a la medida conectados a los sistemas de tu empresa.",
     prices: [
       { concept: "Plan empaquetado de agente para WhatsApp", range: "Desde $1,900", unit: "al mes" },
       { concept: "Implementación de un agente acotado", range: "Desde $9,300", unit: "pago único" },
@@ -43,14 +43,14 @@ export const DIGITAL_EXTRAS: Record<string, ServiceExtras> = {
       "Cambios mayores de alcance después del lanzamiento.",
     ],
     faq: [
-      ["¿Cuánto cuesta un agente de IA para WhatsApp en México?", "La implementación de un agente acotado parte de $9,300 y su operación desde $2,900 al mes, más el uso de WhatsApp y del modelo de IA. Un agente conectado a CRM o ERP parte de $29,000."],
+      ["¿Cuánto cuesta un agente de IA para WhatsApp en México?", "Con nosotros, la implementación de un agente acotado parte de $9,300 y su operación desde $2,900 al mes, más el uso de WhatsApp y del modelo de IA. Un agente conectado a CRM o ERP parte de $29,000."],
       ["¿Cuánto tarda en estar listo?", "Un agente acotado suele tardar de 1 a 3 semanas. Con integraciones a CRM, de 3 a 8 semanas; con ERP o varios procesos, de 2 a 4 meses."],
       ["¿Qué costos mensuales tiene?", "La operación y mejora del agente, el uso de WhatsApp que cobra Meta y el consumo del modelo de IA. Te los detallamos por separado en la propuesta."],
     ],
   },
 
   "automatizacion-procesos": {
-    costIntro: "Las automatizaciones se cotizan por flujo o por proceso. En México hay desde flujos simples de bajo costo hasta suites que conectan CRM, facturación y WhatsApp. Al precio de construcción se suma la plataforma donde corren, que normalmente paga el cliente.",
+    costIntro: "Las automatizaciones se cotizan por flujo o por proceso. Construimos desde flujos simples hasta procesos completos que conectan CRM, facturación y WhatsApp. Al precio de construcción se suma la plataforma donde corren, que normalmente paga el cliente.",
     prices: [
       { concept: "Flujo simple", range: "Desde $4,100", unit: "por flujo" },
       { concept: "Proceso de negocio (cobranza, sincronizar CRM)", range: "Desde $5,800", unit: "por proceso" },
@@ -81,7 +81,7 @@ export const DIGITAL_EXTRAS: Record<string, ServiceExtras> = {
       "Empieza por un flujo que se repita mucho y tenga reglas claras. Cuando funcione y puedas medir el ahorro, es más fácil decidir qué automatizar después.",
     ],
     faq: [
-      ["¿Cuánto cuesta automatizar un proceso?", "Un flujo simple parte de $4,100 y un proceso de negocio completo desde $5,800."],
+      ["¿Cuánto cuesta automatizar un proceso?", "Con nosotros, un flujo simple parte de $4,100 y un proceso de negocio completo desde $5,800."],
       ["¿Cuánto tarda?", "Un flujo simple puede estar listo en una o dos semanas. Varios procesos coordinados toman de 4 a 12 semanas."],
     ],
   },
@@ -118,7 +118,7 @@ export const DIGITAL_EXTRAS: Record<string, ServiceExtras> = {
       "Pregunta siempre por la propiedad del código, el hosting y el soporte después del lanzamiento. Son los puntos que más diferencias generan entre propuestas que parecen similares.",
     ],
     faq: [
-      ["¿Cuánto cuesta un software a la medida en México?", "Una primera versión parte de $116,000 y una plataforma completa desde $232,000."],
+      ["¿Cuánto cuesta un software a la medida en México?", "Con nosotros, una primera versión parte de $116,000 y una plataforma completa desde $232,000."],
       ["¿Cuánto tarda una primera versión?", "Normalmente entre 8 y 14 semanas, según el alcance."],
     ],
   },
@@ -154,18 +154,18 @@ export const DIGITAL_EXTRAS: Record<string, ServiceExtras> = {
       "Una buena hoja de ruta prioriza pocos casos de uso con valor claro, define cómo medirlos y propone un orden realista. Desconfía de un diagnóstico que recomiende implementar todo al mismo tiempo.",
     ],
     faq: [
-      ["¿Cuánto cuesta un diagnóstico de IA?", "Un diagnóstico formal de 2 a 3 semanas parte de $17,400. La primera conversación con nosotros no tiene costo."],
-      ["¿Cuánto cuesta capacitar a mi equipo en IA?", "Un taller ejecutivo parte de $17,400 y una capacitación de 1 a 2 días desde $40,600."],
+      ["¿Cuánto cuesta un diagnóstico de IA?", "Nuestro diagnóstico formal de 2 a 3 semanas parte de $17,400. La primera conversación con nosotros no tiene costo."],
+      ["¿Cuánto cuesta capacitar a mi equipo en IA?", "Nuestro taller ejecutivo parte de $17,400 y la capacitación de 1 a 2 días, desde $40,600."],
     ],
   },
 
   marketing: {
-    costIntro: "En marketing digital hay que separar dos cosas: lo que cobra la agencia por su trabajo y la inversión en anuncios, que se paga directo a Google o Meta. Los precios de esta tabla son solo del trabajo de la agencia.",
+    costIntro: "En marketing digital hay que separar dos cosas: lo que cobramos por nuestro trabajo y la inversión en anuncios, que pagas directo a Google o Meta. Los precios de esta tabla son solo de nuestro trabajo.",
     prices: [
       { concept: "SEO para negocio local", range: "Desde $5,800", unit: "al mes" },
       { concept: "SEO B2B nacional", range: "Desde $11,600", unit: "al mes" },
       { concept: "Auditoría técnica de SEO", range: "Desde $5,250", unit: "pago único" },
-      { concept: "Gestión de Google Ads o Meta Ads (sin pauta)", range: "Desde $5,800", unit: "al mes, o 15–20% de la inversión" },
+      { concept: "Gestión de Google Ads o Meta Ads (sin pauta)", range: "Desde $5,800", unit: "al mes, o 15 a 20% de la inversión" },
       { concept: "Manejo de redes sociales", range: "Desde $5,700", unit: "al mes" },
       { concept: "Agencia integral", range: "Desde $9,300", unit: "al mes" },
     ],
@@ -191,7 +191,7 @@ export const DIGITAL_EXTRAS: Record<string, ServiceExtras> = {
       "Define un presupuesto mensual que puedas sostener al menos tres meses. Los primeros resultados sirven para ajustar; cambiar de estrategia cada semana no deja aprender nada.",
     ],
     faq: [
-      ["¿Cuánto cuesta el SEO para un negocio local?", "Desde $5,800 al mes. Los primeros resultados suelen verse entre el segundo y el cuarto mes."],
+      ["¿Cuánto cuesta el SEO para un negocio local?", "Nuestro servicio de SEO parte de $5,800 al mes. Los primeros resultados suelen verse entre el segundo y el cuarto mes."],
       ["¿El precio incluye lo que se paga a Google o Meta?", "No. La inversión en anuncios se paga directo a cada plataforma y se acuerda contigo aparte."],
     ],
   },
@@ -229,7 +229,7 @@ export const DIGITAL_EXTRAS: Record<string, ServiceExtras> = {
       "Piensa también qué debe pasar cuando alguien te escribe: quién responde, en cuánto tiempo y dónde queda registrada la solicitud. Ordenar eso es tan importante como el diseño del sitio.",
     ],
     faq: [
-      ["¿Cuánto cuesta una página web para un negocio pequeño?", "Un sitio de hasta 5 páginas parte de $7,550 en pago único, más hosting y dominio desde $3,500 al año."],
+      ["¿Cuánto cuesta una página web para un negocio pequeño?", "Con nosotros, un sitio de hasta 5 páginas parte de $7,550 en pago único, más hosting y dominio desde $3,500 al año."],
       ["¿Cuánto tarda en estar listo?", "Un sitio de hasta 5 páginas suele estar listo en 1 a 3 semanas, según qué tan pronto tengamos textos y fotos."],
     ],
   },

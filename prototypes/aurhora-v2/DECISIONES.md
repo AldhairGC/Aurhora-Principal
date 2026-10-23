@@ -12,13 +12,15 @@ Digital atiende profesionales, emprendedores, pequeños negocios y empresas medi
 
 ## Cobertura y atención
 
-CDMX y zonas del Estado de México para servicios físicos, con foco en Satélite, Naucalpan, Lomas Verdes, Tlalnepantla, Chapultepec, Centro, Santa Fe y Lomas de Bezares. Confirmar traslado y disponibilidad. Atención lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00, hora de Ciudad de México. Domingo sin operación ordinaria; urgencias sujetas a evaluación y disponibilidad. No prometer llegada garantizada ni atención 24/7.
+CDMX y área metropolitana para servicios físicos (actualizado el 23 de octubre de 2026). En el sitio se dice "CDMX y área metropolitana". Zonas frecuentes: Satélite, Naucalpan, Lomas Verdes, Tlalnepantla, Cuautitlán Izcalli, Ecatepec, Chalco, Chapultepec, Centro, Santa Fe y Lomas de Bezares. También se atienden proyectos en Puebla, Querétaro, Hidalgo y Valle de Bravo, previo acuerdo de traslado. Confirmar traslado y disponibilidad. Atención lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00, hora de Ciudad de México. Domingo sin operación ordinaria; urgencias sujetas a evaluación y disponibilidad. No prometer llegada garantizada ni atención 24/7.
 
 ## Solicitud, precios y respaldo
 
 WhatsApp único confirmado: +52 55 8299 1282. Primera versión con atención humana. La solicitud recopila unidad, servicio, espacio, zona, descripción y preferencia de atención. No obliga al cliente a completar un cuestionario largo para contactar.
 
 Precios autorizados (23 de octubre de 2026): se aprobaron los rangos de mercado de CDMX y Estado de México investigados para cada servicio (los de plomería, el 23 de octubre de 2026), y se publican solo como "Desde $X", con el límite inferior de cada rango. No se publica el límite superior. Para cumplir el art. 7 Bis de la LFPC, los precios publicados incluyen IVA: al límite inferior se le suma el 16% y se redondea hacia arriba al siguiente múltiplo de $50 (por ejemplo, $350 + IVA = $406, se publica $450). Cada tabla lleva la nota "Precios desde, en pesos mexicanos, con IVA incluido. El precio final se confirma en la cotización". Los datos y sus fuentes están en `extras-*.ts` y `articles-cost.ts` del prototipo v3.
+
+Ajuste de plomería (23 de octubre de 2026, decisión de Aurhora): lavado y desinfección de tinaco desde $600 (antes $350) e instalación de calentador, mano de obra y conexiones, desde $2,000 (antes $3,500). Ambos con IVA incluido.
 
 La visita o diagnóstico se publica desde $450 (aire acondicionado) y desde $500 (electricidad), con IVA; se informa antes de la visita y se descuenta del trabajo aceptado. Materiales, traslados y urgencias necesitan políticas finales.
 

@@ -13,7 +13,9 @@ export const SITE = {
     { day: "Sábado", time: "8:00 a 16:00" },
     { day: "Domingo", time: "Sin operación ordinaria" },
   ],
-  zones: ["Satélite", "Naucalpan", "Lomas Verdes", "Tlalnepantla", "Chapultepec", "Centro", "Santa Fe", "Lomas de Bezares"],
+  zones: ["Satélite", "Naucalpan", "Lomas Verdes", "Tlalnepantla", "Cuautitlán Izcalli", "Ecatepec", "Chalco", "Chapultepec", "Centro", "Santa Fe", "Lomas de Bezares"],
+  /** Fuera del área metropolitana: proyectos con traslado acordado. */
+  regions: ["Puebla", "Querétaro", "Hidalgo", "Valle de Bravo"],
 };
 
 export const UNITS: Unit[] = [
@@ -41,12 +43,12 @@ export const UNITS: Unit[] = [
     short: "Seguridad, redes y domótica.",
     lead: "Cada espacio, mejor conectado.",
     desc: "Diseñamos e instalamos seguridad, redes y domótica que funcionan como un solo sistema en tu casa o negocio.",
-    area: "CDMX y zonas del Estado de México",
+    area: "CDMX y área metropolitana",
     icon: Boxes,
     services: ["seguridad-accesos", "redes", "domotica", "audio-video"],
     seo: {
       title: "Aurhora Integra | Cámaras, redes y domótica en CDMX",
-      description: "Instalación de cámaras en CDMX y Estado de México, control de acceso, WiFi, cableado estructurado, domótica y audio para residencias y negocios.",
+      description: "Instalación de cámaras en CDMX y área metropolitana, control de acceso, WiFi, cableado estructurado, domótica y audio para residencias y negocios.",
       slug: "/integra",
       keywords: ["instalación de cámaras CDMX", "domótica CDMX", "cableado estructurado", "control de acceso", "casa inteligente"],
     },
@@ -58,12 +60,12 @@ export const UNITS: Unit[] = [
     short: "Hogar, comercio e industria.",
     lead: "Que todo funcione. Y tu día siga.",
     desc: "Aire acondicionado, electricidad, plomería, instalaciones y proyectos para casas, locales, oficinas, naves y bodegas. El mismo equipo se encarga desde la revisión hasta el seguimiento.",
-    area: "CDMX y zonas del Estado de México",
+    area: "CDMX y área metropolitana",
     icon: Wrench,
     services: ["aire-acondicionado", "electricidad", "plomeria", "reparaciones", "mantenimiento-programado", "proyectos-residenciales", "proyectos-industriales"],
     seo: {
       title: "Aurhora Facilities | Mantenimiento e instalaciones en CDMX",
-      description: "Mantenimiento en CDMX y Estado de México: aire acondicionado, electricidad, plomería, reparaciones del hogar, pólizas y proyectos residenciales e industriales.",
+      description: "Mantenimiento en CDMX y área metropolitana: aire acondicionado, electricidad, plomería, reparaciones, pólizas y proyectos residenciales e industriales.",
       slug: "/facilities",
       keywords: ["mantenimiento CDMX", "mantenimiento industrial", "póliza de mantenimiento", "electricista CDMX", "plomero CDMX", "mantenimiento de aire acondicionado"],
     },
