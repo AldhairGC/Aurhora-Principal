@@ -8,6 +8,7 @@ import { copyText, whatsappUrl } from "@/lib/whatsapp";
 import { OpenDot } from "./Header";
 import { SeoInspector } from "./SeoInspector";
 import { track } from "@/lib/analytics";
+import { openCookieSettings } from "@/lib/consent";
 
 export function CopyValue({ value, label, night }: { value: string; label: string; night?: boolean }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -94,6 +95,7 @@ export function Footer() {
             {[["privacidad", "Aviso de privacidad"], ["terminos", "Términos"], ["cookies", "Cookies"]].map(([to, label]) => (
               <Link key={to} to={to} className="transition hover:text-on-night">{label}</Link>
             ))}
+            <button type="button" onClick={openCookieSettings} className="transition hover:text-on-night">Preferencias de cookies</button>
           </span>
           <OpenDot night />
           <span className="flex flex-wrap items-center gap-3"><SeoInspector /><span className="eyebrow">Prototipo para revisión · v0.4</span></span>

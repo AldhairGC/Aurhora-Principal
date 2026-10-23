@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Toaster } from "sonner";
 import { Header } from "@/components/layout/Header";
 import { Footer, WhatsAppFab } from "@/components/layout/Footer";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 import { GroupPage } from "@/pages/GroupPage";
 import { DigitalPage, IntegraPage, FacilitiesPage } from "@/pages/UnitPages";
 import { ContactPage, ServicePage } from "@/pages/ServicePage";
@@ -58,6 +59,7 @@ function Shell() {
       </main>
       <Footer />
       {view !== "contacto" && <WhatsAppFab />}
+      <CookieBanner />
       <Toaster theme={dark ? "dark" : "light"} position="bottom-center" />
     </>
   );

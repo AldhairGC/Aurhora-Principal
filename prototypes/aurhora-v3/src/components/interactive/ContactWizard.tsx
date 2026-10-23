@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { CATALOG, SITE, UNIT_LABEL } from "@/content/site";
 import { buildMessage, copyText, whatsappUrl } from "@/lib/whatsapp";
 import { todayISO } from "@/lib/hours";
-import { useRouter } from "@/lib/router";
+import { Link, useRouter } from "@/lib/router";
 import { CopyValue } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
@@ -233,6 +233,11 @@ export function ContactWizard() {
               </a>
             )}
           </div>
+          {/* Aviso de privacidad simplificado: visible en todos los pasos, antes de enviar datos. */}
+          <p className="mt-5 text-[12.5px] leading-relaxed text-mute">
+            Aurhora Agency usa los datos que compartes para atender tu solicitud, cotizar y coordinar el servicio. Si no quieres recibir información de nuestros servicios, dínoslo en tu mensaje. Consulta el{" "}
+            <Link to="privacidad" className="underline underline-offset-2 hover:text-ink">Aviso de privacidad</Link>.
+          </p>
         </div>
       </form>
 
