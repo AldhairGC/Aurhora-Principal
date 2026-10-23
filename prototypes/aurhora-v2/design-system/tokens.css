@@ -1,0 +1,16 @@
+/* Aurhora — generated from tokens.json */
+:root,[data-theme="light"]{--surface:#fafafa;--surface-raised:#ffffff;--surface-sunken:#f4f4f5;--surface-inverse:#0a0a0f;--line:#e4e4e7;--line-strong:#8a8a93;--ink:#09090b;--ink-soft:#27272a;--text-muted:#52525b;--accent-text:#6d28d9;--cyan-text:#0e7490;--aurora-violet:#7c3aed;--aurora-indigo:#4f46e5;--aurora-blue:#2563eb;--aurora-cyan:#06b6d4;--aurora-cyan-deep:#0891b2;--aurora-mint:#34d399;--aurora-magenta:#e879f9;--action-from:#7c3aed;--action-via:#4f46e5;--action-to:#2563eb;--on-action:#ffffff;--focus-ring:#4f46e5;--shadow-brand:0 8px 24px -8px rgba(79, 70, 229, 0.5);}
+[data-theme="dark"]{--surface:#0a0a0f;--surface-raised:#131318;--surface-sunken:#07070b;--surface-inverse:#0a0a0f;--line:#27272a;--line-strong:#7c7c86;--ink:#fafafa;--ink-soft:#e4e4e7;--text-muted:#a1a1aa;--accent-text:#a78bfa;--cyan-text:#22d3ee;--aurora-violet:#8b5cf6;--aurora-indigo:#6366f1;--aurora-blue:#3b82f6;--aurora-cyan:#22d3ee;--aurora-cyan-deep:#22d3ee;--aurora-mint:#6ee7b7;--aurora-magenta:#f0abfc;--action-from:#7c3aed;--action-via:#4f46e5;--action-to:#2563eb;--on-action:#ffffff;--focus-ring:#a5b4fc;--shadow-brand:0 8px 24px -8px rgba(79, 70, 229, 0.5);}
+:root{--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;--radius-pill:9999px;--font-display:"Sora", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;--font-sans:"Geist", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;--font-mono:"Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;}
+.display-xl{font-family:var(--font-display);font-size:64px;line-height:68px;font-weight:600;letter-spacing:-1.92px}
+.display-lg{font-family:var(--font-display);font-size:44px;line-height:52px;font-weight:600;letter-spacing:-1.1px}
+.display-md{font-family:var(--font-display);font-size:36px;line-height:44px;font-weight:600;letter-spacing:-0.72px}
+.heading{font-family:var(--font-sans);font-size:18px;line-height:25.2px;font-weight:600;letter-spacing:-0.18px}
+.body-lg{font-family:var(--font-sans);font-size:18px;line-height:29.25px;font-weight:400;letter-spacing:-0.17px}
+.body{font-family:var(--font-sans);font-size:17px;line-height:27.2px;font-weight:400;letter-spacing:-0.17px}
+.body-sm{font-family:var(--font-sans);font-size:14px;line-height:22.4px;font-weight:400;letter-spacing:-0.17px}
+.stat{font-family:var(--font-mono);font-size:28px;line-height:44.8px;font-weight:500;letter-spacing:-0.56px}
+.eyebrow{font-family:var(--font-mono);font-size:11px;line-height:16px;font-weight:400;letter-spacing:1.5px}
+@font-face{font-family:"Sora";src:url(fonts/Sora-Variable.woff2) format("woff2");font-weight:100 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Geist";src:url(fonts/Geist-Variable.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Geist Mono";src:url(fonts/GeistMono-Variable.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}

@@ -1,0 +1,59 @@
+VERSIÓN 2 COMERCIAL — AURHORA AGENCY
+Crea una nueva propuesta comercial audiovisual para la portada del sitio de Aurhora Agency en México. Esta versión sustituye el enfoque institucional extenso por una historia humana que genere interés y conversaciones por WhatsApp. Título de trabajo: «Aurhora — Hagamos que funcione». No reutilices el montaje de 55 escenas del video anterior.
+
+PÚBLICO
+Dueños de negocios, responsables de oficinas/comercios y personas en casa. Mostrar beneficios, cercanía, capacidad técnica y filosofía para que quieran contarnos qué desean resolver.
+
+FORMATO Y DURACIÓN
+Horizontal 16:9, MP4 mínimo 1920x1080. Objetivo orientativo 90–110 segundos, preferiblemente cerca de 100. La locución natural determina la duración; NO fuerces un tiempo exacto con pausas, cámara lenta o palabras aceleradas. El guion tiene unas 200 palabras. No agregues narración ni afirmaciones. Sin avatar narrador, sin subtítulos incrustados; sí rótulos breves. Un solo CTA: WhatsApp +52 55 8299 1282.
+
+NARRACIÓN Y PRONUNCIACIÓN — PRIORIDAD MÁXIMA
+Voz nueva de catálogo, cálida, conversacional, español de México, 135–150 palabras/minuto. La voz anterior 1b7d8a19ba49481896dbeabc05559c28 fue rechazada por robótica: no reutilizar. Habla a una persona, sin solemnidad ni énfasis monótono; une ideas y varía el énfasis.
+La marca ESCRITA siempre es «Aurhora», con h. La marca HABLADA se pronuncia «Aurora», exactamente como aurora boreal: au-RO-ra, h muda, sin aspiración ni separación au-rho-ra. Aplica el glosario e763ee38007d424cb6c7365666ce1278, cuya regla española Aurhora → Aurora ya está confirmada.
+No cambies la ortografía en pantalla. Si la ruta de voz no aplica el glosario, usa «Aurora» únicamente como texto interno de síntesis y conserva «Aurhora» en guion editorial, logo, rótulos y futuros subtítulos.
+Produce una locución continua o bloques narrativos amplios de oraciones completas. Los cambios de plano NO deben reiniciar la síntesis de voz. No sintetices cada media frase como una escena independiente. No insertar etiquetas break de varios segundos, ni silencios dentro de oraciones. Los planos pueden cambiar mientras la voz continúa.
+Elige una voz de catálogo adecuada a español de México y presenta ID y metadatos reales; no inventes una confirmación de acento ni diseñes otra voz similar a la rechazada.
+
+DIRECCIÓN VISUAL — PERSONAS Y SERVICIOS EN ACCIÓN
+Al menos 80% del metraje debe mostrar escenas fotográficas en movimiento: personas, reuniones, equipos trabajando, espacios y demostraciones prácticas. Personas adultas con rostros visibles, expresiones naturales y contexto mexicano contemporáneo, sin estereotipos. No impongas una regla de ocultar todas las caras. Evita sonrisas impostadas, apretones de manos de stock y gente señalando pantallas sin propósito.
+Usa tomas de video de acción real licenciadas o video generado fotorealista. No sustituyas todo por ilustraciones, siluetas, tarjetas abstractas, diapositivas ni fotos con zoom. Si no puedes producir metraje humano en movimiento, informa la limitación en la propuesta antes de renderizar.
+Unos 18–24 planos, con acciones de 3–6 segundos y continuidad de espacio, vestuario y objetos. Cada plano aporta información.
+Auroras: máximo DOS apariciones breves y 5 segundos acumulados en TODO el video, incluido cierre; ninguna toma de cielo auroral en medio de los servicios. No abrir con una explicación de la aurora. Su función es firma de marca, no relleno. No usar barridos de aurora entre todos los cortes.
+Interfaces: mostrar un uso entendible, con etiqueta discreta «Ejemplo», compuestas como elementos limpios y legibles sobre escenas reales; evitar texto ilegible generado dentro de pantallas. Sin interfaces ni logos de terceros. Nunca presentar escenas ilustrativas como obras reales, casos de éxito o testimonios de Aurhora.
+
+ARCO Y PLAN DE PLANOS — TIEMPOS ORIENTATIVOS, NO SILENCIOS OBLIGATORIOS
+1. Gancho humano (aprox. 0–13 s). Negocio en actividad: responsable atiende a un cliente y revisa una solicitud; equipo coordina trabajo en mesa; persona entra a un espacio preparado. El movimiento y las miradas cuentan una situación cotidiana. Texto «Haz que todo funcione mejor». Sin caos exagerado ni auroras.
+2. Presentación (aprox. 13–24 s). Reunión pequeña: especialista escucha al cliente, ambos revisan el espacio o un plano y acuerdan una solución. Insertar logo original y nombres de las tres unidades como rótulos discretos, sin pantalla cósmica.
+3. Digital (aprox. 24–43 s). Microsecuencia comprensible: una consulta genérica por mensaje; una solicitud aparece organizada con responsable; un colaborador revisa y continúa el seguimiento. Luego un equipo usa una herramienta a medida. Unir personas + pantalla + resultado operativo, con etiqueta «Ejemplo» en simulaciones. Violeta #7C3AED como acento. Rótulos «Aurhora Digital» / «Más tiempo para tu negocio».
+4. Integra (aprox. 43–61 s). Técnico instala una cámara en una entrada y verifica su encuadre con el cliente; prueba de red; una persona controla luz y persianas desde teléfono y se ve la respuesta en el mismo espacio. Equipos sin marcas. Mostrar antes de la acción y efecto comprensible. Azul #2563EB como acento. Rótulos «Aurhora Integra» / «Espacios conectados y protegidos».
+5. Facilities (aprox. 61–76 s). Técnico revisa un minisplit; equipo prepara una instalación con herramientas adecuadas; revisión de iluminación de comercio u oficina. Demostraciones técnicas plausibles con equipo de protección apropiado; tableros desenergizados si se intervienen, sin prácticas inseguras. No inventar uniformes ni credenciales de una empresa real. Menta #34D399 como acento. Rótulos «Aurhora Facilities» / «Espacios que funcionan».
+6. Filosofía en acción (aprox. 76–93 s). Regresa la relación humana: escuchar al cliente, visita de diagnóstico visual sin hablar de términos, coordinación en mesa, explicación sencilla de una solución y cliente usando su espacio. Sensación de acompañamiento y claridad, sin simular un testimonio. Texto «Escuchamos. Conectamos. Resolvemos.».
+7. Conversión y cierre (últimos 7–10 s). Persona usa WhatsApp en un teléfono genérico sin marca; después cierre editorial oscuro con logo original, teléfono visible al menos 5 segundos y frase final. Una sola aurora sutil de hasta 3 segundos puede funcionar detrás de la firma. Texto CTA «Cuéntanos qué quieres resolver» y «WhatsApp +52 55 8299 1282». Frase final completa «Tú disfruta el resultado. Nosotros nos encargamos de lo complejo.», como excepción al límite de seis palabras: puede mostrarse en dos bloques legibles.
+
+MARCA Y SONIDO
+Adjunto el logo original aurhora-lockup-dark-video.png, asset efe4e2224f3e43fca4bce28db15eff38: úsalo sin redibujar, recolorear, estirar ni animar las letras. Fondo de firma #0A0A0F, texto #FAFAFA; los colores de unidad solo como acentos. Fotografía luminosa y natural, interiores reales y composición editorial sobria. Tipografía Sora/Geist si están disponibles; si no, sans serif equivalente, sin bloquear el proyecto. Rótulos alineados a la izquierda, máximo dos líneas, poco texto.
+Música instrumental contemporánea cálida, pulso suave y optimista, sin letra y sin dramatismo épico. Debajo de la voz, con mezcla clara; algunos sonidos ambientales sutiles pueden reforzar acciones. La voz manda sobre la música.
+
+OMITIR DEL VIDEO
+No mencionar garantías, plazos de respaldo, cotizaciones, costo o descuento de diagnósticos, horarios, precios, letra pequeña, términos ni condiciones. Tampoco explicación de partículas solares ni física de auroras. No añadir cifras, promesas absolutas, clientes, resultados cuantificados, certificaciones, testimonios ni «24/7», «atención inmediata» o «llegada garantizada».
+
+GUION EDITORIAL DE LOCUCIÓN — TEXTO COMPLETO
+Hay días en los que todo pasa al mismo tiempo. Clientes que atender, un equipo que coordinar y un espacio que necesita funcionar mejor. En Aurhora, te ayudamos a resolverlo.
+
+Reunimos tres especialidades para que tu negocio avance y tu casa funcione como quieres: Digital, Integra y Facilities.
+
+Con Aurhora Digital, una consulta por WhatsApp puede convertirse en una solicitud organizada y lista para darle seguimiento. Creamos agentes de inteligencia artificial, automatizamos tareas y desarrollamos software a la medida para que tu equipo se concentre en lo que mejor sabe hacer.
+
+Aurhora Integra conecta y protege tus espacios. Cámaras, redes y control de acceso; luces, clima y persianas que puedes manejar desde tu teléfono. Soluciones que se adaptan a tu casa, tu oficina o tu negocio.
+
+Y con Aurhora Facilities, cuidamos lo que hace que un espacio funcione: aire acondicionado, electricidad, instalaciones y mantenimiento para casas, comercios, oficinas y espacios industriales.
+
+Todo empieza por escucharte. Entender qué quieres lograr, reunir al equipo y trabajar contigo para hacerlo posible. Puedes empezar con un servicio y contar con nuestras tres especialidades cuando las necesites.
+
+¿Qué quieres resolver? Cuéntanos por WhatsApp.
+
+Aurhora. Tú disfruta el resultado. Nosotros nos encargamos de lo complejo.
+
+ENTREGA Y COMPROBACIÓN
+Prepara la propuesta de versión 2 y conserva el video anterior para comparación. Presenta la voz elegida con ID real, el guion y un storyboard donde se vea claramente qué servicios y personas aparecen, distinguiendo metraje fotográfico en movimiento de motion graphics. Comprueba que no se repiten cielos de aurora y que la pronunciación usa la regla del glosario.
+Tras la revisión, la producción debe entregar MP4 sin captions incrustados. Mantén guion y tiempos reales para subtítulos separados y capítulos. Para portada, prioriza una composición humana con logo, no otra aurora vacía. No afirmes que un SRT o fotograma existe hasta que esté disponible.

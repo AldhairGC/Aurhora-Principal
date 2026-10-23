@@ -1,3 +1,5 @@
+> **Guía sustituida.** La guía vigente de marca y voz es [docs/GUIA_DE_MARCA.md](docs/GUIA_DE_MARCA.md) (21 de octubre de 2026). Este documento se conserva como referencia de la etapa anterior; en lo que se contradiga, manda la guía nueva.
+
 # Guía de Voz y Estilo - Aurhora Agency
 
 ## Propósito
