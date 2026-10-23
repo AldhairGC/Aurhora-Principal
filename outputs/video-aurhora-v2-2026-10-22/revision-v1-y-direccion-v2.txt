@@ -1,0 +1,35 @@
+AURHORA AGENCY — REVISIÓN COMERCIAL V2 — 2026-10-22
+
+EVIDENCIA DEL VIDEO ANTERIOR
+Video HeyGen: 578d85e5c3054ea9918f085db747afa9
+Sesión: 0bc2eeb78cc346599f164f6d647a61b0
+Duración publicada: 234.286 segundos.
+La consulta de escenas devolvió 55 escenas, 12 de ellas con etiquetas de pausa que suman 49 segundos.
+La locución fue repartida entre fragmentos cortos. Esto puede contribuir a una prosodia discontinua; no demuestra por sí solo la causa de la voz robótica.
+Los elementos devueltos por la API están tipificados como motion_graphics; esa clasificación no permite por sí sola verificar cada imagen del MP4.
+El cliente vio el video y reportó demasiadas auroras, falta de personas/ejemplos y pronunciación incorrecta de Aurhora.
+
+PROBLEMAS DEL PROMPT Y LA EJECUCIÓN
+1. Duración institucional extensa y apertura explicativa antes de mostrar servicios.
+2. Repetición de la aurora como fondo y transición, quitando tiempo a las soluciones.
+3. Demasiada información operativa: garantías, cotizaciones, diagnóstico, horarios.
+4. Fragmentación de la locución y silencios añadidos para llegar a un tiempo fijo.
+5. Pronunciación de la marca sin una regla explícita aplicada.
+6. El blueprint impuso ocultar rostros y recurrió a abstracciones, alejándose de la relación humana.
+7. Se fijaron tiempos antes de tener la locución, favoreciendo relleno visual.
+
+DECISIONES DE LA V2
+Guion comercial de 199 palabras. Objetivo orientativo 90–110 segundos; sin rellenar duración.
+Gancho sobre necesidades cotidianas; tres especialidades explicadas mediante ejemplos.
+Al menos 80% de metraje fotográfico en movimiento con personas, instalaciones y demostraciones.
+Unos 18–24 planos subordinados a una locución continua o bloques amplios, no una síntesis por corte.
+Máximo dos apariciones de aurora y cinco segundos acumulados.
+Voz de catálogo distinta; español de México como requisito a comprobar. No reutilizar la voz anterior.
+Glosario e763ee38007d424cb6c7365666ce1278 actualizado: Aurhora → Aurora en español. Se conservó la entrada Ecatepec → Écatepec.
+Escritura de marca intacta: Aurhora. Si la voz ignora el glosario, Aurora solo en texto interno de síntesis.
+Se omiten garantías, cotizaciones, términos, horarios, precios y explicación científica.
+Cierre textual: Tú disfruta el resultado. Nosotros nos encargamos de lo complejo.
+CTA: WhatsApp +52 55 8299 1282.
+Logo original reutilizado: asset efe4e2224f3e43fca4bce28db15eff38.
+Nueva sesión HeyGen: 86f05b9b07d149adaca4bfc262e6cfde.
+Esta es una propuesta de producción: la calidad de voz, el metraje y la sincronía deben verificarse sobre el resultado.
