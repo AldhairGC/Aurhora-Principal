@@ -22,7 +22,7 @@ Precios autorizados (23 de octubre de 2026): se aprobaron los rangos de mercado 
 
 La visita o diagnóstico se publica desde $450 (aire acondicionado) y desde $500 (electricidad), con IVA; se informa antes de la visita y se descuenta del trabajo aceptado. Materiales, traslados y urgencias necesitan políticas finales.
 
-Integra: año adicional de garantía para productos elegibles vendidos por Aurhora, sujeto a precisar cobertura y condiciones. Facilities: garantía de 90 días sobre el trabajo realizado, a partir de la prestación del servicio (mínimo del art. 77 de la LFPC). No usar satisfacción total como promesa universal.
+Integra: un año de garantía adicional a la del fabricante en productos elegibles vendidos e instalados por Aurhora; cubre defectos de fábrica y de instalación (diagnóstico, mano de obra y, si procede, reparación o reemplazo). Facilities: garantía de 90 días sobre el trabajo realizado, a partir de la prestación del servicio (mínimo del art. 77 de la LFPC). No usar satisfacción total como promesa universal.
 
 ## Evolución posterior
 
@@ -30,4 +30,4 @@ Agente de atención inicial con base de conocimientos, oferta de catálogo y pre
 
 ## Pendientes de contenido
 
-Fotos propias; condiciones detalladas de la garantía de Integra; revisión de los textos legales por un abogado; catálogo completo; idiomas y URLs de producción. No bloquean la revisión del mockup.
+Fotos propias (se dejan los espacios reservados); catálogo completo; idiomas y URLs de producción. No bloquean la revisión del mockup.

@@ -1,16 +1,16 @@
 import type { LegalDoc } from "./types";
 
 /*
-  BORRADOR. Revisión de cumplimiento del 23 de octubre de 2026 aplicada (nueva LFPDPPP,
-  autoridad, encargados, finalidades secundarias, cookies y cláusulas de consumo).
-  Requiere revisión legal antes de publicar.
+  Textos con visto bueno de asesoría legal (23 de octubre de 2026), después de la revisión
+  de cumplimiento (nueva LFPDPPP, autoridad, encargados, finalidades secundarias, cookies y
+  cláusulas de consumo).
 
   Pendientes resueltos el 23 de octubre de 2026: domicilio, área responsable (legal@),
   proveedores (Zoho, Gmail y Vercel), plazos ARCO, precios con IVA incluido, garantía de
   90 días en Facilities y banner de cookies.
 */
 
-const UPDATED = "23 de octubre de 2026 (borrador)";
+const UPDATED = "23 de octubre de 2026";
 const DOMICILIO = "Park Plaza II, Calle 3, Zedec Santa Fe, Álvaro Obregón, C.P. 01376, Ciudad de México, México";
 const RAZON_SOCIAL = "Aurhora Agency, S.A. de C.V.";
 const LEGAL_EMAIL = "legal@aurhora.agency";
@@ -181,7 +181,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
         id: "garantias",
         title: "Garantías y respaldo",
         blocks: [
-          { kv: [["Aurhora Facilities", "90 días a partir de la prestación del servicio, para revisión o ajuste del trabajo realizado"], ["Aurhora Integra", "Un año adicional de garantía en productos elegibles vendidos por Aurhora, según las condiciones de la propuesta"], ["Aurhora Digital", "Periodo de soporte definido en la propuesta de cada proyecto"]] },
+          { kv: [["Aurhora Facilities", "90 días a partir de la prestación del servicio, para revisión o ajuste del trabajo realizado"], ["Aurhora Integra", "Un año de garantía adicional a la del fabricante en productos elegibles vendidos e instalados por Aurhora. Cubre defectos de fábrica del equipo y defectos de instalación; incluye diagnóstico, mano de obra y, cuando proceda, reparación o reemplazo. Los productos elegibles se indican en la propuesta."], ["Aurhora Digital", "Periodo de soporte definido en la propuesta de cada proyecto"]] },
           { p: "Las garantías no cubren daños por mal uso, modificaciones hechas por terceros, fallas de servicios externos ni causas ajenas al trabajo realizado. Las condiciones específicas se explican antes de contratar. Para hacer válida una garantía, escríbenos por WhatsApp o a contacto@aurhora.agency con tu número de cotización o factura." },
         ],
       },
@@ -248,6 +248,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
             ["_clck, _clsk", "Microsoft Clarity · analítica · agrupan las páginas de una visita · hasta 1 año y 1 día"],
             ["_gcl_au", "Google Ads · marketing · miden conversiones de anuncios · 90 días"],
             ["_fbp", "Meta · marketing · miden campañas en Facebook e Instagram · 90 días"],
+            ["Video de Vimeo", "Vimeo · reproduce el video del inicio · se carga en modo \"no rastrear\", sin cookies de seguimiento"],
           ] },
           { callout: "La duración la define cada proveedor y puede cambiar. Revisaremos esta tabla cuando agreguemos o quitemos herramientas.", tone: "info" },
         ],

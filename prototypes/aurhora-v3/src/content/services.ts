@@ -40,13 +40,13 @@ const INTEGRA_PROCESS = [
 const INTEGRA_EXPECT = [
   { label: "Cobertura", value: "CDMX y zonas del Estado de México" },
   { label: "Propuesta", value: "Por escrito, antes de instalar" },
-  { label: "Garantía", value: "+1 año adicional en productos elegibles" },
+  { label: "Garantía", value: "+1 año en productos elegibles: defectos de fábrica e instalación" },
   { label: "Después", value: "Mantenimiento coordinado con Aurhora Facilities" },
 ];
 
 const INTEGRA_BACKING = {
   title: "+1 año de garantía adicional",
-  desc: "En productos seleccionados que vendemos. Te indicamos qué equipos están cubiertos y sus condiciones en tu propuesta.",
+  desc: "Adicional a la del fabricante, en productos elegibles que vendemos e instalamos. Cubre defectos de fábrica y de instalación; tu propuesta indica qué equipos aplican.",
 };
 
 const DIGITAL_PROCESS = [
@@ -627,7 +627,7 @@ export const SERVICES: Service[] = [
     faq: [
       ["¿Puedo ver mis cámaras desde el celular?", "Sí. Configuramos la consulta remota y te mostramos cómo usarla al entregar."],
       ["¿Pueden aprovechar el equipo que ya tengo?", "Lo revisamos en el levantamiento y te decimos qué conviene conservar."],
-      ["¿Qué pasa si falla un equipo?", "Los productos elegibles tienen un año adicional de garantía; las condiciones van en tu propuesta."],
+      ["¿Qué pasa si falla un equipo?", "Los productos elegibles que vendemos e instalamos tienen un año de garantía adicional a la del fabricante. Cubre defectos de fábrica y de instalación: revisamos el equipo y, si procede, lo reparamos o reemplazamos."],
     ],
     related: ["domotica", "redes", "proyectos-industriales"],
     contactService: "Seguridad y accesos",

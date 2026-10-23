@@ -30,6 +30,9 @@ const GROUP_FAQ: [string, string][] = [
 
 const SECTORS = ["Automotriz", "Banca", "Fintech", "Seguros"];
 
+/* Vimeo in "do not track" mode: no tracking cookies, so it needs no consent. */
+const VIDEO_URL = "https://player.vimeo.com/video/1238894364?badge=0&autopause=0&player_id=0&app_id=58479&dnt=1";
+
 export function GroupPage() {
   const reduced = useReducedMotion();
   const [paused, setPaused] = useState(reduced);
@@ -102,6 +105,25 @@ export function GroupPage() {
           <Marquee items={CAPABILITIES} />
         </div>
       </section>
+
+      {/* ───── Video ───── */}
+      <Section className="py-20 md:py-28">
+        <SectionHead
+          eyebrow="Conócenos"
+          title={<>Hagamos que funcione.</>}
+          intro="Quiénes somos, qué resolvemos y cómo trabajamos, en menos de dos minutos."
+        />
+        <div className="relative mt-12 aspect-video overflow-hidden rounded-[24px] border border-line bg-night">
+          <iframe
+            src={VIDEO_URL}
+            title="Aurhora — Hagamos que funcione"
+            loading="lazy"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            referrerPolicy="strict-origin-when-cross-origin"
+            className="absolute inset-0 h-full w-full"
+          />
+        </div>
+      </Section>
 
       {/* ───── Encuentra tu solución ───── */}
       <Section id="encuentra" className="py-20 md:py-28">

@@ -350,7 +350,7 @@ export function IntegraPage() {
           <div className="p-7 md:p-10 lg:col-span-7">
             <Eyebrow>Garantía</Eyebrow>
             <h2 className="display-md mt-4">Respaldo después de instalar.</h2>
-            <p className="mt-5 max-w-[50ch] text-[16px] leading-relaxed text-mute">En productos seleccionados que vendemos, ofrecemos un año adicional de garantía. Te indicamos los equipos cubiertos y las condiciones en tu propuesta.</p>
+            <p className="mt-5 max-w-[50ch] text-[16px] leading-relaxed text-mute">En los productos elegibles que vendemos e instalamos, sumamos un año de garantía a la del fabricante. Cubre defectos de fábrica y defectos de instalación, con diagnóstico, mano de obra y, si procede, reparación o reemplazo. Tu propuesta indica qué equipos aplican.</p>
             <div className="mt-8 flex flex-wrap items-center gap-3 rounded-[12px] bg-sunken p-4 text-[14px]">
               <span className="text-mute">¿Tu instalación necesita adecuaciones eléctricas o mantenimiento?</span>
               <TextLink to="facilities">Lo coordinamos con Aurhora Facilities</TextLink>

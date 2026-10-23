@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, Moon, Sun, Monitor } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Logo } from "@/components/brand/Logo";
+import { Logo, UnitLockup } from "@/components/brand/Logo";
 import { Link, useRouter } from "@/lib/router";
 import { useTheme } from "@/lib/theme";
 import { useOpenState } from "@/lib/hours";
@@ -65,8 +65,8 @@ export function Header() {
     >
       <div className="wrap flex h-16 items-center gap-6">
         <Link to="grupo" aria-label="Aurhora Agency, inicio" className="flex shrink-0 items-center gap-3">
-          <Logo onNight={night} className="h-7" />
-          <span className={cn("eyebrow hidden border-l pl-3 sm:inline", night ? "border-night-line text-on-night-mute" : "border-line text-mute")}>{activeUnit ? UNITS.find((u) => u.id === activeUnit)!.name : "Agency"}</span>
+          {/* Lockup del sistema de diseño: Agency en el sitio; la unidad en sus páginas (nunca dos descriptores). */}
+          {activeUnit ? <UnitLockup unit={activeUnit} onNight={night} className="h-7" /> : <Logo onNight={night} className="h-7" />}
         </Link>
 
         <nav aria-label="Principal" className="ml-auto hidden items-center gap-1 lg:flex">
