@@ -159,7 +159,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
         id: "servicios",
         title: "Servicios",
         blocks: [
-          { list: ["Aurhora Digital: agentes de IA, automatización, software a la medida, consultoría, marketing digital y GoDigital Suite.", "Aurhora Integra: seguridad y accesos, redes y conectividad, domótica y automatización, audio y video.", "Aurhora Facilities: aire acondicionado, electricidad, reparaciones del hogar, mantenimiento programado y proyectos residenciales, comerciales e industriales."] },
+          { list: ["Aurhora Digital: agentes de IA, automatización, software a la medida, consultoría, marketing digital y GoDigital Suite.", "Aurhora Integra: seguridad y accesos, redes y conectividad, domótica y automatización, audio y video.", "Aurhora Facilities: aire acondicionado, electricidad, plomería, reparaciones del hogar, mantenimiento programado y proyectos residenciales, comerciales e industriales."] },
           { p: "El alcance, los entregables, los tiempos y el costo de cada servicio se definen en la cotización, propuesta o contrato correspondiente." },
         ],
       },

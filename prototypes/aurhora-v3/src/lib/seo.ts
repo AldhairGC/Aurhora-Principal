@@ -150,6 +150,8 @@ export function jsonLdFor(view: string): Record<string, unknown> {
     graph.push({ "@type": "CollectionPage", name: PAGE_SEO.recursos.title, url: abs("/recursos"), publisher: { "@id": ORG_ID } }, breadcrumbs([{ name: "Aurhora Agency", slug: "/" }, { name: "Recursos", slug: "/recursos" }]));
   } else if (view === "nosotros") {
     graph.push({ "@type": "AboutPage", name: PAGE_SEO.nosotros.title, url: abs("/nosotros"), about: { "@id": ORG_ID } }, organization());
+  } else if (view === "mapa-del-sitio") {
+    graph.push({ "@type": "WebPage", name: PAGE_SEO["mapa-del-sitio"].title, url: abs("/mapa-del-sitio"), inLanguage: "es-MX", publisher: { "@id": ORG_ID } }, breadcrumbs([{ name: "Aurhora Agency", slug: "/" }, { name: "Mapa del sitio", slug: "/mapa-del-sitio" }]));
   } else if (view === "contacto") {
     graph.push({ "@type": "ContactPage", name: PAGE_SEO.contacto.title, url: abs("/contacto"), about: { "@id": ORG_ID } });
   } else {

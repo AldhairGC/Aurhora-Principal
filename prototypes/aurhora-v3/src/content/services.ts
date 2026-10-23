@@ -1,5 +1,5 @@
 import {
-  AirVent, Zap, Hammer, Code2, Workflow, Compass, Megaphone, Rocket, Cctv, Wifi, Speaker, Bot, Factory, CalendarCheck, HousePlug, Home,
+  AirVent, Zap, Droplets, Hammer, Code2, Workflow, Compass, Megaphone, Rocket, Cctv, Wifi, Speaker, Bot, Factory, CalendarCheck, HousePlug, Home,
 } from "lucide-react";
 import type { Service } from "./types";
 
@@ -160,6 +160,49 @@ export const SERVICES: Service[] = [
     },
   },
   {
+    id: "plomeria",
+    unit: "facilities",
+    name: "Plomería",
+    h1: "Plomero en CDMX para fugas, baños, tinacos y cisternas",
+    tagline: "Fugas, destapes, baños, tinacos y cisternas.",
+    icon: Droplets,
+    heroLead: "Agua donde la necesitas,",
+    heroAccent: "sin fugas.",
+    heroDesc: "Fugas, destapes, baños, cocinas, tinacos, cisternas y bombas para tu casa en CDMX y zonas del Estado de México. También atendemos comercios, oficinas y naves con instalaciones hidráulicas y sanitarias.",
+    includes: [
+      { title: "Fugas y goteos", desc: "Llaves, mezcladoras, WC que no deja de correr, tuberías y conexiones que gotean." },
+      { title: "Destapes", desc: "Fregaderos, lavabos, regaderas, coladeras, WC y drenajes, con equipo cuando hace falta." },
+      { title: "Baños y cocina", desc: "Instalación y cambio de WC, lavabos, fregaderos, regaderas, mezcladoras y accesorios." },
+      { title: "Tinacos y cisternas", desc: "Instalación, lavado y desinfección, flotadores, válvulas y conexiones." },
+      { title: "Bombas y presión", desc: "Bombas, hidroneumáticos y ajustes cuando el agua no sube o sale con poca presión." },
+      { title: "Calentadores", desc: "Instalación y cambio de calentadores de paso o de depósito, con su conexión hidráulica." },
+    ],
+    forWho: [
+      { title: "Hogares", desc: "Fugas, baños, cocina, tinaco y cisterna: lo que más se usa todos los días." },
+      { title: "Comercios y oficinas", desc: "Baños de clientes y personal, cocinas de restaurante y tarjas de servicio." },
+      { title: "Naves e industria", desc: "Redes hidráulicas y sanitarias, cisternas de mayor capacidad y bombeo." },
+    ],
+    signals: ["Gotea una llave o el WC no deja de correr", "Manchas de humedad en muros o techo", "El agua no sube al tinaco", "Poca presión en la regadera", "El recibo de agua subió sin razón", "Un drenaje se tapa seguido o huele mal"],
+    process: MANT_PROCESS,
+    share: ["Foto o video de la fuga, el mueble o el drenaje", "Si el agua llega de tinaco, cisterna o directo de la red", "Capacidad del tinaco o cisterna, si aplica", "Tipo de espacio y zona"],
+    expect: MANT_EXPECT,
+    backing: MANT_BACKING,
+    faq: [
+      ["¿Atienden fugas urgentes?", "Sí. Mientras llega el equipo, cierra la llave de paso del área o la general y retira lo que pueda mojarse. Revisamos la disponibilidad antes de confirmar la atención; no ofrecemos un tiempo de llegada garantizado."],
+      ["¿Cada cuánto conviene lavar el tinaco y la cisterna?", "Como regla general, cada seis meses, o antes si notas sedimento, mal olor o cambio de color en el agua. Lavamos y desinfectamos ambos en la misma visita."],
+      ["¿Instalan calentadores de gas?", "Hacemos la instalación y la conexión hidráulica del calentador. La conexión a la línea de gas debe hacerla un instalador de gas autorizado; te lo indicamos en la cotización."],
+      ["¿Atienden comercios y naves?", "Sí. Para baños, cocinas, redes hidráulicas y sanitarias o cisternas de mayor capacidad hacemos una visita de levantamiento y una propuesta por etapas."],
+    ],
+    related: ["mantenimiento-programado", "proyectos-residenciales", "reparaciones"],
+    contactService: "Plomería",
+    seo: {
+      title: "Plomero en CDMX: fugas, tinacos y cisternas | Aurhora Agency",
+      description: "Plomero en CDMX y Estado de México: fugas, destapes, baños, tinacos, cisternas y bombas para casa, comercio e industria. Visita desde $500 con IVA.",
+      slug: "/facilities/plomeria",
+      keywords: ["plomero CDMX", "plomería", "fontanería", "reparación de fugas de agua", "lavado de tinacos y cisternas", "destape de drenaje", "instalación de tinaco", "plomero a domicilio"],
+    },
+  },
+  {
     id: "reparaciones",
     unit: "facilities",
     name: "Instalaciones y reparaciones",
@@ -214,6 +257,7 @@ export const SERVICES: Service[] = [
       { title: "Visitas programadas", desc: "Fechas acordadas contigo para no interrumpir la operación." },
       { title: "Bitácora y reporte", desc: "Qué se revisó, qué se hizo y qué conviene atender en la siguiente visita." },
       { title: "Atención correctiva coordinada", desc: "Si algo falla entre visitas, ya conocemos tus equipos y tu espacio." },
+      { title: "Agua y sanitarios", desc: "Lavado de tinacos y cisternas, revisión de bombas y de fugas en baños y cocinas." },
     ],
     forWho: [
       { title: "Cadenas y sucursales", desc: "Varios locales con el mismo estándar de mantenimiento." },
@@ -262,6 +306,7 @@ export const SERVICES: Service[] = [
     includes: [
       { title: "Instalación eléctrica completa", desc: "Circuitos, tablero, contactos e iluminación para espacios nuevos o remodelados." },
       { title: "Climatización", desc: "Selección, preparación e instalación de equipos por habitación." },
+      { title: "Instalación hidráulica y sanitaria", desc: "Tuberías de agua y drenaje, baños, cocina, tinaco, cisterna, bomba y calentador." },
       { title: "Iluminación y acabados", desc: "Luminarias, tablaroca, pintura e impermeabilización según alcance." },
       { title: "Tecnología integrada", desc: "Cableado y preparación para cámaras, WiFi, audio y domótica con Integra." },
     ],
@@ -307,6 +352,7 @@ export const SERVICES: Service[] = [
     includes: [
       { title: "Instalaciones eléctricas", desc: "Circuitos, tableros y canalizaciones para áreas de trabajo, maquinaria ligera y oficinas." },
       { title: "Climatización y ventilación", desc: "Equipos para áreas comerciales, oficinas y zonas de trabajo." },
+      { title: "Instalaciones hidrosanitarias", desc: "Redes de agua y drenaje, sanitarios, cisternas y sistemas de bombeo." },
       { title: "Iluminación eficiente", desc: "Cambio a luminarias LED en naves, bodegas y estacionamientos." },
       { title: "Adecuaciones de espacio", desc: "Tablaroca, divisiones, pintura e impermeabilización de techos." },
       { title: "Mantenimiento programado", desc: "Pólizas preventivas con bitácora por equipo e instalación." },

@@ -23,7 +23,7 @@ Es la única frase de marca. Va en la portada, el pie del sitio y las firmas. No
 - **Regla del isotipo:** el isotipo es la "A" de Aurhora; junto a él, el nombre se lee "urhora". Nunca pongas el isotipo al lado de la palabra completa.
 - **Descriptor en web:** junto al lockup va el descriptor en Geist Mono y mayúsculas. Dice "AGENCY" en páginas generales y el nombre de la unidad en sus páginas.
 - **Favicon y avatares:** usan el isotipo (`aurhora-mark.svg`).
-- **Pendiente de diseño:** lockups en SVG de Digital, Integra y Facilities. Solo existen los de las unidades anteriores (Agency, Essentials, Marketing).
+- **Lockups de unidad:** Aurhora Agency (marca del sitio), Digital, Integra y Facilities, en claro y oscuro, en `design-system/assets/Logos`. Se generaron con el patrón del sistema de diseño (descriptor en Sora Regular, mismo tamaño, línea base y color que "Agency"). En el sitio, el encabezado muestra el lockup de la unidad en sus páginas.
 
 ## 4. Color
 
@@ -73,6 +73,7 @@ Es la única frase de marca. Va en la portada, el pie del sitio y las firmas. No
   - "IA" (no "AI"), "agentes de IA" e "IA agéntica".
   - "GoDigital Suite" con mayúsculas.
   - "Hoja de ruta" en lugar de "roadmap".
+  - "Plomería" y "plomero" (uso en México); "fontanería" solo como sinónimo en palabras clave.
 
 ## 8. Títulos de página (SEO)
 
@@ -86,6 +87,5 @@ Máximo 65 caracteres por título; descripciones de 120 a 160.
 
 ## 9. Pendientes
 
-1. Lockups SVG de Aurhora Digital, Aurhora Integra y Aurhora Facilities.
-2. Fotografía propia por unidad.
-3. Actualizar el sitio en producción: logotipo oficial en cabecera y pie, frase principal y descriptor.
+1. Fotografía propia por unidad (el sitio deja los espacios reservados).
+2. Publicar el sitio v3 en producción (rama feat/sitio-v3-nextjs).

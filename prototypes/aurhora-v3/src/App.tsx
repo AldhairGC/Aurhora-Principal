@@ -8,7 +8,7 @@ import { DigitalPage, IntegraPage, FacilitiesPage } from "@/pages/UnitPages";
 import { ContactPage, ServicePage } from "@/pages/ServicePage";
 import { RouterProvider, useRouter } from "@/lib/router";
 import { ThemeProvider, useTheme } from "@/lib/theme";
-import { ArticlePage, LegalPage, NosotrosPage, RecursosPage } from "@/pages/ContentPages";
+import { ArticlePage, LegalPage, NosotrosPage, RecursosPage, SitemapPage } from "@/pages/ContentPages";
 import { SERVICES, serviceById } from "@/content/services";
 import { ARTICLES, articleById } from "@/content/articles";
 import { LEGAL_DOCS, legalById } from "@/content/legal";
@@ -16,7 +16,7 @@ import { applySeo } from "@/lib/seo";
 import { track } from "@/lib/analytics";
 
 const VIEWS = new Set([
-  "grupo", "digital", "integra", "facilities", "contacto", "nosotros", "recursos",
+  "grupo", "digital", "integra", "facilities", "contacto", "nosotros", "recursos", "mapa-del-sitio",
   ...SERVICES.map((s) => s.id),
   ...ARTICLES.map((a) => a.id),
   ...LEGAL_DOCS.map((d) => d.id),
@@ -43,6 +43,7 @@ function View() {
     case "contacto": return <ContactPage />;
     case "nosotros": return <NosotrosPage />;
     case "recursos": return <RecursosPage />;
+    case "mapa-del-sitio": return <SitemapPage />;
     default: return <GroupPage />;
   }
 }

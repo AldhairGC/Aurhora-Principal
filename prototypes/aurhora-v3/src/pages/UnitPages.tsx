@@ -399,7 +399,7 @@ export function FacilitiesPage() {
             <Eyebrow>Aurhora Facilities</Eyebrow>
             <h1 className="mt-4 max-w-[34ch] text-[20px] font-semibold leading-snug md:text-[24px]">Mantenimiento e instalaciones para casas, comercios e industria en CDMX</h1>
             <p className="display-lg mt-5 font-display">Que todo funcione. Y tú sigas <span className="text-unit">con tu día.</span></p>
-            <p className="mt-6 max-w-[48ch] text-[17px] leading-relaxed text-mute">Aire acondicionado, electricidad, instalaciones y proyectos para casas, negocios, naves y bodegas. Antes de empezar te decimos qué se hará y cuánto costará, y después damos seguimiento.</p>
+            <p className="mt-6 max-w-[48ch] text-[17px] leading-relaxed text-mute">Aire acondicionado, electricidad, plomería, instalaciones y proyectos para casas, negocios, naves y bodegas. Antes de empezar te decimos qué se hará y cuánto costará, y después damos seguimiento.</p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <BtnLink to="contacto" variant="unit" prefill={{ unit: "facilities" }}>Solicitar un servicio</BtnLink>
               <TextLink to="facilities" section="m-cobertura">¿Llegamos a tu zona?</TextLink>
@@ -419,10 +419,10 @@ export function FacilitiesPage() {
 
       <Section id="m-servicios" className="py-20 md:py-28">
         <SectionHead eyebrow="Lo que podemos resolver" title="Un equipo para tus pendientes." intro="Desde el mantenimiento preventivo hasta esa reparación que no puede esperar. Cada trabajo empieza por entender qué está pasando." />
-        <div className="mt-12"><ServiceGrid unit="facilities" ids={["aire-acondicionado", "electricidad", "reparaciones"]} /></div>
+        <div className="mt-12"><ServiceGrid unit="facilities" ids={["aire-acondicionado", "electricidad", "plomeria", "reparaciones"]} /></div>
         <div className="mt-6 flex flex-wrap items-center gap-2 text-[14px] text-mute">
           También evaluamos:
-          {["Pintura", "Plomería", "Tablaroca", "Impermeabilización"].map((x) => (
+          {["Pintura", "Tablaroca", "Impermeabilización"].map((x) => (
             <Link key={x} to="contacto" prefill={{ unit: "facilities", service: x }} className="rounded-full border border-line px-3 py-1 text-ink-soft transition hover:border-unit hover:text-unit">{x}</Link>
           ))}
         </div>

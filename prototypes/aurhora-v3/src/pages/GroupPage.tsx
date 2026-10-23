@@ -12,7 +12,7 @@ import { useReducedMotion } from "@/lib/theme";
 import { UNITS } from "@/content/site";
 import { cn } from "@/lib/utils";
 
-const CAPABILITIES = ["Agentes de IA", "IA agéntica", "Automatización de procesos", "Software a la medida", "Domótica", "Mantenimiento industrial", "Cámaras y accesos", "Redes y WiFi", "Audio y video", "Aire acondicionado", "Electricidad", "Instalaciones y reparaciones", "Marketing digital", "GoDigital Suite"];
+const CAPABILITIES = ["Agentes de IA", "IA agéntica", "Automatización de procesos", "Software a la medida", "Domótica", "Mantenimiento industrial", "Cámaras y accesos", "Redes y WiFi", "Audio y video", "Aire acondicionado", "Electricidad", "Plomería", "Instalaciones y reparaciones", "Marketing digital", "GoDigital Suite"];
 
 const COMMITMENTS = [
   { title: "Cotización antes de trabajar", desc: "Sabes qué se hará y cuánto costará antes de aceptar." },
