@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.name,
   formatDetection: { telephone: false },
+  // Meta de verificación de Search Console, solo si la variable está definida.
+  ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } } : {}),
 };
 
 export const viewport: Viewport = {
