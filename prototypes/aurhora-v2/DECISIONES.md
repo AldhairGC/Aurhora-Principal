@@ -16,6 +16,8 @@ CDMX y área metropolitana para servicios físicos (actualizado el 23 de octubre
 
 ## Solicitud, precios y respaldo
 
+Bitácora digital (23 de octubre de 2026): cada servicio de Facilities e Integra se entrega con una bitácora digital: fotos del antes y el después, detalle de lo que se hizo, notas técnicas (rutas de tuberías y cableado, ubicación de equipos), ficha de cada equipo y hallazgos. Se comparte por WhatsApp y queda resguardada en el sistema de Aurhora. En Digital equivale a la documentación del proyecto. No se promete un portal de clientes.
+
 WhatsApp único confirmado: +52 55 8299 1282. Primera versión con atención humana. La solicitud recopila unidad, servicio, espacio, zona, descripción y preferencia de atención. No obliga al cliente a completar un cuestionario largo para contactar.
 
 Precios autorizados (23 de octubre de 2026): se aprobaron los rangos de mercado de CDMX y Estado de México investigados para cada servicio (los de plomería, el 23 de octubre de 2026), y se publican solo como "Desde $X", con el límite inferior de cada rango. No se publica el límite superior. Para cumplir el art. 7 Bis de la LFPC, los precios publicados incluyen IVA: al límite inferior se le suma el 16% y se redondea hacia arriba al siguiente múltiplo de $50 (por ejemplo, $350 + IVA = $406, se publica $450). Cada tabla lleva la nota "Precios desde, en pesos mexicanos, con IVA incluido. El precio final se confirma en la cotización". Los datos y sus fuentes están en `extras-*.ts` y `articles-cost.ts` del prototipo v3.

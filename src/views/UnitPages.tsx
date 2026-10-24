@@ -1,6 +1,8 @@
 "use client";
 
 import { ArrowUpRight, Check, Minus } from "lucide-react";
+import { DigitalLogbook } from "@/components/sections/DigitalLogbook";
+import { LOGBOOK_FAQ } from "@/content/logbook";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BtnLink, CtaBand, Eyebrow, FaqBlock, PlaceholderMedia, ProcessSteps, Section, SectionHead, TextLink } from "@/components/sections/primitives";
 import { FlowDemo } from "@/components/interactive/FlowDemo";
@@ -281,6 +283,7 @@ const INTEGRA_FAQ: [string, string][] = [
   ["¿Puedo controlar todo desde una sola aplicación?", "Buscamos equipos compatibles entre sí y te indicamos en la propuesta qué se controla desde dónde."],
   ["¿Qué cubre la garantía adicional?", "Aplica a productos seleccionados que vendemos. En tu propuesta te indicamos los equipos cubiertos y sus condiciones."],
   ["¿Quién da mantenimiento después?", "Lo coordinamos con Aurhora Facilities para que tengas un solo contacto."],
+  LOGBOOK_FAQ.integra,
 ];
 
 export function IntegraPage() {
@@ -347,7 +350,9 @@ export function IntegraPage() {
         <div className="mt-12"><ProcessSteps steps={serviceById("redes")!.process} /></div>
       </Section>
 
-      <Section className="pb-20 md:pb-28">
+      <DigitalLogbook unit="integra" />
+
+      <Section className="py-20 md:py-28">
         <div className="grid overflow-hidden rounded-[24px] border border-line bg-raised lg:grid-cols-12">
           <div className="p-7 md:p-10 lg:col-span-7">
             <Eyebrow>Garantía</Eyebrow>
@@ -388,7 +393,8 @@ const MANT_FAQ: [string, string][] = [
   ["¿Atienden también negocios y oficinas?", "Sí. Atendemos viviendas, locales y oficinas. Para trabajos de mayor alcance primero evaluamos las necesidades y condiciones del espacio."],
   ["¿Trabajan en domingo?", "No hay operación ordinaria en domingo. Las urgencias se evalúan según disponibilidad."],
   ["¿Atienden naves, bodegas y proyectos industriales?", "Sí. Realizamos instalaciones, iluminación, climatización y mantenimiento programado para naves y bodegas. El alcance técnico se confirma en el levantamiento."],
-  ["¿Ofrecen pólizas de mantenimiento?", "Sí. Armamos un plan por equipo e instalación con visitas programadas y bitácora de cada visita."],
+  ["¿Ofrecen pólizas de mantenimiento?", "Sí. Armamos un plan por equipo e instalación con visitas programadas y bitácora digital de cada visita."],
+  LOGBOOK_FAQ.facilities,
 ];
 
 export function FacilitiesPage() {
@@ -517,6 +523,8 @@ export function FacilitiesPage() {
           </div>
         </div>
       </Section>
+
+      <DigitalLogbook unit="facilities" className="border-t border-line py-20 md:py-28" />
 
       <Section id="m-cobertura" className="border-t border-line bg-sunken py-20 md:py-28">
         <div className="grid gap-10 lg:grid-cols-12">

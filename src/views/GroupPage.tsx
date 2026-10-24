@@ -21,6 +21,7 @@ const COMMITMENTS = [
   { title: "Diagnóstico descontable", desc: "Si hace falta, te informamos su costo primero y se descuenta del trabajo aceptado." },
   { title: "Horario real", desc: "Lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00. Fuera de ese horario, las urgencias se evalúan según disponibilidad." },
   { title: "Respaldo por escrito", desc: "90 días en Aurhora Facilities; +1 año adicional en productos elegibles de Integra." },
+  { title: "Bitácora digital", desc: "Al terminar te entregamos un reporte técnico con fotos del antes y el después, lo que se hizo y lo que encontramos. Queda resguardado para cuando lo necesites." },
 ];
 
 const GROUP_FAQ: [string, string][] = [
@@ -236,7 +237,7 @@ export function GroupPage() {
             title="Lo que sabes antes de contratar."
             intro="Estas reglas aplican igual en Digital, Integra y Facilities."
           />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {COMMITMENTS.map((c) => (
               <div key={c.title} className="flex flex-col rounded-[16px] border border-line bg-raised p-6">
                 <h3 className="text-[18px] font-semibold leading-snug">{c.title}</h3>

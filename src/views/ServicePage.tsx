@@ -12,6 +12,7 @@ import { extrasOf, faqOf } from "@/content/extras";
 import { ServiceCost } from "@/components/sections/ServiceCost";
 import { ServiceAnatomy } from "@/components/sections/ServiceAnatomy";
 import { anatomyOf } from "@/content/anatomy";
+import { DigitalLogbook } from "@/components/sections/DigitalLogbook";
 import type { Service } from "@/content/types";
 
 export function ServicePage({ service: s }: { service: Service }) {
@@ -147,6 +148,8 @@ export function ServicePage({ service: s }: { service: Service }) {
           </div>
         </div>
       </Section>
+
+      <DigitalLogbook unit={s.unit} />
 
       {/* FAQ */}
       <Section className="border-t border-line py-20 md:py-28">

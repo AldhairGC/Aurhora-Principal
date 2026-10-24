@@ -2,6 +2,7 @@ import type { Service, ServiceExtras } from "./types";
 import { FACILITIES_EXTRAS } from "./extras-facilities";
 import { INTEGRA_EXTRAS } from "./extras-integra";
 import { DIGITAL_EXTRAS } from "./extras-digital";
+import { LOGBOOK_FAQ } from "./logbook";
 
 /*
   Precios "Desde" autorizados por Aurhora el 23 de octubre de 2026: el límite inferior de los
@@ -18,5 +19,5 @@ export const EXTRAS: Record<string, ServiceExtras> = {
 
 export const extrasOf = (id: string) => EXTRAS[id];
 
-/** FAQ completa del servicio (base + costo, tiempo y alcance). */
-export const faqOf = (s: Service): [string, string][] => [...s.faq, ...(EXTRAS[s.id]?.faq ?? [])];
+/** FAQ completa del servicio (base + costo, tiempo y alcance + bitácora digital). */
+export const faqOf = (s: Service): [string, string][] => [...s.faq, ...(EXTRAS[s.id]?.faq ?? []), LOGBOOK_FAQ[s.unit]];

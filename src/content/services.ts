@@ -9,20 +9,21 @@ const MANT_EXPECT = [
   { label: "Diagnóstico", value: "Costo informado antes; se descuenta si aceptas el trabajo" },
   { label: "Cotización", value: "Antes de ejecutar, con alcance y materiales" },
   { label: "Garantía", value: "90 días sobre el trabajo realizado" },
+  { label: "Entrega", value: "Bitácora digital con fotos y reporte técnico" },
 ];
 
 const MANT_PROCESS = [
   { title: "Nos cuentas qué pasa", desc: "Servicio, zona y fotos por WhatsApp. Indicas tu horario preferido." },
   { title: "Revisamos y cotizamos", desc: "Confirmamos si hace falta diagnóstico, su costo y el alcance del trabajo." },
   { title: "Coordinamos la visita", desc: "La cita queda confirmada cuando el equipo te lo indica." },
-  { title: "Ejecutamos y damos seguimiento", desc: "Resolvemos lo acordado y explicamos el respaldo aplicable." },
+  { title: "Ejecutamos y documentamos", desc: "Resolvemos lo acordado y te enviamos la bitácora digital: fotos del antes y el después, lo que se hizo y lo que encontramos." },
 ];
 
 const PROJECT_PROCESS = [
   { title: "Levantamiento", desc: "Visitamos el sitio o revisamos planos y fotos para entender alcance, condiciones y tiempos." },
   { title: "Propuesta por etapas", desc: "Alcance, materiales, programa de trabajo y responsables, por escrito." },
   { title: "Ejecución coordinada", desc: "Un responsable de proyecto coordina especialidades y te reporta avances." },
-  { title: "Entrega y bitácora", desc: "Recorrido de entrega, documentación del trabajo y plan de mantenimiento." },
+  { title: "Entrega y bitácora", desc: "Recorrido de entrega, bitácora digital con fotos, notas técnicas y hallazgos, y plan de mantenimiento." },
 ];
 
 const MANT_BACKING = {
@@ -34,13 +35,14 @@ const INTEGRA_PROCESS = [
   { title: "Levantamiento", desc: "Conocemos tu espacio, cómo lo usas y qué quieres resolver. En sitio o con fotos y planos." },
   { title: "Propuesta", desc: "Equipos, ubicación, alcance de instalación y condiciones de garantía, por escrito." },
   { title: "Instalación", desc: "Coordinamos fechas, instalamos y configuramos todo para que funcione en conjunto." },
-  { title: "Entrega y uso", desc: "Te mostramos cómo usarlo desde tu teléfono y te dejamos el respaldo documentado." },
+  { title: "Entrega y uso", desc: "Te mostramos cómo usarlo desde tu teléfono y te entregamos la bitácora digital con fotos, ubicación de equipos y rutas de cableado." },
 ];
 
 const INTEGRA_EXPECT = [
   { label: "Cobertura", value: "CDMX y área metropolitana" },
   { label: "Propuesta", value: "Por escrito, antes de instalar" },
   { label: "Garantía", value: "+1 año en productos elegibles: defectos de fábrica e instalación" },
+  { label: "Entrega", value: "Bitácora digital con fotos y reporte técnico" },
   { label: "Después", value: "Mantenimiento coordinado con Aurhora Facilities" },
 ];
 
@@ -68,6 +70,7 @@ const DIGITAL_EXPECT = [
   { label: "Primera conversación", value: "Sin costo, para entender tu caso" },
   { label: "Propuesta", value: "Alcance, etapas y entregables por escrito" },
   { label: "Avance", value: "Revisiones en cada entrega" },
+  { label: "Entrega", value: "Documentación digital del proyecto" },
 ];
 
 const DIGITAL_BACKING = {
@@ -275,7 +278,7 @@ export const SERVICES: Service[] = [
     expect: [
       { label: "Cobertura", value: "CDMX y área metropolitana" },
       { label: "Propuesta", value: "Plan y condiciones de la póliza por escrito" },
-      { label: "Registro", value: "Bitácora de cada visita" },
+      { label: "Registro", value: "Bitácora digital de cada visita, con fotos y reporte técnico" },
       { label: "Respaldo", value: "Según los servicios incluidos en la póliza" },
     ],
     backing: { title: "Historial de cada equipo", desc: "Cada visita queda documentada para que sepas qué se hizo y qué sigue." },
@@ -323,6 +326,7 @@ export const SERVICES: Service[] = [
       { label: "Levantamiento", value: "En sitio, para definir alcance" },
       { label: "Propuesta", value: "Por etapas, con programa de trabajo" },
       { label: "Respaldo", value: "Definido por tipo de trabajo en la propuesta" },
+      { label: "Entrega", value: "Bitácora digital con fotos y reporte técnico" },
     ],
     backing: { title: "Un responsable de proyecto", desc: "Una sola persona coordina especialidades, te reporta avances y responde por la entrega." },
     faq: [
@@ -370,7 +374,7 @@ export const SERVICES: Service[] = [
       { label: "Cobertura", value: "CDMX y área metropolitana" },
       { label: "Levantamiento", value: "En sitio, con tu responsable de operación" },
       { label: "Programa", value: "Trabajos planeados fuera de horas críticas cuando se requiere" },
-      { label: "Entrega", value: "Bitácora y documentación del trabajo" },
+      { label: "Entrega", value: "Bitácora digital con fotos y reporte técnico" },
     ],
     backing: { title: "Alcance confirmado en sitio", desc: "Las capacidades técnicas, permisos y requisitos de cada proyecto se confirman en el levantamiento y quedan por escrito." },
     faq: [
@@ -420,6 +424,7 @@ export const SERVICES: Service[] = [
       { label: "Primera conversación", value: "Sin costo, para identificar casos de uso" },
       { label: "Primera versión", value: "Acotada, para validar con casos reales" },
       { label: "Control", value: "Supervisión humana y registro de cada acción" },
+      { label: "Entrega", value: "Documentación digital del proyecto" },
     ],
     backing: { title: "Agentes con supervisión", desc: "Definimos permisos, límites y puntos de aprobación humana. Cada acción queda registrada para revisarla y mejorar el agente." },
     faq: [
