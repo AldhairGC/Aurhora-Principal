@@ -15,7 +15,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
     costIntro: "Los precios para minisplits van desde unos cientos de pesos por una visita de diagnóstico hasta varios miles por una instalación. Te sirven para planear; el precio final depende de tu equipo, del acceso y de lo que encontremos en la revisión.",
     prices: [
       { concept: "Visita técnica o diagnóstico", range: "Desde $450", unit: "por visita, descontable" },
-      { concept: "Mantenimiento preventivo en casa (1 a 2 toneladas)", range: "Desde $950", unit: "por equipo" },
+      { concept: "Mantenimiento preventivo con desarmado, en casa (1 a 2 toneladas)", range: "Desde $950", unit: "por equipo" },
       { concept: "Mantenimiento en negocio u oficina (minisplit o cassette)", range: "Desde $2,900", unit: "por equipo" },
       { concept: "Instalación básica de minisplit (mano de obra)", range: "Desde $2,250", unit: "por equipo" },
       { concept: "Metro adicional de tubería", range: "Desde $450", unit: "por metro" },
@@ -257,7 +257,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
     costIntro: "En proyectos comerciales e industriales el precio depende del área, la altura y los horarios en que se puede trabajar. Estos precios de partida sirven para estimar el orden de magnitud antes del levantamiento.",
     prices: [
       { concept: "Iluminación LED de nave (proyecto completo)", range: "Desde $150", unit: "por m²" },
-      { concept: "Luminaria LED tipo campana, suministro e instalación", range: "Desde $6,750", unit: "por luminaria, costo directo" },
+      { concept: "Luminaria LED tipo campana, suministro e instalación", range: "Desde $6,750", unit: "por luminaria" },
       { concept: "Mantenimiento básico de nave o local", range: "Desde $2,900", unit: "por servicio" },
       { concept: "Mantenimiento de climatización comercial", range: "Desde $3,250", unit: "por equipo" },
       { concept: "Mantenimiento preventivo de tablero", range: "Desde $1,750", unit: "por tablero" },

@@ -57,7 +57,7 @@ export const DIGITAL_EXTRAS: Record<string, ServiceExtras> = {
       { concept: "Paquete de 5 a 10 procesos", range: "Desde $29,000", unit: "pago único" },
       { concept: "Suite completa (CRM, facturación y WhatsApp)", range: "Desde $232,000", unit: "pago único" },
       { concept: "Mantenimiento", range: "Desde $2,900", unit: "al mes" },
-      { concept: "Plataforma de automatización", range: "Desde $250", unit: "al mes, según volumen" },
+      { concept: "Plataforma de automatización (licencia del proveedor)", range: "Desde $250", unit: "al mes, según volumen" },
     ],
     factors: [
       "Número de pasos y sistemas conectados.",
@@ -203,8 +203,8 @@ export const DIGITAL_EXTRAS: Record<string, ServiceExtras> = {
       { concept: "Landing page", range: "Desde $5,250", unit: "pago único" },
       { concept: "Sitio por suscripción", range: "Desde $5,800 + $850", unit: "instalación + al mes" },
       { concept: "Hosting y dominio", range: "Desde $3,500", unit: "al año" },
-      { concept: "Agenda en línea (software)", range: "Desde $500", unit: "al mes" },
-      { concept: "CRM o bandeja de WhatsApp (software)", range: "Desde $600", unit: "al mes" },
+      { concept: "Agenda en línea (licencia del proveedor)", range: "Desde $500", unit: "al mes" },
+      { concept: "CRM o bandeja de WhatsApp (licencia del proveedor)", range: "Desde $600", unit: "al mes" },
     ],
     factors: [
       "Número de páginas y secciones.",

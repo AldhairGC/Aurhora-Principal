@@ -1,6 +1,10 @@
 import type { Article } from "./types";
 import { ARTICLES_MORE, type ArticleMore } from "./articles-more";
 import { ARTICLES_COST } from "./articles-cost";
+import { GUIDES_DIGITAL } from "./guides-digital";
+import { GUIDES_INTEGRA } from "./guides-integra";
+import { GUIDES_FACILITIES } from "./guides-facilities";
+import { GUIDES_FACILITIES_PROYECTOS } from "./guides-facilities-proyectos";
 
 /*
   Artículos de Recursos. Cada uno apoya a una página de servicio (pilar) y responde
@@ -306,7 +310,9 @@ const BASE: Article[] = [
         id: "tecnico",
         title: "Lo que debe hacer un técnico",
         blocks: [
-          { list: ["Limpieza de serpentines y bandeja de condensados.", "Revisión del drenaje.", "Revisión de conexiones eléctricas y funcionamiento general.", "Detección de fallas antes de que crezcan."] },
+          { p: "El mantenimiento tradicional lava el equipo colgado en la pared, con una bolsa colectora debajo para recoger el agua. Es rápido, pero la turbina y la charola de desagüe se limpian solo por donde alcanza el agua, y el agua sucia escurre por las mismas piezas." },
+          { p: "En Aurhora lo hacemos distinto: desarmamos por completo la unidad interior (el evaporador). Retiramos la carcasa, la turbina y la charola de desagüe, y solo el serpentín se queda instalado. Lavamos y desinfectamos cada pieza por separado con brochas, desinfectante y trapos limpios, y limpiamos el serpentín aparte con el mismo cuidado. Así quedan limpias las piezas donde se acumulan polvo y humedad, y el equipo se desinfecta por completo." },
+          { list: ["Desarmado de carcasa, turbina y charola de desagüe.", "Lavado y desinfección de cada pieza por separado.", "Limpieza minuciosa del serpentín en su lugar.", "Revisión del drenaje.", "Revisión de conexiones eléctricas y funcionamiento general.", "Detección de fallas antes de que crezcan."] },
         ],
       },
       {
@@ -550,7 +556,7 @@ function withMore(a: Article): Article {
   return { ...a, sections, faq: [...(a.faq ?? []), ...(more.faq ?? [])] };
 }
 
-export const ARTICLES: Article[] = BASE.map(withMore);
+export const ARTICLES: Article[] = [...BASE, ...GUIDES_DIGITAL, ...GUIDES_INTEGRA, ...GUIDES_FACILITIES, ...GUIDES_FACILITIES_PROYECTOS].map(withMore);
 
 export const articleById = (id: string) => ARTICLES.find((a) => a.id === id);
 export const articlesOf = (unit: string) => ARTICLES.filter((a) => a.unit === unit);

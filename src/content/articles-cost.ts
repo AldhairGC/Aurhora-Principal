@@ -224,7 +224,7 @@ export const ARTICLES_COST: Record<string, ArticleMore> = {
         after: "regla",
         title: "Limpieza contra mantenimiento",
         blocks: [
-          { p: "Muchas veces se usan como sinónimos, pero no son lo mismo. La limpieza de filtros la puedes hacer tú y se repite con frecuencia. El mantenimiento preventivo lo hace un técnico: incluye la limpieza profunda del serpentín y del drenaje, la revisión de conexiones y una prueba de funcionamiento. Lo recomendable es hacer las dos cosas: filtros con frecuencia y mantenimiento profesional al menos una vez al año." },
+          { p: "Muchas veces se usan como sinónimos, pero no son lo mismo. La limpieza de filtros la puedes hacer tú y se repite con frecuencia. El mantenimiento preventivo lo hace un técnico. En el nuestro desarmamos la unidad interior, lavamos y desinfectamos cada pieza por separado, limpiamos el serpentín y el drenaje, revisamos conexiones y probamos el funcionamiento. Lo recomendable es hacer las dos cosas: filtros con frecuencia y mantenimiento profesional al menos una vez al año." },
         ],
       },
       {

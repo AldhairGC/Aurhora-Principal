@@ -219,8 +219,10 @@ export const ARTICLES_MORE: Record<string, ArticleMore> = {
             list: [
               "Revisión de funcionamiento antes de empezar: temperatura de salida, ruidos y fugas visibles.",
               "Desmontaje y lavado de filtros.",
-              "Limpieza del serpentín de la unidad interior, normalmente con producto y bolsa recolectora para no mojar la pared.",
-              "Limpieza de la bandeja y la manguera de drenaje.",
+              "Desarmado de la unidad interior: carcasa, turbina y charola de desagüe. El serpentín se queda instalado.",
+              "Lavado y desinfección de cada pieza por separado, con brochas, desinfectante y trapos limpios.",
+              "Limpieza minuciosa del serpentín en su lugar y de la manguera de drenaje.",
+              "Rearmado de la unidad interior.",
               "Limpieza de la unidad exterior cuando el acceso es seguro.",
               "Revisión de conexiones eléctricas y prueba final de funcionamiento.",
             ],

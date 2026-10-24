@@ -125,7 +125,7 @@ export const INTEGRA_EXTRAS: Record<string, ServiceExtras> = {
   },
 
   "audio-video": {
-    costIntro: "En audio y video, el equipo suele ser la parte más grande del presupuesto. Publicamos el precio de instalación de pantallas; los proyectos de audio por zonas, cine en casa y salas de juntas se cotizan por proyecto.",
+    costIntro: "En audio y video, el equipo suele ser la parte más grande del presupuesto. Por eso publicamos precios desde para los proyectos más comunes; el total de un audio por zonas, cine en casa o sala de juntas se confirma con el equipo que elijas.",
     prices: [
       { concept: "Instalación de pantalla en muro (soporte aparte)", range: "Desde $700", unit: "por pantalla" },
       { concept: "Cine en casa en una sala existente", range: "Desde $29,000", unit: "por proyecto, con equipo" },

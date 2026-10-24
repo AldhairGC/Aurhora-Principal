@@ -88,7 +88,7 @@ export const SERVICES: Service[] = [
     heroAccent: "a gusto.",
     heroDesc: "Mantenimiento, limpieza, instalación y revisión de fallas para que tu equipo enfríe bien, en casa o en tu negocio. Atendemos en CDMX y área metropolitana, como Satélite, Naucalpan, Cuautitlán Izcalli y Santa Fe.",
     includes: [
-      { title: "Mantenimiento preventivo", desc: "Limpieza de filtros, serpentines y drenaje para que el equipo trabaje con menos esfuerzo." },
+      { title: "Mantenimiento preventivo con desarmado", desc: "Desarmamos la unidad interior y lavamos y desinfectamos carcasa, turbina y charola por separado. El serpentín se limpia a detalle en su lugar." },
       { title: "Limpieza profunda", desc: "Para equipos con olor, goteo o que llevan tiempo sin servicio." },
       { title: "Instalación", desc: "Evaluamos ubicación, soporte, tubería y alimentación eléctrica antes de instalar." },
       { title: "Diagnóstico y reparación", desc: "Identificamos la causa antes de proponer una reparación." },
