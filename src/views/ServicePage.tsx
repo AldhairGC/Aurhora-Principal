@@ -13,7 +13,6 @@ import { ServiceCost } from "@/components/sections/ServiceCost";
 import { ServiceAnatomy } from "@/components/sections/ServiceAnatomy";
 import { anatomyOf } from "@/content/anatomy";
 import { DigitalLogbook } from "@/components/sections/DigitalLogbook";
-import { ServicePhotos } from "@/components/sections/ServicePhotos";
 import type { Service } from "@/content/types";
 
 export function ServicePage({ service: s }: { service: Service }) {
@@ -69,8 +68,6 @@ export function ServicePage({ service: s }: { service: Service }) {
           ))}
         </ul>
       </Section>
-
-      <ServicePhotos serviceId={s.id} />
 
       {s.id === "agentes-ia" ? (
         <section className="gutter bg-night py-20 text-on-night md:py-28">

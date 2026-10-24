@@ -34,4 +34,4 @@ Agente de atención inicial con base de conocimientos, oferta de catálogo y pre
 
 ## Pendientes de contenido
 
-Fotos propias: el 24 de octubre de 2026 se publicaron 18 fotos de trabajos reales (con marco y franja de marca) en una galería «Así se ven algunos de nuestros trabajos» en 10 páginas de servicio de Facilities e Integra; faltan fotos de plomería, del resto de los servicios y de Digital. Catálogo completo; idiomas y URLs de producción. No bloquean la revisión del mockup.
+Fotos propias: el 24 de octubre de 2026 se publicaron 18 fotos de trabajos reales (con marco y franja de marca). Viven solo en la página /galeria, agrupadas por tipo de servicio; no se muestran en las páginas de servicio (decisión de Aurhora, para no recargarlas); faltan fotos de plomería, del resto de los servicios y de Digital. Catálogo completo; idiomas y URLs de producción. No bloquean la revisión del mockup.

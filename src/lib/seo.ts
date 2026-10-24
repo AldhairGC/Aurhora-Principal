@@ -3,6 +3,7 @@ import { serviceById } from "@/content/services";
 import { articleById } from "@/content/articles";
 import { legalById } from "@/content/legal";
 import { extrasOf, faqOf } from "@/content/extras";
+import { PHOTO_GROUPS } from "@/content/photos";
 import type { Seo } from "@/content/types";
 
 /*
@@ -148,6 +149,8 @@ export function jsonLdFor(view: string): Record<string, unknown> {
     graph.push({ "@type": "WebPage", name: d.title, url: abs(d.seo.slug), inLanguage: "es-MX", publisher: { "@id": ORG_ID } });
   } else if (view === "recursos") {
     graph.push({ "@type": "CollectionPage", name: PAGE_SEO.recursos.title, url: abs("/recursos"), publisher: { "@id": ORG_ID } }, breadcrumbs([{ name: "Aurhora Agency", slug: "/" }, { name: "Recursos", slug: "/recursos" }]));
+  } else if (view === "galeria") {
+    graph.push({ "@type": "ImageGallery", name: PAGE_SEO.galeria.title, url: abs("/galeria"), inLanguage: "es-MX", publisher: { "@id": ORG_ID }, image: PHOTO_GROUPS.flatMap((g) => g.photos.map((p) => ({ "@type": "ImageObject", contentUrl: abs(p.src), caption: p.alt }))) }, breadcrumbs([{ name: "Aurhora Agency", slug: "/" }, { name: "Galería", slug: "/galeria" }]));
   } else if (view === "nosotros") {
     graph.push({ "@type": "AboutPage", name: PAGE_SEO.nosotros.title, url: abs("/nosotros"), about: { "@id": ORG_ID } }, organization());
   } else if (view === "mapa-del-sitio") {

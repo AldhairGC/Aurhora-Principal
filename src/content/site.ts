@@ -94,6 +94,12 @@ export const PAGE_SEO: Record<string, Seo> = {
     slug: "/recursos",
     keywords: ["guías de inteligencia artificial", "agentes de IA", "domótica", "mantenimiento de minisplit"],
   },
+  galeria: {
+    title: "Galería de trabajos en CDMX | Aurhora Agency",
+    description: "Fotos de trabajos reales de Aurhora: instalación y mantenimiento de minisplits, tableros eléctricos, videovigilancia, audio y video, y redes en CDMX y área metropolitana.",
+    slug: "/galeria",
+    keywords: ["galería de trabajos", "instalación de minisplit", "tableros eléctricos", "instalación de cámaras de seguridad", "cine en casa"],
+  },
   "mapa-del-sitio": {
     title: "Mapa del sitio | Aurhora Agency",
     description: "Mapa del sitio de Aurhora Agency: todas las páginas de Digital, Integra y Facilities con sus servicios, las guías y los documentos legales.",

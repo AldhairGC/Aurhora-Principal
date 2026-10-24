@@ -111,6 +111,7 @@ export function Header() {
             </div>
           ))}
           <Link to="recursos" className={navCls(view === "recursos" || Boolean(articleById(view)), night)}>Recursos</Link>
+          <Link to="galeria" className={navCls(view === "galeria", night)}>Galería</Link>
         </nav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-4">
@@ -159,6 +160,7 @@ export function Header() {
                 <div className="grid grid-cols-2 gap-1">
                   <Link to="nosotros" className="rounded-[8px] px-3 py-3 font-display text-[17px] font-semibold tracking-tight hover:bg-sunken">Nosotros</Link>
                   <Link to="recursos" className="rounded-[8px] px-3 py-3 font-display text-[17px] font-semibold tracking-tight hover:bg-sunken">Recursos</Link>
+                  <Link to="galeria" className="rounded-[8px] px-3 py-3 font-display text-[17px] font-semibold tracking-tight hover:bg-sunken">Galería</Link>
                 </div>
                 <Link to="contacto" className="mt-2 flex min-h-[48px] items-center justify-center gap-2 rounded-[12px] bg-ink font-medium text-bg">
                   Hablemos <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

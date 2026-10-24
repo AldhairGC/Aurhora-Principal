@@ -13,6 +13,7 @@ const PAGES: [string, string][] = [
   ["grupo", PAGE_SEO.grupo.slug],
   ["nosotros", PAGE_SEO.nosotros.slug],
   ["recursos", PAGE_SEO.recursos.slug],
+  ["galeria", PAGE_SEO.galeria.slug],
   ["contacto", PAGE_SEO.contacto.slug],
   ["mapa-del-sitio", PAGE_SEO["mapa-del-sitio"].slug],
   ...UNITS.map((u): [string, string] => [u.id, u.seo.slug]),

@@ -7,7 +7,7 @@ import { ALL_VIEWS, slugOf } from "@/lib/routes";
 
 // Fecha del último cambio de contenido. Actualizar al publicar cambios relevantes
 // (no usar new Date(): cambiaría en cada build y Google dejaría de confiar en ella).
-const CONTENT_UPDATED = new Date("2026-10-23");
+const CONTENT_UPDATED = new Date("2026-10-24");
 
 const UNIT_IDS = new Set<string>(UNITS.map((u) => u.id));
 const SERVICE_IDS = new Set(SERVICES.map((s) => s.id));

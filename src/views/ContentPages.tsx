@@ -341,7 +341,7 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
 
 export function SitemapPage() {
   const groups: { title: string; links: [string, string][] }[] = [
-    { title: "Aurhora Agency", links: [["grupo", "Inicio"], ["nosotros", "Nosotros"], ["recursos", "Recursos"], ["contacto", "Contacto"]] },
+    { title: "Aurhora Agency", links: [["grupo", "Inicio"], ["nosotros", "Nosotros"], ["recursos", "Recursos"], ["galeria", "Galería"], ["contacto", "Contacto"]] },
     ...UNITS.map((u) => ({
       title: u.full,
       links: [[u.id, `Todo ${u.full}`] as [string, string], ...u.services.map((id): [string, string] => [id, serviceById(id)!.name])],
