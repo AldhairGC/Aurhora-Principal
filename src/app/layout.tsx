@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Sora } from "next/font/google";
-import Script from "next/script";
 import { SiteShell } from "@/components/site/SiteShell";
 import { SITE } from "@/content/site";
 import { CONSENT_DEFAULT_SCRIPT } from "@/lib/analytics/consent";
@@ -8,6 +7,13 @@ import { THEME_SCRIPT } from "@/lib/theme-script";
 import "./globals.css";
 
 const GTM_ID = "GTM-TMP9R7B6";
+
+// Fragmento estándar de GTM, escrito en el <head> del HTML: Search Console lo busca ahí para verificar el sitio.
+const GTM_SCRIPT = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`;
 
 const sora = Sora({ variable: "--font-sora", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
@@ -36,16 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* Consent Mode v2: debe ejecutarse antes de GTM (todo "denied" hasta que la persona elija) */}
         <script id="consent-default" dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT_SCRIPT }} />
         {/* Google Tag Manager — GA4, Ads y píxeles se configuran dentro del contenedor */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){
-              w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${GTM_ID}');
-          `}
-        </Script>
+        <script id="google-tag-manager" dangerouslySetInnerHTML={{ __html: GTM_SCRIPT }} />
       </head>
       <body>
         <noscript>
