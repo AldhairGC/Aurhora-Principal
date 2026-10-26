@@ -23,8 +23,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.name,
   formatDetection: { telephone: false },
-  // Verificación de Search Console (propiedad https://www.aurhora.agency/). El token es público; no quitarlo o se pierde la verificación.
-  verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? "Na0C9RJvFOLLAr4MGBHfnjGJIQe1ccQgy5ZGaKYJOSU" },
+  // Verificación de Search Console (propiedad https://www.aurhora.agency/), un token por propietario:
+  // aldhair.gc@gmail.com y aldhair@aurhora.it.com. Son públicos; quitar uno quita la verificación de esa cuenta.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? ["MtLzXsDmp4OnpUTaxWSMwI1reGYmuO8X8-1sXaKtQFU", "Na0C9RJvFOLLAr4MGBHfnjGJIQe1ccQgy5ZGaKYJOSU"],
+  },
 };
 
 export const viewport: Viewport = {
