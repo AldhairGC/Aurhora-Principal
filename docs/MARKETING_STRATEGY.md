@@ -27,7 +27,7 @@ La estrategia se construye en 3 capas:
 | Activo | Estado | Nota |
 |---|---|---|
 | Sitio Next.js 15, multiidioma (es-MX, en-US, pt-BR) | ✅ Vivo | Base sólida y rápida |
-| Google Analytics 4 | ✅ Cableado (`G-SQKR312YQR`) | Solo mide pageviews, **falta eventos** |
+| Google Analytics 4 | ✅ Cableado (`G-NRPDQSXEZJ`) | Solo mide pageviews, **falta eventos** |
 | Google Tag Manager | ✅ Cableado (`GTM-TMP9R7B6`) | Contenedor listo para píxeles |
 | Microsoft Clarity | ✅ Cableado (`rxjrrdz9v5`) | Mapas de calor / grabaciones |
 | Formulario de contacto | ✅ Funcional vía Brevo | Captura `source` por CTA — atribución lista |
@@ -327,7 +327,7 @@ Conectar: **GA4 + Google Search Console + Brevo (export) + Meta Insights**. Una 
 - [ ] En GTM (`GTM-TMP9R7B6`): crear *triggers* Custom Event para `contact_submit`, `demo_scheduled`, `plan_selected`, `whatsapp_click`.
 - [ ] Crear tags GA4 Event para cada uno (enviar `source`, `plan`).
 - [ ] Publicar el contenedor.
-- [ ] En GA4 (`G-SQKR312YQR`) → marcar como **conversión**: `demo_scheduled`, `contact_submit`, `whatsapp_click`.
+- [ ] En GA4 (`G-NRPDQSXEZJ`) → marcar como **conversión**: `demo_scheduled`, `contact_submit`, `whatsapp_click`.
 
 ### D. Píxeles y SEO
 - [ ] Crear **Meta Pixel** y agregarlo vía GTM; mapear `Lead`.

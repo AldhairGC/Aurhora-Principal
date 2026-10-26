@@ -141,7 +141,7 @@ Ritmo sugerido: 2 artículos al mes, empezando por IA agéntica (es el tema dond
 
 ### Principios
 
-- **Un solo contenedor:** todo pasa por GTM `GTM-TMP9R7B6`. Quitar el gtag directo de `layout.tsx` y configurar GA4 (`G-SQKR312YQR`) solo dentro de GTM.
+- **Un solo contenedor:** todo pasa por GTM `GTM-TMP9R7B6`. Quitar el gtag directo de `layout.tsx` y configurar GA4 (hoy `G-NRPDQSXEZJ`) solo dentro de GTM.
 - **Consentimiento primero:**
   - Consent Mode v2 con `gtag('consent','default', { ad_storage, analytics_storage, ad_user_data, ad_personalization: 'denied' })`, antes de cargar GTM.
   - El banner llama `gtag('consent','update', …)` según lo que elija la persona.
@@ -189,7 +189,7 @@ Mapeo con el plan de `MARKETING_STRATEGY.md`: `contact_submit` se mantiene para 
 - [x] Canonical, OG y hreflang (con x-default) por página; `lang` en `<html>`; verificación de Search Console por variable `NEXT_PUBLIC_GSC_VERIFICATION` (`src/lib/seo/metadata.ts`, `generateMetadata` en cada página)
 - [x] Sitemap sin `/login` y con fecha de contenido; robots sin bloquear `/_next/`; `/login` con noindex
 - [x] Captura de UTM, gclid/gbraid/wbraid, fbclid, página de entrada y referrer → API → Brevo (atributos del contacto, descripción del deal y correo al equipo) (`src/lib/analytics/attribution.ts`, `src/lib/brevo/attribution.ts`)
-- [ ] **Pendiente en GTM:** confirmar que el contenedor `GTM-TMP9R7B6` tiene la etiqueta de configuración de GA4 (`G-SQKR312YQR`); ya no se carga gtag directo
+- [x] **GTM:** el contenedor `GTM-TMP9R7B6` carga GA4 con la constante `const - GA4 ID de medición` = `G-NRPDQSXEZJ` (versión 5, 26/10/2026). El flujo anterior `G-SQKR312YQR` se eliminó en GA4 el 25/10/2026 y ya no recibe datos; no volver a usarlo. Ya no se carga gtag directo
 - [ ] **Pendiente en Brevo:** crear los atributos de contacto listados en `.env.example`
 - [ ] **Pendiente en Vercel:** `NEXT_PUBLIC_GSC_VERIFICATION` con el código real de Search Console
 
