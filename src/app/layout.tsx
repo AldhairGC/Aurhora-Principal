@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.name,
   formatDetection: { telephone: false },
-  // Meta de verificación de Search Console, solo si la variable está definida.
-  ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } } : {}),
+  // Verificación de Search Console (propiedad https://www.aurhora.agency/). El token es público; no quitarlo o se pierde la verificación.
+  verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? "Na0C9RJvFOLLAr4MGBHfnjGJIQe1ccQgy5ZGaKYJOSU" },
 };
 
 export const viewport: Viewport = {
