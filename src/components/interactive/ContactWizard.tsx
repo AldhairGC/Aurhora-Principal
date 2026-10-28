@@ -12,12 +12,13 @@ import { Link, useRouter } from "@/lib/router";
 import { CopyValue } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/analytics";
-
+import { sendLead } from "@/lib/crm";
 
 type Form = {
   unit: string;
   service: string;
   name: string;
+  phone: string;
   space: string;
   zone: string;
   detail: string;
@@ -42,6 +43,7 @@ export function ContactWizard() {
       unit: startUnit,
       service: startService,
       name: "",
+      phone: "",
       space: startUnit === "digital" ? "Negocio o proyecto digital" : "",
       zone: "",
       detail: "",
@@ -52,6 +54,8 @@ export function ContactWizard() {
   });
   const [step, setStep] = useState(0);
   const previewRef = useRef<HTMLPreElement>(null);
+  // Último mensaje enviado al CRM: evita duplicar el registro si la persona vuelve a pulsar el botón.
+  const sentRef = useRef("");
   const v = watch();
   const needsZone = PHYSICAL.has(v.unit);
 
@@ -130,6 +134,10 @@ export function ContactWizard() {
                       <label htmlFor="f-name" className="mb-2 block text-[14px] font-medium">Tu nombre <span className="font-normal text-mute">· opcional</span></label>
                       <input id="f-name" {...register("name", { maxLength: 80 })} autoComplete="given-name" placeholder="¿Cómo te llamamos?" className={inputCls} />
                     </div>
+                  </div>
+                  <div>
+                    <label htmlFor="f-phone" className="mb-2 block text-[14px] font-medium">Tu teléfono <span className="font-normal text-mute">· opcional</span></label>
+                    <input id="f-phone" type="tel" inputMode="tel" {...register("phone", { maxLength: 30 })} autoComplete="tel" placeholder="Para llamarte si WhatsApp no te funciona" className={inputCls} />
                   </div>
                 </fieldset>
               )}
@@ -227,6 +235,10 @@ export function ContactWizard() {
                 rel="noopener noreferrer"
                 onClick={(e) => {
                   if (v.date && v.date < todayISO()) { e.preventDefault(); trigger("date"); return; }
+                  if (sentRef.current !== message) {
+                    sentRef.current = message;
+                    sendLead({ name: v.name, phone: v.phone, summary: message });
+                  }
                   track("generate_lead", { method: "whatsapp", unit: v.unit, service: v.service, priority: v.priority, source: prefill.origin ?? "contacto" });
                 }}
                 className="inline-flex min-h-[46px] items-center gap-2 rounded-[12px] bg-[#1f9d55] px-5 text-[15px] font-medium text-white transition hover:brightness-110"
@@ -237,7 +249,7 @@ export function ContactWizard() {
           </div>
           {/* Aviso de privacidad simplificado: visible en todos los pasos, antes de enviar datos. */}
           <p className="mt-5 text-[12.5px] leading-relaxed text-mute">
-            Aurhora Agency usa los datos que compartes para atender tu solicitud, cotizar y coordinar el servicio. Si no quieres recibir información de nuestros servicios, dínoslo en tu mensaje. Consulta el{" "}
+            Aurhora Agency usa los datos que compartes para atender tu solicitud, cotizar y coordinar el servicio. Al continuar en WhatsApp, guardamos tu solicitud en nuestro CRM para darte seguimiento. Si no quieres recibir información de nuestros servicios, dínoslo en tu mensaje. Consulta el{" "}
             <Link to="privacidad" className="underline underline-offset-2 hover:text-ink">Aviso de privacidad</Link>.
           </p>
         </div>
@@ -286,7 +298,7 @@ export function ContactWizard() {
           <p className="mt-3 font-display text-[22px] font-semibold tracking-tight"><CopyValue value={SITE.phoneDisplay} label="Teléfono" /></p>
           <p className="mt-1 text-[14px] text-mute"><CopyValue value={SITE.email} label="Correo" /></p>
           <ul className="mt-4 space-y-1.5 text-[13.5px] text-mute">
-            {["Los datos solo viajan en el mensaje que tú decides enviar.", "Atención humana; sin bots en esta etapa.", "Lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00, hora de CDMX."].map((t) => (
+            {["Tu solicitud se guarda solo cuando pulsas Continuar en WhatsApp.", "Atención humana; sin bots en esta etapa.", "Lunes a viernes de 8:00 a 20:00 y sábados de 8:00 a 16:00, hora de CDMX."].map((t) => (
               <li key={t} className="flex gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-ok" aria-hidden="true" />{t}</li>
             ))}
           </ul>
