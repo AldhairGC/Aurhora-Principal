@@ -84,7 +84,7 @@ export const SERVICES: Service[] = [
     id: "aire-acondicionado",
     unit: "facilities",
     name: "Aire acondicionado",
-    h1: "Mantenimiento e instalación de aire acondicionado en CDMX y área metropolitana",
+    h1: "Mantenimiento, instalación y venta de aire acondicionado en CDMX y área metropolitana",
     tagline: "Limpieza, mantenimiento, instalación y fallas.",
     icon: AirVent,
     heroLead: "Vuelve a estar",
@@ -94,6 +94,7 @@ export const SERVICES: Service[] = [
       { title: "Mantenimiento preventivo con desarmado", desc: "Desarmamos la unidad interior y lavamos y desinfectamos carcasa, turbina y charola por separado. El serpentín se limpia a detalle en su lugar." },
       { title: "Limpieza profunda", desc: "Para equipos con olor, goteo o que llevan tiempo sin servicio." },
       { title: "Instalación", desc: "Evaluamos ubicación, soporte, tubería y alimentación eléctrica antes de instalar." },
+      { title: "Venta e instalación de equipos", desc: "Te asesoramos para elegir el tipo y la capacidad según tu espacio, y cotizamos el equipo junto con su instalación." },
       { title: "Diagnóstico y reparación", desc: "Identificamos la causa antes de proponer una reparación." },
     ],
     forWho: [
@@ -116,7 +117,7 @@ export const SERVICES: Service[] = [
     contactService: "Aire acondicionado",
     seo: {
       title: "Mantenimiento de aire acondicionado en CDMX | Aurhora Agency",
-      description: "Mantenimiento de aire acondicionado en CDMX y área metropolitana: limpieza, instalación y reparación de minisplits. Desde $950 por equipo con IVA.",
+      description: "Venta, instalación y mantenimiento de minisplits en CDMX y área metropolitana. Mantenimiento desde $950 e instalación desde $2,250 por equipo, con IVA.",
       slug: "/facilities/aire-acondicionado",
       keywords: ["mantenimiento de aire acondicionado CDMX", "limpieza de minisplit", "instalación de minisplit", "reparación de aire acondicionado", "aire acondicionado no enfría"],
     },

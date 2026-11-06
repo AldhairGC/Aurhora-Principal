@@ -47,6 +47,9 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Nuestro mantenimiento parte de $950 por equipo en casa y de $2,900 en negocios. Te damos el precio exacto después de ver tu equipo."],
       ["¿Cuánto tarda la limpieza de un minisplit?", "Normalmente entre una hora y hora y media por equipo, según el acceso y qué tan sucio esté."],
       ["¿El diagnóstico tiene costo?", "Sí, y te lo informamos antes de la visita. Parte de $450; si aceptas la cotización, se descuenta del trabajo."],
+      ["¿Venden e instalan minisplits?", "Sí. Te asesoramos para elegir el tipo y la capacidad según tu espacio, y cotizamos el equipo junto con la instalación. La mano de obra de una instalación básica parte de $2,250 por equipo, con IVA incluido. El equipo y los materiales adicionales se cotizan según lo que elijas."],
+      ["¿Qué necesito para cotizar el equipo y su instalación?", "Fotos del lugar donde irá la unidad interior y la exterior, medidas aproximadas del espacio, cuántos equipos quieres y el piso o la altura de la unidad exterior. Con eso confirmamos lo que incluye la cotización antes de agendar."],
+      ["¿La instalación tiene garantía?", "Sí, la mano de obra de la instalación tiene 90 días de garantía. Si compras el equipo con nosotros, tu propuesta indica la garantía que aplica a cada equipo."],
     ],
   },
 
