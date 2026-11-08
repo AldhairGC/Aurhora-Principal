@@ -6,8 +6,10 @@
 
   Taxonomía (ver docs/SEO_ANALYTICS_V3.md):
   - page_view        { page_path, page_title, content_group }       vista virtual
-  - generate_lead    { method, unit, service, priority, source }    conversión principal
-  - whatsapp_click   { source, unit?, service? }                    conversión secundaria
+  - generate_lead    { method, unit, service, priority, cta_location } conversión principal
+  - whatsapp_click   { cta_location, unit?, service? }                 conversión secundaria
+  No usar "source", "medium" ni "campaign" como parámetros de evento: GA4 los toma como
+  fuente de tráfico de la sesión y rompe la atribución de campañas.
   - phone_click / email_click { action: "copy" }
   - form_progress    { form, step }
   - select_content   { content_type, content_id }                   uso de herramientas

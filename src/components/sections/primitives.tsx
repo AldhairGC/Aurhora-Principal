@@ -63,7 +63,7 @@ export function BtnLink({ to, prefill, section, variant = "ink", children, class
 
 export function WhatsAppBtn({ text, variant = "unit", children, className, source = "cta" }: { text?: string; variant?: BtnVariant; children: ReactNode; className?: string; source?: string }) {
   return (
-    <a href={whatsappUrl(text)} onClick={() => track("whatsapp_click", { source })} target="_blank" rel="noopener noreferrer" className={cn(btnBase, BTN[variant], className)}>
+    <a href={whatsappUrl(text)} onClick={() => track("whatsapp_click", { cta_location: source })} target="_blank" rel="noopener noreferrer" className={cn(btnBase, BTN[variant], className)}>
       {children}
       <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
     </a>

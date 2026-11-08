@@ -155,8 +155,8 @@ Ya implementada en `prototypes/aurhora-v3/src/lib/analytics.ts`, con el mismo co
 | Evento | Parámetros | Uso en GA4 / Ads |
 |---|---|---|
 | `page_view` | `page_path`, `page_title`, `content_group` | Vista virtual. En Next.js la cubre GA4 con historial de navegación |
-| `generate_lead` | `method` (whatsapp/formulario), `unit`, `service`, `priority`, `source` | **Evento clave** y conversión principal de Google Ads |
-| `whatsapp_click` | `source`, `unit`, `service` | Evento clave secundario |
+| `generate_lead` | `method` (whatsapp/formulario), `unit`, `service`, `priority`, `cta_location` | **Evento clave** y conversión principal de Google Ads |
+| `whatsapp_click` | `cta_location`, `unit`, `service` | Evento clave secundario |
 | `phone_click` / `email_click` | `action` | Micro-conversión |
 | `form_progress` | `form`, `step`, `unit` | Embudo del formulario |
 | `select_content` | `content_type`, `content_id` | Uso de herramientas: buscador, síntomas, zona, agente, plano |

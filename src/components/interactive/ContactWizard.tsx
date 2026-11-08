@@ -239,7 +239,7 @@ export function ContactWizard() {
                     sentRef.current = message;
                     sendLead({ name: v.name, phone: v.phone, summary: message });
                   }
-                  track("generate_lead", { method: "whatsapp", unit: v.unit, service: v.service, priority: v.priority, source: prefill.origin ?? "contacto" });
+                  track("generate_lead", { method: "whatsapp", unit: v.unit, service: v.service, priority: v.priority, cta_location: prefill.origin ?? "contacto" });
                 }}
                 className="inline-flex min-h-[46px] items-center gap-2 rounded-[12px] bg-[#1f9d55] px-5 text-[15px] font-medium text-white transition hover:brightness-110"
               >

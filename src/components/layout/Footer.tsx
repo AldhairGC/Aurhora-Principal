@@ -70,7 +70,7 @@ export function Footer() {
             <p className="eyebrow text-on-night-mute">Conversemos</p>
             <ul className="mt-4 space-y-2.5 text-[15px] text-on-night-mute">
               <li>
-                <a href={whatsappUrl()} onClick={() => track("whatsapp_click", { source: "footer" })} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-on-night hover:underline">
+                <a href={whatsappUrl()} onClick={() => track("whatsapp_click", { cta_location: "footer" })} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-on-night hover:underline">
                   <MessageCircle className="h-4 w-4" aria-hidden="true" /> WhatsApp
                 </a>
               </li>
@@ -113,7 +113,7 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"
-      onClick={() => track("whatsapp_click", { source: "boton_flotante" })}
+      onClick={() => track("whatsapp_click", { cta_location: "boton_flotante" })}
       className="fixed z-40 grid h-14 w-14 place-items-center rounded-full bg-[#1f9d55] text-white shadow-[0_12px_32px_-8px_rgba(9,9,11,0.45)] transition hover:scale-105"
       style={{
         right: "calc(20px + env(safe-area-inset-right, 0px))",
