@@ -26,6 +26,17 @@ export type Service = {
   heroAccent: string;
   heroDesc: string;
   includes: Item[];
+  /** Ficha de equipos (marcas, capacidades, voltajes) para servicios que venden producto. */
+  specs?: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    /** Opciones destacadas, por ejemplo cada capacidad. */
+    highlights: { label: string; value: string }[];
+    /** Filas de la ficha: etiqueta y valor. */
+    rows: [string, string][];
+    note?: string;
+  };
   forWho: Item[];
   signals: string[];
   process: Item[];

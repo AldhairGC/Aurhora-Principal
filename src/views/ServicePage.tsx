@@ -69,6 +69,30 @@ export function ServicePage({ service: s }: { service: Service }) {
         </ul>
       </Section>
 
+      {s.specs && (
+        <Section className="border-t border-line bg-sunken py-20 md:py-28">
+          <SectionHead eyebrow={s.specs.eyebrow} title={s.specs.title} intro={s.specs.intro} />
+          <ul className="mt-12 grid gap-4 sm:grid-cols-3">
+            {s.specs.highlights.map((h) => (
+              <li key={h.label} className="rounded-[16px] border border-line bg-raised p-6">
+                <p className="eyebrow text-unit">Capacidad</p>
+                <p className="mt-4 font-display text-[28px] font-semibold leading-tight tracking-tight">{h.label}</p>
+                <p className="tabular mt-2 font-mono text-[15px] text-mute">{h.value}</p>
+              </li>
+            ))}
+          </ul>
+          <dl className="mt-4 overflow-hidden rounded-[16px] border border-line bg-raised">
+            {s.specs.rows.map(([k, v]) => (
+              <div key={k} className="grid gap-1 border-b border-line px-6 py-4 last:border-b-0 md:grid-cols-[minmax(0,0.5fr)_minmax(0,1.5fr)] md:gap-6">
+                <dt className="eyebrow pt-1 text-mute">{k}</dt>
+                <dd className="text-[15px] font-medium leading-relaxed">{v}</dd>
+              </div>
+            ))}
+          </dl>
+          {s.specs.note && <p className="mt-4 max-w-[62ch] text-[14px] leading-relaxed text-mute">{s.specs.note}</p>}
+        </Section>
+      )}
+
       {s.id === "agentes-ia" ? (
         <section className="gutter bg-night py-20 text-on-night md:py-28">
           <div className="wrap">

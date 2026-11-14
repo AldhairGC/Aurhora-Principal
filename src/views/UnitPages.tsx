@@ -427,7 +427,7 @@ export function FacilitiesPage() {
 
       <Section id="m-servicios" className="py-20 md:py-28">
         <SectionHead eyebrow="Lo que podemos resolver" title="Un equipo para tus pendientes." intro="Desde el mantenimiento preventivo hasta esa reparación que no puede esperar. Cada trabajo empieza por entender qué está pasando." />
-        <div className="mt-12"><ServiceGrid unit="facilities" ids={["aire-acondicionado", "electricidad", "plomeria", "reparaciones"]} /></div>
+        <div className="mt-12"><ServiceGrid unit="facilities" ids={["aire-acondicionado", "venta-instalacion-minisplit", "electricidad", "plomeria", "reparaciones"]} /></div>
         <div className="mt-6 flex flex-wrap items-center gap-2 text-[14px] text-mute">
           También evaluamos:
           {["Pintura", "Tablaroca", "Impermeabilización"].map((x) => (

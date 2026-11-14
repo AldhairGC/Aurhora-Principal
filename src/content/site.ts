@@ -62,7 +62,7 @@ export const UNITS: Unit[] = [
     desc: "Aire acondicionado, electricidad, plomería, instalaciones y proyectos para casas, locales, oficinas, naves y bodegas. El mismo equipo se encarga desde la revisión hasta el seguimiento.",
     area: "CDMX y área metropolitana",
     icon: Wrench,
-    services: ["aire-acondicionado", "electricidad", "plomeria", "reparaciones", "mantenimiento-programado", "proyectos-residenciales", "proyectos-industriales"],
+    services: ["aire-acondicionado", "venta-instalacion-minisplit", "electricidad", "plomeria", "reparaciones", "mantenimiento-programado", "proyectos-residenciales", "proyectos-industriales"],
     seo: {
       title: "Aurhora Facilities | Mantenimiento e instalaciones en CDMX",
       description: "Mantenimiento en CDMX y área metropolitana: aire acondicionado, electricidad, plomería, reparaciones, pólizas y proyectos residenciales e industriales.",
@@ -117,7 +117,7 @@ export const PAGE_SEO: Record<string, Seo> = {
 /** Opciones del formulario de contacto, por unidad. */
 export const CATALOG: Record<string, string[]> = {
   orientacion: ["Necesito orientación"],
-  facilities: ["Aire acondicionado", "Electricidad", "Instalaciones y reparaciones", "Mantenimiento programado", "Proyecto residencial", "Proyecto comercial o industrial", "Pintura", "Plomería", "Tablaroca", "Impermeabilización", "Otro servicio"],
+  facilities: ["Aire acondicionado", "Venta e instalación de minisplit", "Electricidad", "Instalaciones y reparaciones", "Mantenimiento programado", "Proyecto residencial", "Proyecto comercial o industrial", "Pintura", "Plomería", "Tablaroca", "Impermeabilización", "Otro servicio"],
   integra: ["Seguridad y accesos", "Redes y conectividad", "Domótica y automatización", "Audio, video y control", "Solución para residencia", "Solución para negocio", "Otro proyecto"],
   digital: ["Agentes de IA", "Automatización de procesos", "Desarrollo de software", "Consultoría", "Marketing digital", "GoDigital Suite", "Otro proyecto"],
 };
