@@ -47,17 +47,17 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       ["¿Cuánto cuesta el mantenimiento de un minisplit en la CDMX?", "Nuestro mantenimiento parte de $950 por equipo en casa y de $2,900 en negocios. Te damos el precio exacto después de ver tu equipo."],
       ["¿Cuánto tarda la limpieza de un minisplit?", "Normalmente entre una hora y hora y media por equipo, según el acceso y qué tan sucio esté."],
       ["¿El diagnóstico tiene costo?", "Sí, y te lo informamos antes de la visita. Parte de $450; si aceptas la cotización, se descuenta del trabajo."],
-      ["¿Venden e instalan minisplits?", "Sí. Te asesoramos para elegir el tipo y la capacidad según tu espacio, y cotizamos el equipo junto con la instalación. La mano de obra de una instalación básica parte de $2,250 por equipo, con IVA incluido. El equipo y los materiales adicionales se cotizan según lo que elijas."],
+      ["¿Venden e instalan minisplits?", "Sí. Te asesoramos para elegir el tipo y la capacidad según tu espacio, y cotizamos el equipo junto con la instalación. Un minisplit con instalación básica incluida parte de $4,999, con IVA incluido, y si ya tienes el equipo, la mano de obra de una instalación básica parte de $2,250 por equipo. Aplican restricciones: los materiales adicionales se cotizan según lo que elijas."],
       ["¿Qué necesito para cotizar el equipo y su instalación?", "Fotos del lugar donde irá la unidad interior y la exterior, medidas aproximadas del espacio, cuántos equipos quieres y el piso o la altura de la unidad exterior. Con eso confirmamos lo que incluye la cotización antes de agendar."],
       ["¿La instalación tiene garantía?", "Sí, la mano de obra de la instalación tiene 90 días de garantía. Si compras el equipo con nosotros, tu propuesta indica la garantía que aplica a cada equipo."],
     ],
   },
 
   "venta-instalacion-minisplit": {
-    costIntro: "Un minisplit con instalación tiene dos partes: el equipo y la mano de obra. El equipo depende de la marca y la capacidad; la instalación, del acceso y de cuántos metros de tubería hagan falta. Estos precios te sirven para planear; el precio final se confirma en la cotización.",
+    costIntro: "El precio de un minisplit con instalación incluye el equipo y la instalación básica. Cambia según la marca y la capacidad, y según el acceso y los metros de tubería que hagan falta. Estos precios te sirven para planear; el precio final se confirma en la cotización y aplican restricciones.",
     prices: [
-      { concept: "Minisplit Mirage, Whirlpool o York (equipo)", range: "Desde $4,999", unit: "por equipo" },
-      { concept: "Instalación básica de minisplit (mano de obra)", range: "Desde $2,250", unit: "por equipo" },
+      { concept: "Minisplit Mirage, Whirlpool o York con instalación básica incluida", range: "Desde $4,999", unit: "por equipo" },
+      { concept: "Instalación básica de un equipo que compraste por tu cuenta (mano de obra)", range: "Desde $2,250", unit: "por equipo" },
       { concept: "Metro adicional de tubería", range: "Desde $450", unit: "por metro" },
       { concept: "Salida de 220 V para minisplit (sin material)", range: "Desde $1,400", unit: "por salida" },
     ],
@@ -81,7 +81,7 @@ export const FACILITIES_EXTRAS: Record<string, ServiceExtras> = {
       "Antes de cotizar, ayuda tener a la mano fotos del lugar de la unidad interior y de la exterior, y medidas aproximadas del espacio: con eso la cotización es más precisa y evitas sorpresas el día de la instalación.",
     ],
     faq: [
-      ["¿Cuánto cuesta un minisplit con instalación?", "Los equipos parten de $4,999 y la mano de obra de una instalación básica parte de $2,250 por equipo, con IVA incluido. El total depende de la marca, la capacidad, los metros de tubería y la línea eléctrica; te lo confirmamos en la cotización antes de que compres."],
+      ["¿Cuánto cuesta un minisplit con instalación?", "Los minisplits con instalación básica incluida parten de $4,999, con IVA incluido. Aplican restricciones: la tubería adicional, la perforación de losa, las bases, la canaleta, la línea eléctrica dedicada y el trabajo en altura se cotizan aparte. El total depende de la marca, la capacidad y esos conceptos; te lo confirmamos en la cotización antes de que compres."],
       ["¿Cuánto tarda la instalación de un minisplit?", "Normalmente entre 3 y 8 horas, según el acceso a la unidad exterior y los metros de tubería."],
       ["¿La instalación tiene garantía?", "Sí, la mano de obra de la instalación tiene 90 días de garantía. La garantía de cada equipo depende de su marca y tu propuesta indica la que aplica."],
     ],
