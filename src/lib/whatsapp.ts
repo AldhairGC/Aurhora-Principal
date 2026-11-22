@@ -13,7 +13,8 @@ export type RequestData = {
   origin?: string;
 };
 
-const CAMPAIGN_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
+// gclid es el identificador de clic de Google Ads: permite, más adelante, relacionar una venta con el anuncio.
+const CAMPAIGN_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid"] as const;
 
 /** UTM context kept in memory for this visit only (the artifact gives no reliable storage). */
 export const campaign: Record<string, string> = (() => {
@@ -44,9 +45,17 @@ export function buildMessage(d: RequestData) {
     lines.push("(Pendiente de confirmar disponibilidad y cita.)");
   }
   if (d.origin) lines.push("", "Página de origen: " + d.origin);
-  const attribution = Object.entries(campaign).map(([k, v]) => `${k}: ${v}`);
-  if (attribution.length) lines.push("Referencia de campaña: " + attribution.join(" / "));
+  // La referencia de campaña NO va en el mensaje: la persona lo lee y lo envía. Se registra aparte (attributionNote).
   return lines.join("\n");
+}
+
+/**
+ * Origen de la visita (parámetros de campaña) para uso interno: se guarda en el registro de Zoho,
+ * nunca en el texto que ve o envía el cliente. Devuelve una cadena vacía si no llegó con parámetros.
+ */
+export function attributionNote() {
+  const rows = Object.entries(campaign).map(([k, v]) => `${k}: ${v}`);
+  return rows.length ? "Origen de la visita (interno)\n" + rows.join("\n") : "";
 }
 
 export function whatsappUrl(text?: string) {

@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Copy } from "lucide-react";
 import { toast } from "sonner";
 import { CATALOG, SITE, UNIT_LABEL } from "@/content/site";
-import { buildMessage, copyText, whatsappUrl } from "@/lib/whatsapp";
+import { attributionNote, buildMessage, copyText, whatsappUrl } from "@/lib/whatsapp";
 import { todayISO } from "@/lib/hours";
 import { Link, useRouter } from "@/lib/router";
 import { CopyValue } from "@/components/layout/Footer";
@@ -237,7 +237,9 @@ export function ContactWizard() {
                   if (v.date && v.date < todayISO()) { e.preventDefault(); trigger("date"); return; }
                   if (sentRef.current !== message) {
                     sentRef.current = message;
-                    sendLead({ name: v.name, phone: v.phone, summary: message });
+                    // El origen de campaña va solo al CRM; el mensaje de WhatsApp queda limpio.
+                    const origin = attributionNote();
+                    sendLead({ name: v.name, phone: v.phone, summary: origin ? `${message}\n\n${origin}` : message });
                   }
                   track("generate_lead", { method: "whatsapp", unit: v.unit, service: v.service, priority: v.priority, cta_location: prefill.origin ?? "contacto" });
                 }}
@@ -249,7 +251,7 @@ export function ContactWizard() {
           </div>
           {/* Aviso de privacidad simplificado: visible en todos los pasos, antes de enviar datos. */}
           <p className="mt-5 text-[12.5px] leading-relaxed text-mute">
-            Aurhora Agency usa los datos que compartes para atender tu solicitud, cotizar y coordinar el servicio. Al continuar en WhatsApp, guardamos tu solicitud en nuestro CRM para darte seguimiento. Si no quieres recibir información de nuestros servicios, dínoslo en tu mensaje. Consulta el{" "}
+            Aurhora Agency usa los datos que compartes para atender tu solicitud, cotizar y coordinar el servicio. Al continuar en WhatsApp, guardamos tu solicitud en nuestro CRM, junto con la campaña o página por la que llegaste, para darte seguimiento. Si no quieres recibir información de nuestros servicios, dínoslo en tu mensaje. Consulta el{" "}
             <Link to="privacidad" className="underline underline-offset-2 hover:text-ink">Aviso de privacidad</Link>.
           </p>
         </div>
